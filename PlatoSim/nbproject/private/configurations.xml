@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="../Components" name="0">
+      <df name="AuxTools">
+        <in>Constants.cpp</in>
+        <in>Constants.h</in>
+        <in>FFT.cpp</in>
+        <in>FFT.h</in>
+        <in>FileUtilities.cpp</in>
+        <in>FileUtilities.h</in>
+        <in>GlobalVariables.cpp</in>
+        <in>GlobalVariables.h</in>
+        <in>MathTools.cpp</in>
+        <in>MathTools.h</in>
+        <in>Sky.cpp</in>
+        <in>Sky.h</in>
+        <in>Skydata.h</in>
+        <in>Statistics.cpp</in>
+        <in>Statistics.h</in>
+        <in>Tabfunction.h</in>
+      </df>
+      <df name="DataSet">
+        <in>DataSet.cpp</in>
+        <in>DataSet.h</in>
+      </df>
+      <df name="Manager">
+        <in>Controller.cpp</in>
+        <in>Controller.h</in>
+        <in>LogManager.cpp</in>
+        <in>LogManager.h</in>
+        <in>main.cpp</in>
+      </df>
+      <df name="Parameters">
+        <in>ParamsBackground.cpp</in>
+        <in>ParamsBackground.h</in>
+        <in>ParamsCCD.cpp</in>
+        <in>ParamsCCD.h</in>
+        <in>ParamsCMOS.cpp</in>
+        <in>ParamsCMOS.h</in>
+        <in>ParamsCTE.cpp</in>
+        <in>ParamsCTE.h</in>
+        <in>ParamsFlatField.cpp</in>
+        <in>ParamsFlatField.h</in>
+        <in>ParamsJitter.cpp</in>
+        <in>ParamsJitter.h</in>
+        <in>ParamsPSF.cpp</in>
+        <in>ParamsPSF.h</in>
+        <in>ParamsPhotometry.cpp</in>
+        <in>ParamsPhotometry.h</in>
+        <in>ParamsStarfield.cpp</in>
+        <in>ParamsStarfield.h</in>
+        <in>ParamsWUVS.cpp</in>
+        <in>ParamsWUVS.h</in>
+      </df>
+      <df name="PostProcessing">
+        <in>PostProcessing.cpp</in>
+        <in>PostProcessing.h</in>
+      </df>
+      <df name="PreProcessing">
+        <in>PreProcessingCCD.cpp</in>
+        <in>PreProcessingCCD.h</in>
+        <in>PreProcessingCMOS.cpp</in>
+        <in>PreProcessingCMOS.h</in>
+        <in>PreProcessingCommon.cpp</in>
+        <in>PreProcessingCommon.h</in>
+        <in>PreProcessingPSF.cpp</in>
+        <in>PreProcessingPSF.h</in>
+        <in>PreProcessingPhotometry.cpp</in>
+        <in>PreProcessingPhotometry.h</in>
+        <in>PreProcessingWUVS.cpp</in>
+        <in>PreProcessingWUVS.h</in>
+      </df>
+      <df name="Processing">
+        <in>ProcessingCCD.cpp</in>
+        <in>ProcessingCCD.h</in>
+        <in>ProcessingCMOS.cpp</in>
+        <in>ProcessingCMOS.h</in>
+        <in>ProcessingPhotometry.cpp</in>
+        <in>ProcessingPhotometry.h</in>
+        <in>ProcessingWUVS.cpp</in>
+        <in>ProcessingWUVS.h</in>
+      </df>
+      <df name="ProcessingSteps">
+        <in>StepBackground.cpp</in>
+        <in>StepBackground.h</in>
+        <in>StepCTE.cpp</in>
+        <in>StepCTE.h</in>
+        <in>StepChargeTransferSmearing.cpp</in>
+        <in>StepChargeTransferSmearing.h</in>
+        <in>StepConvolvePSF.cpp</in>
+        <in>StepConvolvePSF.h</in>
+        <in>StepCosmics.cpp</in>
+        <in>StepCosmics.h</in>
+        <in>StepElectronicOffset.cpp</in>
+        <in>StepElectronicOffset.h</in>
+        <in>StepFlatField.cpp</in>
+        <in>StepFlatField.h</in>
+        <in>StepGain.cpp</in>
+        <in>StepGain.h</in>
+        <in>StepJitter.cpp</in>
+        <in>StepJitter.h</in>
+        <in>StepPhotometryOnTheGo.cpp</in>
+        <in>StepPhotometryOnTheGo.h</in>
+        <in>StepPhotonNoise.cpp</in>
+        <in>StepPhotonNoise.h</in>
+        <in>StepReadOutNoise.cpp</in>
+        <in>StepReadOutNoise.h</in>
+        <in>StepRebin.cpp</in>
+        <in>StepRebin.h</in>
+        <in>StepSaturation.cpp</in>
+        <in>StepSaturation.h</in>
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>../build/Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>../build</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+          <variable name="DYLD_LIBRARY_PATH"
+                    value="$DYLD_LIBRARY_PATH:$PLATOROOT/../dependencyInstalls/OpenCV-2.4.2/lib/"/>
+          <variable name="LD_LIBRARY_PATH"
+                    value="$LD_LIBRARY_PATH:$PLATOROOT/../dependencyInstalls/openmpi-1.6.5/lib/"/>
+        </environment>
+      </runprofile>
+    </conf>
+    <conf name="PLATOSIM" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>4</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>../build</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>make -j 4
+</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"/PLATOSim</runcommandpicklistitem>
+          <runcommandpicklistitem>PLATOSim</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+          <runcommandpicklistitem>/bin/bash -c "ulimit -s 2048; ./PLATOSim -s ../inputfiles/ccd_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>/bin/bash -c "ulimit -s 2048; ./PLATOSim -s ../inputfiles/ccd_parameters.xml"</runcommandpicklistitem>
+          <runcommandpicklistitem>/bin/bash -c "ulimit -s 2048; ./PLATOSim"</runcommandpicklistitem>
+          <runcommandpicklistitem></runcommandpicklistitem>
+          <runcommandpicklistitem>./PLATOSim -s ../inputfiles/ccd_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./PLATOSim -s ../inputfiles/ccd_parameters.xml -p ../inputfiles/photometry_parameters.xml </runcommandpicklistitem>
+          <runcommandpicklistitem>./PLATOSim -s ../inputfiles/ccd_parameters.xml -p ../inputfiles/photometry_parameters.xml</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>./PLATOSim -s ../inputfiles/ccd_parameters.xml -p ../inputfiles/photometry_parameters.xml</runcommand>
+        <rundir>../build</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+          <variable name="DYLD_LIBRARY_PATH"
+                    value="$PLATOROOT/../dependencyInstalls/OpenCV-2.4.2/lib/"/>
+          <variable name="LD_LIBRARY_PATH"
+                    value="$PLATOROOT/../dependencyInstalls/openmpi-1.6.5/lib/"/>
+        </environment>
+      </runprofile>
+    </conf>
+    <conf name="WUVS_PLATOSIM" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>../build</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>make -j 4
+</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"/PLATOSim</runcommandpicklistitem>
+          <runcommandpicklistitem>PLATOSim</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+          <runcommandpicklistitem>/bin/bash -c "ulimit -s 2048; ./PLATOSim -s ../inputfiles/ccd_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>/bin/bash -c "ulimit -s 2048; ./PLATOSim -s ../inputfiles/ccd_parameters.xml"</runcommandpicklistitem>
+          <runcommandpicklistitem>/bin/bash -c "ulimit -s 2048; ./PLATOSim"</runcommandpicklistitem>
+          <runcommandpicklistitem></runcommandpicklistitem>
+          <runcommandpicklistitem>./PLATOSim -w ../inputfiles/ccd_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./PLATOSim -s ../inputfiles/ccd_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./PLATOSim -s ../inputfiles/WUVS_parameters.xml</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>./PLATOSim -s ../inputfiles/WUVS_parameters.xml</runcommand>
+        <rundir>../build</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+          <variable name="DYLD_LIBRARY_PATH"
+                    value="$PLATOROOT/../dependencyInstalls/OpenCV-2.4.2/lib/"/>
+          <variable name="LD_LIBRARY_PATH"
+                    value="$PLATOROOT/../dependencyInstalls/openmpi-1.6.5/lib/"/>
+        </environment>
+      </runprofile>
+    </conf>
+    <conf name="ISSIS_test_PLATOSIM" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>../build</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>make -j 4
+</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>./PLATOSim -s "../inputfiles/ccd_parameters.xml"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"/PLATOSim</runcommandpicklistitem>
+          <runcommandpicklistitem>PLATOSim</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+          <runcommandpicklistitem>/bin/bash -c "ulimit -s 2048; ./PLATOSim -s ../inputfiles/ccd_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>/bin/bash -c "ulimit -s 2048; ./PLATOSim -s ../inputfiles/ccd_parameters.xml"</runcommandpicklistitem>
+          <runcommandpicklistitem>/bin/bash -c "ulimit -s 2048; ./PLATOSim"</runcommandpicklistitem>
+          <runcommandpicklistitem></runcommandpicklistitem>
+          <runcommandpicklistitem>./PLATOSim -s ../inputfiles/ccd_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./PLATOSim -s ../inputfiles/issis_parameters.xml</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>./PLATOSim -s ../inputfiles/issis_parameters.xml</runcommand>
+        <rundir>../build</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+          <variable name="DYLD_LIBRARY_PATH"
+                    value="$PLATOROOT/../dependencyInstalls/OpenCV-2.4.2/lib/"/>
+          <variable name="LD_LIBRARY_PATH"
+                    value="$PLATOROOT/../dependencyInstalls/openmpi-1.6.5/lib/"/>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

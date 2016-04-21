@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<description>This is the parameter file for performing photometry with PlatoSim.</description>
+<GeneralParameters>
+    <!--Photometry Method (WM=Weighted Mask, AP= Simple Aperture Photometry)-->
+    <PhotometryMethod>WM</PhotometryMethod>
+    <!--Number of telescopes that should be considered for statistical calculations-->
+    <NumberTelescopes>32</NumberTelescopes>
+    <!--Correct the flat field (0=no/1=yes) -->
+    <CorrectFlatfield>1</CorrectFlatfield>
+    <!--Correct for the smearing trails from the read-out with open shutter (0=no/1=yes) -->
+    <CorrectTrails>1</CorrectTrails>
+</GeneralParameters>
+<BackgroundParameters>
+    <!--Background flux [e-/pixel/s] (negative for automatic calculation)-->
+    <BackgroundFlux>-1</BackgroundFlux>
+    <!--Inner radius of annulus for background calculation [pixels]-->
+    <BackgroundAnnulusInnerRadius>4</BackgroundAnnulusInnerRadius>
+    <!--Outer radius of annulus for background calculation [pixels]-->
+    <BackgroundAnnulusOuterRadius>7</BackgroundAnnulusOuterRadius>
+</BackgroundParameters>

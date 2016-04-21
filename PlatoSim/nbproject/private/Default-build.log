@@ -1,0 +1,11 @@
+-- Could NOT find MPI_C (missing:  MPI_C_LIBRARIES MPI_C_INCLUDE_PATH) 
+-- Could NOT find MPI_CXX (missing:  MPI_CXX_LIBRARIES MPI_CXX_INCLUDE_PATH) 
+-- Looking for tinyxml/tinyxml.hpp or tinyxml/tinyxml.h - not found.
+-- PROJECT_SOURCE_DIR = /home/pablo/Projects/PLATOSim2.3
+-- CMAKE_CXX_FLAGS =  -O3 -fmessage-length=0
+-- OSX detected = 
+-- C COMPILER = /usr/bin/gcc
+-- CXX COMPILER = /home/pablo/Projects/PLATOSim2.3/dependencyInstalls/openmpi-1.6.5/bin/mpic++
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/pablo/Projects/PLATOSim2.3/build

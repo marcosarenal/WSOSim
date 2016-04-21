@@ -1,0 +1,16 @@
+called: /usr/bin/gcc
+	/home/pablo/Projects/PLATOSim2.3/build/CMakeFiles/CMakeFiles/CMakeTmp
+	/usr/bin/gcc
+	-o
+	CMakeFiles/cmTryCompileExec3635033262.dir/cmake_mpi_test.c.o
+	-c
+	/home/pablo/Projects/PLATOSim2.3/build/CMakeFiles/cmake_mpi_test.c
+
+called: /usr/bin/g++
+	/home/pablo/Projects/PLATOSim2.3/build/CMakeFiles/CMakeFiles/CMakeTmp
+	/usr/bin/g++
+	-o
+	CMakeFiles/cmTryCompileExec4042778314.dir/cmake_mpi_test.cpp.o
+	-c
+	/home/pablo/Projects/PLATOSim2.3/build/CMakeFiles/cmake_mpi_test.cpp
+

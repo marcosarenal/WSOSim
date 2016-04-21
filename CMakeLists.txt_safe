@@ -1,0 +1,398 @@
+# cmake file to build the Simulator
+# 
+# Author: Joris De Ridder
+#
+# Usage: ($ mkdir build)
+#        $ cd build
+#        $ cmake ..
+#        ($ make clean)
+#        $ make -j 4 
+#
+#
+# Notes:
+#   - Prefer 'cmake ..' in the build/ directory above 'cmake' in the
+#     parent directory, because the former does an out-of-source build.
+
+
+# Specify the compiler. This should be done before the project() command.
+# The set(CMAKE_CXX_COMPILER = ...) is not the prefered way (see http://www.cmake.org/Wiki/CMake_FAQ).
+# In this case it greatly enhances user friendliness since the compiler is the MPI compiler located
+# in one of the dependency dirs.
+
+
+# Start the project
+#------------------------
+
+project(PLATOSim.orig)
+
+# cmake version shouldn't be too old
+
+cmake_minimum_required(VERSION 2.8)
+
+
+
+
+# Find MPI libraries previously installed
+#------------------------
+
+# Require MPI for this project:
+
+
+set( MPI_C_FIND_QUIETLY ON )
+find_package(MPI )
+
+IF (MPI_FOUND)
+	set(CMAKE_CXX_COMPILER ${MPI_CXX_COMPILER})
+ENDIF (MPI_FOUND)
+
+IF (NOT MPI_FOUND)
+	file(GLOB mpiDependencyDir ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/openmpi*)
+	#set(mpiDependencyDir ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/openmpi*)
+	FIND_PATH(MPI_INCLUDE_DIR mpi.h
+	  ${mpiDependencyDir}/lib/openmpi/include
+	  ${mpiDependencyDir}/lib/openmpi/include
+	  r:${mpiDependencyDir}/include
+	  c:${mpiDependencyDir}/include
+	  ${DISTR_PREFIX}/${mpiDependencyDir}/include
+	  DOC "Directory containing openmpi headers"
+	)
+	
+	SET(LIBSEARCHPATHS 
+		${mpiDependencyDir}/lib
+		${mpiDependencyDir}/lib/openmpi
+		R:${mpiDependencyDir}/lib/openmpi/lib
+		${DISTR_PREFIX}/${mpiDependencyDir}/lib
+	) 
+	
+	FIND_LIBRARY(MPI_LIBRARY NAMES mpi PATHS ${LIBSEARCHPATHS}) 
+	FIND_LIBRARY(MPI_CXX_LIBRARY NAMES mpi_cxx PATHS ${LIBSEARCHPATHS}) 
+	FIND_LIBRARY(MPI_F77_LIBRARY NAMES mpi_f77 PATHS ${LIBSEARCHPATHS}) 
+	FIND_LIBRARY(MPI_F90_LIBRARY NAMES mpi_f90 PATHS 	${LIBSEARCHPATHS}) 
+	FIND_LIBRARY(MPI_OPEN_LIBRARY NAMES open-pal open-rte PATHS ${LIBSEARCHPATHS}) 
+	FIND_LIBRARY(MPI_MCA_LIBRARY NAMES mca_common_sm PATHS 	${LIBSEARCHPATHS}) 
+	FIND_LIBRARY(MPI_OMPITV_LIBRARY NAMES ompitv PATHS ${LIBSEARCHPATHS}) 
+	
+	set(MPI_LIBRARY_D ${MPI_LIBRARY})
+	set(MPI_CXX_LIBRARY_D ${MPI_CXX_LIBRARY})
+	set(MPI_F77_LIBRARY_D ${MPI_F77_LIBRARY})
+	set(MPI_F90_LIBRARY_D ${MPI_F90_LIBRARY})
+	set(MPI_OPEN_LIBRARY_D ${MPI_OPEN_LIBRARY})
+	set(MPI_MCA_LIBRARY_D ${MPI_MCA_LIBRARY})
+	set(MPI_OMPITV_LIBRARY_D ${MPI_OMPITV_LIBRARY})
+	set(CMAKE_CXX_COMPILER "${mpiDependencyDir}/bin/mpic++")
+	
+	IF (MPI_INCLUDE_DIR AND MPI_LIBRARY_D AND MPI_LIBRARY AND MPI_CXX_LIBRARY_D AND MPI_CXX_LIBRARY AND MPI_F77_LIBRARY_D AND MPI_F77_LIBRARY AND MPI_F90_LIBRARY_D AND MPI_F90_LIBRARY AND MPI_OPEN_LIBRARY_D AND MPI_OPEN_LIBRARY AND MPI_MCA_LIBRARY_D AND MPI_MCA_LIBRARY AND MPI_OMPITV_LIBRARY_D AND MPI_OMPITV_LIBRARY)
+		SET(MPI_FOUND TRUE) 
+	ENDIF (MPI_INCLUDE_DIR AND MPI_LIBRARY_D AND MPI_LIBRARY AND MPI_CXX_LIBRARY_D AND MPI_CXX_LIBRARY AND MPI_F77_LIBRARY_D AND MPI_F77_LIBRARY AND MPI_F90_LIBRARY_D AND MPI_F90_LIBRARY AND MPI_OPEN_LIBRARY_D AND MPI_OPEN_LIBRARY AND MPI_MCA_LIBRARY_D AND MPI_MCA_LIBRARY AND MPI_OMPITV_LIBRARY_D AND MPI_OMPITV_LIBRARY)
+	
+	IF (MPI_FOUND)
+		IF (NOT Mpi_FIND_QUIETLY) 
+			MESSAGE(STATUS "Found MPI: ${MPI_LIBRARY}") 
+		ENDIF (NOT Mpi_FIND_QUIETLY) 
+	ELSE (MPI_FOUND)
+		 IF (Mpi_FIND_REQUIRED) 
+			MESSAGE(FATAL_ERROR "Could not find Mpi") 
+		ENDIF (Mpi_FIND_REQUIRED) 
+	ENDIF (MPI_FOUND)
+ENDIF (NOT MPI_FOUND)
+
+
+
+# Find OPENCV libraries previously installed
+#------------------------
+
+# Require OPENCV for this project:
+
+FIND_LIBRARY(OpenCV REQUIRED)
+
+IF (OPENCV_FOUND)
+	SET(OpenCV_INCLUDE_DIRS "${OpenCV_INSTALL_PATH}/include/opencv;${OpenCV_INSTALL_PATH}/include")
+	INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIRS})
+ENDIF (OPENCV_FOUND)
+
+
+IF (NOT OPENCV_FOUND)
+
+	SET(OPENCVLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/OpenCV-2.4.2) 
+	
+	FIND_LIBRARY(OpenCV_CORE NAMES libopencv_core.so  HINTS ${OPENCVLIBSEARCHPATHS} PATH_SUFFIXES lib)
+	FIND_LIBRARY(OpenCV_CONTRIB NAMES libopencv_contrib.so PATHS ${OPENCVLIBSEARCHPATHS} PATH_SUFFIXES lib)
+	FIND_LIBRARY(OpenCV_IMGPROC NAMES libopencv_imgproc.so PATHS ${OPENCVLIBSEARCHPATHS} PATH_SUFFIXES lib)
+
+    include_directories(${OPENCVLIBSEARCHPATHS}/include)
+    include_directories(${OPENCVLIBSEARCHPATHS}/include/opencv)
+    include_directories(${OPENCVLIBSEARCHPATHS}/include/opencv2)
+
+	IF (OpenCV_INCLUDE_DIRS AND OpenCV_COMPUTE_CAPABILITIES AND OpenCV_LIBS)
+		SET(OPENCV_FOUND TRUE) 
+	ENDIF (OpenCV_INCLUDE_DIRS AND OpenCV_COMPUTE_CAPABILITIES AND OpenCV_LIBS)
+		
+	link_directories(${OPENCVLIBSEARCHPATHS}/lib)
+
+ENDIF (NOT OPENCV_FOUND)
+
+
+
+# Find CCFITS libraries previously installed
+#------------------------
+
+# Require CCFITS for this project:
+FIND_LIBRARY(CCFITS REQUIRED)
+
+if(NOT CCFITS_FOUND)
+
+	SET(CCFITS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/CCfits)
+    find_path(CCFITS_INCLUDE_DIR
+        NAMES CCfits/CCfits.h
+        HINTS $ENV{CCFITS_ROOT_DIR} "${CCFITS_DIR}/include"
+        DOC "CCFITS include directory.")
+    
+    include_directories(${CCFITS_DIR}/include/)
+    
+    find_library(CCFITS_LIBRARY
+        NAMES libCCfits.so libCCfits.a libCCfits.dylib libCCfits.la libCCfits.0.dylib 
+        HINTS $ENV{CCFITS_ROOT_DIR} "${CCFITS_DIR}/lib"
+        DOC "CCFITS library.")
+  
+  	SET(CFITSIO_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/cfitsio)
+    find_library(CFITSIO_LIBRARY
+        NAMES libcfitsio.a
+        HINTS "${CFITSIO_DIR}/lib"
+        DOC "CFITSIO library.")
+
+    include_directories(${CFITSIO_DIR}/include)
+    include_directories(${CFITSIO_DIR}/include/CCfits)
+
+
+    mark_as_advanced(CCFITS_INCLUDE_DIR CCFITS_LIBRARY)
+
+    include(FindPackageHandleStandardArgs)
+    find_package_handle_standard_args(CCFITS DEFAULT_MSG
+          CCFITS_LIBRARY CCFITS_INCLUDE_DIR)
+
+    set(CCFITS_INCLUDE_DIRS ${CCFITS_INCLUDE_DIR} ${CFITSIO_INCLUDE_DIR})
+    set(CCFITS_LIBRARIES ${CCFITS_LIBRARY} ${CFITSIO_LIBRARY})
+
+endif(NOT CCFITS_FOUND)
+
+
+
+
+# Find FFTW libraries previously installed
+#------------------------
+
+# Require FFTW for this project:
+
+FIND_LIBRARY(FFTW REQUIRED)
+IF (FFTW_FOUND)
+  IF(FFTW_INCLUDE_DIRS)
+    message( STATUS "FFTW libraries: ${FFTW_INCLUDE_DIRS}" )
+  	include_directories( ${FFTW_INCLUDE_DIRS} )
+  ENDIF(FFTW_INCLUDE_DIRS)
+  
+  IF (FFTW_LIBRARIES)
+    message( STATUS "FFTW libraries: ${FFTW_LIBRARIES}" )
+    link_directories( ${FFTW_LIBRARIES} )
+  ENDIF (FFTW_LIBRARIES)
+ENDIF (FFTW_FOUND)
+
+
+IF (NOT FFTW_FOUND)
+	SET(FFTWLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/fftw-3.3.3) 
+	
+    find_path(FFTW_INCLUDE_DIR
+        NAMES fftw3.h
+        HINTS $ENV{FFWT_ROOT_DIR} "${FFTWLIBSEARCHPATHS}/include"
+        DOC "FFWT3 include directory.")
+        
+    include_directories(${FFTWLIBSEARCHPATHS}/include)
+    
+    find_library(FFTW_LIBRARY
+        NAMES libfftw3.a libfftw3.la libfftw3_threads.a libfftw3_threads.la  
+        HINTS $ENV{FFTW_ROOT_DIR} "${FFTWLIBSEARCHPATHS}/lib"
+        DOC "FFTW library.")
+
+	link_directories(${FFTWLIBSEARCHPATHS}/lib)
+
+	IF (FFTW_INCLUDE_DIR AND FFTW_LIBRARY)
+		SET(FFTW_FOUND TRUE) 
+	ENDIF (FFTW_INCLUDE_DIR AND FFTW_LIBRARY)
+ENDIF (NOT FFTW_FOUND)
+
+
+
+# Find BLITZ libraries previously installed
+#------------------------
+
+# Require BLITZ for this project:
+        
+
+FIND_LIBRARY(BLITZ_LIBRARY NAMES blitz)
+IF (BLITZ_LIBRARY)
+	link_directories(${BLITZ_LIBRARY})
+ENDIF (BLITZ_LIBRARY)
+
+IF(BLITZ_INCLUDE_DIR)
+  	include_directories( ${BLITZ_INCLUDE_DIR} )
+  	include_directories( "${BLITZ_INCLUDE_DIR}/blitz" )
+ENDIF(BLITZ_INCLUDE_DIR)
+  
+
+IF (NOT BLITZ_LIBRARY)
+	SET(BLITZLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/blitz-0.10) 
+	
+    find_path(BLITZ_INCLUDE_DIR 
+    	NAMES blitz/blitz.h PATHS ${BLITZLIBSEARCHPATHS}
+        DOC "BLITZ include directory.")
+   
+   include_directories(${BLITZLIBSEARCHPATHS}/include)
+   include_directories(${BLITZLIBSEARCHPATHS}/include/blitz)
+   
+	find_library(BLITZ_LIBRARY 
+		NAMES blitz PATHS ${BLITZLIBSEARCHPATHS}/lib
+        DOC "BLITZ library.")
+
+	link_directories(${BLITZLIBSEARCHPATHS}/lib)
+
+	IF (BLITZ_INCLUDE_DIR AND BLITZ_LIBRARY)
+		SET(BLITZ_FOUND TRUE)
+	ENDIF (BLITZ_INCLUDE_DIR AND BLITZ_LIBRARY)		
+ENDIF (NOT BLITZ_LIBRARY)
+
+
+
+# Find LAPACK libraries previously installed
+#------------------------
+
+# Require LAPACK for this project:
+
+# find_package(LAPACK REQUIRED)
+# IF (LAPACK_FOUND)
+#   if (LAPACK_LIBRARIES_DIR)
+#     message( STATUS "LAPACK library directories: ${LAPACK_LIBRARIES_DIR}" )
+#     link_directories( ${LAPACK_LIBRARIES_DIR} )
+#   endif()
+#   if (LAPACK_LIBRARIES)
+#     message( STATUS "LAPACK libraries: ${LAPACK_LIBRARIES}" )
+#     link_libraries( ${LAPACK_LIBRARIES} )
+#   endif()
+# ENDIF (LAPACK_FOUND)
+
+
+# IF (NOT LAPACK_FOUND)
+# 	SET(LAPACKLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/lapack-3.5.0) 
+# 	        
+# 	find_library(LAPACK_LIBRARIES
+#  		NAMES lapack liblapack PATHS $ENV{LAPACKDIR}/lib ${LAPACKLIBSEARCHPATHS}/lib
+#         DOC "LAPACK library.")
+#         
+# 	IF (LAPACK_INCLUDES AND LAPACK_LIBRARY)
+# 		SET(LAPACK_FOUND TRUE) 
+# 	ENDIF (LAPACK_INCLUDES AND LAPACK_LIBRARY)
+# 
+# #	find_library(BLAS_LIBRARY
+# #		NAMES blas libblas PATHS $ENV{LAPACKDIR}/lib ${LAPACKLIBSEARCHPATHS}/lib
+# #        DOC "LAPACK library.")
+# #
+# #	IF (BLAS_LIBRARY)
+# #		SET(BLAS_FOUND TRUE) 
+# #	ENDIF (BLAS_LIBRARY)
+# 
+# ENDIF (NOT LAPACK_FOUND)
+
+
+
+
+
+# Find TINYXML libraries previously installed
+#------------------------
+
+# Require TINYXML for this project:
+
+find_library(tinyxml_library tinyxml)
+if (tinyxml_library)
+  message (STATUS "Looking for libtinyxml - found")
+  link_libraries(${tinyxml_library})
+endif(tinyxml_library)
+
+find_path(tinyxml_include_dirs NAMES tinyxml.h PATH_SUFFIXES tinyxml)
+if (tinyxml_include_dirs)
+   include_directories(${tinyxml_include_dirs})
+endif (tinyxml_include_dirs)
+
+
+IF (NOT tinyxml_library)
+	SET(TINYXMLLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/tinyxml) 
+    include_directories(${TINYXMLLIBSEARCHPATHS}/include)
+	link_directories(${TINYXMLLIBSEARCHPATHS}/lib)
+			
+	if (NOT ${TINYXMLLIBSEARCHPATHS}/include)
+	   message (STATUS "Looking for tinyxml/tinyxml.hpp or tinyxml/tinyxml.h - not found.")
+	endif(NOT ${TINYXMLLIBSEARCHPATHS}/include)
+
+ENDIF (NOT tinyxml_library)
+
+
+
+
+# Specify the location of the header files
+#------------------------
+
+file(GLOB simulatorIncludeDirs ${CMAKE_CURRENT_SOURCE_DIR}/Components/*)
+
+foreach(includeDir ${simulatorIncludeDirs})
+    if(IS_DIRECTORY ${includeDir})
+        include_directories(${includeDir})
+    endif()
+endforeach()
+
+
+
+
+
+
+# Specify the simulator source files to be compiled
+#------------------------
+              
+file(GLOB sourceFiles ${CMAKE_CURRENT_SOURCE_DIR}/Components/*/*.cpp)
+
+# Set the compiler flags
+# -O3 = level 3 optimization; -Wall = enable all compiler's warning messages
+# -fmessage-length=0 = each error message on a single line (no line-wrapping)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -fmessage-length=0")
+
+MESSAGE( STATUS "PROJECT_SOURCE_DIR = " ${PROJECT_SOURCE_DIR} )
+MESSAGE( STATUS "CMAKE_CXX_FLAGS = " ${CMAKE_CXX_FLAGS} )
+MESSAGE( STATUS "OSX detected = " ${OSX} )
+MESSAGE( STATUS "C COMPILER = " ${CMAKE_C_COMPILER})
+MESSAGE( STATUS "CXX COMPILER = " ${CMAKE_CXX_COMPILER})
+
+
+
+# Create an executable target (PLATOSim.orig)
+#------------------------
+
+add_executable(PLATOSim.orig ${sourceFiles})
+
+# Link the executable to the dependency libraries
+# Note: the location of these libraries was specified above
+
+target_link_libraries(PLATOSim.orig libopencv_core.so libopencv_contrib.so libopencv_imgproc.so ${CCFITS_LIBRARIES} ticppd fftw3 fftw3_threads blitz ${MPI_LIBRARIES}) 
+
+
+# Create a launcher that sets the DYLD_LIBRARY_PATH environment variable
+#------------------------
+
+# This solutions provides an effective solution to the error:
+#   dyld: Library not loaded: lib/libopencv_core.2.4.dylib
+
+set (PLATOSim "${CMAKE_CURRENT_SOURCE_DIR}/build/PLATOSim")
+set (PLATOdir "${CMAKE_CURRENT_SOURCE_DIR}")
+file(WRITE ${PLATOSim} "#!/bin/sh \n" )
+file(APPEND ${PLATOSim} "PLATOROOT=$PWD\n" )
+file(APPEND ${PLATOSim} "export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$PLATOROOT/../dependencyInstalls/OpenCV-2.4.2/lib/\n" )
+file(APPEND ${PLATOSim} "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PLATOROOT/../dependencyInstalls/openmpi-1.6.5/lib/\n" )
+file(APPEND ${PLATOSim} "exec $PWD/PLATOSim.orig $*\n" )
+execute_process(COMMAND sed -i s_/home/PLATOSim_${PLATOdir}_g ../inputfiles/ccd_parameters.xml)
+execute_process(COMMAND chmod 755 ${PLATOSim})

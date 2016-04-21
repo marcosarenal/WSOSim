@@ -1,0 +1,165 @@
+This will install libraries and create a binary to run PLATOSim.
+
+The installation of the dependencies is a local installation that doesn't require root; it shouldn't interfere with system-installed packages.
+
+
+1. INSTALLATION PROCEDURE:
+==========================
+
+Just run the install.sh script:
+
+$ ./install.sh
+
+
+
+
+
+2. DESCRIPTION:
+===============
+
+2.1 Install dependencies
+-------------------------
+
+There is one python script under installscripts/ folder for each dependency package.
+Each script Unzip/Untar packages in dependencyDownloads/ and
+installs dependencies packages in dependencyInstalls/
+
+python ./installscripts/install_blitz.py
+python ./installscripts/install_lapack.py
+python ./installscripts/install_cfitsio.py
+python ./installscripts/install_CCfits.py 
+python ./installscripts/install_fftw.py
+python ./installscripts/install_openmpi.py
+python ./installscripts/install_OpenCV.py
+python ./installscripts/install_tinyxml.py
+
+If one or more of these packages are already installed, go to install.sh and comment the 
+corresponding line (please, be sure that the commented package is correctly installed in 
+your system, otherwise the installation will raise errors!!).
+
+	
+
+2.2 Build and install the simulator
+----------------------------------
+
+mkdir build
+cd build
+cmake ..
+make -j 4 
+
+
+
+
+
+3. Troubleshooting
+==================
+
+3.1 Setting dynamic libraries path (on Mac OSX)
+----------------------------------
+JDR 12/01/2013
+Launching PLATOSim resulted in:
+   dyld: Library not loaded: lib/libopencv_core.2.4.dylib
+     Referenced from: /Users/joris/Development/Cpp/PLATOSim/build/./PLATOSim
+     Reason: image not found
+   Trace/BPT trap: 5
+
+Checking (on OSX) the contents of the binary:
+
+$ otool -L PLATOSim 
+PLATOSim:
+	lib/libopencv_core.2.4.dylib
+[cut]
+
+shows that the path to libopencv_core.2.4 is not correct. Checking the content of the dylib:
+
+$ otool -D ../dependencyInstalls/OpenCV-2.4.2/lib/libopencv_core.2.4.dylib 
+../dependencyInstalls/OpenCV-2.4.2/lib/libopencv_core.2.4.dylib:
+lib/libopencv_core.2.4.dylib
+
+shows where the compiler got the wrong path from. In principle the (r)path can be set properly
+in the dylib with
+
+install_name_tool -id (...)
+
+before compilation of the simulator, or with 
+
+install_name_tool -change (...) 
+
+directly in the executable, but for some reason this doesn't work (yet) as advertised in 
+https://blogs.oracle.com/dipol/entry/dynamic_libraries_rpath_and_mac
+
+A quick fix was to set the environment variable DYLD_LIBRARY_PATH (not just LD_LIBRARY_PATH)
+
+$ export DYLD_LIBRARY_PATH=/Users/PLATOSim/dependencyInstalls/OpenCV-2.4.2/lib:$DYLD_LIBRARY_PATH
+
+but this should only be a temporary solution.
+---
+
+
+
+3.2 Setting the path of the libraries  (on Linux)
+-------------------------------------
+PMA 25/11/2013
+Launching PLATOSim resulted in:
+   ./build/PLATOSim: error while loading shared libraries: libmpi.so.1: cannot open shared object file: No such file or directory
+
+Checking (on linux) the contents of the binary:
+
+$ ldd PLATOSim 
+ldd build/PLATOSim 
+	linux-vdso.so.1 =>  (0x00007fff825fe000)
+	(...)
+	libmpi.so.1 => not found
+	libmpi_cxx.so.1 => not found
+	(...)
+shows that the path to libmpi.so.1 is not correct. 
+
+A quick fix was to set the environment variable DYLD_LIBRARY_PATH (not just LD_LIBRARY_PATH)
+
+$ export DYLD_LIBRARY_PATH=/Users/PLATOSim/dependencyInstalls/openmpi-1.6.5/lib:$DYLD_LIBRARY_PATH
+
+but this should only be a temporary solution.
+---
+
+
+
+3.3 Error in the installation of CCFits  (on Mac OSX 10.9 Mavericks)
+-------------------------------------
+PMA 20/12/2013
+
+This is a known error on CCFits 2.4 for the installation on  Mac OSX 10.9 Mavericks. 
+The CCFits installation web indicates:
+"A modified ColumnVectorData.h file may be needed to build CCfits v2.4 with the XCode compilers included with Mavericks. If you run into build errors,
+copy this into your CCfits source directory replacing the original file, and then rebuild with:
+
+make clean
+make
+make install "
+
+This solution might solve the problem.
+
+
+
+3.4 Incorrect XML input parameters file  
+---------------------------------------
+PMA 21/11/2013
+Launching PLATOSim resulted in:
+	Starting CCD Simulation and Photometry
+	Starting PreProcessing
+	terminate called throwing an exceptionAbort trap: 6
+
+This error might be produced when the ccd_parameter.xml file in not correct, meaning that is missing one or more parameters 
+or the parameter name has been modify.
+It is recommended to use the original downloaded ccd_parameter.xml file and modify the values on it but not modify the variables names.
+
+
+
+3.5 Incorrect input star catalogue  
+---------------------------------------
+PMA 19/01/2014
+Launching PLATOsim resulted in:
+	PLATOSim.orig(11519) malloc: *** error for object 0x7fb772c0f248: incorrect checksum for freed object - object was probably modified after being freed.
+	*** set a breakpoint in malloc_error_break to debug
+
+This error might be produced by an incorrect input star catalogue. It might not be an appropriate format. Remember: RA, DEC, magnitude (in columns).
+
