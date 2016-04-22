@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/Users/pablo/GDrive/Trabajo/Development/PLATOSim2.3/dependencyInstalls/CCfits/lib'
+libdir='/Users/pablo/GDrive/Trabajo/Development/WSOSim/dependencyInstalls/CCfits/lib'

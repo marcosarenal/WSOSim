@@ -1,4 +1,4 @@
-prefix=/Users/pablo/GDrive/Trabajo/Development/PLATOSim2.3/dependencyInstalls/CCfits
+prefix=/Users/pablo/GDrive/Trabajo/Development/WSOSim/dependencyInstalls/CCfits
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include
