@@ -36,8 +36,8 @@
 #include "Constants.h"
 #include "FileUtilities.h"
 
-#include <opencv/cv.h>
-#include <opencv/cvwimage.h>
+//#include <opencv/cv.h>
+//#include <opencv/cvwimage.h>
 
 using namespace std;
 using namespace blitz;

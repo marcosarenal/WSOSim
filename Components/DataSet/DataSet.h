@@ -30,11 +30,11 @@
 #include <string>
 #include "GlobalVariables.h"
 #include "LogManager.h"
-#include "tinyxml2.h"
+#include "ticpp.h"
 #include "blitz/array.h"
 
 using namespace std;
-using namespace tinyxml2;
+using namespace ticpp;
 using namespace blitz;
 
 /**

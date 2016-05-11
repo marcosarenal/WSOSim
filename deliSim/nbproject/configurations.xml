@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="2.8.12.2"
+                   displayName="2.8.12.2"
+                   projectFiles="true"
+                   root="../build/CMakeFiles/2.8.12.2">
+      <logicalFolder name="CompilerIdC" displayName="CompilerIdC" projectFiles="true">
+        <itemPath>../build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="CompilerIdCXX"
+                     displayName="CompilerIdCXX"
+                     projectFiles="true">
+        <itemPath>../build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="CMakeFiles"
+                   displayName="CMakeFiles"
+                   projectFiles="true"
+                   root="../build/CMakeFiles">
+      <itemPath>../build/CMakeFiles/cmake_mpi_test.c</itemPath>
+      <itemPath>../build/CMakeFiles/cmake_mpi_test.cpp</itemPath>
+    </logicalFolder>
+    <df root="../Components" name="0">
+      <df name="AuxTools">
+        <in>Constants.cpp</in>
+        <in>FFT.cpp</in>
+        <in>FileUtilities.cpp</in>
+        <in>GlobalVariables.cpp</in>
+        <in>MathTools.cpp</in>
+        <in>Sky.cpp</in>
+        <in>Statistics.cpp</in>
+      </df>
+      <df name="DataSet">
+        <in>DataSet.cpp</in>
+      </df>
+      <df name="Manager">
+        <in>Controller.cpp</in>
+        <in>LogManager.cpp</in>
+        <in>main.cpp</in>
+      </df>
+      <df name="Parameters">
+        <in>ParamsBackground.cpp</in>
+        <in>ParamsCCD.cpp</in>
+        <in>ParamsCMOS.cpp</in>
+        <in>ParamsCTE.cpp</in>
+        <in>ParamsFlatField.cpp</in>
+        <in>ParamsJitter.cpp</in>
+        <in>ParamsPSF.cpp</in>
+        <in>ParamsPhotometry.cpp</in>
+        <in>ParamsStarfield.cpp</in>
+        <in>ParamsWUVS.cpp</in>
+      </df>
+      <df name="PostProcessing">
+        <in>PostProcessing.cpp</in>
+      </df>
+      <df name="PreProcessing">
+        <in>PreProcessingCCD.cpp</in>
+        <in>PreProcessingCMOS.cpp</in>
+        <in>PreProcessingCommon.cpp</in>
+        <in>PreProcessingPSF.cpp</in>
+        <in>PreProcessingPhotometry.cpp</in>
+        <in>PreProcessingWUVS.cpp</in>
+      </df>
+      <df name="Processing">
+        <in>ProcessingCCD.cpp</in>
+        <in>ProcessingCMOS.cpp</in>
+        <in>ProcessingPhotometry.cpp</in>
+        <in>ProcessingWUVS.cpp</in>
+      </df>
+      <df name="ProcessingSteps">
+        <in>StepBackground.cpp</in>
+        <in>StepCTE.cpp</in>
+        <in>StepChargeTransferSmearing.cpp</in>
+        <in>StepConvolvePSF.cpp</in>
+        <in>StepCosmics.cpp</in>
+        <in>StepElectronicOffset.cpp</in>
+        <in>StepFlatField.cpp</in>
+        <in>StepGain.cpp</in>
+        <in>StepJitter.cpp</in>
+        <in>StepPhotometryOnTheGo.cpp</in>
+        <in>StepPhotonNoise.cpp</in>
+        <in>StepReadOutNoise.cpp</in>
+        <in>StepRebin.cpp</in>
+        <in>StepSaturation.cpp</in>
+      </df>
+    </df>
+    <logicalFolder name="Modules"
+                   displayName="Modules"
+                   projectFiles="true"
+                   root="/usr/share/cmake-2.8/Modules">
+      <itemPath>/usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c</itemPath>
+      <itemPath>/usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp</itemPath>
+      <itemPath>/usr/share/cmake-2.8/Modules/CMakeCompilerABI.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>../CMakeLists.txt</itemPath>
+      <itemPath>../build/Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>../Components</Elem>
+  </sourceRootList>
+  <projectmakefile>../build/Makefile</projectmakefile>
+  <confs>
+    <conf name="WSOSim" type="0">
+      <toolsSet>
+        <compilerSet>GNU|GNU</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-O3"/>
+      </flagsDictionary>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>../build</buildCommandWorkingDir>
+          <buildCommand>make -j 32</buildCommand>
+          <cleanCommand>rm -rf build/*</cleanCommand>
+          <executablePath>../build</executablePath>
+          <cTool>
+            <incDir>
+              <pElem>../build/CMakeFiles/CMakeFiles/CMakeTmp</pElem>
+            </incDir>
+          </cTool>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>../build</preBuildCommandWorkingDir>
+          <preBuildCommand>cmake ..</preBuildCommand>
+          <preBuildFirst>true</preBuildFirst>
+        </preBuild>
+      </makefileType>
+      <item path="../Components/AuxTools/Constants.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/AuxTools/FFT.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/AuxTools/FileUtilities.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/AuxTools/GlobalVariables.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/AuxTools/MathTools.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/AuxTools/Sky.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/AuxTools/Statistics.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/DataSet/DataSet.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Manager/Controller.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Manager/LogManager.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Manager/main.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Parameters/ParamsBackground.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Parameters/ParamsCCD.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Parameters/ParamsCMOS.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Parameters/ParamsCTE.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Parameters/ParamsFlatField.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Parameters/ParamsJitter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Parameters/ParamsPSF.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Parameters/ParamsPhotometry.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Parameters/ParamsStarfield.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Parameters/ParamsWUVS.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/PostProcessing/PostProcessing.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/PreProcessing/PreProcessingCCD.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/PreProcessing/PreProcessingCMOS.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/PreProcessing/PreProcessingCommon.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/PreProcessing/PreProcessingPSF.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/PreProcessing/PreProcessingPhotometry.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/PreProcessing/PreProcessingWUVS.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Processing/ProcessingCCD.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Processing/ProcessingCMOS.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Processing/ProcessingPhotometry.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/Processing/ProcessingWUVS.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/ProcessingSteps/StepBackground.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/ProcessingSteps/StepCTE.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/ProcessingSteps/StepChargeTransferSmearing.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/ProcessingSteps/StepConvolvePSF.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/ProcessingSteps/StepCosmics.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/ProcessingSteps/StepElectronicOffset.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/ProcessingSteps/StepFlatField.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/ProcessingSteps/StepGain.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/ProcessingSteps/StepJitter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/ProcessingSteps/StepPhotometryOnTheGo.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/ProcessingSteps/StepPhotonNoise.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/ProcessingSteps/StepReadOutNoise.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/ProcessingSteps/StepRebin.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../Components/ProcessingSteps/StepSaturation.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c"
+            ex="true"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="../build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+            ex="true"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../build/CMakeFiles/cmake_mpi_test.c"
+            ex="false"
+            tool="0"
+            flavor2="9">
+      </item>
+      <item path="../build/CMakeFiles/cmake_mpi_test.cpp"
+            ex="false"
+            tool="1"
+            flavor2="9">
+      </item>
+      <item path="/usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c"
+            ex="true"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="/usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp"
+            ex="true"
+            tool="1"
+            flavor2="4">
+      </item>
+      <folder path="0">
+        <ccTool>
+          <incDir>
+            <pElem>../dependencyInstalls/CCfits/include</pElem>
+            <pElem>../dependencyInstalls/cfitsio/include</pElem>
+            <pElem>../dependencyInstalls/cfitsio/include/CCfits</pElem>
+            <pElem>../dependencyInstalls/fftw-3.3.3/include</pElem>
+            <pElem>../dependencyInstalls/tinyxml/include</pElem>
+            <pElem>../Components/ProcessingSteps</pElem>
+            <pElem>../Components/PostProcessing</pElem>
+            <pElem>../Components/AuxTools</pElem>
+            <pElem>../Components/DataSet</pElem>
+            <pElem>../Components/Parameters</pElem>
+            <pElem>../Components/Processing</pElem>
+            <pElem>../Components/Manager</pElem>
+            <pElem>../Components/PreProcessing</pElem>
+            <pElem>../build</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="2.8.12.2">
+        <cTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="CMakeFiles">
+        <ccTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="Modules">
+        <cTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+    </conf>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>../build</buildCommandWorkingDir>
+          <buildCommand>cmake ..</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <incDir>
+              <pElem>../build/CMakeFiles/CMakeFiles/CMakeTmp</pElem>
+            </incDir>
+          </cTool>
+          <ccTool>
+            <incDir>
+              <pElem>../build/CMakeFiles/CMakeFiles/CMakeTmp</pElem>
+            </incDir>
+          </ccTool>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <item path="../build/CMakeFiles/cmake_mpi_test.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../build/CMakeFiles/cmake_mpi_test.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="PLATOSIM" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>../build</buildCommandWorkingDir>
+          <buildCommand>cmake ..</buildCommand>
+          <cleanCommand>${MAKE} clean</cleanCommand>
+          <executablePath>../build</executablePath>
+          <cTool>
+            <incDir>
+              <pElem>../build/CMakeFiles/CMakeFiles/CMakeTmp</pElem>
+            </incDir>
+          </cTool>
+          <ccTool>
+            <incDir>
+              <pElem>../build/CMakeFiles/CMakeFiles/CMakeTmp</pElem>
+            </incDir>
+          </ccTool>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <item path="../build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c"
+            ex="true"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="../build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+            ex="true"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../build/CMakeFiles/cmake_mpi_test.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../build/CMakeFiles/cmake_mpi_test.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c"
+            ex="true"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="/usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp"
+            ex="true"
+            tool="1"
+            flavor2="4">
+      </item>
+      <folder path="2.8.12.2">
+        <cTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="Modules">
+        <cTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+    </conf>
+    <conf name="WUVS_PLATOSIM" type="0">
+      <toolsSet>
+        <compilerSet>GNU|GNU</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>../build</buildCommandWorkingDir>
+          <buildCommand>cmake ..</buildCommand>
+          <cleanCommand>${MAKE} clean</cleanCommand>
+          <executablePath>../build</executablePath>
+          <cTool>
+            <incDir>
+              <pElem>../build/CMakeFiles/CMakeFiles/CMakeTmp</pElem>
+            </incDir>
+          </cTool>
+          <ccTool>
+            <incDir>
+              <pElem>../build/CMakeFiles/CMakeFiles/CMakeTmp</pElem>
+            </incDir>
+          </ccTool>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <item path="../build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c"
+            ex="true"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="../build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+            ex="true"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../build/CMakeFiles/cmake_mpi_test.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../build/CMakeFiles/cmake_mpi_test.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c"
+            ex="true"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="/usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp"
+            ex="true"
+            tool="1"
+            flavor2="4">
+      </item>
+      <folder path="2.8.12.2">
+        <cTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="Modules">
+        <cTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+    </conf>
+    <conf name="ISSIS_test_PLATOSIM" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>../build</buildCommandWorkingDir>
+          <buildCommand>cmake ..</buildCommand>
+          <cleanCommand>${MAKE} clean</cleanCommand>
+          <executablePath>../build</executablePath>
+          <cTool>
+            <incDir>
+              <pElem>../build/CMakeFiles/CMakeFiles/CMakeTmp</pElem>
+            </incDir>
+          </cTool>
+          <ccTool>
+            <incDir>
+              <pElem>../build/CMakeFiles/CMakeFiles/CMakeTmp</pElem>
+            </incDir>
+          </ccTool>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <item path="../build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c"
+            ex="true"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="../build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+            ex="true"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../build/CMakeFiles/cmake_mpi_test.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../build/CMakeFiles/cmake_mpi_test.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c"
+            ex="true"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="/usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp"
+            ex="true"
+            tool="1"
+            flavor2="4">
+      </item>
+      <folder path="2.8.12.2">
+        <cTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="Modules">
+        <cTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+    </conf>
+  </confs>
+</configurationDescriptor>

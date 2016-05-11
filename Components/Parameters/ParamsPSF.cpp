@@ -282,7 +282,7 @@ void ParamsPSF::paramsPSFsetGaussian()
     //rotate the PSF       
     if (psfRotation != NO_PSF_ROTATION)
     {
-        ParamsPSF::paramsPSFrotatePSF(newGaussMask, orientationAngle);
+//        ParamsPSF::paramsPSFrotatePSF(newGaussMask, orientationAngle);
     }
         
     //rebin to subpixel level
@@ -532,7 +532,7 @@ void ParamsPSF::paramsPSFreadFromFile()
     //rotate the PSF       
     if (psfRotation != NO_PSF_ROTATION)
     {
-        ParamsPSF::paramsPSFrotatePSF(newMask, orientationAngle);
+//        ParamsPSF::paramsPSFrotatePSF(newMask, orientationAngle);
     }
         
     //rebin
@@ -718,49 +718,49 @@ void ParamsPSF::paramsPSFwriteSubPixelsToASCIIFile(string fileName)
  */
 void ParamsPSF::paramsPSFrotatePSF(Array<float, 2> &mask, double orientationAngle)
 {
-
-	int n = mask.rows();
-
-	CvSize size = { n, n };
-	IplImage *src = cvCreateImage(size, IPL_DEPTH_32F, 1);
-
-	for (int i = 0; i < n; i++)
-    {
-		for (int j = 0; j < n; j++)
-        {
-			cvSetReal2D(src, i, j, mask(i, j));
-        }
-    }
-
-	//Perform the rotation with opencv
-	CvMat* Mrot = cvCreateMat(2, 3, CV_32FC1);
-	IplImage *dst;
-
-	CvPoint2D32f centre = cvPoint2D32f(n / 2. - 1, n / 2. - 1);
-
-	cv2DRotationMatrix(centre, orientationAngle, 1.0, Mrot);
-
-	dst = cvCloneImage(src);
-	dst->origin = src->origin;
-	cvZero(dst);
-
-	CvScalar fill = cvScalarAll(0.0);
-
-	cvWarpAffine(src, dst, Mrot, CV_INTER_CUBIC, fill);
-
-	cvReleaseImage(&src);
-	cvReleaseMat(&Mrot);
-
-	//Convert the rotated mask back to a blitz-Array
-	for (int i = 0; i < size.width; i++)
-    {
-		for (int j = 0; j < size.height; j++)
-        {
-			mask(i, j) = cvGetReal2D(dst, i, j);
-        }
-    }
-
-	cvReleaseImage(&dst);
+//
+//	int n = mask.rows();
+//
+//	CvSize size = { n, n };
+//	IplImage *src = cvCreateImage(size, IPL_DEPTH_32F, 1);
+//
+//	for (int i = 0; i < n; i++)
+//    {
+//		for (int j = 0; j < n; j++)
+//        {
+//			cvSetReal2D(src, i, j, mask(i, j));
+//        }
+//    }
+//
+//	//Perform the rotation with opencv
+//	CvMat* Mrot = cvCreateMat(2, 3, CV_32FC1);
+//	IplImage *dst;
+//
+//	CvPoint2D32f centre = cvPoint2D32f(n / 2. - 1, n / 2. - 1);
+//
+//	cv2DRotationMatrix(centre, orientationAngle, 1.0, Mrot);
+//
+//	dst = cvCloneImage(src);
+//	dst->origin = src->origin;
+//	cvZero(dst);
+//
+//	CvScalar fill = cvScalarAll(0.0);
+//
+//	cvWarpAffine(src, dst, Mrot, CV_INTER_CUBIC, fill);
+//
+//	cvReleaseImage(&src);
+//	cvReleaseMat(&Mrot);
+//
+//	//Convert the rotated mask back to a blitz-Array
+//	for (int i = 0; i < size.width; i++)
+//    {
+//		for (int j = 0; j < size.height; j++)
+//        {
+//			mask(i, j) = cvGetReal2D(dst, i, j);
+//        }
+//    }
+//
+//	cvReleaseImage(&dst);
 
 }
 //==============================================================================

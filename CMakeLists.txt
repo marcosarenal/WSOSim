@@ -1,6 +1,5 @@
 # cmake file to build the Simulator
 # 
-# Author: Joris De Ridder
 #
 # Usage: ($ mkdir build)
 #        $ cd build
@@ -23,7 +22,7 @@
 # Start the project
 #------------------------
 
-project(PLATOSim)
+project(WSOSim)
 
 # cmake version shouldn't be too old
 
@@ -41,33 +40,33 @@ cmake_minimum_required(VERSION 2.8)
 
 # Require OPENCV for this project:
 
-FIND_LIBRARY(OpenCV REQUIRED)
+#FIND_LIBRARY(OpenCV REQUIRED)
 
-IF (OPENCV_FOUND)
-	SET(OpenCV_INCLUDE_DIRS "${OpenCV_INSTALL_PATH}/include/opencv;${OpenCV_INSTALL_PATH}/include")
-	INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIRS})
-ENDIF (OPENCV_FOUND)
+#IF (OPENCV_FOUND)
+#	SET(OpenCV_INCLUDE_DIRS "${OpenCV_INSTALL_PATH}/include/opencv;${OpenCV_INSTALL_PATH}/include")
+#	INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIRS})
+#ENDIF (OPENCV_FOUND)
 
 
-IF (NOT OPENCV_FOUND)
+#IF (NOT OPENCV_FOUND)
 
-	SET(OPENCVLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/OpenCV-2.4.2) 
+#	SET(OPENCVLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/OpenCV-2.4.2) 
 	
-	FIND_LIBRARY(OpenCV_CORE NAMES libopencv_core.so  HINTS ${OPENCVLIBSEARCHPATHS} PATH_SUFFIXES lib)
-	FIND_LIBRARY(OpenCV_CONTRIB NAMES libopencv_contrib.so PATHS ${OPENCVLIBSEARCHPATHS} PATH_SUFFIXES lib)
-	FIND_LIBRARY(OpenCV_IMGPROC NAMES libopencv_imgproc.so PATHS ${OPENCVLIBSEARCHPATHS} PATH_SUFFIXES lib)
+#	FIND_LIBRARY(OpenCV_CORE NAMES libopencv_core.so  HINTS ${OPENCVLIBSEARCHPATHS} PATH_SUFFIXES lib)
+#	FIND_LIBRARY(OpenCV_CONTRIB NAMES libopencv_contrib.so PATHS ${OPENCVLIBSEARCHPATHS} PATH_SUFFIXES lib)
+#	FIND_LIBRARY(OpenCV_IMGPROC NAMES libopencv_imgproc.so PATHS ${OPENCVLIBSEARCHPATHS} PATH_SUFFIXES lib)
 
-    include_directories(${OPENCVLIBSEARCHPATHS}/include)
-    include_directories(${OPENCVLIBSEARCHPATHS}/include/opencv)
-    include_directories(${OPENCVLIBSEARCHPATHS}/include/opencv2)
+#    include_directories(${OPENCVLIBSEARCHPATHS}/include)
+#    include_directories(${OPENCVLIBSEARCHPATHS}/include/opencv)
+#    include_directories(${OPENCVLIBSEARCHPATHS}/include/opencv2)
 
-	IF (OpenCV_INCLUDE_DIRS AND OpenCV_COMPUTE_CAPABILITIES AND OpenCV_LIBS)
-		SET(OPENCV_FOUND TRUE) 
-	ENDIF (OpenCV_INCLUDE_DIRS AND OpenCV_COMPUTE_CAPABILITIES AND OpenCV_LIBS)
+#	IF (OpenCV_INCLUDE_DIRS AND OpenCV_COMPUTE_CAPABILITIES AND OpenCV_LIBS)
+#		SET(OPENCV_FOUND TRUE) 
+#	ENDIF (OpenCV_INCLUDE_DIRS AND OpenCV_COMPUTE_CAPABILITIES AND OpenCV_LIBS)
 		
-	link_directories(${OPENCVLIBSEARCHPATHS}/lib)
+#	link_directories(${OPENCVLIBSEARCHPATHS}/lib)
 
-ENDIF (NOT OPENCV_FOUND)
+#ENDIF (NOT OPENCV_FOUND)
 
 
 
@@ -260,13 +259,25 @@ endif (tinyxml_include_dirs)
 
 
 IF (NOT tinyxml_library)
+
+
 	SET(TINYXMLLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/tinyxml) 
-    include_directories(${TINYXMLLIBSEARCHPATHS}/include)
+	
+    find_path(TINYXML_INCLUDE_DIR 
+    	NAMES ticpp.h tinyxml.h PATHS ${TINYXMLLIBSEARCHPATHS}
+        DOC "TINYXML include directory.")
+   
+   include_directories(${TINYXMLLIBSEARCHPATHS}/include)
+   
+	find_library(tinyxml_library 
+		NAMES ticpp tinyxml PATHS ${TINYXMLLIBSEARCHPATHS}/lib
+        DOC "TINYXML library.")
+
 	link_directories(${TINYXMLLIBSEARCHPATHS}/lib)
-			
-	if (NOT ${TINYXMLLIBSEARCHPATHS}/include)
-	   message (STATUS "Looking for tinyxml/tinyxml.hpp or tinyxml/tinyxml.h - not found.")
-	endif(NOT ${TINYXMLLIBSEARCHPATHS}/include)
+
+	IF (TINYXML_INCLUDE_DIR AND tinyxml_library)
+		SET(TINYXML_FOUND TRUE)
+	ENDIF (TINYXML_INCLUDE_DIR AND tinyxml_library)		
 
 ENDIF (NOT tinyxml_library)
 
@@ -308,15 +319,15 @@ MESSAGE( STATUS "CXX COMPILER = " ${CMAKE_CXX_COMPILER})
 
 
 
-# Create an executable target (PLATOSim)
+# Create an executable target (WSOSim)
 #------------------------
 
-add_executable(PLATOSim ${sourceFiles})
+add_executable(WSOSim ${sourceFiles})
 
 # Link the executable to the dependency libraries
 # Note: the location of these libraries was specified above
 
-target_link_libraries(PLATOSim libopencv_core.so libopencv_contrib.so libopencv_imgproc.so ${CCFITS_LIBRARIES} ticppd fftw3 fftw3_threads blitz) 
+target_link_libraries(WSOSim ${CCFITS_LIBRARIES} ticppd fftw3 fftw3_threads blitz) 
 
 
 # Create a launcher that sets the DYLD_LIBRARY_PATH environment variable
@@ -325,12 +336,12 @@ target_link_libraries(PLATOSim libopencv_core.so libopencv_contrib.so libopencv_
 # This solutions provides an effective solution to the error:
 #   dyld: Library not loaded: lib/libopencv_core.2.4.dylib
 
-#set (PLATOSim "${CMAKE_CURRENT_SOURCE_DIR}/build/PLATOSim")
-#set (PLATOdir "${CMAKE_CURRENT_SOURCE_DIR}")
-#file(WRITE ${PLATOSim} "#!/bin/sh \n" )
-#file(APPEND ${PLATOSim} "PLATOROOT=$PWD\n" )
-#file(APPEND ${PLATOSim} "export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$PLATOROOT/../dependencyInstalls/OpenCV-2.4.2/lib/\n" )
-#file(APPEND ${PLATOSim} "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PLATOROOT/../dependencyInstalls/openmpi-1.6.5/lib/\n" )
-#file(APPEND ${PLATOSim} "exec $PWD/PLATOSim $*\n" )
-#execute_process(COMMAND sed -i s_/home/PLATOSim_${PLATOdir}_g ../inputfiles/ccd_parameters.xml)
-#execute_process(COMMAND chmod 755 ${PLATOSim})
+#set (WSOSim "${CMAKE_CURRENT_SOURCE_DIR}/build/WSOSim")
+#set (WSOdir "${CMAKE_CURRENT_SOURCE_DIR}")
+#file(WRITE ${WSOSim} "#!/bin/sh \n" )
+#file(APPEND ${WSOSim} "WSOROOT=$PWD\n" )
+#file(APPEND ${WSOSim} "export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$WSOROOT/../dependencyInstalls/OpenCV-2.4.2/lib/\n" )
+#file(APPEND ${WSOSim} "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WSOROOT/../dependencyInstalls/openmpi-1.6.5/lib/\n" )
+#file(APPEND ${WSOSim} "exec $PWD/WSOSim $*\n" )
+#execute_process(COMMAND sed -i s_/home/WSOSim_${WSOdir}_g ../inputfiles/ccd_parameters.xml)
+#execute_process(COMMAND chmod 755 ${WSOSim})
