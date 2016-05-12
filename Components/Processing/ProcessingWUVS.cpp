@@ -195,7 +195,7 @@ void ProcessingWUVS::processingWUVSPipeline(DataSet &m_DataSet)
         DataSet::seedRNG++;
         
         //CTE (CHARGE TRANSFER EFFICIENCY)
-        m_StepCTE.StepCTEapplication(m_DataSet);
+        //m_StepCTE.StepCTEapplication(m_DataSet);
         
         //re-seed the RNG with an integer incremented by 1 to ensure that each image uses a different RNG seed
         //in each noise process, each random variable is seeded with this value!

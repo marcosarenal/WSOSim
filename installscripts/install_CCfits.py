@@ -15,7 +15,7 @@ packageName = "CCfits"
 currentWorkingDir = os.getcwd()
 buildDir = currentWorkingDir + "/dependencyDownloads/" + packageName
 installDir = currentWorkingDir + "/dependencyInstalls/" + packageName 
-cfitsio_installDir = "/usr/local/Cellar/cfitsio/3.370"
+cfitsio_installDir = currentWorkingDir + "/dependencyInstalls/cfitsio"
 
 # Remove a possible older version, and create a fresh one
 

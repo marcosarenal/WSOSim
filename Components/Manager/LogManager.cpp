@@ -206,19 +206,21 @@ void LogManager::LogManagerAppendLogAndShow(stringstream &text)
  */
 void LogManager::LogManagerPresentation()
 {
-	log << "     "<<endl;
-	log << "     *****************************************"<<endl;
-	log << "     *              PLATOSim                 *"<<endl;
-	log << "     *       PLATO End-to-End Simulator      *"<<endl;
-	log << "     *            Version 2.0                *"<<endl;
-	log << "     *              18/11/2013               *"<<endl;
-	log << "     *                                       *"<<endl;
-	log << "     *   Developer: Pablo Marcos Arenal      *"<<endl;
-	log << "     *         University of Leuven          *"<<endl;
-	log << "     *                Belgium                *"<<endl;
-	log << "     *  pablo.MarcosArenal@ster.kuleuven.be  *"<<endl;
-	log << "     *****************************************"<<endl;	
+    log << "     "<<endl;
+    log << "     *****************************************************************************"<<endl;
+    log << "     *                                  WSOSim                                   *"<<endl;
+    log << "     *                          WSO End-to-End Simulator                         *"<<endl;
+    log << "     *                               Version 3.0                                 *"<<endl;
+    log << "     *                                11/05/2016                                 *"<<endl;
+    log << "     *                         Based on the PLATO Simulator                      *"<<endl;
+    log << "     *                                                                           *"<<endl;
+    log << "     *                        Developer: Pablo Marcos Arenal                     *"<<endl;
+    log << "     *                                    UCM                                    *"<<endl;
+    log << "     *                               pablmar@ucm.es                              *"<<endl;
+    log << "     *****************************************************************************"<<endl;	
     log << "     "<<endl;
 
 }
 //==============================================================================
+
+                                                                       

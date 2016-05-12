@@ -99,7 +99,7 @@ void PreProcessingCommon::PreProcessingCommonCCD(DataSet &m_DataSet, string para
 
     
     //Creating output directory 
-    if (!FileUtilities::doMkdir(outputDir.c_str(), S_IRWXU))
+    if (!FileUtilities::doMkdir(outputDir.c_str(), ACCESSPERMS))
     {
         cerr << "\nError (PreProcessingCommon::PreProcessingCommonCCD()): Cannot create directory " << outputDir << endl;
         exit(1);

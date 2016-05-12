@@ -131,7 +131,7 @@ void Controller::runController(int argc, char ** argv)
     }
  
 
-    
+          
     //In case of incorrect input parameters usage explanation is shown to user.
     else
     {
@@ -143,8 +143,8 @@ void Controller::runController(int argc, char ** argv)
             cerr << "parameter file: An xml-file with input parameters" << endl;
             cerr << "photometry parameter file: An XML-file with photometry input parameters."<< endl;
             cerr << endl << "Examples:" << endl;
-            cerr << "Run a CCD simulation: ./PLATOsim -s /home/PLATOSim/inputfiles/ccd_parameters.xml" << endl;
-            cerr << "Run a CCD simulation and make photometry: ./PLATOSim -s /home/PLATOSim/inputfiles/ccd_parameters.xml -p /home/PLATOSim/inputfiles/photometry_parameters.xml" << endl;
+            cerr << "Run a CCD simulation: ./WSOsim -s /home/WSOSim/inputfiles/ccd_parameters.xml" << endl;
+            cerr << "Run a CCD simulation and make photometry: ./WSOSim -s /home/WSOSim/inputfiles/ccd_parameters.xml -p /home/WSOSim/inputfiles/photometry_parameters.xml" << endl;
     }
     
     return;

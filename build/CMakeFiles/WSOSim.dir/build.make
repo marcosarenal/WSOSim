@@ -1206,8 +1206,8 @@ WSOSim: CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingPhotometry.c
 WSOSim: CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCMOS.cpp.o
 WSOSim: CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingWUVS.cpp.o
 WSOSim: CMakeFiles/WSOSim.dir/build.make
-WSOSim: /usr/lib/x86_64-linux-gnu/libCCfits.so
-WSOSim: ../dependencyInstalls/cfitsio/lib/libcfitsio.a
+WSOSim: /home/pablo/projects/WSOSim/dependencyInstalls/CCfits/lib/libCCfits.so
+WSOSim: /home/pablo/projects/WSOSim/dependencyInstalls/cfitsio/lib/libcfitsio.a
 WSOSim: CMakeFiles/WSOSim.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable WSOSim"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/WSOSim.dir/link.txt --verbose=$(VERBOSE)

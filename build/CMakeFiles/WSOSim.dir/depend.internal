@@ -8,6 +8,35 @@ CMakeFiles/WSOSim.dir/Components/AuxTools/FFT.cpp.o
  ../Components/AuxTools/GlobalVariables.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -20,6 +49,35 @@ CMakeFiles/WSOSim.dir/Components/AuxTools/FileUtilities.cpp.o
  ../Components/AuxTools/GlobalVariables.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -109,6 +167,35 @@ CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o
  ../Components/ProcessingSteps/StepReadOutNoise.h
  ../Components/ProcessingSteps/StepRebin.h
  ../Components/ProcessingSteps/StepSaturation.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -165,6 +252,35 @@ CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o
  ../Components/ProcessingSteps/StepReadOutNoise.h
  ../Components/ProcessingSteps/StepRebin.h
  ../Components/ProcessingSteps/StepSaturation.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -228,6 +344,35 @@ CMakeFiles/WSOSim.dir/Components/Parameters/ParamsFlatField.cpp.o
  ../Components/AuxTools/GlobalVariables.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -240,6 +385,35 @@ CMakeFiles/WSOSim.dir/Components/Parameters/ParamsJitter.cpp.o
  ../Components/AuxTools/GlobalVariables.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -254,6 +428,35 @@ CMakeFiles/WSOSim.dir/Components/Parameters/ParamsPSF.cpp.o
  ../Components/AuxTools/MathTools.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -279,6 +482,35 @@ CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o
  ../Components/AuxTools/MathTools.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -304,6 +536,35 @@ CMakeFiles/WSOSim.dir/Components/PostProcessing/PostProcessing.cpp.o
  ../Components/AuxTools/GlobalVariables.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -327,6 +588,35 @@ CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCCD.cpp.o
  ../Components/Parameters/ParamsFlatField.h
  ../Components/Parameters/ParamsJitter.h
  ../Components/Parameters/ParamsStarfield.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -351,6 +641,35 @@ CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCommon.cpp.o
  ../Components/AuxTools/GlobalVariables.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -366,6 +685,35 @@ CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingPSF.cpp.o
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
  ../Components/Parameters/ParamsPSF.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -379,6 +727,35 @@ CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingPhotometry.cpp.o
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
  ../Components/Parameters/ParamsPhotometry.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -402,6 +779,35 @@ CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingWUVS.cpp.o
  ../Components/Parameters/ParamsJitter.h
  ../Components/Parameters/ParamsStarfield.h
  ../Components/Parameters/ParamsWUVS.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -433,6 +839,35 @@ CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCCD.cpp.o
  ../Components/ProcessingSteps/StepReadOutNoise.h
  ../Components/ProcessingSteps/StepRebin.h
  ../Components/ProcessingSteps/StepSaturation.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -450,6 +885,35 @@ CMakeFiles/WSOSim.dir/Components/Processing/ProcessingPhotometry.cpp.o
  ../Components/AuxTools/Statistics.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -481,6 +945,35 @@ CMakeFiles/WSOSim.dir/Components/Processing/ProcessingWUVS.cpp.o
  ../Components/ProcessingSteps/StepReadOutNoise.h
  ../Components/ProcessingSteps/StepRebin.h
  ../Components/ProcessingSteps/StepSaturation.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -504,6 +997,35 @@ CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepCTE.cpp.o
  ../Components/AuxTools/GlobalVariables.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -518,6 +1040,35 @@ CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepChargeTransferSmearing.cpp.
  ../Components/AuxTools/MathTools.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -531,6 +1082,35 @@ CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepConvolvePSF.cpp.o
  ../Components/AuxTools/GlobalVariables.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -556,6 +1136,35 @@ CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepElectronicOffset.cpp.o
  ../Components/AuxTools/GlobalVariables.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -568,6 +1177,35 @@ CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepFlatField.cpp.o
  ../Components/AuxTools/GlobalVariables.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -580,6 +1218,35 @@ CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepGain.cpp.o
  ../Components/AuxTools/GlobalVariables.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -596,6 +1263,35 @@ CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepJitter.cpp.o
  ../Components/AuxTools/Statistics.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -610,6 +1306,35 @@ CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepPhotometryOnTheGo.cpp.o
  ../Components/AuxTools/Statistics.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -623,6 +1348,35 @@ CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepPhotonNoise.cpp.o
  ../Components/AuxTools/Statistics.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -647,6 +1401,35 @@ CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepRebin.cpp.o
  ../Components/AuxTools/GlobalVariables.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h
@@ -659,6 +1442,35 @@ CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepSaturation.cpp.o
  ../Components/AuxTools/GlobalVariables.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
+ ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits
+ ../dependencyInstalls/CCfits/include/CCfits/CCfits.h
+ ../dependencyInstalls/CCfits/include/CCfits/Column.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnT.h
+ ../dependencyInstalls/CCfits/include/CCfits/ColumnVectorData.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/ExtHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITS.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtil.h
+ ../dependencyInstalls/CCfits/include/CCfits/FITSUtilT.h
+ ../dependencyInstalls/CCfits/include/CCfits/FitsError.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/HDUCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/Image.h
+ ../dependencyInstalls/CCfits/include/CCfits/ImageExt.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeyData.h
+ ../dependencyInstalls/CCfits/include/CCfits/Keyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordCreator.h
+ ../dependencyInstalls/CCfits/include/CCfits/KeywordT.h
+ ../dependencyInstalls/CCfits/include/CCfits/NewKeyword.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/PHDUT.h
+ ../dependencyInstalls/CCfits/include/CCfits/PrimaryHDU.h
+ ../dependencyInstalls/CCfits/include/CCfits/Table.h
+ ../dependencyInstalls/cfitsio/include/fitsio.h
+ ../dependencyInstalls/cfitsio/include/longnam.h
  ../dependencyInstalls/tinyxml/include/ticpp.h
  ../dependencyInstalls/tinyxml/include/ticppapi.h
  ../dependencyInstalls/tinyxml/include/ticpprc.h

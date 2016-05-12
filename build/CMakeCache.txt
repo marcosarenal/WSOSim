@@ -21,13 +21,13 @@ BLITZ_LIBRARY:FILEPATH=/usr/lib/libblitz.so
 CCFITS:FILEPATH=CCFITS-NOTFOUND
 
 //CCFITS include directory.
-CCFITS_INCLUDE_DIR:PATH=/usr/include
+CCFITS_INCLUDE_DIR:PATH=/home/pablo/projects/WSOSim/dependencyInstalls/CCfits/include
 
 //CCFITS library.
-CCFITS_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libCCfits.so
+CCFITS_LIBRARY:FILEPATH=/home/pablo/projects/WSOSim/dependencyInstalls/CCfits/lib/libCCfits.so
 
 //CFITSIO library.
-CFITSIO_LIBRARY:FILEPATH=/hd1/Projects/WSOSim/dependencyInstalls/cfitsio/lib/libcfitsio.a
+CFITSIO_LIBRARY:FILEPATH=/home/pablo/projects/WSOSim/dependencyInstalls/cfitsio/lib/libcfitsio.a
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
@@ -284,7 +284,7 @@ CMAKE_GENERATOR:INTERNAL=Unix Makefiles
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Start directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/hd1/Projects/WSOSim
+CMAKE_HOME_DIRECTORY:INTERNAL=/home/pablo/projects/WSOSim
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
@@ -346,5 +346,5 @@ CMAKE_USE_RELATIVE_PATHS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding CCFITS
-FIND_PACKAGE_MESSAGE_DETAILS_CCFITS:INTERNAL=[/usr/lib/x86_64-linux-gnu/libCCfits.so][/usr/include][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_CCFITS:INTERNAL=[/home/pablo/projects/WSOSim/dependencyInstalls/CCfits/lib/libCCfits.so][/home/pablo/projects/WSOSim/dependencyInstalls/CCfits/include][v()]
 
