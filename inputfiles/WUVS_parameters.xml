@@ -22,7 +22,7 @@
               </UseFFTWisdom>
               <!--Directory, where wisdom is stored-->
               <FFTWisdomPath>
-                  /home/pablo/Projects/PLATOSim2.3/wisdom
+                  /hd1/Projects/WSOSim/wisdom
               </FFTWisdomPath>
               <!--Seed value for the Randum Number Generator (set to negative value to take value from system time)-->
               <SeedRNG>
@@ -32,11 +32,11 @@
           <OutputParameters>
               <!--Output path (THIS MUST BE THE *COMPLETE* PATH OF AN EXISTING DIRECTORY)-->
               <OutputPath>
-                  /home/pablo/Projects/PLATOSim2.3/output
+                  /hd1/Projects/WSOSim/output
               </OutputPath>
               <!--Prefix of output files (=name of output sub-directory)-->
               <Prefix>
-                  PLATOsim-2048
+                  WSOsim-2048
               </Prefix>
               <!--Write sub-pixel images to fits file (1=yes/0=no)-->
               <WriteSubPixelFits>
@@ -54,7 +54,7 @@
               </NumExposures>
               <!--File name stellar catalogue (RA, DEC, Mag)-->
               <CatalogueFileName>
-                  /home/pablo/Projects/PLATOSim2.3/inputfiles/field_RA180.0_DEC-70.0_R1.0.coo
+                  /hd1/Projects/WSOSim/inputfiles/field_RA180.0_DEC-70.0_R1.0.coo
               </CatalogueFileName>
               <!--Flux of m=0 star [phot/s/cm^2]-->
               <Fluxm0>
@@ -224,7 +224,7 @@
               </JitterRepointing>
               <!--File with jitter time series-->
               <JitterFileName>
-                  /home/pablo/Projects/PLATOSim2.3/inputfiles/plato_pointing_time_ra_dec_roll_arcsec_large_dt1.dat
+                  /hd1/Projects/WSOSim/inputfiles/plato_pointing_time_ra_dec_roll_arcsec_large_dt1.dat
               </JitterFileName>
               <!--Angular distance [deg] of satellite jitter rotation axis from CCD center-of-field-->
               <JitterAxisAngularDistance>
@@ -250,7 +250,7 @@
               </PSFGaussFWHM>
               <!--File with normalised PSF -->
               <PSFFileName>
-                  /home/pablo/Projects/PLATOSim2.3/inputfiles/psf_plato_6000_field_0.0_final.dat
+                  /hd1/Projects/WSOSim/inputfiles/psf_plato_6000_field_0.0_final.dat
               </PSFFileName>
               <!--Use location-dependent PSF (0=no/1=yes)-->
               <PSFLocationDependent>
@@ -258,7 +258,7 @@
               </PSFLocationDependent>
               <!--File with list of PSFs and their location-->
               <PSFLocationFileName>
-                  /home/pablo/Projects/PLATOSim2.3/inputfiles/listpsf
+                  /hd1/Projects/WSOSim/inputfiles/listpsf
               </PSFLocationFileName>
               <!--Rotate PSF  (0 = No Rotation / 1 = Towards Optical Axis / 2 = Arbitrary Rotation by PSFRotationAngle)-->
               <PSFRotation>

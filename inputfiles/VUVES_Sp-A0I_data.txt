@@ -1,0 +1,12 @@
+Dear Pablo,
+ 
+You can download the CCD image simulation of VUVES channel of WUVS using the following link. This is spectra of A0 star.
+The simulation includes all optical elements of telescope, WUVS, CCD QE. The image do not includes CCD noise, bias, dark. The image size is 4096х3112 pixels.
+ 
+https://cloud.inasan.ru/owncloud/index.php/s/fM53RhsH3fYI6Dd
+ 
+ 
+ 
+Best regards,
+ 
+Andrey

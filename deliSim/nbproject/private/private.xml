@@ -5,10 +5,27 @@
     </code-assistance-data>
     <data xmlns="http://www.netbeans.org/ns/make-project-private/1">
         <activeConfTypeElem>0</activeConfTypeElem>
-        <activeConfIndexElem>0</activeConfIndexElem>
+        <activeConfIndexElem>5</activeConfIndexElem>
     </data>
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>file:/Volumes/Projects/WSOSim/Components/DataSet/DataSet.cpp</url>
+            <bookmark id="1">
+                <name/>
+                <line>177</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Volumes/Projects/WSOSim/Components/PreProcessing/PreProcessingCommon.cpp</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/PostProcessing/PostProcessing.cpp</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/PreProcessing/PreProcessingWUVS.cpp</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/Manager/Controller.cpp</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/Processing/ProcessingWUVS.cpp</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/AuxTools/FileUtilities.cpp</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/AuxTools/FileUtilities.h</file>
+        </group>
     </open-files>
 </project-private>
