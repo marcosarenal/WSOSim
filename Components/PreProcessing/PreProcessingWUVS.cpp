@@ -75,7 +75,7 @@ PreProcessingWUVS::PreProcessingWUVS(DataSet &m_DataSet)
     //Take the corresponding FITS file
     outputPath = p_DataSet->datasetGetOutputPath();
 
-    string inputFitsFile =  "/hd1/Projects/WSOSim/inputfiles/VUVES_Sp-A0I.fits";
+    string inputFitsFile =  "/hd1/Projects/WSOSim/inputfiles/VUVES_LyA.fits";
     //string inputFitsFile =  "/home/pablo/Projects/Simulator/WUVS_Simulator/DATA/input_data/pablomarcosa44946/ocb6n0030_raw.fits";
 
     //Check that it is correctly opened

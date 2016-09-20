@@ -36,7 +36,7 @@
               </OutputPath>
               <!--Prefix of output files (=name of output sub-directory)-->
               <Prefix>
-                  WSOsim-prueba2
+                  WSOsim-VUVES_LyA
               </Prefix>
               <!--Write sub-pixel images to fits file (1=yes/0=no)-->
               <WriteSubPixelFits>
@@ -50,7 +50,7 @@
               </ExposureTime>
               <!--Total number of exposures-->
               <NumExposures>
-                  6
+                  10
               </NumExposures>
               <!--File name stellar catalogue (RA, DEC, Mag)-->
               <CatalogueFileName>

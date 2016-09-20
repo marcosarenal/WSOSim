@@ -1,0 +1,318 @@
+<?xml version="1.0" ?>
+      <Config>
+          <Description>
+              This is the parameter file for PlatoSim.
+          </Description>
+          <GeneralParameters>
+              <!--Number of processors to use in parallel-->
+              <Processors>
+                  32
+              </Processors>
+              <!--Memory limit for FFT convolution [bytes] (to avoid memory overflow)-->
+              <MemoryLimit>
+                  600000
+              </MemoryLimit>
+              <!--Convolution method: FFT Convolution (FFT) or Real Space Convolution (Real)-->
+              <Convolution>
+                  FFT
+              </Convolution>
+              <!--Use FFT Wisdom to speed up convolution (can take longer for certain image dimensions) (0=no/1=yes)-->
+              <UseFFTWisdom>
+                  0
+              </UseFFTWisdom>
+              <!--Directory, where wisdom is stored-->
+              <FFTWisdomPath>
+                  /hd1/Projects/WSOSim/wisdom
+              </FFTWisdomPath>
+              <!--Seed value for the Randum Number Generator (set to negative value to take value from system time)-->
+              <SeedRNG>
+                  1302617258
+              </SeedRNG>
+          </GeneralParameters>
+          <OutputParameters>
+              <!--Output path (THIS MUST BE THE *COMPLETE* PATH OF AN EXISTING DIRECTORY)-->
+              <OutputPath>
+                  /hd1/Projects/WSOSim/output
+              </OutputPath>
+              <!--Prefix of output files (=name of output sub-directory)-->
+              <Prefix>
+                  WSOsim-VUVES_10000_2
+              </Prefix>
+              <!--Write sub-pixel images to fits file (1=yes/0=no)-->
+              <WriteSubPixelFits>
+                  0
+              </WriteSubPixelFits>
+          </OutputParameters>
+          <ObservingParameters>
+              <!--Exposure time [s]-->
+              <ExposureTime>
+                  22
+              </ExposureTime>
+              <!--Total number of exposures-->
+              <NumExposures>
+                  10000
+              </NumExposures>
+              <!--File name stellar catalogue (RA, DEC, Mag)-->
+              <CatalogueFileName>
+                  /hd1/Projects/WSOSim/inputfiles/field_RA180.0_DEC-70.0_R1.0.coo
+              </CatalogueFileName>
+              <!--Flux of m=0 star [phot/s/cm^2]-->
+              <Fluxm0>
+                  4962700
+              </Fluxm0>
+              <!--Light collecting area of each telescope [cm^2]-->
+              <LightCollectingArea>
+                  113.09
+              </LightCollectingArea>
+              <!--Transmission efficiency-->
+              <TransmissionEfficiency>
+                  0.638466
+              </TransmissionEfficiency>
+              <!--Right Ascension of optical axis [deg]-->
+              <OpticalAxisRACenter>
+                  180
+              </OpticalAxisRACenter>
+              <!--Declination of optical axis [deg]-->
+              <OpticalAxisDecCenter>
+                  -70
+              </OpticalAxisDecCenter>
+              <!--Orientation of focal plane [deg]-->
+              <FocalPlaneOrientation>
+                  0
+              </FocalPlaneOrientation>
+              <!--Predefined position of CCD (A, B, C, D, AF, BF, CF, DF, or User)-->
+              <CCDPredefinedPosition>
+                  User
+              </CCDPredefinedPosition>
+              <!--X Offset of CCD origin from center of focal plane [mm]-->
+              <CCDOriginOffsetX>
+                  0
+              </CCDOriginOffsetX>
+              <!--Y Offset of CCD origin from center of focal plane [mm]-->
+              <CCDOriginOffsetY>
+                  0
+              </CCDOriginOffsetY>
+              <!--Orientation of CCD with respect to focal plane orientation [deg]-->
+              <CCDOrientation>
+                  0
+              </CCDOrientation>
+          </ObservingParameters>
+          <CCD>
+              <!--CCD size X [pixels] (columns)-->
+              <CCDSizeX>
+                  4096
+              </CCDSizeX>
+              <!--CCD size Y [pixels] (rows)-->
+              <CCDSizeY>
+                  3112
+              </CCDSizeY>
+              <!--Pixel size [microns]-->
+              <PixelSize>
+                  12
+              </PixelSize>
+              <!--Pixel scale [arcsec/pixel]-->
+              <PixelScale>
+                  0.101
+              </PixelScale>
+              <!--Gain [e/ADU]-->
+              <Gain>
+                  6
+              </Gain>
+              <!--Quantum efficiency-->
+              <QuantumEfficiency>
+                  1
+              </QuantumEfficiency>
+              <!--Full well saturation [e/pixel]-->
+              <FullWellSaturation>
+                  1243000
+              </FullWellSaturation>
+              <!--Digital saturation [ADU/pixel]-->
+              <DigitalSaturation>
+                  16384
+              </DigitalSaturation>
+              <!--Readout noise [e]-->
+              <ReadoutNoise>
+                  3
+              </ReadoutNoise>
+              <!--Electronic offset (= bias level) [ADU]--> 
+              <ElectronicOffset>
+                  100
+              </ElectronicOffset>
+              <!--Electronic offset (bias) prescan strip number of rows [pixels]-->
+              <BiasPrescanRows>
+                  0
+              </BiasPrescanRows>
+              <!--Read-out time [s] = time to read out the entire CCD -->
+              <ReadOutTime>
+                  0.01
+              </ReadOutTime>
+              <!--Smearing overscan strip number of rows [pixels]-->
+              <SmearingOverscanRows>
+                  0
+              </SmearingOverscanRows>
+              <!--Flatfield peak-to-peak pixel noise-->
+              <FlatfieldPtPNoise>
+                  0.016
+              </FlatfieldPtPNoise>
+              <!--Flatfield sub-pixel white noise-->
+              <FlatfieldSubpixelNoise>
+                  0
+              </FlatfieldSubpixelNoise>
+              <!--Flatfield intrapixel-width at edge of pixel with 5% lower sensitivity [% of pixel size, rounded up]-->
+              <FlatfieldIntraWidth>
+                  0
+              </FlatfieldIntraWidth>
+              <!--Mean Charge Transfer Efficiency-->
+              <CTEMean>
+                  0.999999
+              </CTEMean>
+              <!--No. of low-CTE pixels-->
+              <CTELowPixels>
+                  0
+              </CTELowPixels>
+              <!--No. of low-CTE lines-->
+              <CTELowLines>
+                  0
+              </CTELowLines>
+          </CCD>
+          <SubField>
+              <!--Sub-field zero point X relative to CCD [pixels]-->
+              <SubFieldZeroPointX>
+                  0
+              </SubFieldZeroPointX>
+              <!--Sub-field zero point Y relative to CCD [pixels]-->
+              <SubFieldZeroPointY>
+                  0
+              </SubFieldZeroPointY>
+              <!--Sub-field size X [pixels] (columns)-->
+              <SubFieldSizeX>
+                  4096
+              </SubFieldSizeX>
+              <!--Sub-field size Y [pixels] (rows)-->
+              <SubFieldSizeY>
+                  3112
+              </SubFieldSizeY>
+              <!--Number of sub-pixels-->
+              <SubPixels>
+                  4
+              </SubPixels>
+          </SubField>
+          <JitterParameters>
+              <!--Apply jitter to time series (0=no/1=yes)-->
+              <UseJitter>
+                  0
+              </UseJitter>
+              <!--Apply jitter to time series from a file with jitter time-series or using jitter parameters (0=using parameters/1=from file)-->
+              <UseJitterFromFile>
+                  0
+              </UseJitterFromFile>
+              <!--Time interval in between jitter positions [in seconds]. This time interval must be shorter than the exposition time-->
+              <JitterInterval>
+                  9
+              </JitterInterval>
+              <!--Jitter rms [in arcsecs]-->
+              <JitterRms>
+                  0.5
+              </JitterRms>
+              <!--Jitter drift [in arcsecs/min]-->
+              <JitterDrift>
+                  0.00099
+              </JitterDrift>
+              <!--Jitter repointing time [in hours]. Time for the shuttle to point back to the initial position (center of the FoV). -->
+              <JitterRepointing>
+                  12
+              </JitterRepointing>
+              <!--File with jitter time series-->
+              <JitterFileName>
+                  /hd1/Projects/WSOSim/inputfiles/plato_pointing_time_ra_dec_roll_arcsec_large_dt1.dat
+              </JitterFileName>
+              <!--Angular distance [deg] of satellite jitter rotation axis from CCD center-of-field-->
+              <JitterAxisAngularDistance>
+                  0
+              </JitterAxisAngularDistance>
+              <!--Position angle [deg] of satellite jitter rotation axis (relative to N)-->
+              <JitterAxisPositionAngle>
+                  0
+              </JitterAxisPositionAngle>
+              <!--Multiplication factor of jitter time-series-->
+              <JitterMultiplicationFactor>
+                  1
+              </JitterMultiplicationFactor>
+          </JitterParameters>
+          <PSFParameters>
+              <!--Use analytical Gaussian PSF (0=no/1=yes)-->
+              <UseGauss>
+                  0
+              </UseGauss>
+              <!--Width of Gaussian PSF (only applicable if no PSF file is read in) [pixels]-->
+              <PSFGaussFWHM>
+                  0.16
+              </PSFGaussFWHM>
+              <!--File with normalised PSF -->
+              <PSFFileName>
+                  /hd1/Projects/WSOSim/inputfiles/psf_plato_6000_field_0.0_final.dat
+              </PSFFileName>
+              <!--Use location-dependent PSF (0=no/1=yes)-->
+              <PSFLocationDependent>
+                  0
+              </PSFLocationDependent>
+              <!--File with list of PSFs and their location-->
+              <PSFLocationFileName>
+                  /hd1/Projects/WSOSim/inputfiles/listpsf
+              </PSFLocationFileName>
+              <!--Rotate PSF  (0 = No Rotation / 1 = Towards Optical Axis / 2 = Arbitrary Rotation by PSFRotationAngle)-->
+              <PSFRotation>
+                  1
+              </PSFRotation>
+              <!--Rotation angle of PSF in degrees (counter-clockwise)-->
+              <PSFRotationAngle>
+                  90
+              </PSFRotationAngle>
+              <!--Total number of rows of PSF file (must be quadratic)-->
+              <PSFNumRows>
+                  1024
+              </PSFNumRows>
+              <!--Number of sub-pixels per pixel in PSF file (NumPixels/SubPixels must be an integer value) [pixels]-->
+              <PSFSubPixels>
+                  128
+              </PSFSubPixels>
+              <!--X Center of the PSF in sub-pixel coordinates-->
+              <PSFCenterX>
+                  511.5
+              </PSFCenterX>
+              <!--Y Center of the PSF in sub-pixel coordinates-->
+              <PSFCenterY>
+                  512.5
+              </PSFCenterY>
+              <!--Orientation of pre-computed PSF in degrees (x-Axis=0°, counter-clockwise)-->
+              <PSFOrientation>
+                  -45
+              </PSFOrientation>
+          </PSFParameters>
+          <NoiseParameters>
+              <!--0=No Photon Noise, 1=Use Photon Noise-->
+              <PhotonNoise>
+                  1
+              </PhotonNoise>
+              <!--Sky background (zodiacal+galactic) [e/(s*pixel)], for automatic computation set to negative value-->
+              <SkyBackground>
+                  -1
+              </SkyBackground>
+              <!--Cosmic hit rate [events/cm^2/min]-->
+              <CosmicHitRate>
+                  0
+              </CosmicHitRate>
+              <!--Cosmics saturation factor [proportional to full-well saturation]-->
+              <CosmicSaturation>
+                  0
+              </CosmicSaturation>
+              <!--Cosmic length FWHM [pixels]-->
+              <CosmicsLength>
+                  2
+              </CosmicsLength>
+              <!--Cosmics width FWHM [pixels]-->
+              <CosmicsWidth>
+                  0.2
+              </CosmicsWidth>
+          </NoiseParameters>
+      </Config>
