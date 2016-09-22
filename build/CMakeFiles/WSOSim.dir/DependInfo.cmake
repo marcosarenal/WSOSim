@@ -24,6 +24,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/hd1/Projects/WSOSim/Components/Parameters/ParamsPSF.cpp" "/hd1/Projects/WSOSim/build/CMakeFiles/WSOSim.dir/Components/Parameters/ParamsPSF.cpp.o"
   "/hd1/Projects/WSOSim/Components/Parameters/ParamsPhotometry.cpp" "/hd1/Projects/WSOSim/build/CMakeFiles/WSOSim.dir/Components/Parameters/ParamsPhotometry.cpp.o"
   "/hd1/Projects/WSOSim/Components/Parameters/ParamsStarfield.cpp" "/hd1/Projects/WSOSim/build/CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o"
+  "/hd1/Projects/WSOSim/Components/Parameters/ParamsTransit.cpp" "/hd1/Projects/WSOSim/build/CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o"
   "/hd1/Projects/WSOSim/Components/Parameters/ParamsWUVS.cpp" "/hd1/Projects/WSOSim/build/CMakeFiles/WSOSim.dir/Components/Parameters/ParamsWUVS.cpp.o"
   "/hd1/Projects/WSOSim/Components/PostProcessing/PostProcessing.cpp" "/hd1/Projects/WSOSim/build/CMakeFiles/WSOSim.dir/Components/PostProcessing/PostProcessing.cpp.o"
   "/hd1/Projects/WSOSim/Components/PreProcessing/PreProcessingCCD.cpp" "/hd1/Projects/WSOSim/build/CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCCD.cpp.o"

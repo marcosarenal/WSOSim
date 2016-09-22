@@ -37,6 +37,10 @@
                     <name>WUVS_WSOSim</name>
                     <type>0</type>
                 </confElem>
+                <confElem>
+                    <name>PLATOSim_transit</name>
+                    <type>0</type>
+                </confElem>
             </confList>
             <formatting>
                 <project-formatting-style>false</project-formatting-style>

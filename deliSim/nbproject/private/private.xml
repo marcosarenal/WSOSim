@@ -5,7 +5,7 @@
     </code-assistance-data>
     <data xmlns="http://www.netbeans.org/ns/make-project-private/1">
         <activeConfTypeElem>0</activeConfTypeElem>
-        <activeConfIndexElem>5</activeConfIndexElem>
+        <activeConfIndexElem>6</activeConfIndexElem>
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
         <file>
@@ -20,7 +20,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Volumes/Projects/WSOSim/Components/Processing/ProcessingCCD.cpp</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/ProcessingSteps/StepJitter.cpp</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/PreProcessing/PreProcessingCCD.cpp</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/Parameters/ParamsTransit.h</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/Parameters/ParamsCCD.cpp</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/DataSet/DataSet.cpp</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/PreProcessing/PreProcessingCCD.h</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/Parameters/ParamsTransit.cpp</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/DataSet/DataSet.h</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/Parameters/ParamsBackground.cpp</file>
         </group>
     </open-files>
 </project-private>

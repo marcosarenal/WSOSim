@@ -29,6 +29,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/WSOSim.dir/Components/Parameters/ParamsPSF.cpp.o"
   "CMakeFiles/WSOSim.dir/Components/Parameters/ParamsCTE.cpp.o"
   "CMakeFiles/WSOSim.dir/Components/Parameters/ParamsCCD.cpp.o"
+  "CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o"
   "CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o"
   "CMakeFiles/WSOSim.dir/Components/Parameters/ParamsJitter.cpp.o"
   "CMakeFiles/WSOSim.dir/Components/Parameters/ParamsWUVS.cpp.o"

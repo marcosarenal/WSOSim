@@ -591,6 +591,30 @@ Components/Parameters/ParamsStarfield.cpp.s:
 	$(MAKE) -f CMakeFiles/WSOSim.dir/build.make CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.s
 .PHONY : Components/Parameters/ParamsStarfield.cpp.s
 
+Components/Parameters/ParamsTransit.o: Components/Parameters/ParamsTransit.cpp.o
+.PHONY : Components/Parameters/ParamsTransit.o
+
+# target to build an object file
+Components/Parameters/ParamsTransit.cpp.o:
+	$(MAKE) -f CMakeFiles/WSOSim.dir/build.make CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o
+.PHONY : Components/Parameters/ParamsTransit.cpp.o
+
+Components/Parameters/ParamsTransit.i: Components/Parameters/ParamsTransit.cpp.i
+.PHONY : Components/Parameters/ParamsTransit.i
+
+# target to preprocess a source file
+Components/Parameters/ParamsTransit.cpp.i:
+	$(MAKE) -f CMakeFiles/WSOSim.dir/build.make CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.i
+.PHONY : Components/Parameters/ParamsTransit.cpp.i
+
+Components/Parameters/ParamsTransit.s: Components/Parameters/ParamsTransit.cpp.s
+.PHONY : Components/Parameters/ParamsTransit.s
+
+# target to generate assembly for a file
+Components/Parameters/ParamsTransit.cpp.s:
+	$(MAKE) -f CMakeFiles/WSOSim.dir/build.make CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.s
+.PHONY : Components/Parameters/ParamsTransit.cpp.s
+
 Components/Parameters/ParamsWUVS.o: Components/Parameters/ParamsWUVS.cpp.o
 .PHONY : Components/Parameters/ParamsWUVS.o
 
@@ -1284,6 +1308,9 @@ help:
 	@echo "... Components/Parameters/ParamsStarfield.o"
 	@echo "... Components/Parameters/ParamsStarfield.i"
 	@echo "... Components/Parameters/ParamsStarfield.s"
+	@echo "... Components/Parameters/ParamsTransit.o"
+	@echo "... Components/Parameters/ParamsTransit.i"
+	@echo "... Components/Parameters/ParamsTransit.s"
 	@echo "... Components/Parameters/ParamsWUVS.o"
 	@echo "... Components/Parameters/ParamsWUVS.i"
 	@echo "... Components/Parameters/ParamsWUVS.s"

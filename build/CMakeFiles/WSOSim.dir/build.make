@@ -739,9 +739,32 @@ CMakeFiles/WSOSim.dir/Components/Parameters/ParamsCCD.cpp.o.provides: CMakeFiles
 
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsCCD.cpp.o.provides.build: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsCCD.cpp.o
 
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o: CMakeFiles/WSOSim.dir/flags.make
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o: ../Components/Parameters/ParamsTransit.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_31)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o -c /hd1/Projects/WSOSim/Components/Parameters/ParamsTransit.cpp
+
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /hd1/Projects/WSOSim/Components/Parameters/ParamsTransit.cpp > CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.i
+
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /hd1/Projects/WSOSim/Components/Parameters/ParamsTransit.cpp -o CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.s
+
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o.requires:
+.PHONY : CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o.requires
+
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o.provides: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o.requires
+	$(MAKE) -f CMakeFiles/WSOSim.dir/build.make CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o.provides.build
+.PHONY : CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o.provides
+
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o.provides.build: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o
+
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o: CMakeFiles/WSOSim.dir/flags.make
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o: ../Components/Parameters/ParamsStarfield.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_31)
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_32)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o -c /hd1/Projects/WSOSim/Components/Parameters/ParamsStarfield.cpp
 
@@ -764,7 +787,7 @@ CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o.provides.build
 
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsJitter.cpp.o: CMakeFiles/WSOSim.dir/flags.make
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsJitter.cpp.o: ../Components/Parameters/ParamsJitter.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_32)
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_33)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/Parameters/ParamsJitter.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/Parameters/ParamsJitter.cpp.o -c /hd1/Projects/WSOSim/Components/Parameters/ParamsJitter.cpp
 
@@ -787,7 +810,7 @@ CMakeFiles/WSOSim.dir/Components/Parameters/ParamsJitter.cpp.o.provides.build: C
 
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsWUVS.cpp.o: CMakeFiles/WSOSim.dir/flags.make
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsWUVS.cpp.o: ../Components/Parameters/ParamsWUVS.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_33)
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_34)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/Parameters/ParamsWUVS.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/Parameters/ParamsWUVS.cpp.o -c /hd1/Projects/WSOSim/Components/Parameters/ParamsWUVS.cpp
 
@@ -810,7 +833,7 @@ CMakeFiles/WSOSim.dir/Components/Parameters/ParamsWUVS.cpp.o.provides.build: CMa
 
 CMakeFiles/WSOSim.dir/Components/Processing/ProcessingPhotometry.cpp.o: CMakeFiles/WSOSim.dir/flags.make
 CMakeFiles/WSOSim.dir/Components/Processing/ProcessingPhotometry.cpp.o: ../Components/Processing/ProcessingPhotometry.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_34)
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_35)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/Processing/ProcessingPhotometry.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/Processing/ProcessingPhotometry.cpp.o -c /hd1/Projects/WSOSim/Components/Processing/ProcessingPhotometry.cpp
 
@@ -833,7 +856,7 @@ CMakeFiles/WSOSim.dir/Components/Processing/ProcessingPhotometry.cpp.o.provides.
 
 CMakeFiles/WSOSim.dir/Components/Processing/ProcessingWUVS.cpp.o: CMakeFiles/WSOSim.dir/flags.make
 CMakeFiles/WSOSim.dir/Components/Processing/ProcessingWUVS.cpp.o: ../Components/Processing/ProcessingWUVS.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_35)
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_36)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/Processing/ProcessingWUVS.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/Processing/ProcessingWUVS.cpp.o -c /hd1/Projects/WSOSim/Components/Processing/ProcessingWUVS.cpp
 
@@ -856,7 +879,7 @@ CMakeFiles/WSOSim.dir/Components/Processing/ProcessingWUVS.cpp.o.provides.build:
 
 CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCCD.cpp.o: CMakeFiles/WSOSim.dir/flags.make
 CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCCD.cpp.o: ../Components/Processing/ProcessingCCD.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_36)
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_37)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCCD.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCCD.cpp.o -c /hd1/Projects/WSOSim/Components/Processing/ProcessingCCD.cpp
 
@@ -879,7 +902,7 @@ CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCCD.cpp.o.provides.build: 
 
 CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCMOS.cpp.o: CMakeFiles/WSOSim.dir/flags.make
 CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCMOS.cpp.o: ../Components/Processing/ProcessingCMOS.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_37)
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_38)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCMOS.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCMOS.cpp.o -c /hd1/Projects/WSOSim/Components/Processing/ProcessingCMOS.cpp
 
@@ -902,7 +925,7 @@ CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCMOS.cpp.o.provides.build:
 
 CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: CMakeFiles/WSOSim.dir/flags.make
 CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../Components/Manager/Controller.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_38)
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_39)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o -c /hd1/Projects/WSOSim/Components/Manager/Controller.cpp
 
@@ -925,7 +948,7 @@ CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o.provides.build: CMakeF
 
 CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: CMakeFiles/WSOSim.dir/flags.make
 CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../Components/Manager/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_39)
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_40)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o -c /hd1/Projects/WSOSim/Components/Manager/main.cpp
 
@@ -948,7 +971,7 @@ CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o.provides.build: CMakeFiles/W
 
 CMakeFiles/WSOSim.dir/Components/Manager/LogManager.cpp.o: CMakeFiles/WSOSim.dir/flags.make
 CMakeFiles/WSOSim.dir/Components/Manager/LogManager.cpp.o: ../Components/Manager/LogManager.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_40)
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_41)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/Manager/LogManager.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/Manager/LogManager.cpp.o -c /hd1/Projects/WSOSim/Components/Manager/LogManager.cpp
 
@@ -971,7 +994,7 @@ CMakeFiles/WSOSim.dir/Components/Manager/LogManager.cpp.o.provides.build: CMakeF
 
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingPSF.cpp.o: CMakeFiles/WSOSim.dir/flags.make
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingPSF.cpp.o: ../Components/PreProcessing/PreProcessingPSF.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_41)
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_42)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingPSF.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingPSF.cpp.o -c /hd1/Projects/WSOSim/Components/PreProcessing/PreProcessingPSF.cpp
 
@@ -994,7 +1017,7 @@ CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingPSF.cpp.o.provides.b
 
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCCD.cpp.o: CMakeFiles/WSOSim.dir/flags.make
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCCD.cpp.o: ../Components/PreProcessing/PreProcessingCCD.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_42)
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_43)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCCD.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCCD.cpp.o -c /hd1/Projects/WSOSim/Components/PreProcessing/PreProcessingCCD.cpp
 
@@ -1017,7 +1040,7 @@ CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCCD.cpp.o.provides.b
 
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCommon.cpp.o: CMakeFiles/WSOSim.dir/flags.make
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCommon.cpp.o: ../Components/PreProcessing/PreProcessingCommon.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_43)
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_44)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCommon.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCommon.cpp.o -c /hd1/Projects/WSOSim/Components/PreProcessing/PreProcessingCommon.cpp
 
@@ -1040,7 +1063,7 @@ CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCommon.cpp.o.provide
 
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingPhotometry.cpp.o: CMakeFiles/WSOSim.dir/flags.make
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingPhotometry.cpp.o: ../Components/PreProcessing/PreProcessingPhotometry.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_44)
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_45)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingPhotometry.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingPhotometry.cpp.o -c /hd1/Projects/WSOSim/Components/PreProcessing/PreProcessingPhotometry.cpp
 
@@ -1063,7 +1086,7 @@ CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingPhotometry.cpp.o.pro
 
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCMOS.cpp.o: CMakeFiles/WSOSim.dir/flags.make
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCMOS.cpp.o: ../Components/PreProcessing/PreProcessingCMOS.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_45)
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_46)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCMOS.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCMOS.cpp.o -c /hd1/Projects/WSOSim/Components/PreProcessing/PreProcessingCMOS.cpp
 
@@ -1086,7 +1109,7 @@ CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCMOS.cpp.o.provides.
 
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingWUVS.cpp.o: CMakeFiles/WSOSim.dir/flags.make
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingWUVS.cpp.o: ../Components/PreProcessing/PreProcessingWUVS.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_46)
+	$(CMAKE_COMMAND) -E cmake_progress_report /hd1/Projects/WSOSim/build/CMakeFiles $(CMAKE_PROGRESS_47)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingWUVS.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingWUVS.cpp.o -c /hd1/Projects/WSOSim/Components/PreProcessing/PreProcessingWUVS.cpp
 
@@ -1139,6 +1162,7 @@ WSOSim_OBJECTS = \
 "CMakeFiles/WSOSim.dir/Components/Parameters/ParamsPSF.cpp.o" \
 "CMakeFiles/WSOSim.dir/Components/Parameters/ParamsCTE.cpp.o" \
 "CMakeFiles/WSOSim.dir/Components/Parameters/ParamsCCD.cpp.o" \
+"CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o" \
 "CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o" \
 "CMakeFiles/WSOSim.dir/Components/Parameters/ParamsJitter.cpp.o" \
 "CMakeFiles/WSOSim.dir/Components/Parameters/ParamsWUVS.cpp.o" \
@@ -1189,6 +1213,7 @@ WSOSim: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsPhotometry.cpp.o
 WSOSim: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsPSF.cpp.o
 WSOSim: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsCTE.cpp.o
 WSOSim: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsCCD.cpp.o
+WSOSim: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o
 WSOSim: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o
 WSOSim: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsJitter.cpp.o
 WSOSim: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsWUVS.cpp.o
@@ -1246,6 +1271,7 @@ CMakeFiles/WSOSim.dir/requires: CMakeFiles/WSOSim.dir/Components/Parameters/Para
 CMakeFiles/WSOSim.dir/requires: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsPSF.cpp.o.requires
 CMakeFiles/WSOSim.dir/requires: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsCTE.cpp.o.requires
 CMakeFiles/WSOSim.dir/requires: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsCCD.cpp.o.requires
+CMakeFiles/WSOSim.dir/requires: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o.requires
 CMakeFiles/WSOSim.dir/requires: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o.requires
 CMakeFiles/WSOSim.dir/requires: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsJitter.cpp.o.requires
 CMakeFiles/WSOSim.dir/requires: CMakeFiles/WSOSim.dir/Components/Parameters/ParamsWUVS.cpp.o.requires

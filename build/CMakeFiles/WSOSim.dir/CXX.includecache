@@ -110,6 +110,16 @@ DataSet.h
 Sky.h
 ../Components/Parameters/Sky.h
 
+../Components/Parameters/ParamsCCD.h
+blitz/array.h
+../Components/Parameters/blitz/array.h
+DataSet.h
+../Components/Parameters/DataSet.h
+Constants.h
+../Components/Parameters/Constants.h
+MathTools.h
+../Components/Parameters/MathTools.h
+
 ../Components/Parameters/ParamsCTE.h
 blitz/array.h
 ../Components/Parameters/blitz/array.h
@@ -154,15 +164,11 @@ string
 fstream
 -
 
-../Components/Parameters/ParamsWUVS.h
-blitz/array.h
-../Components/Parameters/blitz/array.h
+../Components/Parameters/ParamsTransit.h
+GlobalVariables.h
+../Components/Parameters/GlobalVariables.h
 DataSet.h
 ../Components/Parameters/DataSet.h
-Constants.h
-../Components/Parameters/Constants.h
-MathTools.h
-../Components/Parameters/MathTools.h
 
 ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
 HDUCreator.h
@@ -624,19 +630,29 @@ tinystr.h
 ticpprc.h
 ../dependencyInstalls/tinyxml/include/ticpprc.h
 
-/hd1/Projects/WSOSim/Components/PreProcessing/PreProcessingWUVS.cpp
-PreProcessingWUVS.h
-/hd1/Projects/WSOSim/Components/PreProcessing/PreProcessingWUVS.h
+/hd1/Projects/WSOSim/Components/Parameters/ParamsTransit.cpp
+ParamsTransit.h
+/hd1/Projects/WSOSim/Components/Parameters/ParamsTransit.h
 
-/hd1/Projects/WSOSim/Components/PreProcessing/PreProcessingWUVS.h
+/hd1/Projects/WSOSim/Components/Parameters/ParamsTransit.h
+GlobalVariables.h
+/hd1/Projects/WSOSim/Components/Parameters/GlobalVariables.h
+DataSet.h
+/hd1/Projects/WSOSim/Components/Parameters/DataSet.h
+
+/hd1/Projects/WSOSim/Components/PreProcessing/PreProcessingCCD.cpp
+PreProcessingCCD.h
+/hd1/Projects/WSOSim/Components/PreProcessing/PreProcessingCCD.h
+
+/hd1/Projects/WSOSim/Components/PreProcessing/PreProcessingCCD.h
 ParamsStarfield.h
 /hd1/Projects/WSOSim/Components/PreProcessing/ParamsStarfield.h
 LogManager.h
 /hd1/Projects/WSOSim/Components/PreProcessing/LogManager.h
 DataSet.h
 /hd1/Projects/WSOSim/Components/PreProcessing/DataSet.h
-ParamsWUVS.h
-/hd1/Projects/WSOSim/Components/PreProcessing/ParamsWUVS.h
+ParamsCCD.h
+/hd1/Projects/WSOSim/Components/PreProcessing/ParamsCCD.h
 ParamsBackground.h
 /hd1/Projects/WSOSim/Components/PreProcessing/ParamsBackground.h
 ParamsCTE.h
@@ -645,4 +661,6 @@ ParamsFlatField.h
 /hd1/Projects/WSOSim/Components/PreProcessing/ParamsFlatField.h
 ParamsJitter.h
 /hd1/Projects/WSOSim/Components/PreProcessing/ParamsJitter.h
+ParamsTransit.h
+/hd1/Projects/WSOSim/Components/PreProcessing/ParamsTransit.h
 

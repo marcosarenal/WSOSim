@@ -354,8 +354,7 @@ void ParamsCCD::paramsCCDcheckCCDParams(DataSet &m_DataSet)
 		cerr << "\nError (ParamsCCD::paramsCCDcheckCCDParams): Cosmic Hit Rate must be >= 0." << endl;
 		exit(1);
 	}
-    
-    
+        
 }
 //==============================================================================
 

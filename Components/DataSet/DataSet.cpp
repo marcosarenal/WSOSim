@@ -194,6 +194,21 @@ void DataSet::datasetReadParameterFile(string parameterFile)
     pElem->FirstChildElement("CosmicSaturation")->GetText(&cosmicsSatFactor);
     pElem->FirstChildElement("CosmicsLength")->GetText(&cosmicsLength);
     pElem->FirstChildElement("CosmicsWidth")->GetText(&cosmicsWidth);
+    
+    
+    pElem = config->FirstChildElement("ExoplanetaryTransitParameters");
+    pElem->FirstChildElement("PerformExoTransit")->GetText(&PerformExoTransit);
+    if (PerformExoTransit)
+    {
+        pElem->FirstChildElement("HostStarTransitRA")->GetText(&HostStarTransitRA);
+        pElem->FirstChildElement("HostStarTransitDec")->GetText(&HostStarTransitDec);
+        pElem->FirstChildElement("HostStarRadius")->GetText(&HostStarRadius);
+        pElem->FirstChildElement("ExoplanetRadius")->GetText(&ExoplanetRadius);
+        pElem->FirstChildElement("ExoplanetOrbitalPeriod")->GetText(&ExoplanetOrbitalPeriod);
+        pElem->FirstChildElement("PlanetaryOrbitSemiaxis")->GetText(&PlanetaryOrbitSemiaxis);
+        pElem->FirstChildElement("PlanetaryOrbitInclination")->GetText(&PlanetaryOrbitInclination);    
+    }
+    
 
     LogManager::log << "    Successfully read parameter file";
     GlobalVariables::logManager.LogManagerShowLog();        
@@ -766,6 +781,35 @@ Array<float, 2> DataSet::datasetGetStarCatalogue()
 //==============================================================================
 
 
+//==============================================================================
+/**
+* This function sets the time where the exoplanet transit takes place in the inTransitArray Blitz array.
+* 
+* @param inTransitArrayCopy inTransitArrayCopy is a Blitz 1-D array with the time where 
+ * the exoplanet transit takes place. These values
+ * are set in the array inTransitArray as in the example:
+ * inTransitArray(initTransit1, endTransit1, initTransit2, endTransit2, ...)
+*/
+void DataSet::datasetSetinTransitArray(Array<float, 1> inTransitArrayCopy)
+{
+
+    inTransitArray.reference(inTransitArrayCopy);
+    this->inTransitArray = inTransitArray;
+}
+//==============================================================================
+//==============================================================================
+/**
+* This function retrieves the time where the exoplanet transit takes place in the inTransitArray Blitz array. 
+* These values
+* are set in the array inTransitArray as in the example:
+* inTransitArray(initTransit1, endTransit1, initTransit2, endTransit2, ...).
+*/
+Array<float, 1> DataSet::datasetGetinTransitArray()
+{
+    //Returning the inTransitArray Array 
+    return inTransitArray;
+}
+//==============================================================================
 
 
 

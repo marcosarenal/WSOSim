@@ -155,6 +155,14 @@ public:
         inline double datasetGetjitterPosAngle() const{ return jitterPosAngle;}                 //Retrieves the position angle [deg] of satellite jitter rotation axis (relative to N).
         inline double datasetGetjitterMultFactor() const{ return jitterMultFactor;}             //Retrieves the multiplication factor of jitter time-series.
         
+        inline bool   datasetGetperformExoTransit() const{ return PerformExoTransit;}           //Retrieves 0 = Do not perform transit simulation of exoplanet, 1 = Do perform transit simulation of exoplanet.
+        inline double datasetGethostStarTransitRA() const{ return HostStarTransitRA;}           //Retrieves the Right Ascension of the transit host star [deg].
+        inline double datasetGethostStarTransitDec() const{ return HostStarTransitDec;}         //Retrieves the Declination of the transit host star [deg].
+        inline double datasetGethostStarRadius() const{ return HostStarRadius;}                 //Radius of the transit host star [Solar radius].
+        inline double datasetGetexoplanetRadius() const{ return ExoplanetRadius;}               //Retrieves the Radius of the exoplanet [Solar radius].
+        inline double datasetGetexoplanetOrbitalPeriod() const{ return ExoplanetOrbitalPeriod;} //Retrieves the Orbital period of the exoplanet [days].
+        inline double datasetGetplanetaryOrbitSemiaxis() const{ return PlanetaryOrbitSemiaxis;} //Retrieves the semiaxis of the orbit of the exoplanet [AU].
+        inline double datasetGetplanetaryOrbitInclination() const{ return PlanetaryOrbitInclination;} //Retrieves the inclination of the orbit of the exoplanet as seen from Earth [deg].
         
         Array<float, 2>  datasetGetPSFMap();                                
         Array<double, 2> datasetGetCTEMap();                               
@@ -171,8 +179,10 @@ public:
         Array<float, 2>  datasetGetsubPixelStarListOnCCD();                  
         Array<string, 1>  datasetGetExposuresNamesArray();        
         Array<float, 2> datasetGetStarCatalogue();                  
+        Array<float, 1> datasetGetinTransitArray();                  
 
-
+        
+        
         
 
         
@@ -202,10 +212,9 @@ public:
         void datasetSetCenterFocalPlane(double xOpticalAxis, double yOpticalAxis);
         void datasetSetExposuresNamesArray(Array<string, 1> exposuresNamesArrayCopy);
         void datasetSetStarCatalogue(Array<float, 2> starCatalogue);
+        void datasetSetinTransitArray(Array<float, 1> inTransitArray);
 
-   
-    
-            
+              
 
         // Static parameters:
 
@@ -313,6 +322,15 @@ private:
         
         bool   writeSubPixelFits;               //Write subpixel map to FITS file (0=no/1=yes).
 
+        bool   PerformExoTransit;               //Perform exoplanetary transit simulation for one source in the field (0=no/1=yes).
+        double HostStarTransitRA;               //Right Ascension of the transit host star [deg] (It must match with a source in the star catalogue).
+        double HostStarTransitDec;              //Declination of the transit host star [deg].
+        double HostStarRadius;                  //Radius of the transit host star [Solar radius].
+        double ExoplanetRadius;                 //Radius of the exoplanet [Solar radius].
+        double ExoplanetOrbitalPeriod;          //Orbital period of the exoplanet [days].
+        double PlanetaryOrbitSemiaxis;          //Semiaxis of the orbit of the exoplanet [AU].
+        double PlanetaryOrbitInclination;       //Inclination of the orbit of the exoplanet as seen from Earth [deg].
+        
         
         
         Array<float, 2>  pixelMap;                      //Blitz 2-D array with the pixel map.
@@ -330,6 +348,7 @@ private:
         Array<float, 2>  subPixelStarListOnCCD;         //Blitz 2-D array with the list of stars on the CCD at subpixel level.
         Array<string, 1> exposuresNamesArray;           //Blitz 2-D array with the list of exposures names.
         Array<float, 2>  starCatalogue;                 //Blitz 2-D array with the star catalogue
+        Array<float, 1>  inTransitArray;                //Blitz 2-D array with the the times where the exoplanet transit takes place.
 };
 
 

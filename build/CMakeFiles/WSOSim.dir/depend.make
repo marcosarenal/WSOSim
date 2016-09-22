@@ -140,6 +140,7 @@ CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../Components/Paramet
 CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../Components/Parameters/ParamsPSF.h
 CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../Components/Parameters/ParamsPhotometry.h
 CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../Components/Parameters/ParamsStarfield.h
+CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../Components/Parameters/ParamsTransit.h
 CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../Components/Parameters/ParamsWUVS.h
 CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../Components/PostProcessing/PostProcessing.h
 CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../Components/PreProcessing/PreProcessingCCD.h
@@ -225,6 +226,7 @@ CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../Components/Parameters/Pa
 CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../Components/Parameters/ParamsPSF.h
 CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../Components/Parameters/ParamsPhotometry.h
 CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../Components/Parameters/ParamsStarfield.h
+CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../Components/Parameters/ParamsTransit.h
 CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../Components/Parameters/ParamsWUVS.h
 CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../Components/PostProcessing/PostProcessing.h
 CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../Components/PreProcessing/PreProcessingCCD.h
@@ -518,6 +520,17 @@ CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o: ../dependency
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o: ../Components/Parameters/ParamsStarfield.cpp
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o: ../Components/Parameters/ParamsStarfield.h
 
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o: ../Components/AuxTools/GlobalVariables.h
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o: ../Components/DataSet/DataSet.h
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o: ../Components/Manager/LogManager.h
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o: ../dependencyInstalls/tinyxml/include/ticpp.h
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o: ../dependencyInstalls/tinyxml/include/ticppapi.h
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o: ../dependencyInstalls/tinyxml/include/ticpprc.h
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o: ../dependencyInstalls/tinyxml/include/tinystr.h
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o: ../dependencyInstalls/tinyxml/include/tinyxml.h
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o: ../Components/Parameters/ParamsTransit.cpp
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o: ../Components/Parameters/ParamsTransit.h
+
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsWUVS.cpp.o: ../Components/AuxTools/Constants.h
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsWUVS.cpp.o: ../Components/AuxTools/GlobalVariables.h
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsWUVS.cpp.o: ../Components/AuxTools/MathTools.h
@@ -587,6 +600,7 @@ CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCCD.cpp.o: ../Compon
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCCD.cpp.o: ../Components/Parameters/ParamsFlatField.h
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCCD.cpp.o: ../Components/Parameters/ParamsJitter.h
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCCD.cpp.o: ../Components/Parameters/ParamsStarfield.h
+CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCCD.cpp.o: ../Components/Parameters/ParamsTransit.h
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCCD.cpp.o: ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCCD.cpp.o: ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
 CMakeFiles/WSOSim.dir/Components/PreProcessing/PreProcessingCCD.cpp.o: ../dependencyInstalls/CCfits/include/CCfits/CCfits

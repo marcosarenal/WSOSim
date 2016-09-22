@@ -36,6 +36,7 @@
 #include "ParamsCTE.h"
 #include "ParamsFlatField.h"
 #include "ParamsJitter.h"
+#include "ParamsTransit.h"
 
 /**
  * The PreprocessingCCD reads all the input files and makes sure that all the CCD
@@ -63,7 +64,8 @@ private:
         
 	string  convolutionMethod;                      //Parameter retrieved from DataSet.
 	string  ccdPredefinedPosition;                  //Parameter retrieved from DataSet.
-	string parameterFile;                           //Parameter retrieved from DataSet.
+	string  parameterFile;                          //Parameter retrieved from DataSet.
+	bool    PerformExoTransit;                      //Parameter retrieved from DataSet.
         
         
 
