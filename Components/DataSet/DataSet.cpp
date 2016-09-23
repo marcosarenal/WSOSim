@@ -197,16 +197,16 @@ void DataSet::datasetReadParameterFile(string parameterFile)
     
     
     pElem = config->FirstChildElement("ExoplanetaryTransitParameters");
-    pElem->FirstChildElement("PerformExoTransit")->GetText(&PerformExoTransit);
-    if (PerformExoTransit)
+    pElem->FirstChildElement("PerformExoTransit")->GetText(&performExoTransit);
+    if (performExoTransit)
     {
-        pElem->FirstChildElement("HostStarTransitRA")->GetText(&HostStarTransitRA);
-        pElem->FirstChildElement("HostStarTransitDec")->GetText(&HostStarTransitDec);
-        pElem->FirstChildElement("HostStarRadius")->GetText(&HostStarRadius);
-        pElem->FirstChildElement("ExoplanetRadius")->GetText(&ExoplanetRadius);
-        pElem->FirstChildElement("ExoplanetOrbitalPeriod")->GetText(&ExoplanetOrbitalPeriod);
-        pElem->FirstChildElement("PlanetaryOrbitSemiaxis")->GetText(&PlanetaryOrbitSemiaxis);
-        pElem->FirstChildElement("PlanetaryOrbitInclination")->GetText(&PlanetaryOrbitInclination);    
+        pElem->FirstChildElement("HostStarTransitRA")->GetText(&hostStarTransitRA);
+        pElem->FirstChildElement("HostStarTransitDec")->GetText(&hostStarTransitDec);
+        pElem->FirstChildElement("HostStarRadius")->GetText(&hostStarRadius);
+        pElem->FirstChildElement("ExoplanetRadius")->GetText(&exoplanetRadius);
+        pElem->FirstChildElement("ExoplanetOrbitalPeriod")->GetText(&exoplanetOrbitalPeriod);
+        pElem->FirstChildElement("PlanetaryOrbitSemiaxis")->GetText(&planetaryOrbitSemiaxis);
+        pElem->FirstChildElement("PlanetaryOrbitInclination")->GetText(&planetaryOrbitInclination);    
     }
     
 

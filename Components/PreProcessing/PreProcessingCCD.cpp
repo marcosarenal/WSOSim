@@ -94,8 +94,8 @@ PreProcessingCCD::PreProcessingCCD(DataSet &m_DataSet)
     m_ParamsFlatField.paramsFlatFieldcreateFFMap(m_DataSet);
 
     //Chech if an exoplanet transit must be simulated
-    PerformExoTransit = p_DataSet->datasetGetperformExoTransit();
-    if (PerformExoTransit)
+    performExoTransit = p_DataSet->datasetGetperformExoTransit();
+    if (performExoTransit)
     {
         //Calculates and sets the Exoplanet transit parameters.
         ParamsTransit m_ParamsTransit;

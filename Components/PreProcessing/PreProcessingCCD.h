@@ -65,7 +65,7 @@ private:
 	string  convolutionMethod;                      //Parameter retrieved from DataSet.
 	string  ccdPredefinedPosition;                  //Parameter retrieved from DataSet.
 	string  parameterFile;                          //Parameter retrieved from DataSet.
-	bool    PerformExoTransit;                      //Parameter retrieved from DataSet.
+	bool    performExoTransit;                      //Parameter retrieved from DataSet.
         
         
 

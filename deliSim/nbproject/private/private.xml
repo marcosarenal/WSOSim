@@ -24,10 +24,11 @@
             <file>file:/Volumes/Projects/WSOSim/Components/Parameters/ParamsTransit.h</file>
             <file>file:/Volumes/Projects/WSOSim/Components/Parameters/ParamsCCD.cpp</file>
             <file>file:/Volumes/Projects/WSOSim/Components/DataSet/DataSet.cpp</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/Processing/ProcessingCCD.h</file>
             <file>file:/Volumes/Projects/WSOSim/Components/PreProcessing/PreProcessingCCD.h</file>
             <file>file:/Volumes/Projects/WSOSim/Components/Parameters/ParamsTransit.cpp</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/AuxTools/Constants.cpp</file>
             <file>file:/Volumes/Projects/WSOSim/Components/DataSet/DataSet.h</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/Parameters/ParamsBackground.cpp</file>
         </group>
     </open-files>
 </project-private>

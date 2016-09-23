@@ -520,6 +520,7 @@ CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o: ../dependency
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o: ../Components/Parameters/ParamsStarfield.cpp
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o: ../Components/Parameters/ParamsStarfield.h
 
+CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o: ../Components/AuxTools/Constants.h
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o: ../Components/AuxTools/GlobalVariables.h
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o: ../Components/DataSet/DataSet.h
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o: ../Components/Manager/LogManager.h

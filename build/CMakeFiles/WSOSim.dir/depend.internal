@@ -521,6 +521,7 @@ CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o
  /hd1/Projects/WSOSim/Components/Parameters/ParamsStarfield.cpp
  /hd1/Projects/WSOSim/Components/Parameters/ParamsStarfield.h
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o
+ ../Components/AuxTools/Constants.h
  ../Components/AuxTools/GlobalVariables.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h

@@ -29,6 +29,7 @@
 
 #include "GlobalVariables.h"
 #include "DataSet.h"
+#include "Constants.h"
 
 
 /**
@@ -53,15 +54,26 @@ private:
 
         Array<float, 1>  inTransitArray;        //Blitz array to be set into the DataSet.        
         
-        bool   PerformExoTransit;               //Perform exoplanetary transit simulation for one source in the field (0=no/1=yes).
-        double HostStarTransitRA;               //Right Ascension of the transit host star [deg] (It must match with a source in the star catalogue).
-        double HostStarTransitDec;              //Declination of the transit host star [deg].
-        double HostStarRadius;                  //Radius of the transit host star [Solar radius].
-        double ExoplanetRadius;                 //Radius of the exoplanet [Solar radius].
-        double ExoplanetOrbitalPeriod;          //Orbital period of the exoplanet [days].
-        double PlanetaryOrbitSemiaxis;          //Semiaxis of the orbit of the exoplanet [AU].
-        double PlanetaryOrbitInclination;       //Inclination of the orbit of the exoplanet as seen from Earth [deg].
+        bool   performExoTransit;               //Perform exoplanetary transit simulation for one source in the field (0=no/1=yes).
+        double hostStarTransitRA;               //Right Ascension of the transit host star [deg] (It must match with a source in the star catalogue).
+        double hostStarTransitDec;              //Declination of the transit host star [deg].
+        double hostStarRadius;                  //Radius of the transit host star [Solar radius].
+        double exoplanetRadius;                 //Radius of the exoplanet [Solar radius].
+        double exoplanetOrbitalPeriod;          //Orbital period of the exoplanet [days].
+        double planetaryOrbitSemiaxis;          //Semiaxis of the orbit of the exoplanet [AU].
+        double planetaryOrbitInclination;       //Inclination of the orbit of the exoplanet as seen from Earth [deg].
 
+        int    numExposures;                   //Parameter retrieved from DataSet.
+        double exposureTime;                   //Parameter retrieved from DataSet.
+        double readOutTime;                    //Parameter retrieved from DataSet.
+        double integrationTime;                //integrationTime = exposureTime + readOutTime.
+        double startTime;                      //Starting time for each exposure to be applied the Jitter
+        double totalSimulationDuration;        //Duration of the whole simulation [in seconds]
+        double orbitalPeriodInSeconds;         //Orbital period [in seconds]
+        int    numberOfTransits;               //Number of transits in the whole simulation.
+        double impactParameter;                //impact parameter is the sky-projected distance between the centre of the stellar disc and the centre of the planetary disc at conjunction
+        double transitDuration;                //Transit duration [s]
+        double planetaryOrbitSemiaxisInSolarRadius;                //planetary Orbit Semiaxis In Solar Radius units
 
 };
 

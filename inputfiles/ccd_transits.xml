@@ -46,7 +46,7 @@
           <ObservingParameters>
               <!--Exposure time [s]-->
               <ExposureTime>
-                  22
+                  2200000
               </ExposureTime>
               <!--Total number of exposures-->
               <NumExposures>
@@ -318,7 +318,7 @@
           <ExoplanetaryTransitParameters>
               <!--Perform exoplanetary transit simulation for one source in the field (0=no/1=yes)-->
               <PerformExoTransit>
-                  0
+                  1
               </PerformExoTransit>
               <!--Right Ascension of the transit host star [deg] (It must match with a source in the star catalogue)-->
               <HostStarTransitRA>
@@ -330,23 +330,23 @@
               </HostStarTransitDec>
               <!--Radius of the transit host star [Solar radius]-->
               <HostStarRadius>
-                  70
+                  10
               </HostStarRadius>
               <!--Radius of the exoplanet [Solar radius]-->
               <ExoplanetRadius>
-                  70
+                  0.3
               </ExoplanetRadius>
               <!--Orbital period of the exoplanet [days]-->
               <ExoplanetOrbitalPeriod>
-                  70
+                  7
               </ExoplanetOrbitalPeriod>
               <!--Semiaxis of the orbit of the exoplanet [AU]-->
               <PlanetaryOrbitSemiaxis>
-                  70
+                  7.1
               </PlanetaryOrbitSemiaxis>
               <!--Inclination of the orbit of the exoplanet as seen from Earth [deg]-->
               <PlanetaryOrbitInclination>
-                  70
+                  89.8
               </PlanetaryOrbitInclination>
           </ExoplanetaryTransitParameters>    
       </Config>
