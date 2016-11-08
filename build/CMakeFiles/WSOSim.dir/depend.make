@@ -167,6 +167,7 @@ CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../Components/Process
 CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../Components/ProcessingSteps/StepReadOutNoise.h
 CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../Components/ProcessingSteps/StepRebin.h
 CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../Components/ProcessingSteps/StepSaturation.h
+CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../Components/ProcessingSteps/StepTransit.h
 CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
 CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
 CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o: ../dependencyInstalls/CCfits/include/CCfits/CCfits
@@ -253,6 +254,7 @@ CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../Components/ProcessingSte
 CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../Components/ProcessingSteps/StepReadOutNoise.h
 CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../Components/ProcessingSteps/StepRebin.h
 CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../Components/ProcessingSteps/StepSaturation.h
+CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../Components/ProcessingSteps/StepTransit.h
 CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
 CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
 CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o: ../dependencyInstalls/CCfits/include/CCfits/CCfits
@@ -853,6 +855,7 @@ CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCCD.cpp.o: ../Components/P
 CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCCD.cpp.o: ../Components/ProcessingSteps/StepReadOutNoise.h
 CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCCD.cpp.o: ../Components/ProcessingSteps/StepRebin.h
 CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCCD.cpp.o: ../Components/ProcessingSteps/StepSaturation.h
+CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCCD.cpp.o: ../Components/ProcessingSteps/StepTransit.h
 CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCCD.cpp.o: ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
 CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCCD.cpp.o: ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
 CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCCD.cpp.o: ../dependencyInstalls/CCfits/include/CCfits/CCfits
@@ -1492,4 +1495,15 @@ CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepSaturation.cpp.o: ../depend
 CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepSaturation.cpp.o: ../dependencyInstalls/tinyxml/include/tinyxml.h
 CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepSaturation.cpp.o: ../Components/ProcessingSteps/StepSaturation.cpp
 CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepSaturation.cpp.o: ../Components/ProcessingSteps/StepSaturation.h
+
+CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepTransit.cpp.o: ../Components/AuxTools/GlobalVariables.h
+CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepTransit.cpp.o: ../Components/DataSet/DataSet.h
+CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepTransit.cpp.o: ../Components/Manager/LogManager.h
+CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepTransit.cpp.o: ../dependencyInstalls/tinyxml/include/ticpp.h
+CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepTransit.cpp.o: ../dependencyInstalls/tinyxml/include/ticppapi.h
+CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepTransit.cpp.o: ../dependencyInstalls/tinyxml/include/ticpprc.h
+CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepTransit.cpp.o: ../dependencyInstalls/tinyxml/include/tinystr.h
+CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepTransit.cpp.o: ../dependencyInstalls/tinyxml/include/tinyxml.h
+CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepTransit.cpp.o: ../Components/ProcessingSteps/StepTransit.cpp
+CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepTransit.cpp.o: ../Components/ProcessingSteps/StepTransit.h
 

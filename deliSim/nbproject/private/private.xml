@@ -18,17 +18,6 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/Volumes/Projects/WSOSim/Components/Processing/ProcessingCCD.cpp</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/PreProcessing/PreProcessingCCD.cpp</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/Parameters/ParamsTransit.h</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/Parameters/ParamsCCD.cpp</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/DataSet/DataSet.cpp</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/Processing/ProcessingCCD.h</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/PreProcessing/PreProcessingCCD.h</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/Parameters/ParamsTransit.cpp</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/AuxTools/Constants.cpp</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/DataSet/DataSet.h</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

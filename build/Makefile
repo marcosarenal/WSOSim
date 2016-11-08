@@ -1239,6 +1239,30 @@ Components/ProcessingSteps/StepSaturation.cpp.s:
 	$(MAKE) -f CMakeFiles/WSOSim.dir/build.make CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepSaturation.cpp.s
 .PHONY : Components/ProcessingSteps/StepSaturation.cpp.s
 
+Components/ProcessingSteps/StepTransit.o: Components/ProcessingSteps/StepTransit.cpp.o
+.PHONY : Components/ProcessingSteps/StepTransit.o
+
+# target to build an object file
+Components/ProcessingSteps/StepTransit.cpp.o:
+	$(MAKE) -f CMakeFiles/WSOSim.dir/build.make CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepTransit.cpp.o
+.PHONY : Components/ProcessingSteps/StepTransit.cpp.o
+
+Components/ProcessingSteps/StepTransit.i: Components/ProcessingSteps/StepTransit.cpp.i
+.PHONY : Components/ProcessingSteps/StepTransit.i
+
+# target to preprocess a source file
+Components/ProcessingSteps/StepTransit.cpp.i:
+	$(MAKE) -f CMakeFiles/WSOSim.dir/build.make CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepTransit.cpp.i
+.PHONY : Components/ProcessingSteps/StepTransit.cpp.i
+
+Components/ProcessingSteps/StepTransit.s: Components/ProcessingSteps/StepTransit.cpp.s
+.PHONY : Components/ProcessingSteps/StepTransit.s
+
+# target to generate assembly for a file
+Components/ProcessingSteps/StepTransit.cpp.s:
+	$(MAKE) -f CMakeFiles/WSOSim.dir/build.make CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepTransit.cpp.s
+.PHONY : Components/ProcessingSteps/StepTransit.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1389,6 +1413,9 @@ help:
 	@echo "... Components/ProcessingSteps/StepSaturation.o"
 	@echo "... Components/ProcessingSteps/StepSaturation.i"
 	@echo "... Components/ProcessingSteps/StepSaturation.s"
+	@echo "... Components/ProcessingSteps/StepTransit.o"
+	@echo "... Components/ProcessingSteps/StepTransit.i"
+	@echo "... Components/ProcessingSteps/StepTransit.s"
 .PHONY : help
 
 

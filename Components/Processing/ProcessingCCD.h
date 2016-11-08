@@ -39,6 +39,7 @@
 #include "StepCosmics.h"
 #include "StepElectronicOffset.h"
 #include "StepGain.h"
+#include "StepTransit.h"
 #include "StepJitter.h"
 #include "StepConvolvePSF.h"
 #include "StepPhotonNoise.h"
@@ -70,6 +71,7 @@ private:
     StepFlatField m_StepFlatField;                  //Declaration of the StepFlatField method.
     StepRebin m_StepRebin;                          //Declaration of the StepRebin method.
     StepGain m_StepGain;                            //Declaration of the StepGain method.
+    StepTransit m_StepTransit;                      //Declaration of the StepJitter method.
     StepJitter m_StepJitter;                        //Declaration of the StepJitter method.
     StepPhotonNoise m_StepPhotonNoise;              //Declaration of the StepPhotonNoise method.
     StepConvolvePSF m_StepConvolvePSF;              //Declaration of the StepConvolvePSF method.

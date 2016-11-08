@@ -46,7 +46,7 @@
           <ObservingParameters>
               <!--Exposure time [s]-->
               <ExposureTime>
-                  2200000
+                  220
               </ExposureTime>
               <!--Total number of exposures-->
               <NumExposures>
@@ -318,7 +318,7 @@
           <ExoplanetaryTransitParameters>
               <!--Perform exoplanetary transit simulation for one source in the field (0=no/1=yes)-->
               <PerformExoTransit>
-                  1
+                  0
               </PerformExoTransit>
               <!--Right Ascension of the transit host star [deg] (It must match with a source in the star catalogue)-->
               <HostStarTransitRA>

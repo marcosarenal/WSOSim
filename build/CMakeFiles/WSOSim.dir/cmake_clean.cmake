@@ -5,6 +5,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepBackground.cpp.o"
   "CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepChargeTransferSmearing.cpp.o"
   "CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepCTE.cpp.o"
+  "CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepTransit.cpp.o"
   "CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepFlatField.cpp.o"
   "CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepReadOutNoise.cpp.o"
   "CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepCosmics.cpp.o"

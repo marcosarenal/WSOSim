@@ -141,7 +141,6 @@ void ParamsTransit::ParamsTransitcheckInputParameters(DataSet &m_DataSet)
             //Calculation of the impact parameter to check whether there will be a transit or not
             if ( (planetaryOrbitSemiaxis / ( 0.00465047 * hostStarRadius ) ) * std::cos(planetaryOrbitInclination * Constants::Pi / 180) > 1 )
             {
-                cout<<"_________________________" << (planetaryOrbitSemiaxis / ( 0.00465047 * hostStarRadius ) ) * std::cos(planetaryOrbitInclination * Constants::Pi / 180)<<endl;
 		cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Under these conditions there will not be an observable transit. Please modify them (an orbit inclination closer to 90 deg would help)." << endl;
 		exit(1);
             }
@@ -181,11 +180,7 @@ void ParamsTransit::ParamsTransitcalculation(DataSet &m_DataSet)
     
     //Calculate the number of trasits in that amount of time
     numberOfTransits = (int)floor(totalSimulationDuration / orbitalPeriodInSeconds);
-    
-    cout<<"_________ ParamsTransit::ParamsTransitcalculation __________"<< numberOfTransits <<endl;
-    
-    //Check whether there will be at least one transit during the simulation duration    
-    
+            
     //Resize the transit array to twicw the number of transits in the whole simulation
     //in order to allocate beginning and end time of each of them
     inTransitArray.resize(2 * numberOfTransits);
@@ -222,27 +217,15 @@ void ParamsTransit::ParamsTransitcalculation(DataSet &m_DataSet)
         //For the following transits:
         for (int iterTransit = 1; iterTransit < numberOfTransits; iterTransit++)
         {
-            cout<<"______ iterTransit _____"<< iterTransit <<endl;
-            cout<<"______ inTransitArray(0) _____"<< inTransitArray(0) <<endl;
-            cout<<"______ inTransitArray(1) _____"<< inTransitArray(1) <<endl;
-            cout<<"______ orbitalPeriodInSeconds _____"<< orbitalPeriodInSeconds <<endl;
+            
+            //Set the beginning of each transit as the beginning of the 1st transit times the orbital period (even positions in the inTransitArray)
             inTransitArray(2*iterTransit) = inTransitArray(0) + iterTransit * orbitalPeriodInSeconds;
+            //Set the end of each transit as the end of the 1st transit times the orbital period (odd positions in the inTransitArray)
             inTransitArray(2*iterTransit + 1) = inTransitArray(1) + iterTransit * orbitalPeriodInSeconds;
-                        
-            
-            cout<<"______ inTransitArray(2*iterTransit) _____"<< inTransitArray(2*iterTransit) <<endl;
-            cout<<"______ inTransitArray(2*iterTransit+1) _____"<< inTransitArray(2*iterTransit+1) <<endl;
-
-            
+      
         }
     }
-    
-    cout<<"_________ ParamsTransit::ParamsTransitcalculation _____ transitDuration _____"<< transitDuration <<endl;
-    cout<<"_________ ParamsTransit::ParamsTransitcalculation _____orbitalPeriodInSeconds_____"<< orbitalPeriodInSeconds <<endl;
-    cout<<"_________ ParamsTransit::ParamsTransitcalculation _____inTransitArray(0)_____"<< inTransitArray(0) <<endl;
-    cout<<"_________ ParamsTransit::ParamsTransitcalculation __inTransitArray________"<< inTransitArray <<endl;
-
-   
+     
   
 }
 //==============================================================================

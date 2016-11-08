@@ -85,6 +85,8 @@
         <in>StepReadOutNoise.cpp</in>
         <in>StepRebin.cpp</in>
         <in>StepSaturation.cpp</in>
+        <in>StepTransit.cpp</in>
+        <in>StepTransit.h</in>
       </df>
     </df>
     <logicalFolder name="Modules"
@@ -101,6 +103,7 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>../CMakeLists.txt</itemPath>
       <itemPath>../build/Makefile</itemPath>
+      <itemPath>../inputfiles/ccd_transits.xml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
@@ -458,6 +461,16 @@
         <ccTool flags="0">
         </ccTool>
       </item>
+      <item path="../Components/ProcessingSteps/StepTransit.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../Components/ProcessingSteps/StepTransit.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="../build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c"
             ex="true"
             tool="0"
@@ -580,6 +593,16 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="../Components/ProcessingSteps/StepTransit.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../Components/ProcessingSteps/StepTransit.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="../build/CMakeFiles/cmake_mpi_test.c"
             ex="false"
             tool="0"
@@ -627,6 +650,16 @@
             flavor2="0">
       </item>
       <item path="../Components/Parameters/ParamsTransit.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../Components/ProcessingSteps/StepTransit.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../Components/ProcessingSteps/StepTransit.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -726,6 +759,16 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="../Components/ProcessingSteps/StepTransit.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../Components/ProcessingSteps/StepTransit.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="../build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c"
             ex="true"
             tool="0"
@@ -817,6 +860,16 @@
             flavor2="0">
       </item>
       <item path="../Components/Parameters/ParamsTransit.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../Components/ProcessingSteps/StepTransit.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../Components/ProcessingSteps/StepTransit.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -1224,6 +1277,16 @@
             flavor2="4">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="../Components/ProcessingSteps/StepTransit.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../Components/ProcessingSteps/StepTransit.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="../build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c"
             ex="true"
@@ -1670,6 +1733,16 @@
             flavor2="4">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="../Components/ProcessingSteps/StepTransit.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../Components/ProcessingSteps/StepTransit.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="../build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c"
             ex="true"

@@ -111,6 +111,16 @@ void ProcessingCCD::processingCCDPipeline(DataSet &m_DataSet)
         //Set the null values for pixelMap and subPixelMap at the Dataset
         m_DataSet.datasetSetpixelMap(pixelMap);
         m_DataSet.datasetSetsubPixelMap(subPixelMap);
+        
+        
+        //EXOPLANETS TRANSITS
+        //Check if there TRANSITS must be used
+        if (m_DataSet.datasetGetperformExoTransit())
+        {    
+            m_StepTransit.StepTransitapplication(m_DataSet, startTime);
+
+        }
+       
             
         //JITTER
         //Check if there JITTER must be used

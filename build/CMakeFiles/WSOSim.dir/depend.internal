@@ -168,6 +168,7 @@ CMakeFiles/WSOSim.dir/Components/Manager/Controller.cpp.o
  ../Components/ProcessingSteps/StepReadOutNoise.h
  ../Components/ProcessingSteps/StepRebin.h
  ../Components/ProcessingSteps/StepSaturation.h
+ ../Components/ProcessingSteps/StepTransit.h
  ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
  ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
  ../dependencyInstalls/CCfits/include/CCfits/CCfits
@@ -254,6 +255,7 @@ CMakeFiles/WSOSim.dir/Components/Manager/main.cpp.o
  ../Components/ProcessingSteps/StepReadOutNoise.h
  ../Components/ProcessingSteps/StepRebin.h
  ../Components/ProcessingSteps/StepSaturation.h
+ ../Components/ProcessingSteps/StepTransit.h
  ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
  ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
  ../dependencyInstalls/CCfits/include/CCfits/CCfits
@@ -854,6 +856,7 @@ CMakeFiles/WSOSim.dir/Components/Processing/ProcessingCCD.cpp.o
  ../Components/ProcessingSteps/StepReadOutNoise.h
  ../Components/ProcessingSteps/StepRebin.h
  ../Components/ProcessingSteps/StepSaturation.h
+ ../Components/ProcessingSteps/StepTransit.h
  ../dependencyInstalls/CCfits/include/CCfits/AsciiTable.h
  ../dependencyInstalls/CCfits/include/CCfits/BinTable.h
  ../dependencyInstalls/CCfits/include/CCfits/CCfits
@@ -1493,3 +1496,14 @@ CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepSaturation.cpp.o
  ../dependencyInstalls/tinyxml/include/tinyxml.h
  /hd1/Projects/WSOSim/Components/ProcessingSteps/StepSaturation.cpp
  /hd1/Projects/WSOSim/Components/ProcessingSteps/StepSaturation.h
+CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepTransit.cpp.o
+ ../Components/AuxTools/GlobalVariables.h
+ ../Components/DataSet/DataSet.h
+ ../Components/Manager/LogManager.h
+ ../dependencyInstalls/tinyxml/include/ticpp.h
+ ../dependencyInstalls/tinyxml/include/ticppapi.h
+ ../dependencyInstalls/tinyxml/include/ticpprc.h
+ ../dependencyInstalls/tinyxml/include/tinystr.h
+ ../dependencyInstalls/tinyxml/include/tinyxml.h
+ /hd1/Projects/WSOSim/Components/ProcessingSteps/StepTransit.cpp
+ /hd1/Projects/WSOSim/Components/ProcessingSteps/StepTransit.h

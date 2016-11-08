@@ -112,6 +112,8 @@
         <in>StepRebin.h</in>
         <in>StepSaturation.cpp</in>
         <in>StepSaturation.h</in>
+        <in>StepTransit.cpp</in>
+        <in>StepTransit.h</in>
       </df>
     </df>
   </logicalFolder>

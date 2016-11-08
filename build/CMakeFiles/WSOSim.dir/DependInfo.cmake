@@ -51,6 +51,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/hd1/Projects/WSOSim/Components/ProcessingSteps/StepReadOutNoise.cpp" "/hd1/Projects/WSOSim/build/CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepReadOutNoise.cpp.o"
   "/hd1/Projects/WSOSim/Components/ProcessingSteps/StepRebin.cpp" "/hd1/Projects/WSOSim/build/CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepRebin.cpp.o"
   "/hd1/Projects/WSOSim/Components/ProcessingSteps/StepSaturation.cpp" "/hd1/Projects/WSOSim/build/CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepSaturation.cpp.o"
+  "/hd1/Projects/WSOSim/Components/ProcessingSteps/StepTransit.cpp" "/hd1/Projects/WSOSim/build/CMakeFiles/WSOSim.dir/Components/ProcessingSteps/StepTransit.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
