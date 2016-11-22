@@ -1396,8 +1396,10 @@
       </toolsSet>
       <flagsDictionary>
         <element flagsID="0" commonFlags="-O3"/>
+        <element flagsID="1" commonFlags="-std=c++14"/>
       </flagsDictionary>
       <codeAssistance>
+        <buildAnalyzer>false</buildAnalyzer>
       </codeAssistance>
       <makefileType>
         <makeTool>
@@ -1406,10 +1408,29 @@
           <cleanCommand>rm -rf build/*</cleanCommand>
           <executablePath>../build</executablePath>
           <cTool>
-            <incDir>
-              <pElem>../build/CMakeFiles/CMakeFiles/CMakeTmp</pElem>
-            </incDir>
+            <standard>10</standard>
           </cTool>
+          <ccTool>
+            <standard>8</standard>
+            <incDir>
+              <pElem>..</pElem>
+              <pElem>../Components</pElem>
+              <pElem>../dependencyInstalls/CCfits/include</pElem>
+              <pElem>../dependencyInstalls/cfitsio/include</pElem>
+              <pElem>../dependencyInstalls/cfitsio/include/CCfits</pElem>
+              <pElem>../dependencyInstalls/fftw-3.3.3/include</pElem>
+              <pElem>../dependencyInstalls/tinyxml/include</pElem>
+              <pElem>../Components/ProcessingSteps</pElem>
+              <pElem>../Components/PostProcessing</pElem>
+              <pElem>../Components/AuxTools</pElem>
+              <pElem>../Components/DataSet</pElem>
+              <pElem>../Components/Parameters</pElem>
+              <pElem>../Components/Processing</pElem>
+              <pElem>../Components/Manager</pElem>
+              <pElem>../Components/PreProcessing</pElem>
+              <pElem>../build</pElem>
+            </incDir>
+          </ccTool>
         </makeTool>
         <preBuild>
           <preBuildCommandWorkingDir>../build</preBuildCommandWorkingDir>
@@ -1737,12 +1758,9 @@
       <item path="../Components/ProcessingSteps/StepTransit.cpp"
             ex="false"
             tool="1"
-            flavor2="0">
-      </item>
-      <item path="../Components/ProcessingSteps/StepTransit.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+            flavor2="11">
+        <ccTool flags="1">
+        </ccTool>
       </item>
       <item path="../build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c"
             ex="true"
@@ -1755,12 +1773,12 @@
             flavor2="4">
       </item>
       <item path="../build/CMakeFiles/cmake_mpi_test.c"
-            ex="false"
+            ex="true"
             tool="0"
             flavor2="9">
       </item>
       <item path="../build/CMakeFiles/cmake_mpi_test.cpp"
-            ex="false"
+            ex="true"
             tool="1"
             flavor2="9">
       </item>
@@ -1774,26 +1792,6 @@
             tool="1"
             flavor2="4">
       </item>
-      <folder path="0">
-        <ccTool>
-          <incDir>
-            <pElem>../dependencyInstalls/CCfits/include</pElem>
-            <pElem>../dependencyInstalls/cfitsio/include</pElem>
-            <pElem>../dependencyInstalls/cfitsio/include/CCfits</pElem>
-            <pElem>../dependencyInstalls/fftw-3.3.3/include</pElem>
-            <pElem>../dependencyInstalls/tinyxml/include</pElem>
-            <pElem>../Components/ProcessingSteps</pElem>
-            <pElem>../Components/PostProcessing</pElem>
-            <pElem>../Components/AuxTools</pElem>
-            <pElem>../Components/DataSet</pElem>
-            <pElem>../Components/Parameters</pElem>
-            <pElem>../Components/Processing</pElem>
-            <pElem>../Components/Manager</pElem>
-            <pElem>../Components/PreProcessing</pElem>
-            <pElem>../build</pElem>
-          </incDir>
-        </ccTool>
-      </folder>
       <folder path="2.8.12.2">
         <cTool>
           <incDir>

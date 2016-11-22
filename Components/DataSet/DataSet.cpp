@@ -816,6 +816,41 @@ Array<float, 1> DataSet::datasetGetinTransitArray()
 
 //==============================================================================
 /**
+* This function sets the transit host star magnitude parameter.
+* 
+* @param hostStarMagnitude transit host star magnitude
+*/
+void DataSet::datasetSethostStarMagnitude(double hostStarMagnitude)
+{
+    this->hostStarMagnitude = hostStarMagnitude;
+
+}
+//==============================================================================
+
+
+
+
+
+//==============================================================================
+/**
+* This function sets the transit host star ID position parameter.
+* 
+* @param hostStarID transit host star position
+*/
+void DataSet::datasetSethostStarID(double hostStarID)
+{
+    this->hostStarID = hostStarID;
+
+}
+//==============================================================================
+
+
+
+
+
+
+//==============================================================================
+/**
 * Constructor method
 */
 DataSetPhotometry::DataSetPhotometry(){}

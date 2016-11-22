@@ -26,7 +26,7 @@
 #define STEPTRANSIT_H
 
 #include "DataSet.h"
-
+#include <math.h>
 
 
 /**
@@ -52,10 +52,16 @@ private:
         double hostStarTransitDec;              //Declination of the transit host star [deg].
         double hostStarRadius;                  //Radius of the transit host star [Solar radius].
         double exoplanetRadius;                 //Radius of the exoplanet [Solar radius].
-
-                
+        double hostStarMagnitude;               //Magnitude of the transit host star
+        int    hostStarID;                      //Position of the transit host star on the Star Catalogue         
+        double transitMagnitude;                //Magnitude of the transit host star DURING the transit
+        double transitFlux;                     //Flux of the transit host star DURING the transit
+        double exoplanetOrbitalPeriod;          //Orbital period of the exoplanet [days].
+        double orbitalPeriodInSeconds;          //Orbital period [in seconds]
+        
         Array<float, 1>  inTransitArray;        //Blitz array to be set into the DataSet.        
-        Array<float, 2>  subPixelMap;              //Map array retrieved from DataSet.
+        Array<float, 2>  subPixelMap;           //Map array retrieved from DataSet.
+        Array<float, 2>  starCatalogue;          //Blitz map set into the DataSet.
 
 };
 

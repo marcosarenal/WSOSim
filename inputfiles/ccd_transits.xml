@@ -208,7 +208,7 @@
               </UseJitterFromFile>
               <!--Time interval in between jitter positions [in seconds]. This time interval must be shorter than the exposition time-->
               <JitterInterval>
-                  9
+                  1
               </JitterInterval>
               <!--Jitter rms [in arcsecs]-->
               <JitterRms>
@@ -216,7 +216,7 @@
               </JitterRms>
               <!--Jitter drift [in arcsecs/min]-->
               <JitterDrift>
-                  0.00099
+                  0.00001
               </JitterDrift>
               <!--Jitter repointing time [in hours]. Time for the shuttle to point back to the initial position (center of the FoV). -->
               <JitterRepointing>
@@ -242,11 +242,11 @@
           <PSFParameters>
               <!--Use analytical Gaussian PSF (0=no/1=yes)-->
               <UseGauss>
-                  0
+                  1
               </UseGauss>
               <!--Width of Gaussian PSF (only applicable if no PSF file is read in) [pixels]-->
               <PSFGaussFWHM>
-                  4
+                  1
               </PSFGaussFWHM>
               <!--File with normalised PSF -->
               <PSFFileName>
@@ -322,11 +322,11 @@
               </PerformExoTransit>
               <!--Right Ascension of the transit host star [deg] (It must match with a source in the star catalogue)-->
               <HostStarTransitRA>
-                  180
+                  179.0234789
               </HostStarTransitRA>
               <!--Declination of the transit host star [deg] (It must match with a source in the star catalogue)-->
               <HostStarTransitDec>
-                  -70
+                  -70.908371
               </HostStarTransitDec>
               <!--Radius of the transit host star [Solar radius]-->
               <HostStarRadius>

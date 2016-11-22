@@ -423,8 +423,8 @@ void ParamsPSF::paramsPSFreadFromFile()
     
     if (floor(double(psfNumPixels) / double(psfSubPixels)) != ceil(double(psfNumPixels) / double(psfSubPixels)))
     {
-        cerr << "\nError (ParamsPSF::paramsPSFreadFromFile()): Size of PSF (" << psfNumPixels << "=Number of Rows) must be "
-                        " an integer factor of the number of sub-pixels ("<< psfSubPixels << ")." << endl;
+        std::cerr << "\nError (ParamsPSF::paramsPSFreadFromFile()): Size of PSF (" << psfNumPixels << "=Number of Rows) must be "
+                        " an integer factor of the number of sub-pixels ("<< psfSubPixels << ")." << std::endl;
         cerr << "\nModify the parameters NumPixels and SubPixels of PSFParameters accordingly." << endl;
         exit(1);
     }

@@ -69,12 +69,18 @@ void ParamsTransit::ParamsTransitsetting(DataSet &m_DataSet)
     ParamsTransit::ParamsTransitcheckInputParameters(m_DataSet);
 
     //Calculate the beginning and end of each transit during the whole simulation time. 
-    ParamsTransit::ParamsTransitcalculation(m_DataSet);
+    ParamsTransit::ParamsTransittimeCalculation(m_DataSet);
+        
+
+    //Search for the transit host star in the star Catalogue
+    ParamsTransit::ParamsTransitsearchHostStarOnCatalogue(m_DataSet);
+    
+    //Calculate the Flux of the transit host star 
+    //ParamsTransit::ParamsTransitfluxCalculation(m_DataSet);
     
     //Setting the inTransitArray  (in s) calculated in the DataSet 
     p_DataSet->datasetSetinTransitArray(inTransitArray); 
-//    //Set the calculated inTransitArray in the DataSet
-//    m_DataSet.datasetSetinTransitArray(inTransitArray);	
+        
 
 }
 //==============================================================================
@@ -160,7 +166,7 @@ void ParamsTransit::ParamsTransitcheckInputParameters(DataSet &m_DataSet)
  * inTransitArray(initTransit1, endTransit1, initTransit2, endTransit2, ...).
  * The beguinning of the transit starts in a random time.
  */
-void ParamsTransit::ParamsTransitcalculation(DataSet &m_DataSet)
+void ParamsTransit::ParamsTransittimeCalculation(DataSet &m_DataSet)
 {
     //Pointing to the DataSet
     p_DataSet = &m_DataSet;
@@ -190,14 +196,15 @@ void ParamsTransit::ParamsTransitcalculation(DataSet &m_DataSet)
     {
         inTransitArray.resize(2);        
     }
-    
-
+   
     //Seed the random generator
     std::srand(DataSet::seedRNG++);
         
     //Set the beginning of the 1st transit in a random time < orbital period
     inTransitArray(0) = ( std::rand() / (double)RAND_MAX) * orbitalPeriodInSeconds;
 
+    
+    
     //Calculate the transit duration as in https://www.paulanthonywilson.com/exoplanets/exoplanet-detection-techniques/the-exoplanet-transit-method/
     
     //Calculate planetaryOrbitSemiaxis in Solar radius units (1 solar radius = 0.00465047 AU)
@@ -217,7 +224,6 @@ void ParamsTransit::ParamsTransitcalculation(DataSet &m_DataSet)
         //For the following transits:
         for (int iterTransit = 1; iterTransit < numberOfTransits; iterTransit++)
         {
-            
             //Set the beginning of each transit as the beginning of the 1st transit times the orbital period (even positions in the inTransitArray)
             inTransitArray(2*iterTransit) = inTransitArray(0) + iterTransit * orbitalPeriodInSeconds;
             //Set the end of each transit as the end of the 1st transit times the orbital period (odd positions in the inTransitArray)
@@ -228,4 +234,76 @@ void ParamsTransit::ParamsTransitcalculation(DataSet &m_DataSet)
      
   
 }
+
+//==============================================================================
+
+//==============================================================================
+/**
+ * This method searchs for the transit host star on the Star Catalogue based on 
+ * the hostStarTransitRA and hostStarTransitDec parameters.
+ * The method retrieves the position of the host star on the Star Catalogue and 
+ * the magnitude that is provided there.
+ * The hostStarTransitRA and hostStarTransitDec parameters must match with the 
+ * Right Ascension and Declination on the Star Catalogue up 0.00001 degrees.
+ */
+void ParamsTransit::ParamsTransitsearchHostStarOnCatalogue(DataSet &m_DataSet)
+{
+    //Pointing to the DataSet
+    p_DataSet = &m_DataSet;
+    
+    //Retrieve parameters from the DataSet
+
+    // Retrieving the starCatalogue: contains for each star, its X and Y position in CCD, magnitude, RA,
+    // declination and identification number.
+    starCatalogue.resize(p_DataSet->datasetGetStarCatalogue().extent(0),p_DataSet->datasetGetStarCatalogue().extent(1));
+    starCatalogue = 0.0;
+    starCatalogue = p_DataSet->datasetGetStarCatalogue();
+
+
+    //Determine the number of sources on the Star Catalogue
+    int NumStars = starCatalogue.rows();
+        
+    //Initialize parameter to check if the host star is found on the Star Catalogue
+    bool transitHostStarMatch = false;
+    
+    //Iterate in the whole Star Catalogue
+    for (int starIterator = 0; starIterator < NumStars; starIterator++)
+    {
+           
+        //Check whether is a match of the hostStarTransitRA and hostStarTransitDec on the Star Catalogue and has not been found yet
+        if (!transitHostStarMatch && fabs(starCatalogue(starIterator, 1) - hostStarTransitRA) < 0.00001 && fabs(starCatalogue(starIterator, 2) - hostStarTransitDec < 0.00001))
+        {
+            //Indicate that the Host Star has been found on the Star Catalogue
+            transitHostStarMatch = true;
+            
+            //REMINDER:
+            //starCatalogue(starIterator, 0) = id(starIterator);
+            //starCatalogue(starIterator, 1) = ra(starIterator);
+            //starCatalogue(starIterator, 2) = dec(starIterator);
+            //starCatalogue(starIterator, 3) = magn(starIterator);       
+            
+            
+            //Set the ID position of the host source on the Star Catalogue on the DataSet
+            hostStarID = starCatalogue(starIterator, 0);
+            p_DataSet->datasetSethostStarID(hostStarID);
+
+            //Set the magnitude of the host source on the DataSet
+            hostStarMagnitude = starCatalogue(starIterator, 3);
+            p_DataSet->datasetSethostStarMagnitude(hostStarMagnitude);
+        
+
+        }      
+    }       
+ 
+    //If there has NOT been any source in the Star Catalogue that matches with the Right Ascension and Declination of the transit planet 
+    if (transitHostStarMatch == false) 
+    {
+
+        cerr << "\nError (ParamsTransit::ParamsTransitsearchHostStarOnCatalogue): Please, check that the Right Ascension and Declination of the transit planet corresponds with a source in the Star Catalogue with better accuracy than 0.00001 degrees." << endl;
+        exit(1);
+    }
+            
+            
+}
+
 //==============================================================================

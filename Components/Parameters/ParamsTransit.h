@@ -30,7 +30,8 @@
 #include "GlobalVariables.h"
 #include "DataSet.h"
 #include "Constants.h"
-
+#include "MathTools.h"
+#include <math.h>
 
 /**
  * This class computes and sets the time where the exoplanet transit takes place. These values
@@ -44,15 +45,18 @@ class ParamsTransit
 public:
 	ParamsTransit();
 	virtual ~ParamsTransit();
-        void ParamsTransitcalculation(DataSet &m_DataSet);
+        void ParamsTransittimeCalculation(DataSet &m_DataSet);
         void ParamsTransitsetting(DataSet &m_DataSet);
         void ParamsTransitcheckInputParameters(DataSet &m_DataSet);
-
+        void ParamsTransitsearchHostStarOnCatalogue(DataSet &m_DataSet);
+        
 private:
     
         DataSet*        p_DataSet;              //Pointer to the DataSet to retrieve parameters from it.
 
         Array<float, 1>  inTransitArray;        //Blitz array to be set into the DataSet.        
+        Array<float, 2> starCatalogue;          //Blitz map set into the DataSet.
+
         
         bool   performExoTransit;               //Perform exoplanetary transit simulation for one source in the field (0=no/1=yes).
         double hostStarTransitRA;               //Right Ascension of the transit host star [deg] (It must match with a source in the star catalogue).
@@ -74,7 +78,9 @@ private:
         double impactParameter;                //impact parameter is the sky-projected distance between the centre of the stellar disc and the centre of the planetary disc at conjunction
         double transitDuration;                //Transit duration [s]
         double planetaryOrbitSemiaxisInSolarRadius;                //planetary Orbit Semiaxis In Solar Radius units
-
+        int    hostStarID;                     //ID position of the host source on the Star Catalogue
+        double hostStarMagnitude;              //Magnitude of the host source on the Star Catalogue
+        
 };
 
 

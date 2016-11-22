@@ -341,7 +341,7 @@ void ParamsStarfield::ParamsStarfieldCoords(DataSet &m_DataSet)
         starCatalogue(i, 1) = ra(i);
         starCatalogue(i, 2) = dec(i);
         starCatalogue(i, 3) = magn(i);
-
+                
     }
         
 
@@ -376,7 +376,7 @@ void ParamsStarfield::ParamsStarfieldCoords(DataSet &m_DataSet)
     //Setting the star list in the DataSet to be used in StepJitter
     m_DataSet.datasetSetStarListOnCCD(starListOnCCD);
 
-
+        
 
     //Freed memory
     subPixelStarListOnCCDResized.free();

@@ -76,13 +76,13 @@ PreProcessingCCD::PreProcessingCCD(DataSet &m_DataSet)
     ParamsStarfield m_ParamsStarfield;
     m_ParamsStarfield.ParamsStarfieldSetting(m_DataSet);
     
-    //Check if there must be performed the JITTER to set
+    //Check if the JITTER must be performed and calculate its related parameters  
     if (m_DataSet.datasetGetuseJitter())
     {
         ParamsJitter m_ParamsJitter;
         m_ParamsJitter.ParamsJittersetParameters(m_DataSet);
     }
-    
+
     
     //Calculate the CTE parameters to be set in the DataSet.
     ParamsCTE m_ParamsCTE;

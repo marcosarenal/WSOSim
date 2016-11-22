@@ -350,8 +350,8 @@ void StepJitter::StepJittercomputeFromParameters(DataSet &m_DataSet, double star
     rollPrevious  = rollPrevious  + (jitterDrift/60) * exposureTime ;
      
  
-    LogManager::log <<"    Successfully added Jitter from parameters.";
-    GlobalVariables::logManager.LogManagerShowLog();
+//    LogManager::log <<"    Successfully added Jitter from parameters.";
+//    GlobalVariables::logManager.LogManagerShowLog();
 }
 //==============================================================================
 
@@ -615,8 +615,8 @@ void StepJitter::StepJitterCoords(double rotationAngleOA)
     
     
     // Defining the starListOnCCD blitz array
-    Array<float, 2> subPixelStarListOnCCDResized;
-    Array<float, 2> starListOnCCDResized;
+    Array<double, 2> subPixelStarListOnCCDResized;
+    Array<double, 2> starListOnCCDResized;
 
     //Remove zeros from the starListOnCCD array
     starListOnCCDResized.resize(numStarsCCD, 6);
@@ -638,7 +638,7 @@ void StepJitter::StepJitterCoords(double rotationAngleOA)
     subPixelStarListOnCCD = 0.0;
     subPixelStarListOnCCD = subPixelStarListOnCCDResized;
         
-        
+    
     //Setting the star list in the DataSet
     p_DataSet->datasetSetStarListOnCCD(starListOnCCD);
     
@@ -723,17 +723,17 @@ void StepJitter::StepJitterfillsubPixelMap(double myExposure)
 {
        
     //Calculating the flux in each subpixel
-	long double flux=0.0;
+    long double flux=0.0;
     double fluxMultiplicationFactor;    
     fluxMultiplicationFactor = myExposure * fluxm0 * areaTelescope * transEff * quantEff;    
     
     
     //Set the flux of each star, in its X-Y position on the subpixelMap
-	for (int i = 0; i < subPixelStarListOnCCD.rows(); i++)
-	{        
+    for (int i = 0; i < subPixelStarListOnCCD.rows(); i++)
+    {        
         //Calculate the flux detected for each star from its input magnitude and the exposure time 
         flux = fluxMultiplicationFactor * pow(10.0,  -0.4 * subPixelStarListOnCCD(i, 2));
-        
+
         subPixelMap(int(round(subPixelStarListOnCCD(i, 0))), int(round(subPixelStarListOnCCD(i, 1)))) += flux;
 
     }

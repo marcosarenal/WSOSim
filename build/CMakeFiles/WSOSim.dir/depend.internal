@@ -525,6 +525,7 @@ CMakeFiles/WSOSim.dir/Components/Parameters/ParamsStarfield.cpp.o
 CMakeFiles/WSOSim.dir/Components/Parameters/ParamsTransit.cpp.o
  ../Components/AuxTools/Constants.h
  ../Components/AuxTools/GlobalVariables.h
+ ../Components/AuxTools/MathTools.h
  ../Components/DataSet/DataSet.h
  ../Components/Manager/LogManager.h
  ../dependencyInstalls/tinyxml/include/ticpp.h

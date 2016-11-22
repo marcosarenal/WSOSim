@@ -163,6 +163,9 @@ public:
         inline double datasetGetexoplanetOrbitalPeriod() const{ return exoplanetOrbitalPeriod;} //Retrieves the Orbital period of the exoplanet [days].
         inline double datasetGetplanetaryOrbitSemiaxis() const{ return planetaryOrbitSemiaxis;} //Retrieves the semiaxis of the orbit of the exoplanet [AU].
         inline double datasetGetplanetaryOrbitInclination() const{ return planetaryOrbitInclination;} //Retrieves the inclination of the orbit of the exoplanet as seen from Earth [deg].
+        inline double datasetGethostStarMagnitude() const{ return hostStarMagnitude;}           //Retrieves the magnitude of the transit host star on the Star Catalogue
+        inline double datasetGethostStarID() const{ return hostStarID;}                         //Retrieves the Position of the transit host star on the Star Catalogue
+
         
         Array<float, 2>  datasetGetPSFMap();                                
         Array<double, 2> datasetGetCTEMap();                               
@@ -213,8 +216,10 @@ public:
         void datasetSetExposuresNamesArray(Array<string, 1> exposuresNamesArrayCopy);
         void datasetSetStarCatalogue(Array<float, 2> starCatalogue);
         void datasetSetinTransitArray(Array<float, 1> inTransitArray);
-
+        void datasetSethostStarMagnitude(double hostStarMagnitude);
+        void datasetSethostStarID(double hostStarID);
               
+
 
         // Static parameters:
 
@@ -330,6 +335,8 @@ private:
         double exoplanetOrbitalPeriod;          //Orbital period of the exoplanet [days].
         double planetaryOrbitSemiaxis;          //Semiaxis of the orbit of the exoplanet [AU].
         double planetaryOrbitInclination;       //Inclination of the orbit of the exoplanet as seen from Earth [deg].
+        double hostStarMagnitude;               //Magnitude of the transit host star
+        double hostStarID;                      //Position of the transit host star on the Star Catalogue
         
         
         
