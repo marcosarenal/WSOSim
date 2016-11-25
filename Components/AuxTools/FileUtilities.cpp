@@ -39,7 +39,7 @@
  * @param pattern
  * @return 
  */
-int FileUtilities::countFiles ( string pattern )
+int FileUtilities::countFiles ( std::string pattern )
 {
    glob_t globbuf;
    globbuf.gl_offs = 2;
@@ -58,10 +58,10 @@ int FileUtilities::countFiles ( string pattern )
  * @param fileName
  * @return 
  */
-int FileUtilities::countLines ( string fileName )
+int FileUtilities::countLines ( std::string fileName )
 {
    int counter = 0;
-   string line;
+   std::string line;
 
    ifstream myfile ( fileName.c_str() );
    if ( myfile.is_open() )
@@ -76,7 +76,7 @@ int FileUtilities::countLines ( string fileName )
    }
    else
    {
-       LogManager::log << "Unable to open file " << fileName << endl;
+       LogManager::log << "Unable to open file " << fileName << std::endl;
        GlobalVariables::logManager.LogManagerShowLog(); 
        return 0;
    }
@@ -92,9 +92,9 @@ int FileUtilities::countLines ( string fileName )
  * @param fileName
  * @return 
  */
-string FileUtilities::readAll ( string fileName )
+std::string FileUtilities::readAll ( std::string fileName )
 {
-   string fileContent, line;
+   std::string fileContent, line;
    ifstream myfile ( fileName.c_str() );
    if ( myfile.is_open() )
    {
@@ -107,7 +107,7 @@ string FileUtilities::readAll ( string fileName )
    }
    else
    {
-       cerr << "\nError (FileUtilities::readAll()): Unable to open file " << fileName << endl;
+       std::cerr << "\nError (FileUtilities::readAll()): Unable to open file " << fileName << std::endl;
        exit (1);
    }
 }
@@ -125,7 +125,7 @@ string FileUtilities::readAll ( string fileName )
  * @param skip
  * @return 
  */
-bool FileUtilities::readCol ( string fileName, int col, vector<string> &var, int skip )
+bool FileUtilities::readCol ( std::string fileName, int col, vector<std::string> &var, int skip )
 {
    var.clear();
    string str, line;
@@ -146,7 +146,7 @@ bool FileUtilities::readCol ( string fileName, int col, vector<string> &var, int
    }
    else
    {
-       cerr << "\nError (FileUtilities::readCol()): Unable to open file " << fileName << endl;
+       std::cerr << "\nError (FileUtilities::readCol()): Unable to open file " << fileName << std::endl;
        exit (1);
    }
 
@@ -165,10 +165,10 @@ bool FileUtilities::readCol ( string fileName, int col, vector<string> &var, int
  * @param skip
  * @return 
  */
-bool FileUtilities::readCol ( string fileName, int col, vector<double> &var, int skip )
+bool FileUtilities::readCol ( std::string fileName, int col, vector<double> &var, int skip )
 {
    var.clear();
-   string str, line;
+   std::string str, line;
    double value;
 
    istringstream iss;
@@ -190,7 +190,7 @@ bool FileUtilities::readCol ( string fileName, int col, vector<double> &var, int
    }
    else
    {
-       cerr << "\nError (FileUtilities::readCol()): Unable to open file " << fileName << endl;
+       std::cerr << "\nError (FileUtilities::readCol()): Unable to open file " << fileName << std::endl;
        exit (1);
    }
 
@@ -210,10 +210,10 @@ bool FileUtilities::readCol ( string fileName, int col, vector<double> &var, int
  * @param skip
  * @return 
  */
-bool FileUtilities::readCol ( string fileName, int col, vector<float> &var, int skip )
+bool FileUtilities::readCol ( std::string fileName, int col, vector<float> &var, int skip )
 {
    var.clear();
-   string str, line;
+   std::string str, line;
    double value;
 
    istringstream iss;
@@ -235,7 +235,7 @@ bool FileUtilities::readCol ( string fileName, int col, vector<float> &var, int 
    }
    else
    {
-       cerr << "\nError (FileUtilities::readCol()): Unable to open file " << fileName << endl;
+       std::cerr << "\nError (FileUtilities::readCol()): Unable to open file " << fileName << std::endl;
        exit (1);
    }
 
@@ -255,7 +255,7 @@ bool FileUtilities::readCol ( string fileName, int col, vector<float> &var, int 
  * @param skip
  * @return 
  */
-bool FileUtilities::readCol ( string fileName, int col, Array<double, 1> &var, int skip )
+bool FileUtilities::readCol ( std::string fileName, int col, Array<double, 1> &var, int skip )
 {
    vector<double> vec;
    readCol ( fileName, col, vec, skip );
@@ -282,7 +282,7 @@ bool FileUtilities::readCol ( string fileName, int col, Array<double, 1> &var, i
  * @param skip
  * @return 
  */
-bool FileUtilities::readCol ( string fileName, int col, Array<float, 1> &var, int skip )
+bool FileUtilities::readCol ( std::string fileName, int col, Array<float, 1> &var, int skip )
 {
    vector<float> vec;
    readCol ( fileName, col, vec, skip );
@@ -357,7 +357,7 @@ bool FileUtilities::dirExists ( const char *path )
  * @param strFilename
  * @return 
  */
-bool FileUtilities::fileExists ( string strFilename )
+bool FileUtilities::fileExists ( std::string strFilename )
 {
    struct stat stFileInfo;
 
@@ -392,10 +392,10 @@ bool FileUtilities::fileExists ( string strFilename )
  * @param row
  * @return 
  */
-double FileUtilities::readValue ( string file, int column, int row )
+double FileUtilities::readValue ( std::string file, int column, int row )
 {
 
-   string str, line;
+   std::string str, line;
    double value;
    istringstream iss;
    ifstream myfile ( file.c_str() );
@@ -414,7 +414,7 @@ double FileUtilities::readValue ( string file, int column, int row )
    }
    else
    {
-      cerr << "\nError (FileUtilities::readValue()): Unable to open file " << file << endl;
+      std::cerr << "\nError (FileUtilities::readValue()): Unable to open file " << file << std::endl;
       exit ( 1 );
    }
 
@@ -431,22 +431,22 @@ double FileUtilities::readValue ( string file, int column, int row )
  * @param files
  * @param filter
  */
-void FileUtilities::getDir ( string dir, vector<string> &files, string filter )
+void FileUtilities::getDir ( std::string dir, vector<std::string> &files, std::string filter )
 {
    DIR *dp;
-   string fileName;
+   std::string fileName;
    struct dirent *dirp;
    if ( ( dp  = opendir ( dir.c_str() ) ) == NULL ) {
-      cerr << "\nError (" << errno << ") (FileUtilities::getDir) opening " << dir << endl;
+      std::cerr << "\nError (" << errno << ") (FileUtilities::getDir) opening " << dir << std::endl;
       exit ( 1 );
    }
 
    while ( ( dirp = readdir ( dp ) ) != NULL )
    {
-      fileName = string ( dirp->d_name );
+      fileName = std::string ( dirp->d_name );
       if ( filter == "" )
          files.push_back ( fileName );
-      else if ( fileName.find ( filter ) != string::npos )
+      else if ( fileName.find ( filter ) != std::string::npos )
          files.push_back ( fileName );
 
    }
@@ -459,11 +459,11 @@ void FileUtilities::getDir ( string dir, vector<string> &files, string filter )
 
 //==============================================================================
 /**
- * Get the file name (e.g. if complete path is "/home/user/simulations/test" then this will return the string "test"
+ * Get the file name (e.g. if complete path is "/home/user/simulations/test" then this will return the std::string "test"
  * @param str
  * @return 
  */
-string FileUtilities::getCompleteBaseName ( const string& str )
+std::string FileUtilities::getCompleteBaseName ( const std::string& str )
 {
    size_t found;
    found = str.find_last_of ( "/\\" );
@@ -476,11 +476,11 @@ string FileUtilities::getCompleteBaseName ( const string& str )
 
 //==============================================================================
 /**
- * Get the directory name (e.g. if complete path is "/home/user/simulations/test" then this will return the string "/home/user/simulations/"
+ * Get the directory name (e.g. if complete path is "/home/user/simulations/test" then this will return the std::string "/home/user/simulations/"
  * @param str
  * @return 
  */
-string FileUtilities::getCompletePath ( const string& str )
+std::string FileUtilities::getCompletePath ( const std::string& str )
 {
    size_t found;
    found = str.find_last_of ( "/\\" );
@@ -493,11 +493,11 @@ string FileUtilities::getCompletePath ( const string& str )
 
 //==============================================================================
 /**
- * Get the file name (e.g. if complete path is "/home/user/simulations/test.txt" then this will return the string "/home/user/simulations/test"
+ * Get the file name (e.g. if complete path is "/home/user/simulations/test.txt" then this will return the std::string "/home/user/simulations/test"
  * @param str
  * @return 
  */
-string FileUtilities::removeExtension ( const string& str )
+std::string FileUtilities::removeExtension ( const std::string& str )
 {
    size_t found;
    found = str.find_last_of ( "." );
@@ -517,7 +517,7 @@ string FileUtilities::removeExtension ( const string& str )
  * @param &map Blitz Array<float, 2> to be written in the FITS file.
  * @param fileName name (including the path, excluding the .fits) for the FITS file.
  */
-void FileUtilities::FileUtilitiesWriteFITS(double exposureTime, int cut, Array<float, 2> &map, string fileName)
+void FileUtilities::FileUtilitiesWriteFITS(double exposureTime, int cut, Array<float, 2> &map, std::string fileName)
 {
          
         LogManager::log << "    Creating FITS file " ;
@@ -578,7 +578,7 @@ void FileUtilities::FileUtilitiesWriteFITS(double exposureTime, int cut, Array<f
  * @param &map Blitz Array<double, 2> to be written in the FITS file. 
  * @param fileName name (including the path, excluding the .fits) for the FITS file.
  */
-void FileUtilities::FileUtilitiesWriteFITS(double exposureTime, int cut, Array<double, 2> &map, string fileName)
+void FileUtilities::FileUtilitiesWriteFITS(double exposureTime, int cut, Array<double, 2> &map, std::string fileName)
 {
          
         LogManager::log << "    Creating FITS file " ;
@@ -643,7 +643,7 @@ void FileUtilities::FileUtilitiesWriteFITS(double exposureTime, int cut, Array<d
  * @param fileName name (including the path, excluding the .fits) for the FITS file.
  */
 void FileUtilities::FileUtilitiesCutAndWriteFITS(double exposureTime, int cut, int numPrescanRows, int numSmearingOverscanRows, Array<float, 2>  biasRegisterMap, 
-                                                 Array<float, 2>  smearingMap, Array<float, 2> &map, string fileName)
+                                                 Array<float, 2>  smearingMap, Array<float, 2> &map, std::string fileName)
 {
          
         LogManager::log << "    Creating FITS file " ;
@@ -733,11 +733,11 @@ void FileUtilities::FileUtilitiesCutAndWriteFITS(double exposureTime, int cut, i
  * @param fileName name (including the path, excluding the .fits) for the FITS file.
  * @param &flux Blitz Array<int, 2> to be read from the FITS file.
  */
-void FileUtilities::FileUtilitiesReadFits( string fileName, Array<int, 2> &flux )
+void FileUtilities::FileUtilitiesReadFits( std::string fileName, Array<int, 2> &flux )
 {
 
     if ( fileName == "" ) return;
-    auto_ptr<FITS> pInfile ( new FITS ( fileName, Read, string("SCI") ) );
+    auto_ptr<FITS> pInfile ( new FITS ( fileName, Read, std::string("SCI") ) );
     PHDU& image = pInfile->pHDU();
 
     valarray<unsigned int>  contents;
@@ -754,9 +754,9 @@ void FileUtilities::FileUtilitiesReadFits( string fileName, Array<int, 2> &flux 
 
     for (int k = 0; k < ax2; k+=10)
     {    
-        ostream_iterator<short> c(cout,"\t");
+        ostream_iterator<short> c(std::cout,"\t");
         copy(&contents[k*ax1],&contents[(k+1)*ax1-1],c);
-        cout <<&contents[k*ax1]<<"  "<<&contents[(k+1)] << '\n';
+        std::cout <<&contents[k*ax1]<<"  "<<&contents[(k+1)] << '\n';
         
     }
 
@@ -785,7 +785,7 @@ void FileUtilities::FileUtilitiesReadFits( string fileName, Array<int, 2> &flux 
  * @param fileName name (including the path, excluding the .fits) for the FITS file.
  * @param &flux Blitz Array<double, 2> to be read from the FITS file.
  */
-void FileUtilities::FileUtilitiesReadFits( string fileName, Array<double, 2> &flux )
+void FileUtilities::FileUtilitiesReadFits( std::string fileName, Array<double, 2> &flux )
 {
     if ( fileName == "" ) return;
    
@@ -829,12 +829,12 @@ void FileUtilities::FileUtilitiesReadFits( string fileName, Array<double, 2> &fl
  * @param fileName name (including the path, excluding the .fits) for the FITS file.
  * @param &flux Blitz Array<float, 2> to be read from the FITS file.
  */
-void FileUtilities::FileUtilitiesReadFits( string fileName, Array<float, 2> &flux )
+void FileUtilities::FileUtilitiesReadFits( std::string fileName, Array<float, 2> &flux )
 {
 
     if ( fileName == "" )
     {
-        cerr<<"\nError (FileUtilities::FileUtilitiesReadFits): Empty file name."<<endl;
+        std::cerr<<"\nError (FileUtilities::FileUtilitiesReadFits): Empty file name."<<std::endl;
         return;
     }
     
@@ -848,7 +848,7 @@ void FileUtilities::FileUtilitiesReadFits( string fileName, Array<float, 2> &flu
   
 //    if(image.bitpix() != -32) 
 //    {
-//        cerr << "\nError (FileUtilities::FileUtilitiesReadFits): Fits image must be of type FLOAT. Make sure you are indicating the [SCI] extension in the input file name." << endl;
+//        std::cerr << "\nError (FileUtilities::FileUtilitiesReadFits): Fits image must be of type FLOAT. Make sure you are indicating the [SCI] extension in the input file name." << std::endl;
 //        exit(1);
 //    }
        
@@ -869,9 +869,9 @@ void FileUtilities::FileUtilitiesReadFits( string fileName, Array<float, 2> &flu
 
 //    for (long k = 0; k < ax2; k+=10)
 //    {    
-//        ostream_iterator<short> c(cout,"\t");
+//        ostream_iterator<short> c(std::cout,"\t");
 //        copy(&contents[k*ax1],&contents[(k+1)*ax1-1],c);
-//        //cout <<&contents[k*ax1]<<"  "<<&contents[(k+1)] << '\n';
+//        //std::cout <<&contents[k*ax1]<<"  "<<&contents[(k+1)] << '\n';
 //        
 //    }
 
@@ -905,7 +905,7 @@ void FileUtilities::FileUtilitiesReadFits( string fileName, Array<float, 2> &flu
  * @param fileName name (including the path, excluding the .fits) for the FITS file.
  * @param &flux Blitz Array<float, 2> to be read from the FITS file.
  */
-void FileUtilities::FileUtilitiesReadExternalFits( string fileName, Array<float, 2> &flux )
+void FileUtilities::FileUtilitiesReadExternalFits( std::string fileName, Array<float, 2> &flux )
 {
     
     FITS::setVerboseMode(false);
@@ -922,7 +922,7 @@ void FileUtilities::FileUtilitiesReadExternalFits( string fileName, Array<float,
     try
     {
 
-        std::auto_ptr<FITS> pInfile(new FITS(fileName,Read,string("SCI")));
+        std::auto_ptr<FITS> pInfile(new FITS(fileName,Read,std::string("SCI")));
         ExtHDU& table = pInfile->extension("SCI");
 
         // read all the keywords, excluding those associated with columns.
@@ -974,7 +974,7 @@ void FileUtilities::FileUtilitiesReadExternalFits( string fileName, Array<float,
 
         std::cerr << " Fits Exception Thrown by FitsImage class \n";    
         std::cerr << " Fits file name : " << fileName << std::endl;
-        rv=1; // problem
+        rv=1; // problem   
 
     }
 }
@@ -991,9 +991,9 @@ void FileUtilities::FileUtilitiesReadExternalFits( string fileName, Array<float,
  * @param fileName name (including the path, excluding the .fits) for the FITS file.
  * @param map Blitz Array<double, 2> to be written to FITS file.
  */
-void FileUtilities::FileUtilitiesWriteFits( string fileName, Array<double, 2> map, int cut )
+void FileUtilities::FileUtilitiesWriteFits( std::string fileName, Array<double, 2> map, int cut )
 {
-    //qDebug ( "void MyFits::write ( string fileName, Array<double, 2> map, int cut )" );
+    //qDebug ( "void MyFits::write ( std::string fileName, Array<double, 2> map, int cut )" );
     
     fileName += ".fits";
     long naxis =   2;
@@ -1040,7 +1040,7 @@ void FileUtilities::FileUtilitiesWriteFits( string fileName, Array<double, 2> ma
  * @param fileName name (including the path, excluding the .fits) for the FITS file.
  * @param map Blitz Array<float, 2> to be written to FITS file.
  */
-void FileUtilities::FileUtilitiesWriteFits( string fileName, Array<float, 2> map, int cut )
+void FileUtilities::FileUtilitiesWriteFits( std::string fileName, Array<float, 2> map, int cut )
 {
     
     fileName += ".fits";

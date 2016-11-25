@@ -49,11 +49,11 @@ public:
         
 	LogManager(const LogManager& temp);
 	LogManager &operator=(const LogManager &temp);
-	void LogManagerGenerateLogFile(string fileName);
+	void LogManagerGenerateLogFile(std::string fileName);
 
-	friend stringstream &operator<<(stringstream & out, const string & outp);
+	friend stringstream &operator<<(stringstream & out, const std::string & outp);
 
-	void LogManagerSetFile(string fileName);
+	void LogManagerSetFile(std::string fileName);
 	void remove();
         
         
@@ -85,13 +85,13 @@ public:
 		showLogsFlag = b;
 	};
 
-	static void LogManagerShowLog(string text);
+	static void LogManagerShowLog(std::string text);
 	static bool showLogsFlag;
 	static stringstream log;
     void LogManagerPresentation();
 
       
 private:
-	string fileName;
+	std::string fileName;
 };
 #endif /* LOGMANAGER_H_ */

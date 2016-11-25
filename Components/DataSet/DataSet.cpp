@@ -72,7 +72,7 @@ unsigned int DataSet::seedRNG;
 * 
 * @param parameterFile XML input parameters file name.
 */
-void DataSet::datasetReadParameterFile(string parameterFile)
+void DataSet::datasetReadParameterFile(std::string parameterFile)
 {
 
     //Using ticpp library to read the parameters file.     
@@ -730,7 +730,7 @@ Array<float, 2> DataSet::datasetGetsubPixelStarListOnCCD()
 *
 * @param exposuresNamesArrayCopy exposuresNamesArrayCopy is a Blitz 2-D array with the list of exposures names.
 */
-void DataSet::datasetSetExposuresNamesArray(Array<string, 1> exposuresNamesArrayCopy)
+void DataSet::datasetSetExposuresNamesArray(Array<std::string, 1> exposuresNamesArrayCopy)
 {
 
     exposuresNamesArray.reference(exposuresNamesArrayCopy);
@@ -742,7 +742,7 @@ void DataSet::datasetSetExposuresNamesArray(Array<string, 1> exposuresNamesArray
 * This function retrieves the list of stars of exposures names in the exposuresNamesArray.
 *
 */
-Array<string, 1> DataSet::datasetGetExposuresNamesArray()
+Array<std::string, 1> DataSet::datasetGetExposuresNamesArray()
 {
     //Return the exposuresNamesArray Array 
     return exposuresNamesArray;
@@ -871,7 +871,7 @@ DataSetPhotometry::~DataSetPhotometry(){}
 * 
 * @param photometryParameterFile Photometry input parameters file name.
 */
-void DataSetPhotometry::datasetPhotometryReadParameterFile(string photometryParameterFile)
+void DataSetPhotometry::datasetPhotometryReadParameterFile(std::string photometryParameterFile)
 {
 
     //Using ticpp library to read the photometry parameters file.
@@ -920,7 +920,7 @@ void DataSetPhotometry::datasetPhotometryReadParameterFile(string photometryPara
 * @param photometryDirName photometryDirName is output directory for photometry. 
 * @param photometryPlotsDir photometryPlotsDir is is output directory for the photometry plots. 
 */
-void DataSetPhotometry::datasetSetPhotometryParams(string photometryDirName, string photometryPlotsDir)
+void DataSetPhotometry::datasetSetPhotometryParams(std::string photometryDirName, std::string photometryPlotsDir)
 {        
 
     this->photometryDirName = photometryDirName;

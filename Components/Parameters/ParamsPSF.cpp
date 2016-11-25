@@ -142,10 +142,10 @@ void ParamsPSF::paramsPSFcheckPSFParams()
     // Check PSFRotation parameter	
     if (psfRotation != 0 && psfRotation != 1 && psfRotation != 2)
     {
-        cerr << "\nError (ParamsPSF::paramsPSFcheckPSFParams()): / "
+        std::cerr << "\nError (ParamsPSF::paramsPSFcheckPSFParams()): / "
         "PSFRotation value must be: 0 = No Rotation / "
                 "1 = Towards Optical Axis / "
-                "2 = Arbitrary Rotation by PSFRotationAngle." << endl;
+                "2 = Arbitrary Rotation by PSFRotationAngle." << std::endl;
         exit(1);
     }
         
@@ -231,8 +231,8 @@ void ParamsPSF::paramsPSFsetGaussian()
 
     if (psfGaussFWHM < 1. / subPixelsPerPixel)
     {
-        cerr << "\nError (ParamsPSF::paramsPSFsetGaussian()): The FWHM of the Gaussian PSF (" << psfGaussFWHM << ") must not be smaller than the size of a sub-pixel (" << 
-        1./ subPixelsPerPixel << ").\n Please increase the size of the Gaussian FWHM or increase the number of sub-pixels." << endl;
+        std::cerr << "\nError (ParamsPSF::paramsPSFsetGaussian()): The FWHM of the Gaussian PSF (" << psfGaussFWHM << ") must not be smaller than the size of a sub-pixel (" << 
+        1./ subPixelsPerPixel << ").\n Please increase the size of the Gaussian FWHM or increase the number of sub-pixels." << std::endl;
         exit(1);
     }
 
@@ -344,9 +344,9 @@ void ParamsPSF::paramsPSFsetGaussian()
     
     
     
-    string outputPath = p_DataSet->datasetGetOutputPath();
-    string    prefix = p_DataSet->datasetGetPrefix();
-    string    outputDir = outputPath + "/" + prefix;    
+    std::string outputPath = p_DataSet->datasetGetOutputPath();
+    std::string    prefix = p_DataSet->datasetGetPrefix();
+    std::string    outputDir = outputPath + "/" + prefix;    
 
 
         
@@ -425,7 +425,7 @@ void ParamsPSF::paramsPSFreadFromFile()
     {
         std::cerr << "\nError (ParamsPSF::paramsPSFreadFromFile()): Size of PSF (" << psfNumPixels << "=Number of Rows) must be "
                         " an integer factor of the number of sub-pixels ("<< psfSubPixels << ")." << std::endl;
-        cerr << "\nModify the parameters NumPixels and SubPixels of PSFParameters accordingly." << endl;
+        std::cerr << "\nModify the parameters NumPixels and SubPixels of PSFParameters accordingly." << std::endl;
         exit(1);
     }
 
@@ -434,10 +434,10 @@ void ParamsPSF::paramsPSFreadFromFile()
         double(psfSubPixels) / double(subPixelsPerPixel) <2 )
 
     {
-        cerr << "\nError (ParamsPSF::paramsPSFreadFromFile()): The number of sub-pixels (" << subPixelsPerPixel<< ")"
+        std::cerr << "\nError (ParamsPSF::paramsPSFreadFromFile()): The number of sub-pixels (" << subPixelsPerPixel<< ")"
                           " must be a integer multiple of the number of PSF sub-pixels per pixel (" << psfSubPixels << ") ";
-        cerr << "of the input PSF used in the simulation." << endl;
-        cerr << "\nModify the SubPixels parameter in the input parameters file accordingly." << endl;
+        std::cerr << "of the input PSF used in the simulation." << std::endl;
+        std::cerr << "\nModify the SubPixels parameter in the input parameters file accordingly." << std::endl;
         exit(1);
     }
 
@@ -447,7 +447,7 @@ void ParamsPSF::paramsPSFreadFromFile()
 
     //Read PSF file into array fileMask
     double dummy;
-    string str, line;
+    std::string str, line;
     int lineNumber = 0;
     ifstream myfile(psfFileName.c_str());
     if (myfile.is_open())
@@ -468,7 +468,7 @@ void ParamsPSF::paramsPSFreadFromFile()
     }
     else
     {
-        cerr << "\nError (ParamsPSF::paramsPSFreadFromFile()):: Unable to open file " << psfFileName << endl;
+        std::cerr << "\nError (ParamsPSF::paramsPSFreadFromFile()):: Unable to open file " << psfFileName << std::endl;
         exit(1);
     }
 
@@ -613,13 +613,13 @@ void ParamsPSF::paramsPSFreadFromFile()
 void ParamsPSF::paramsPSFgetPSFFileFromGrid()
 {
     
-    LogManager::log << "Reading the file with PSF locations ... " << psfLocationFile << endl;
+    LogManager::log << "Reading the file with PSF locations ... " << psfLocationFile << std::endl;
     GlobalVariables::logManager.LogManagerShowLog(); 
     
 	ifstream myfile(psfLocationFile.c_str());
 	if (!myfile.is_open())
 	{
-		cerr << "\nError (ParamsPSF::paramsPSFgetPSFFileFromGrid()): Unable to open file " << psfLocationFile << endl;
+		std::cerr << "\nError (ParamsPSF::paramsPSFgetPSFFileFromGrid()): Unable to open file " << psfLocationFile << std::endl;
 		exit(1);
 	}
 
@@ -627,14 +627,14 @@ void ParamsPSF::paramsPSFgetPSFFileFromGrid()
 	int numLines = FileUtilities::countLines(psfLocationFile);
 	if (numLines == 0)
 	{
-		cerr << "\nError (ParamsPSF::paramsPSFgetPSFFileFromGrid()): File " << psfLocationFile << " is empty." << endl;
+		std::cerr << "\nError (ParamsPSF::paramsPSFgetPSFFileFromGrid()): File " << psfLocationFile << " is empty." << std::endl;
 		exit(1);
 	}
 
 	Array<double, 1> fdist(numLines);
-	Array<string, 1> fname(numLines);
+	Array<std::string, 1> fname(numLines);
 
-	string n;
+	std::string n;
 	double d;
 	int i = 0;
 
@@ -644,7 +644,7 @@ void ParamsPSF::paramsPSFgetPSFFileFromGrid()
             fname(i) = n;
             if (!FileUtilities::fileExists(fname(i)))
             {
-                    cerr << "\nError (ParamsPSF::paramsPSFgetPSFFileFromGrid()): Unable to open file " << fname(i) << endl;
+                    std::cerr << "\nError (ParamsPSF::paramsPSFgetPSFFileFromGrid()): Unable to open file " << fname(i) << std::endl;
                     exit(1);
             }
             fdist(i++) = d;
@@ -679,14 +679,14 @@ void ParamsPSF::paramsPSFgetPSFFileFromGrid()
  * the processing.
  * @param fileName
  */
-void ParamsPSF::paramsPSFwriteSubPixelsToASCIIFile(string fileName)
+void ParamsPSF::paramsPSFwriteSubPixelsToASCIIFile(std::string fileName)
 {
 
     //Open the PSF file
 	ofstream out(fileName.c_str());
 	if (!out.is_open())
 	{
-		cerr << "\nError (ParamsPSF::paramsPSFwriteSubPixelsToASCIIFile()):Unable to open output PSF file";
+		std::cerr << "\nError (ParamsPSF::paramsPSFwriteSubPixelsToASCIIFile()):Unable to open output PSF file";
 		exit(1);
 	}
 	out.precision(10);
@@ -698,9 +698,9 @@ void ParamsPSF::paramsPSFwriteSubPixelsToASCIIFile(string fileName)
 		for (int j = 0; j < mask.cols(); j++)
         {
 			out << (i - (mask.rows() - 1.) / 2.) / double(subPixelsPerPixel) << " " << (j - (mask.cols() - 1.) / 2.)
-					/ double(subPixelsPerPixel) << " " << mask(i, j) << " " << endl;
+					/ double(subPixelsPerPixel) << " " << mask(i, j) << " " << std::endl;
         }
-		out << endl;
+		out << std::endl;
 	}
 }
 //==============================================================================

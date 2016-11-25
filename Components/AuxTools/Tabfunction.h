@@ -191,7 +191,7 @@ class Tabfunction
     }
   else
     {
-      cerr << "\nError (Tabfunction::Init()): size <= 0" << endl;
+      std::cerr << "\nError (Tabfunction::Init()): size <= 0" << std::endl;
       exit(1);
     }
 
@@ -210,7 +210,7 @@ class Tabfunction
     {
       if (x[i] <= x[i-1])
 	{
-	  cerr << "\nError (Tabfunction::Init()):  x-values not sorted\n";
+	  std::cerr << "\nError (Tabfunction::Init()):  x-values not sorted\n";
 	  exit(1);
 	}
     }
@@ -248,8 +248,8 @@ class Tabfunction
     }
   else
     {
-      cerr << "\nError (Tabfunction::Set_Extrapolation_Method()) : "
-           << "Illegal argument." << endl;
+      std::cerr << "\nError (Tabfunction::Set_Extrapolation_Method()) : "
+           << "Illegal argument." << std::endl;
       exit(1);
     }
 }
@@ -283,8 +283,8 @@ class Tabfunction
     }
   else
     {
-      cerr << "\nError (Tabfunction::Set_Interpolation_Method()):  "
-           << "Illegal argument." << endl;
+      std::cerr << "\nError (Tabfunction::Set_Interpolation_Method()):  "
+           << "Illegal argument." << std::endl;
       exit(1);
     }
 }
@@ -318,7 +318,7 @@ class Tabfunction
 
   if (Nvalues == 0)
   {
-      cerr << "\nError ( Tabfunction::()): First give tabulated values.\n";
+      std::cerr << "\nError ( Tabfunction::()): First give tabulated values.\n";
       exit(1);
   }
 
@@ -611,7 +611,7 @@ class Tabfunction
     }
 
 
-  cerr << "\nError (Tabfunction::Integrate):  no convergence." << endl;
+  std::cerr << "\nError (Tabfunction::Integrate):  no convergence." << std::endl;
   exit(1);
 
   return(0.0);   // never get here.
@@ -645,7 +645,7 @@ class Tabfunction
     }
   else
     {
-      cerr << "\nError (Tabfunction::Set_Accuracy()):  accuracy <= 0" << endl;
+      std::cerr << "\nError (Tabfunction::Set_Accuracy()):  accuracy <= 0" << std::endl;
       exit(1);
     }
 
@@ -678,7 +678,7 @@ class Tabfunction
 
   if (Nvalues == 0)
     {
-      cerr << "\nError (Tabfunction::Begin()):  First give tabulated values.\n";
+      std::cerr << "\nError (Tabfunction::Begin()):  First give tabulated values.\n";
       exit(1);
     } 
   else
@@ -715,7 +715,7 @@ class Tabfunction
 
   if (Nvalues == 0)
     {
-      cerr << "\nError (Tabfunction::End()):  First give tabulated values.\n";
+      std::cerr << "\nError (Tabfunction::End()):  First give tabulated values.\n";
       exit(1);
     }
   else

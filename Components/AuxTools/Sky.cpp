@@ -91,9 +91,9 @@ double Sky::SolarRadiantFlux ( const double lambda )
 
    if ( i == -1 )
    {
-      cerr << "\nError (Sky::SolarRadiantFlux()): no data in this part of "
-      << "the spectrum" << endl;
-      cerr << "Please enter a value for the background flux manually in the parameter file." << endl;
+      std::cerr << "\nError (Sky::SolarRadiantFlux()): no data in this part of "
+      << "the spectrum" << std::endl;
+      std::cerr << "Please enter a value for the background flux manually in the parameter file." << std::endl;
       exit ( 1 );
    }
 
@@ -201,7 +201,7 @@ double Sky::SolarRadiantFlux ( const double lambda1,
          olds = s;
       }
 
-      cerr << "\nError (Sky::SolarRadiantFlux()): Integration not converged"<<endl;
+      std::cerr << "\nError (Sky::SolarRadiantFlux()): Integration not converged"<<std::endl;
       exit (1);
    }
    else
@@ -209,8 +209,8 @@ double Sky::SolarRadiantFlux ( const double lambda1,
       // This is the case that the given wavelengths were not between
       // the table boundaries.
 
-      cerr << "\nError (Sky::SolarRadiantFlux()): wavelength must be in "
-           << "[199.5e-9, 10075.0e-9]"<<endl;
+      std::cerr << "\nError (Sky::SolarRadiantFlux()): wavelength must be in "
+           << "[199.5e-9, 10075.0e-9]"<<std::endl;
       exit (1);
    }
 
@@ -249,7 +249,7 @@ double Sky::SolarRadiantFlux ( vector<double> &lambda,
           || ( lambda2 < 199.5e-9 ) || ( lambda2 > 10075.0e-9 ) )
    {
 
-      cerr << "\nError (Sky::SolarRadiantFlux()): Passband wavelengths not in [199.5, 10075] nm." << endl;
+      std::cerr << "\nError (Sky::SolarRadiantFlux()): Passband wavelengths not in [199.5, 10075] nm." << std::endl;
       exit (1);
    }
 
@@ -323,8 +323,8 @@ double Sky::ZodiacalFlux ( const double lambda1, const double lambda2,
 
    if ( ( lam_index == -1 ) || ( beta_index == -1 ) )
    {
-      cerr << "\nError (Sky::ZodiacalFlux()): No data for this part of the sky." << endl;
-      cerr << "Please enter a value for the background flux manually in the parameter file." << endl;
+      std::cerr << "\nError (Sky::ZodiacalFlux()): No data for this part of the sky." << std::endl;
+      std::cerr << "Please enter a value for the background flux manually in the parameter file." << std::endl;
       exit ( 1 );
    }
 
@@ -336,8 +336,8 @@ double Sky::ZodiacalFlux ( const double lambda1, const double lambda2,
           || ( skydata::zod[lam_index+1][beta_index+1] == -1 )
       )
    {
-      cerr << "\nError (Sky::ZodiacalFlux()): No data for this part of the sky." << endl;
-      cerr << "Please enter a value for the background flux manually in the parameter file." << endl;
+      std::cerr << "\nError (Sky::ZodiacalFlux()): No data for this part of the sky." << std::endl;
+      std::cerr << "Please enter a value for the background flux manually in the parameter file." << std::endl;
       exit ( 1 );
    }
 
@@ -423,8 +423,8 @@ double Sky::ZodiacalFlux ( vector<double> &lambda,
 
    if ( ( lam_index == -1 ) || ( beta_index == -1 ) )
    {
-      cerr << "\nError (Sky::ZodiacalFlux()): No data for this part of the sky." << endl;
-      cerr << "Please enter a value for the background flux manually in the parameter file." << endl;
+      std::cerr << "\nError (Sky::ZodiacalFlux()): No data for this part of the sky." << std::endl;
+      std::cerr << "Please enter a value for the background flux manually in the parameter file." << std::endl;
       exit ( 1 );
    }
 
@@ -436,8 +436,8 @@ double Sky::ZodiacalFlux ( vector<double> &lambda,
           || ( skydata::zod[lam_index+1][beta_index+1] == -1 )
       )
    {
-      cerr << "\nError (Sky::ZodiacalFlux()): No data for this part of the sky." << endl;
-      cerr << "Please enter a value for the background flux manually in the parameter file." << endl;
+      std::cerr << "\nError (Sky::ZodiacalFlux()): No data for this part of the sky." << std::endl;
+      std::cerr << "Please enter a value for the background flux manually in the parameter file." << std::endl;
       exit ( 1 );
    }
 
@@ -520,8 +520,8 @@ double Sky::StellarBgFlux ( const double lambda1, const double lambda2,
 
    if ( ( alpha_index == -1 ) || ( delta_index == -1 ) )
    {
-      cerr << "\nError (Sky::StellarBgFlux()): No data for this part of the sky." << endl;
-      cerr << "Please enter a value for the background flux manually in the parameter file." << endl;
+      std::cerr << "\nError (Sky::StellarBgFlux()): No data for this part of the sky." << std::endl;
+      std::cerr << "Please enter a value for the background flux manually in the parameter file." << std::endl;
       exit ( 1 );
    }
 
@@ -535,8 +535,8 @@ double Sky::StellarBgFlux ( const double lambda1, const double lambda2,
           || ( skydata::skyblue[alpha_index+1][delta_index] == -1 )
       )
    {
-      cerr << "\nError (Sky::StellarBgFlux()): No data for this part of the sky." << endl;
-      cerr << "Please enter a value for the background flux manually in the parameter file." << endl;
+      std::cerr << "\nError (Sky::StellarBgFlux()): No data for this part of the sky." << std::endl;
+      std::cerr << "Please enter a value for the background flux manually in the parameter file." << std::endl;
       exit ( 1 );
    }
 
@@ -646,8 +646,8 @@ double Sky::StellarBgFlux ( vector<double> &lambda,
 
    if ( ( alpha_index == -1 ) || ( delta_index == -1 ) )
    {
-      cerr << "\nError (Sky::StellarBgFlux()): No data for this part of the sky." << endl;
-      cerr << "Please enter a value for the background flux manually in the parameter file." << endl;
+      std::cerr << "\nError (Sky::StellarBgFlux()): No data for this part of the sky." << std::endl;
+      std::cerr << "Please enter a value for the background flux manually in the parameter file." << std::endl;
       exit ( 1 );
    }
 
@@ -661,8 +661,8 @@ double Sky::StellarBgFlux ( vector<double> &lambda,
           || ( skydata::skyblue[alpha_index+1][delta_index] == -1 )
       )
    {
-      cerr << "\nError (Sky::StellarBgFlux()): No data for this part of the sky." << endl;
-      cerr << "Please enter a value for the background flux manually in the parameter file." << endl;
+      std::cerr << "\nError (Sky::StellarBgFlux()): No data for this part of the sky." << std::endl;
+      std::cerr << "Please enter a value for the background flux manually in the parameter file." << std::endl;
       exit ( 1 );
    }
 
@@ -719,7 +719,7 @@ double Sky::StellarBgFlux ( vector<double> &lambda,
    if ( a <= 0.0 )
    {
        LogManager::log << "WARNING: Sky::StellarBgFlux(): Unexpected behaviour of "
-                       << "monochromatic background flux for lambda <= 690 nm." << endl;
+                       << "monochromatic background flux for lambda <= 690 nm." << std::endl;
        GlobalVariables::logManager.LogManagerShowLog(); 
 
    }
@@ -859,7 +859,7 @@ void Sky::equa2ecl ( const double alpha, const double delta,
 
    if ( cosbeta == 0.0 )
    {
-      cerr << "\nError (Sky::equa2ecl()): pointing ecliptic pole." << endl;
+      std::cerr << "\nError (Sky::equa2ecl()): pointing ecliptic pole." << std::endl;
       exit (1);
    }
 

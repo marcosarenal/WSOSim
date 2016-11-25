@@ -53,7 +53,7 @@ public:
     void StepPhotometryOnTheGoSubPixelStarListOnCCDCut();
     void StepPhotometryOnTheGoPreComputeWeightedMask();
     void StepPhotometryOnTheGoMeasureStarsFluxes(Array<float, 2> fluxMap);
-    void StepPhotometryOnTheGoWriteInfo(string fileName);
+    void StepPhotometryOnTheGoWriteInfo(std::string fileName);
     
     
 private:
@@ -64,7 +64,7 @@ private:
     Array<float, 2> fluxMap;
     Array<float, 2> rawImage;
     Array<float, 2> trailingMap;
-    Array<string, 1> exposuresNamesArray;             //Array containing the exposures names for the FITS files.
+    Array<std::string, 1> exposuresNamesArray;             //Array containing the exposures names for the FITS files.
     Array<float, 2>  subPixelStarListOnCCD;
     Array<float, 2>  psfMap;                          //Blitz 2-D array with the PSF map.
     Array<float, 4>  weightedPSF;
@@ -73,11 +73,11 @@ private:
     Array<float, 2>  smearingMap;
     Array<float, 2>  pixelMap;
 
-    string  outputPath;                               //Parameter retrieved from DataSet.
-    string  prefix;                                   //Parameter retrieved from DataSet.
-    string  photometryDirName;                        //Parameter retrieved from DataSetPhotometry.
-    string  photometryPlotsDir;                       //Parameter retrieved from DataSetPhotometry.
-    string  photometryMethod;                         //Parameter retrieved from DataSetPhotometry.
+    std::string  outputPath;                               //Parameter retrieved from DataSet.
+    std::string  prefix;                                   //Parameter retrieved from DataSet.
+    std::string  photometryDirName;                        //Parameter retrieved from DataSetPhotometry.
+    std::string  photometryPlotsDir;                       //Parameter retrieved from DataSetPhotometry.
+    std::string  photometryMethod;                         //Parameter retrieved from DataSetPhotometry.
     
     int     numSmearingOverscanRows;                  //Parameter retrieved from DataSet.
     int     numPrescanRows;                           //Parameter retrieved from DataSet.

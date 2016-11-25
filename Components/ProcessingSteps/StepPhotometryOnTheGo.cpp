@@ -550,7 +550,7 @@ void StepPhotometryOnTheGo::StepPhotometryOnTheGoMeasureStarsFluxes(Array<float,
 
                 outStar << magInput << " " << fluxInput;
                 outStar << " " << magObs << " " << magObsNorm << " " << fluxObs << " " << fluxObsNorm << " " << backMedian 
-                        * exposureTime << endl;
+                        * exposureTime << std::endl;
                     
   
 				//write star coordinates to a file
@@ -583,71 +583,71 @@ void StepPhotometryOnTheGo::StepPhotometryOnTheGoMeasureStarsFluxes(Array<float,
  * This function writes the photometry processing info to an ASCII file.
  * @param fileName File name to be written.
  */
-void StepPhotometryOnTheGo::StepPhotometryOnTheGoWriteInfo(string fileName)
+void StepPhotometryOnTheGo::StepPhotometryOnTheGoWriteInfo(std::string fileName)
 {
 	ofstream out(fileName.c_str());
 	if (!out.is_open())
 	{
-		cerr << "\nError (StepPhotometryOnTheGo::StepPhotometryOnTheGoWriteInfo()): Unable to open output information file " << fileName;
+		std::cerr << "\nError (StepPhotometryOnTheGo::StepPhotometryOnTheGoWriteInfo()): Unable to open output information file " << fileName;
 		exit(1);
 	}
     
-	string baseName = outputPath + "/" + prefix;
+	std::string baseName = outputPath + "/" + prefix;
 	baseName.erase(baseName.end() - 1);
     
-	out << "-----------------------------------------------------------------------------" << endl;
-	out << "Information about the photometry files in this directory" << endl;
+	out << "-----------------------------------------------------------------------------" << std::endl;
+	out << "Information about the photometry files in this directory" << std::endl;
 	if (photometryMethod == "WM")   //If photometry method is Weighted Mask
-		out << "PHOTOMETRY METHOD: WEIGHTED MASKS" << endl;
+		out << "PHOTOMETRY METHOD: WEIGHTED MASKS" << std::endl;
 	else if (photometryMethod == "AP") //If photometry method is Aperture
-		out << "PHOTOMETRY METHOD: APERTURE" << endl;
+		out << "PHOTOMETRY METHOD: APERTURE" << std::endl;
     
 	if (flatfieldCorrection)
-		out << "CORRECTED FOR FLATFIELD" << endl;
+		out << "CORRECTED FOR FLATFIELD" << std::endl;
 	else
-		out << "NOT CORRECTED FOR FLATFIELD" << endl;
+		out << "NOT CORRECTED FOR FLATFIELD" << std::endl;
     
 	if (frameTransferSmearingCorrection)
-		out << "CORRECTED FOR TRAILING" << endl;
+		out << "CORRECTED FOR TRAILING" << std::endl;
 	else
-		out << "NOT CORRECTED FOR TRAILING" << endl;
+		out << "NOT CORRECTED FOR TRAILING" << std::endl;
     
-	out << "Number of Telescopes (N): " << photometryNumTelescopes << endl;
-	out << "-----------------------------------------------------------------------------" << endl;
-	out << baseName + ".info" << "  ............. Input parameters for simulation" << endl;
-	out << baseName + "*.fits" << "  ............. Raw sub-images" << endl;
-	out << baseName + "_flat.fits" << "  ............. Flatfield (illumination flux 30000 e)" << endl;
+	out << "Number of Telescopes (N): " << photometryNumTelescopes << std::endl;
+	out << "-----------------------------------------------------------------------------" << std::endl;
+	out << baseName + ".info" << "  ............. Input parameters for simulation" << std::endl;
+	out << baseName + "*.fits" << "  ............. Raw sub-images" << std::endl;
+	out << baseName + "_flat.fits" << "  ............. Flatfield (illumination flux 30000 e)" << std::endl;
 	out << baseName + "_reduced0.fits" << "  ............. First image corrected by trailing, flatfield, gain and exposure (flux/s)"
-    << endl;
-	out << baseName + "_masks0.fits" << " ................ Masks of the first image" << endl;
-	out << "Normalized flux is computed from the theoretical flux of the model PSF at the sub-pixel position of the star" << endl;
+    << std::endl;
+	out << baseName + "_masks0.fits" << " ................ Masks of the first image" << std::endl;
+	out << "Normalized flux is computed from the theoretical flux of the model PSF at the sub-pixel position of the star" << std::endl;
 
-	out << "star*.phot" << " ............. Lightcurve of each star" << endl;
-	out << "                                      Column description:" << endl;
-	out << "                                      1: time [s]" << endl;
-	out << "                                      2: Input magnitude" << endl;
-	out << "                                      3: Input flux" << endl;
-	out << "                                      4: Measured magnitude" << endl;
-	out << "                                      5: Measured normalized magnitude" << endl;
-	out << "                                      6: Measured flux" << endl;
-	out << "                                      7: Measured normalized flux" << endl;
-	out << "                                      8: Background flux" << endl;
+	out << "star*.phot" << " ............. Lightcurve of each star" << std::endl;
+	out << "                                      Column description:" << std::endl;
+	out << "                                      1: time [s]" << std::endl;
+	out << "                                      2: Input magnitude" << std::endl;
+	out << "                                      3: Input flux" << std::endl;
+	out << "                                      4: Measured magnitude" << std::endl;
+	out << "                                      5: Measured normalized magnitude" << std::endl;
+	out << "                                      6: Measured flux" << std::endl;
+	out << "                                      7: Measured normalized flux" << std::endl;
+	out << "                                      8: Background flux" << std::endl;
     
-	out << "star_coordinates.dat" << " ............. Coordinates and magnitude of measured stars" << endl;
-	out << "                                      Column description:" << endl;
-	out << "                                      1: File name with lightcurve" << endl;
-	out << "                                      2: X-coordinate of star on sub-image" << endl;
-	out << "                                      3: Y-coordinate of star on sub-image" << endl;
-	out << "                                      4: Input magnitude" << endl;
-	out << "                                      5: Input flux" << endl;
+	out << "star_coordinates.dat" << " ............. Coordinates and magnitude of measured stars" << std::endl;
+	out << "                                      Column description:" << std::endl;
+	out << "                                      1: File name with lightcurve" << std::endl;
+	out << "                                      2: X-coordinate of star on sub-image" << std::endl;
+	out << "                                      3: Y-coordinate of star on sub-image" << std::endl;
+	out << "                                      4: Input magnitude" << std::endl;
+	out << "                                      5: Input flux" << std::endl;
     
 	
     
-	out << baseName + "_psf.dat" << " ............. Input PSF of image" << endl;
-	out << "                                      Column description:" << endl;
-	out << "                                      1: X-coordinate" << endl;
-	out << "                                      2: Y-coordinate" << endl;
-	out << "                                      3: Normalized flux" << endl;
+	out << baseName + "_psf.dat" << " ............. Input PSF of image" << std::endl;
+	out << "                                      Column description:" << std::endl;
+	out << "                                      1: X-coordinate" << std::endl;
+	out << "                                      2: Y-coordinate" << std::endl;
+	out << "                                      3: Normalized flux" << std::endl;
     
 	
 	out.close();

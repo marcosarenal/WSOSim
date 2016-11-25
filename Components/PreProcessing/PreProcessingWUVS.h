@@ -58,13 +58,13 @@ private:
 	double  originOffsetXmm, originOffsetYmm;       //Parameter retrieved from DataSet.
 	double  ccdOrientation;                         //Parameter retrieved from DataSet.
         
-	string  convolutionMethod;                      //Parameter retrieved from DataSet.
-	string  ccdPredefinedPosition;                  //Parameter retrieved from DataSet.
-	string parameterFile;                           //Parameter retrieved from DataSet.
+	std::string  convolutionMethod;                      //Parameter retrieved from DataSet.
+	std::string  ccdPredefinedPosition;                  //Parameter retrieved from DataSet.
+	std::string parameterFile;                           //Parameter retrieved from DataSet.
             
         Array<float, 2> inputImage;
         Array<int, 2> inputIntImage;
-        string  outputPath, prefix;                               //Parameter retrieved from DataSet.
+        std::string  outputPath, prefix;                               //Parameter retrieved from DataSet.
 
         
 

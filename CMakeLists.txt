@@ -122,9 +122,10 @@ endif(NOT CCFITS_FOUND)
 
 FIND_LIBRARY(FFTW REQUIRED)
 IF (FFTW_FOUND)
+  message( STATUS "FFTW libraries Founded")
   IF(FFTW_INCLUDE_DIRS)
     message( STATUS "FFTW libraries: ${FFTW_INCLUDE_DIRS}" )
-  	include_directories( ${FFTW_INCLUDE_DIRS} )
+    include_directories( ${FFTW_INCLUDE_DIRS} )
   ENDIF(FFTW_INCLUDE_DIRS)
   
   IF (FFTW_LIBRARIES)
@@ -136,14 +137,14 @@ ENDIF (FFTW_FOUND)
 
 IF (NOT FFTW_FOUND)
 	SET(FFTWLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/fftw-3.3.3) 
-	
+
     find_path(FFTW_INCLUDE_DIR
         NAMES fftw3.h
         HINTS $ENV{FFWT_ROOT_DIR} "${FFTWLIBSEARCHPATHS}/include"
         DOC "FFWT3 include directory.")
-        
+
     include_directories(${FFTWLIBSEARCHPATHS}/include)
-    
+
     find_library(FFTW_LIBRARY
         NAMES libfftw3.a libfftw3.la libfftw3_threads.a libfftw3_threads.la  
         HINTS $ENV{FFTW_ROOT_DIR} "${FFTWLIBSEARCHPATHS}/lib"

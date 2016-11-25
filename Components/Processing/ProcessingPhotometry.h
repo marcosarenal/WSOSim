@@ -50,10 +50,10 @@ public:
     void processingPhotometrySubPixelStarListOnCCDCut();
     void processingPhotometryPreComputeWeightedMask();
     void processingPhotometryMeasureStarsFluxes(Array<float, 2> flux, int frameIndex);
-    void processingPhotometryComputeStatistics(string fileName);
-    void processingPhotometryMakeAnalysis(string fileName);
-    void processingPhotometryWritePsfToASCIIFile(string fileName);
-    void processingPhotometryWriteInfo(string fileName);
+    void processingPhotometryComputeStatistics(std::string fileName);
+    void processingPhotometryMakeAnalysis(std::string fileName);
+    void processingPhotometryWritePsfToASCIIFile(std::string fileName);
+    void processingPhotometryWriteInfo(std::string fileName);
     
     
 private:
@@ -63,18 +63,18 @@ private:
 
     Array<float, 2> flux;
     Array<float, 2> rawImage;
-    Array<string, 1> exposuresNamesArray;             //Array containing the exposures names for the FITS files.
+    Array<std::string, 1> exposuresNamesArray;             //Array containing the exposures names for the FITS files.
     Array<float, 2>  subPixelStarListOnCCD;
     Array<float, 2>  psfMap;                          //Blitz 2-D array with the PSF map.
     Array<float, 4>  weightedPSF;                     //Blitz 4-D array. Each pixel of the 2-D PSF map is associated to a 2-D array 
     Array<float, 2>  normalizationFactor;
     Array<float, 2>  flatfieldMap;                    //Blitz map retrieved from the DataSet.
 
-    string  outputPath;                               //Parameter retrieved from DataSet.
-    string  prefix;                                   //Parameter retrieved from DataSet.
-    string  photometryDirName;                        //Parameter retrieved from DataSetPhotometry.
-    string  photometryPlotsDir;                       //Parameter retrieved from DataSetPhotometry.
-    string  photometryMethod;                         //Parameter retrieved from DataSetPhotometry.
+    std::string  outputPath;                               //Parameter retrieved from DataSet.
+    std::string  prefix;                                   //Parameter retrieved from DataSet.
+    std::string  photometryDirName;                        //Parameter retrieved from DataSetPhotometry.
+    std::string  photometryPlotsDir;                       //Parameter retrieved from DataSetPhotometry.
+    std::string  photometryMethod;                         //Parameter retrieved from DataSetPhotometry.
     
     int     numSmearingOverscanRows;                  //Parameter retrieved from DataSet.
     int     numPrescanRows;                           //Parameter retrieved from DataSet.

@@ -24,6 +24,8 @@
 
 
 
+#include <iostream>
+
 #include "PreProcessingCCD.h"
 
 

@@ -52,7 +52,7 @@ PreProcessingPhotometry::~PreProcessingPhotometry(){}
  *        included into the xml parameters input file.
  * @param photometryParameterFile Name of the xml photometry parameters input file.
  */
-PreProcessingPhotometry::PreProcessingPhotometry(DataSet &m_DataSet, DataSetPhotometry &datasetPhotometry, string photometryParameterFile)
+PreProcessingPhotometry::PreProcessingPhotometry(DataSet &m_DataSet, DataSetPhotometry &datasetPhotometry, std::string photometryParameterFile)
 {    
     //Point to the DataSet
     p_datasetPhotometry = &datasetPhotometry;
@@ -73,9 +73,9 @@ PreProcessingPhotometry::PreProcessingPhotometry(DataSet &m_DataSet, DataSetPhot
     //If PSFsubpixels < subfield size
     if (photometryMethod == "WM" && (psfSubPixels < subFieldSizeX || psfSubPixels < subFieldSizeY) )
     {
-        cerr << "\nError (PreProcessingPhotometry::PreProcessingPhotometry()):  You must provide a higher PSFSubPixels value (being PSFSubPixels/SubPixels an integer value) or a smaller subFieldSize because" << endl;
-        cerr << "psfSubPixels ("<< psfSubPixels <<")  < subFieldSizeX ("<< subFieldSizeX <<") or psfSubPixels ("<< psfSubPixels <<") < subFieldSizeY ("<< subFieldSizeX <<")"  << endl;
-        cerr << "You can also use Aperture Photometry (AP) instead of Weighted Mask Photometry (WM) ."  << endl;
+        std::cerr << "\nError (PreProcessingPhotometry::PreProcessingPhotometry()):  You must provide a higher PSFSubPixels value (being PSFSubPixels/SubPixels an integer value) or a smaller subFieldSize because" << std::endl;
+        std::cerr << "psfSubPixels ("<< psfSubPixels <<")  < subFieldSizeX ("<< subFieldSizeX <<") or psfSubPixels ("<< psfSubPixels <<") < subFieldSizeY ("<< subFieldSizeX <<")"  << std::endl;
+        std::cerr << "You can also use Aperture Photometry (AP) instead of Weighted Mask Photometry (WM) ."  << std::endl;
         exit(1);
 
     }
@@ -83,10 +83,10 @@ PreProcessingPhotometry::PreProcessingPhotometry(DataSet &m_DataSet, DataSetPhot
     //If 2*subPixelsPerPixel < subfield size
     if (photometryMethod == "WM" && ((subPixelsPerPixel+1)*2 > subFieldSizeX || (subPixelsPerPixel+1)*2 > subFieldSizeY) )
     {
-        cerr << "\nError (PreProcessingPhotometry::PreProcessingPhotometry()): You must provide a higher subfield size or a smaller subPixel value because  "<< endl;
-        cerr << "2*subPixelsPerPixel (2*"<< subPixelsPerPixel <<")  > subFieldSizeX ("<< subFieldSizeX <<") or "  
-                "2*subPixelsPerPixel (2*"<< subPixelsPerPixel <<") > subFieldSizeY ("<< subFieldSizeX <<")"<< endl;
-        cerr << "You can also use Aperture Photometry (AP) instead of Weighted Mask Photometry (WM) in the input parameters photometry file."  << endl;
+        std::cerr << "\nError (PreProcessingPhotometry::PreProcessingPhotometry()): You must provide a higher subfield size or a smaller subPixel value because  "<< std::endl;
+        std::cerr << "2*subPixelsPerPixel (2*"<< subPixelsPerPixel <<")  > subFieldSizeX ("<< subFieldSizeX <<") or "  
+                "2*subPixelsPerPixel (2*"<< subPixelsPerPixel <<") > subFieldSizeY ("<< subFieldSizeX <<")"<< std::endl;
+        std::cerr << "You can also use Aperture Photometry (AP) instead of Weighted Mask Photometry (WM) in the input parameters photometry file."  << std::endl;
         exit(1);
 
     }
@@ -103,14 +103,14 @@ PreProcessingPhotometry::PreProcessingPhotometry(DataSet &m_DataSet, DataSetPhot
     //Create Photometry output directory.
     if (!FileUtilities::doMkdir(photometryDirName.c_str(), S_IRWXU))
     {
-        cerr << "\nError (PreProcessingPhotometry::PreProcessingPhotometry()): Cannot create directory " << photometryDirName << endl;
+        std::cerr << "\nError (PreProcessingPhotometry::PreProcessingPhotometry()): Cannot create directory " << photometryDirName << std::endl;
         exit(1);
     }
     
     //Create  output directory for photometry plots.
 	if (!FileUtilities::doMkdir(photometryPlotsDir.c_str(), S_IRWXU))
 	{
-        cerr << "\nError (PreProcessingPhotometry::PreProcessingPhotometry()): Cannot create directory " << photometryPlotsDir << endl;
+        std::cerr << "\nError (PreProcessingPhotometry::PreProcessingPhotometry()): Cannot create directory " << photometryPlotsDir << std::endl;
 		exit(1);
 	}
 
@@ -119,8 +119,8 @@ PreProcessingPhotometry::PreProcessingPhotometry(DataSet &m_DataSet, DataSetPhot
     GlobalVariables::logManager.LogManagerShowLog();    
     
     //Remove all photometry files in directory
-	vector<string> starFiles;
-	string dummy;
+	vector<std::string> starFiles;
+	std::string dummy;
 	FileUtilities::getDir(photometryDirName, starFiles, ".phot");
     
 	for (uint i = 0; i < starFiles.size(); i++)
@@ -133,8 +133,8 @@ PreProcessingPhotometry::PreProcessingPhotometry(DataSet &m_DataSet, DataSetPhot
 	remove(dummy.c_str());
     
     
-    LogManager::log<< "    Output directory of photometry "<< photometryDirName << endl;
-    LogManager::log<< "    Output directory of plots  "<< photometryPlotsDir;
+    LogManager::log<< "    Output directory of photometry: "<< photometryDirName << std::endl;
+    LogManager::log<< "    Output directory of plots:  "<< photometryPlotsDir;
     GlobalVariables::logManager.LogManagerAppendLogAndShow();
 
         

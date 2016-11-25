@@ -50,7 +50,7 @@ class PreProcessingPhotometry
 public:
 
 	PreProcessingPhotometry();
-	PreProcessingPhotometry(DataSet &m_DataSet, DataSetPhotometry &datasetPhotometry, string photometryParameterFile);        
+	PreProcessingPhotometry(DataSet &m_DataSet, DataSetPhotometry &datasetPhotometry, std::string photometryParameterFile);        
 	virtual ~PreProcessingPhotometry();
 	void preProcessingPhotometryReadinput();
     
@@ -60,10 +60,10 @@ private:
     DataSetPhotometry*  p_datasetPhotometry; //Pointer to the DataSet to retrieve parameters from it.
     DataSet*            p_DataSet;           //Pointer to the DataSet to retrieve parameters from it.
 
-    string photometryDirName;                  //Parameter retrieved from DataSet.
-    string photometryPlotsDir;                   //Output directory for plots.
-    string outputPath, prefix;               //Parameter retrieved from DataSet.
-    string photometryMethod;
+    std::string photometryDirName;                  //Parameter retrieved from DataSet.
+    std::string photometryPlotsDir;                   //Output directory for plots.
+    std::string outputPath, prefix;               //Parameter retrieved from DataSet.
+    std::string photometryMethod;
 
     int    subPixelsPerPixel;                //Parameter retrieved from DataSet.
     int    psfSubPixels, psfNumPixels;       //Parameter retrieved from DataSet.

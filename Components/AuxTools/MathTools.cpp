@@ -288,7 +288,7 @@ void MathTools::shakersort(Array<float, 1> &v)
  * 
  * @param v
  */
-void MathTools::shakersort(vector<string> &v)
+void MathTools::shakersort(vector<std::string> &v)
 {
 	int n = v.size();
 	int lower = 1;
@@ -386,7 +386,7 @@ void MathTools::shakersort(Array<double, 1> &v1, Array<double, 1> &v2)
  * @param v1
  * @param v2
  */
-void MathTools::shakersort(Array<double, 1> &v1, Array<string, 1> &v2)
+void MathTools::shakersort(Array<double, 1> &v1, Array<std::string, 1> &v2)
 {
 	//
 	int n = v1.size();
@@ -2017,7 +2017,7 @@ void MathTools::rotateMap(Array<double, 2> mapIn, double x0, double y0, double a
 	//mapOut = 0.;
 	double step = 0.5;
 	//qDebug ( "void Jitter::rotateMap ( Array<int, 2> mapIn, Array<int, 2> mapOut )" );
-	//qDebug() << "start rotation" << endl;
+	//qDebug() << "start rotation" << std::endl;
 	double xrot, yrot;
 	int xnew, ynew;
 //	int counter = 0;

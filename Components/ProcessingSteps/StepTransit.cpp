@@ -67,20 +67,25 @@ void StepTransit::StepTransitapplication(DataSet &m_DataSet, double startTime)
     exoplanetOrbitalPeriod = p_DataSet->datasetGetexoplanetOrbitalPeriod();
       
     
+    //Retrieving the inTransitArray from the DataSet
     inTransitArray.resize(p_DataSet->datasetGetinTransitArray().extent(0),p_DataSet->datasetGetinTransitArray().extent(1));
     inTransitArray = 0.0;
     inTransitArray = p_DataSet->datasetGetinTransitArray(); 
 
-    
-    //Retrieving the inTransitArray from the DataSet
     inTransitArray = m_DataSet.datasetGetinTransitArray();
                  
              
-    //Check whether the exposition startTime corresponds with a transit perion on the inTransitArray
+    //Check whether the exposition startTime corresponds with a transit period on the inTransitArray
     
     //Check the aproximate startTime position in inTransitArray to iterate there instead of on the whole inTransitArray to reduce computing time.
     //Given the startTime and the exoplanet Orbital Period, we can aproximate the position of the startTime to verify whether this belongs to a transit or a non-transit period.
     orbitalPeriodInSeconds = exoplanetOrbitalPeriod * 24 * 60 * 60;
+            
+    // Retrieving the starCatalogue: contains for each star, its X and Y position in CCD, magnitude, RA,
+    // declination and identification number.
+    starCatalogue.resize(p_DataSet->datasetGetStarCatalogue().extent(0),p_DataSet->datasetGetStarCatalogue().extent(1));
+    //starCatalogue = 0.0;
+    starCatalogue = p_DataSet->datasetGetStarCatalogue();
 
      //Due to its structure inTransitArray(initTransit1, endTransit1, initTransit2, endTransit2, ...), init transit are in even positions of the array (that's why it's multiplied by 2)
     int firstIteration = floor(startTime/orbitalPeriodInSeconds) - 1;
@@ -90,20 +95,13 @@ void StepTransit::StepTransitapplication(DataSet &m_DataSet, double startTime)
     {
         firstIteration = 0;
     }
-    
+                
     //For the closer positions of startTime in the inTransitArray:
-    for (int iterStartTime = firstIteration; iterStartTime < firstIteration + 5; iterStartTime++)
+    for (int iterStartTime = firstIteration; iterStartTime < firstIteration + 2; iterStartTime++)
     {
         //If the startTime is in between an even and an odd position (and NOT between an odd and an even position), meaning that it is on transit
-        if(inTransitArray(2*iterStartTime) < startTime < inTransitArray(2*iterStartTime+1))
+        if(inTransitArray(2*iterStartTime) < startTime && startTime < inTransitArray(2*iterStartTime+1))
         {
-            // Retrieving the starCatalogue: contains for each star, its X and Y position in CCD, magnitude, RA,
-            // declination and identification number.
-            starCatalogue.resize(p_DataSet->datasetGetStarCatalogue().extent(0),p_DataSet->datasetGetStarCatalogue().extent(1));
-            //starCatalogue = 0.0;
-            starCatalogue = p_DataSet->datasetGetStarCatalogue();
-
-
             //Calculate the aparent magnitude of the host star during the transit
             //F(transit)/F(no transit)=1-(exoplanetRadius^2/hostStarRadius^2)
             transitMagnitude = hostStarMagnitude - (1/0.4)*log10(1-(exoplanetRadius*exoplanetRadius/(hostStarRadius*hostStarRadius))); 
@@ -111,7 +109,12 @@ void StepTransit::StepTransitapplication(DataSet &m_DataSet, double startTime)
 
             //Modify the magnitude of the transit host star in the star catalogue so it takes into account the dimmering due to the exoplanet transit
             starCatalogue(hostStarID, 3) = transitMagnitude;
-
+    
+            LogManager::log <<"    This exposure will include an exoplanet transit:"<< std::endl;
+            LogManager::log <<"    Host star ID in the Star Catalogue: "<< hostStarID +1<< std::endl;//+1 because the starCatalogue array starts in position 0.
+            LogManager::log <<"    Magnitude during transit: "<< transitMagnitude<< std::endl;//+1 because the starCatalogue array starts in position 0.
+            LogManager::log <<"    Transit start and end [s]: "<< inTransitArray(2*iterStartTime)<<"--> "<< inTransitArray(2*iterStartTime+1)<<std::endl;//+1 because the starCatalogue array starts in position 0.
+            GlobalVariables::logManager.LogManagerAppendLog();
 
             //Set the starCatalogue into the DataSet            
             m_DataSet.datasetSetStarCatalogue(starCatalogue); 
@@ -128,8 +131,7 @@ void StepTransit::StepTransitapplication(DataSet &m_DataSet, double startTime)
         }
     }
         
-
-    
-    LogManager::log <<"    Successfully added Jitter.";
+   
+    LogManager::log <<"    Successfully implemented exoplanet transit.";
     GlobalVariables::logManager.LogManagerShowLog();
 }   

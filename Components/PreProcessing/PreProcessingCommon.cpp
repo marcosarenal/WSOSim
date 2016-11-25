@@ -55,7 +55,7 @@ PreProcessingCommon::~PreProcessingCommon(){}
  *        included into the xml parameters input file.
  * @param parameterFile Name of the xml parameters input file.
  */
-void PreProcessingCommon::PreProcessingCommonCCD(DataSet &m_DataSet, string parameterFile)
+void PreProcessingCommon::PreProcessingCommonCCD(DataSet &m_DataSet, std::string parameterFile)
 {
     //Point to the DataSet
     p_DataSet = &m_DataSet;
@@ -72,25 +72,25 @@ void PreProcessingCommon::PreProcessingCommonCCD(DataSet &m_DataSet, string para
 //    //Check if the output directory exists
 //    if (FileUtilities::dirExists(outputDir.c_str()))    
 //    {
-//        string input = "";
-//        LogManager::log << "\nWARNING: Output directory already exist; Continue will delete all its content! Continue? (y/n)" << endl;
+//        std::string input = "";
+//        LogManager::log << "\nWARNING: Output directory already exist; Continue will delete all its content! Continue? (y/n)" << std::endl;
 //        GlobalVariables::logManager.LogManagerShowLog();
 //        getline(cin, input);
 //            
 //        //If user says something different than yes, leave the simulation 
 //        if (input != "y" && input != "Y")
 //        {
-//            cerr << "\nSimulation terminated "  << endl;
+//            std::cerr << "\nSimulation terminated "  << std::endl;
 //            exit(1);
 //        }
 //        //if says yes, clean the output directory
 //        else
 //        {
-//            string command = "rm -rf " +  outputDir;
+//            std::string command = "rm -rf " +  outputDir;
 //            int ret = system(command.c_str());
 //            if (ret != 0)
 //            {
-//                cerr << "\nError (PreProcessingCommon::PreProcessingCommonCCD()): Cannot remove directory " << outputDir << endl;
+//                std::cerr << "\nError (PreProcessingCommon::PreProcessingCommonCCD()): Cannot remove directory " << outputDir << std::endl;
 //                exit(1);
 //            }
 //            
@@ -101,17 +101,17 @@ void PreProcessingCommon::PreProcessingCommonCCD(DataSet &m_DataSet, string para
     //Creating output directory 
     if (!FileUtilities::doMkdir(outputDir.c_str(), ACCESSPERMS))
     {
-        cerr << "\nError (PreProcessingCommon::PreProcessingCommonCCD()): Cannot create directory " << outputDir << endl;
+        std::cerr << "\nError (PreProcessingCommon::PreProcessingCommonCCD()): Cannot create directory " << outputDir << std::endl;
         exit(1);
     }
     
     //Copy input XML file to output directory
-    string command = "cp " + parameterFile + " " + outputDir + "/" + prefix + ".xml";
+    std::string command = "cp " + parameterFile + " " + outputDir + "/" + prefix + ".xml";
              
     int ret = system(command.c_str());
     if (ret != 0)
     {
-        cerr << "\nError (PreProcessingCommon::PreProcessingCommonCCD()): Cannot copy directory " << outputDir << endl;
+        std::cerr << "\nError (PreProcessingCommon::PreProcessingCommonCCD()): Cannot copy directory " << outputDir << std::endl;
         exit(1);
     }            
             
@@ -129,7 +129,7 @@ void PreProcessingCommon::PreProcessingCommonCCD(DataSet &m_DataSet, string para
  *      input parameters (among others) included into the xml photometry parameters input file.
  * @param photometryParameterFile Name of the xml photometry parameters input file.
  */
-void PreProcessingCommon::PreProcessingCommonPhotometry(DataSetPhotometry &datasetPhotometry, string photometryParameterFile)
+void PreProcessingCommon::PreProcessingCommonPhotometry(DataSetPhotometry &datasetPhotometry, std::string photometryParameterFile)
 {
 
     //Read parameters file.

@@ -55,7 +55,7 @@ public:
     void ParamsStarfieldSetting(DataSet &m_DataSet);
     void ParamsStarfieldCoords(DataSet &m_DataSet);
     void ParamsStarfieldSetCCDParams(double a, double c, double d);
-    void ParamsStarfieldReadCatalogue(string catalogueFileName);
+    void ParamsStarfieldReadCatalogue(std::string catalogueFileName);
     void ParamsStarfieldTransformationSkyToCCD(double raS, double decS, double &xStarCCD, double &yStarCCD);
     void ParamsStarfieldfillsubPixelMap(DataSet &m_DataSet);
     
@@ -77,7 +77,7 @@ private:
 
     double radius_fov, ra_center, decl_center;
     double radiusFOVCCD, raCenterSubField, declCenterSubField;
-    string catalogueFileName;                                               //Parameter retrieved from DataSet.
+    std::string catalogueFileName;                                               //Parameter retrieved from DataSet.
     int    NumStars, numStarsCCD, numStarsSubField;
 
     double pixelScale;                                                      //Parameter retrieved from DataSet.
