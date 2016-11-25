@@ -27,7 +27,7 @@
 #include "LogManager.h"
 
 
-stringstream LogManager::log;
+std::stringstream LogManager::log;
 bool LogManager::showLogsFlag = true;
 
 
@@ -78,7 +78,7 @@ LogManager &LogManager::operator=(const LogManager &temp)
  * 
  * @param fileName File name including the absolute path of the log file to be created.
  */
-void LogManager::LogManagerGenerateLogFile(string fileName)
+void LogManager::LogManagerGenerateLogFile(std::string fileName)
 {
 	showLogsFlag = true;
 	LogManagerSetFile(fileName);
@@ -93,7 +93,7 @@ void LogManager::LogManagerGenerateLogFile(string fileName)
  * 
  * @param fileName
  */
-void LogManager::LogManagerSetFile(string fileName)
+void LogManager::LogManagerSetFile(std::string fileName)
 {
 //        LogManager::log << "        test 1 " ;
 
@@ -127,7 +127,7 @@ void LogManager::remove()
  * 
  * @param text
  */
-void LogManager::LogManagerAppendLog(stringstream &text)
+void LogManager::LogManagerAppendLog(std::stringstream &text)
 {
 //	if (GlobalVariables::rankMPI > 0)
 //		return;
@@ -138,11 +138,11 @@ void LogManager::LogManagerAppendLog(stringstream &text)
 	ofstream out(fileName.c_str(), ios_base::out | ios_base::app);
 	if (!out.is_open())
 	{
-		cerr << "\nError (LogManager::LogManagerAppendLog()): Unable to open output log file " << fileName;
+		std::cerr << "\nError (LogManager::LogManagerAppendLog()): Unable to open output log file " << fileName;
 		exit(1);
 	}
 	out.precision(11);
-	out << text.str() << endl;
+	out << text.str() << std::endl;
 }
 //==============================================================================
 
@@ -154,13 +154,13 @@ void LogManager::LogManagerAppendLog(stringstream &text)
  * 
  * @param text
  */
-void LogManager::LogManagerShowLog(stringstream &text)
+void LogManager::LogManagerShowLog(std::stringstream &text)
 {
 //	if (GlobalVariables::rankMPI > 0)
 //		return;
 
 	if (LogManager::showLogsFlag)
-		cout << text.str() << endl;
+		std::cout << text.str() << std::endl;
 }
 //==============================================================================
 
@@ -172,13 +172,13 @@ void LogManager::LogManagerShowLog(stringstream &text)
  * 
  * @param log
  */
-void LogManager::LogManagerShowLog(string text)
+void LogManager::LogManagerShowLog(std::string text)
 {
 //	if (GlobalVariables::rankMPI > 0)
 //		return;
 
 	if (LogManager::showLogsFlag)
-		cout << text << endl;
+		std::cout << text << std::endl;
 }
 //==============================================================================
 
@@ -191,7 +191,7 @@ void LogManager::LogManagerShowLog(string text)
  * 
  * @param text
  */
-void LogManager::LogManagerAppendLogAndShow(stringstream &text)
+void LogManager::LogManagerAppendLogAndShow(std::stringstream &text)
 {
 	LogManagerAppendLog(text);
 	LogManagerShowLog(text);
@@ -206,19 +206,19 @@ void LogManager::LogManagerAppendLogAndShow(stringstream &text)
  */
 void LogManager::LogManagerPresentation()
 {
-    log << "     "<<endl;
-    log << "     *****************************************************************************"<<endl;
-    log << "     *                                  WSOSim                                   *"<<endl;
-    log << "     *                          WSO End-to-End Simulator                         *"<<endl;
-    log << "     *                               Version 3.0                                 *"<<endl;
-    log << "     *                                11/05/2016                                 *"<<endl;
-    log << "     *                         Based on the PLATO Simulator                      *"<<endl;
-    log << "     *                                                                           *"<<endl;
-    log << "     *                        Developer: Pablo Marcos Arenal                     *"<<endl;
-    log << "     *                                    UCM                                    *"<<endl;
-    log << "     *                               pablmar@ucm.es                              *"<<endl;
-    log << "     *****************************************************************************"<<endl;	
-    log << "     "<<endl;
+    log << "     "<<std::endl;
+    log << "     *****************************************************************************"<<std::endl;
+    log << "     *                                  WSOSim                                   *"<<std::endl;
+    log << "     *                          WSO End-to-End Simulator                         *"<<std::endl;
+    log << "     *                               Version 3.0                                 *"<<std::endl;
+    log << "     *                                11/05/2016                                 *"<<std::endl;
+    log << "     *                         Based on the PLATO Simulator                      *"<<std::endl;
+    log << "     *                                                                           *"<<std::endl;
+    log << "     *                        Developer: Pablo Marcos Arenal                     *"<<std::endl;
+    log << "     *                                    UCM                                    *"<<std::endl;
+    log << "     *                               pablmar@ucm.es                              *"<<std::endl;
+    log << "     *****************************************************************************"<<std::endl;	
+    log << "     "<<std::endl;
 
 }
 //==============================================================================

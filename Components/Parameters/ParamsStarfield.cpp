@@ -111,8 +111,8 @@ void ParamsStarfield::ParamsStarfieldSetting(DataSet &m_DataSet)
     //Check whether there are stars in the field to continue the simulation or exit.
     if (numStarsSubField == 0)
     {
-        string input = "";
-        LogManager::log << "\nWARNING: No stars on sub-field! Continue? (y/n)" << endl;
+        std::string input = "";
+        LogManager::log << "\nWARNING: No stars on sub-field! Continue? (y/n)" << std::endl;
         GlobalVariables::logManager.LogManagerShowLog();
         getline(cin, input);
         if (input != "y" && input != "Y")
@@ -137,7 +137,7 @@ void ParamsStarfield::ParamsStarfieldSetting(DataSet &m_DataSet)
 * @param catalogueFileName File name of star catalog. The catalog must be an ASCII
 * file consisting of 3 columns separated by spaces: R.A, Dec and magnitude.
 */
-void ParamsStarfield::ParamsStarfieldReadCatalogue(string catalogueFileName)
+void ParamsStarfield::ParamsStarfieldReadCatalogue(std::string catalogueFileName)
 {
     //read in the star catalouge
     LogManager::log<< "    Reading the star catalogue from " << catalogueFileName;
@@ -235,8 +235,8 @@ void ParamsStarfield::ParamsStarfieldReadCatalogue(string catalogueFileName)
     }
     catch (int e)
     {
-        cerr << "An exception occurred. Exception Nr. " << e  << "There seems to be a problem with the star catalogue."<<endl;
-        cerr << "It might not be an appropriate format. Remember: RA, DEC, magnitude (in columns).   "<<endl;
+        std::cerr << "An exception occurred. Exception Nr. " << e  << "There seems to be a problem with the star catalogue."<<std::endl;
+        std::cerr << "It might not be an appropriate format. Remember: RA, DEC, magnitude (in columns).   "<<std::endl;
     }
         
     myfile.close();
@@ -405,44 +405,44 @@ void ParamsStarfield::ParamsStarfieldTransformationSkyToCCD(double raS, double d
 {
                 
     MathTools::getGnomonicProjection(raS * Constants::DEG2RAD, decS * Constants::DEG2RAD, raOpticalAxis, decOpticalAxis, rotationAngleOA, xStarCCD, yStarCCD);
-    /*	LogManager::log << "Gnomonic Projection" << endl;
-     LogManager::log << "RA Star raS: " << raS << endl;
-     LogManager::log << "Dec Star decS: " << decS << endl;
-     LogManager::log << "RA Projection Center raOpticalAxis: " << raOpticalAxis * Constants::RAD2DEG << endl;
-     LogManager::log << "Dec Projection Center decOpticalAxis: " << decOpticalAxis * Constants::RAD2DEG << endl;
-     LogManager::log << "Rotation Angle rotationAngleOA: " << rotationAngleOA * Constants::RAD2DEG << endl;
-     LogManager::log << "X Projected Star xStarCCD: " << xStarCCD << endl;
-     LogManager::log << "Y Projected Star yStarCCD: " << yStarCCD << endl;
+    /*	LogManager::log << "Gnomonic Projection" << std::endl;
+     LogManager::log << "RA Star raS: " << raS << std::endl;
+     LogManager::log << "Dec Star decS: " << decS << std::endl;
+     LogManager::log << "RA Projection Center raOpticalAxis: " << raOpticalAxis * Constants::RAD2DEG << std::endl;
+     LogManager::log << "Dec Projection Center decOpticalAxis: " << decOpticalAxis * Constants::RAD2DEG << std::endl;
+     LogManager::log << "Rotation Angle rotationAngleOA: " << rotationAngleOA * Constants::RAD2DEG << std::endl;
+     LogManager::log << "X Projected Star xStarCCD: " << xStarCCD << std::endl;
+     LogManager::log << "Y Projected Star yStarCCD: " << yStarCCD << std::endl;
      */
     //the CCD is located in the focal plane with a certain offset.
     //compute the translation
     //double xCCDTrans, yCCDTrans;
 
     MathTools::translate(xStarCCD, yStarCCD, originOffsetX, originOffsetY);
-    /*	LogManager::log << "Translation of CCD" << endl;
-     LogManager::log << "dx Translation originOffsetX: " << originOffsetX << endl;
-     LogManager::log << "dy Translation originOffsetY: " << originOffsetY << endl;
-     LogManager::log << "X Projected Translated Star xStarCCD: " << xStarCCD << endl;
-     LogManager::log << "Y Projected Translated Star yStarCCD: " << yStarCCD << endl;
+    /*	LogManager::log << "Translation of CCD" << std::endl;
+     LogManager::log << "dx Translation originOffsetX: " << originOffsetX << std::endl;
+     LogManager::log << "dy Translation originOffsetY: " << originOffsetY << std::endl;
+     LogManager::log << "X Projected Translated Star xStarCCD: " << xStarCCD << std::endl;
+     LogManager::log << "Y Projected Translated Star yStarCCD: " << yStarCCD << std::endl;
      */
     //then rotate the CCD. Rotate NOT around the origin and also not around the offset coordinates BUT around the coordinates of the original offset
     //Remember: the offset is modified in simulator.cpp because the size of the CCD is increased to correctly compute the flux at the edges
     double xRot, yRot;
     double shift = edgePixels * pixelScale * Constants::DEG2RAD / 3600.;
     MathTools::rotate(xStarCCD, yStarCCD, shift, shift, ccdOrientation * Constants::DEG2RAD, xRot, yRot);
-    /*	LogManager::log << "Rotation of CCD" << endl;
-     LogManager::log << "Rotation center (shift): " << shift << endl;
-     LogManager::log << "CCD Rotation Angle ccdOrientation: " << ccdOrientation << endl;
-     LogManager::log << "X Projected Translated Rotated Star xRot: " << xRot << endl;
-     LogManager::log << "Y Projected Translated Rotated Star yRot: " << yRot << endl;
+    /*	LogManager::log << "Rotation of CCD" << std::endl;
+     LogManager::log << "Rotation center (shift): " << shift << std::endl;
+     LogManager::log << "CCD Rotation Angle ccdOrientation: " << ccdOrientation << std::endl;
+     LogManager::log << "X Projected Translated Rotated Star xRot: " << xRot << std::endl;
+     LogManager::log << "Y Projected Translated Rotated Star yRot: " << yRot << std::endl;
      */
     double pixScalexDeg = Constants::RAD2DEG * 3600. / pixelScale;
     xStarCCD = xRot * pixScalexDeg;
     yStarCCD = yRot * pixScalexDeg;
-    /*	LogManager::log << "Conversion of dimensionless (x,y)-coordinates to CCD coordinates considering the pixel scale." << endl;
-     LogManager::log << "Pixel scale (pixel/rad) pixScalexDeg: " << pixScalexDeg << endl;
-     LogManager::log << "X Pixel Coordinates Star xStarCCD: " << xStarCCD << endl;
-     LogManager::log << "Y Pixel Coordinate Star yStarCCD: " << yStarCCD << endl;
+    /*	LogManager::log << "Conversion of dimensionless (x,y)-coordinates to CCD coordinates considering the pixel scale." << std::endl;
+     LogManager::log << "Pixel scale (pixel/rad) pixScalexDeg: " << pixScalexDeg << std::endl;
+     LogManager::log << "X Pixel Coordinates Star xStarCCD: " << xStarCCD << std::endl;
+     LogManager::log << "Y Pixel Coordinate Star yStarCCD: " << yStarCCD << std::endl;
      */
 }
 //==============================================================================

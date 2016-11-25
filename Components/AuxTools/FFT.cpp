@@ -101,7 +101,7 @@ void FFT::backward(Array<complex<float> , 1> &in, Array<float, 1> &out)
 }
 
 //****************************************************************************
-void FFT::forward(Array<float, 2> &in, Array<complex<float> , 2> &out, int threads, bool useFFTWisdom, string fftWisdomPath)
+void FFT::forward(Array<float, 2> &in, Array<complex<float> , 2> &out, int threads, bool useFFTWisdom, std::string fftWisdomPath)
 {
 	//qDebug ( "void FFT::forward ( Array<float, 2> in, Array<complex<float>, 2 > &out )" );
 	fftw_init_threads();
@@ -113,14 +113,14 @@ void FFT::forward(Array<float, 2> &in, Array<complex<float> , 2> &out, int threa
 
 	if (!FileUtilities::dirExists(fftWisdomPath.c_str()))
 	{
-		cerr << "\nError (FFT::forward): Wisdom directory '" << fftWisdomPath << "' does not exist. Please create it." << endl;
+		std::cerr << "\nError (FFT::forward): Wisdom directory '" << fftWisdomPath << "' does not exist. Please create it." << std::endl;
         exit(1);
 	}
 
-	stringstream ss;
+	std::stringstream ss;
 	ss << fftWisdomPath << "/fftwisdomr2c_r" << rows << "_c" << cols << ".dat";
 
-	string wisdomFile = ss.str();
+	std::string wisdomFile = ss.str();
 
 	double * fin = (double*) fftw_malloc(sizeof(double) * rows * cols);
 	fftw_complex * fout = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * rows * colsd2);
@@ -147,7 +147,7 @@ void FFT::forward(Array<float, 2> &in, Array<complex<float> , 2> &out, int threa
 			{
 	
                 LogManager::log<< "Creating a new r2c wisdom plan for FFT convolution (might take some time).";
-                LogManager::log<< "Once the plan is available, subsequent FFTs using this plan perform very fast." << endl;
+                LogManager::log<< "Once the plan is available, subsequent FFTs using this plan perform very fast." << std::endl;
                 GlobalVariables::logManager.LogManagerShowLog();  
 
 				p = fftw_plan_dft_r2c_2d(rows, cols, fin, fout, FFTW_MEASURE );
@@ -159,10 +159,10 @@ void FFT::forward(Array<float, 2> &in, Array<complex<float> , 2> &out, int threa
 		else
 		{
                 
-            LogManager::log<< "Creating new FFTW wisdom r2c file."<<endl;
+            LogManager::log<< "Creating new FFTW wisdom r2c file."<<std::endl;
             LogManager::log<< "Computing new r2c wisdom plan for FFT convolution (might take some time - for large image dimensions perhaps get a coffee). ";
-            LogManager::log<< "Once the plan is available, subsequent FFTs using this plan perform very fast. "<<endl;
-            LogManager::log<< ""<<endl;
+            LogManager::log<< "Once the plan is available, subsequent FFTs using this plan perform very fast. "<<std::endl;
+            LogManager::log<< ""<<std::endl;
             LogManager::log<< "Another option would be to turn off the usage of wisdom by setting <UseFFTWisdom>0</UseFFTWisdom>  ";
             LogManager::log<< "in the parameter file, or use real space convolution (<Convolution>Real</Convolution>).";
             GlobalVariables::logManager.LogManagerShowLog(); 
@@ -201,7 +201,7 @@ void FFT::forward(Array<float, 2> &in, Array<complex<float> , 2> &out, int threa
 }
 
 //****************************************************************************80
-void FFT::backward(int colst2, Array<complex<float> , 2> &in, Array<float, 2> &out, int threads, bool useFFTWisdom, string fftWisdomPath)
+void FFT::backward(int colst2, Array<complex<float> , 2> &in, Array<float, 2> &out, int threads, bool useFFTWisdom, std::string fftWisdomPath)
 //colst2: number of columns of real 2D array. Differs from ncol of complex input array (see FFTW manual)
 //http://www.fftw.org/fftw3_doc/One_002dDimensional-DFTs-of-Real-Data.html#One_002dDimensional-DFTs-of-Real-Data
 {
@@ -213,13 +213,13 @@ void FFT::backward(int colst2, Array<complex<float> , 2> &in, Array<float, 2> &o
 
 	if (!FileUtilities::dirExists(fftWisdomPath.c_str()))
 	{
-		cerr << "\nError (FFT::backward): Wisdom directory " << fftWisdomPath << " does not exist." << endl;
+		std::cerr << "\nError (FFT::backward): Wisdom directory " << fftWisdomPath << " does not exist." << std::endl;
 		exit(1);
 	}
 
-	stringstream ss;
+	std::stringstream ss;
 	ss << fftWisdomPath << "/fftwisdomc2r_r" << rows << "_c" << colst2 << ".dat";
-	string wisdomFile = ss.str();
+	std::string wisdomFile = ss.str();
 
 	fftw_complex * fin = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * rows * cols);
 	double * fout = (double*) fftw_malloc(sizeof(double) * rows * colst2);
@@ -258,10 +258,10 @@ void FFT::backward(int colst2, Array<complex<float> , 2> &in, Array<float, 2> &o
 		}
 		else
 		{
-            LogManager::log << "    Creating new FFTW wisdom c2r file." <<endl;
-            LogManager::log << "    Computing new c2r wisdom plan for FFT convolution (might take some time - for large image dimensions perhaps get a numPrescanRows)."<<endl;
-            LogManager::log << "    Once the plan is available, subsequent FFTs using this plan perform very fast."<<endl;
-            LogManager::log << "    Another option would be to turn off the usage of wisdom by setting <UseFFTWisdom>0</UseFFTWisdom> in the parameter file, "<<endl;
+            LogManager::log << "    Creating new FFTW wisdom c2r file." <<std::endl;
+            LogManager::log << "    Computing new c2r wisdom plan for FFT convolution (might take some time - for large image dimensions perhaps get a numPrescanRows)."<<std::endl;
+            LogManager::log << "    Once the plan is available, subsequent FFTs using this plan perform very fast."<<std::endl;
+            LogManager::log << "    Another option would be to turn off the usage of wisdom by setting <UseFFTWisdom>0</UseFFTWisdom> in the parameter file, "<<std::endl;
             LogManager::log << "    or use real space convolution (<Convolution>Real</Convolution>).";
             GlobalVariables::logManager.LogManagerShowLog(); 
 

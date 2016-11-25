@@ -56,13 +56,13 @@ private:
     
     DataSet* p_DataSet;                                     //Pointer to the DataSet to retrieve parameters from it.
     DataSetPhotometry* p_datasetPhotometry;                 //Pointer to the DataSet to retrieve parameters from it.
-    string fileName;                                        //Parameter retrieved from DataSet.
-    string outputPath;                                      //Parameter retrieved from DataSet.
-    string prefix;                                          //Parameter retrieved from DataSet.
-    string outputDir;                                       //Parameter retrieved from DataSet.
-    string mapName;                                         //Name of the Blitz array to be written to FITS file.
-    string photometryPlotsDir;                              //Parameter retrieved from DataSetPhotometry.
-    string photometryDirName;                               //Parameter retrieved from DataSetPhotometry.
+    std::string fileName;                                        //Parameter retrieved from DataSet.
+    std::string outputPath;                                      //Parameter retrieved from DataSet.
+    std::string prefix;                                          //Parameter retrieved from DataSet.
+    std::string outputDir;                                       //Parameter retrieved from DataSet.
+    std::string mapName;                                         //Name of the Blitz array to be written to FITS file.
+    std::string photometryPlotsDir;                              //Parameter retrieved from DataSetPhotometry.
+    std::string photometryDirName;                               //Parameter retrieved from DataSetPhotometry.
     double background;                                      //Parameter retrieved from DataSetPhotometry.
     int    photometryNumTelescopes;                         //Parameter retrieved from DataSetPhotometry.
 

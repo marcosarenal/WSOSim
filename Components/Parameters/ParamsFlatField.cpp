@@ -179,7 +179,7 @@ void ParamsFlatField::paramsFlatFieldcreateSubPixelFFMap()
     } 
     catch (int e)
     {
-        cerr << "\nError (ParamsFlatField::paramsFlatFieldcreateSubPixelFFMap()): Cannot allocate enough memory for copying the sub-pixel matrix." << endl;
+        std::cerr << "\nError (ParamsFlatField::paramsFlatFieldcreateSubPixelFFMap()): Cannot allocate enough memory for copying the sub-pixel matrix." << std::endl;
         exit(1);
     }
     

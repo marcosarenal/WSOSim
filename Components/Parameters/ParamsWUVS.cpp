@@ -108,7 +108,7 @@ void ParamsWUVS::ParamsWUVSresizeCCD(DataSet &m_DataSet)
 
     if (subPixelsPerPixel <= 0)
     {
-            cerr << "\nError (ParamsCCD::paramsCCDcheckCCDParams): Number of SubPixels per Pixel must be > 0." << endl;
+            std::cerr << "\nError (ParamsCCD::paramsCCDcheckCCDParams): Number of SubPixels per Pixel must be > 0." << std::endl;
             exit(1);
     }
     
@@ -171,13 +171,13 @@ void ParamsWUVS::ParamsWUVScheckCCDParams(DataSet &m_DataSet)
 	if (ccdSizeX <= 0 || ccdSizeY <= 0)
         
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Pixel dimensions of CCD must be > 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Pixel dimensions of CCD must be > 0." << std::endl;
 		exit(1);
 	}
     
 	if (subFieldSizeX <= 0 || subFieldSizeY <= 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Pixel dimensions of sub-field must be > 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Pixel dimensions of sub-field must be > 0." << std::endl;
 		exit(1);
 	}
     
@@ -185,13 +185,13 @@ void ParamsWUVS::ParamsWUVScheckCCDParams(DataSet &m_DataSet)
     subFieldZeroY = p_DataSet->datasetGetsubFieldZeroY();
 	if (subFieldZeroX >= ccdSizeX || subFieldZeroY >= ccdSizeY || subFieldZeroX < 0 || subFieldZeroX < 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Sub-field zeropoint must be inside CCD." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Sub-field zeropoint must be inside CCD." << std::endl;
 		exit(1);
 	}
     
 	if (subFieldZeroX + subFieldSizeX > ccdSizeX || subFieldZeroY + subFieldSizeY > ccdSizeY)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Sub-field pixel dimensions exceed size of CCD." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Sub-field pixel dimensions exceed size of CCD." << std::endl;
 		exit(1);
 	}
         
@@ -199,108 +199,108 @@ void ParamsWUVS::ParamsWUVScheckCCDParams(DataSet &m_DataSet)
     areaTelescope = p_DataSet->datasetGetareaTelescope();
 	if (areaTelescope <= 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Telescope Area must be > 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Telescope Area must be > 0." << std::endl;
 		exit(1);
 	}
     
     transEff = p_DataSet->datasetGettransEff();
 	if (transEff <= 0 || transEff > 1)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Transmission Efficiency must be 0 < t <= 1." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Transmission Efficiency must be 0 < t <= 1." << std::endl;
 		exit(1);
 	}
     
     quantEff = p_DataSet->datasetGetquantEff();
 	if (quantEff <= 0 || quantEff > 1)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Quantum Efficiency must be 0 < qe <= 1." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Quantum Efficiency must be 0 < qe <= 1." << std::endl;
 		exit(1);
 	}
     
     gain = p_DataSet->datasetGetgain();
 	if (gain <= 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Gain must be > 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Gain must be > 0." << std::endl;
 		exit(1);
 	}
     
     pixelScale = p_DataSet->datasetGetpixelScale();
 	if (pixelScale <= 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Pixel Scale must be > 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Pixel Scale must be > 0." << std::endl;
 		exit(1);
 	}
     
 	if (pixelSize <= 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Pixel Size must be > 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Pixel Size must be > 0." << std::endl;
 		exit(1);
 	}
     
 	if (subPixelsPerPixel <= 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Number of SubPixels per Pixel must be > 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Number of SubPixels per Pixel must be > 0." << std::endl;
 		exit(1);
 	}
     
     fullWellSat = p_DataSet->datasetGetfullWellSat();
 	if (fullWellSat <= 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Full-Well Saturation must be > 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Full-Well Saturation must be > 0." << std::endl;
 		exit(1);
 	}
     
     digitalSat = p_DataSet->datasetGetdigitalSat();
 	if (digitalSat <= 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Digital Saturation must be > 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Digital Saturation must be > 0." << std::endl;
 		exit(1);
 	}
     
     fluxm0 = p_DataSet->datasetGetfluxm0();
 	if (fluxm0 <= 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): m=0-Flux must be > 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): m=0-Flux must be > 0." << std::endl;
 		exit(1);
 	}
     
 	if (opticalAxisRACenter < 0 || opticalAxisRACenter > 360.)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Right Ascension of Optical Axis must be between 0 and 360." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Right Ascension of Optical Axis must be between 0 and 360." << std::endl;
 		exit(1);
 	}
     
 	if (opticalAxisDecCenter < -90 || opticalAxisDecCenter > 90.)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Declination of Optical Axis must be between -90 and +90." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Declination of Optical Axis must be between -90 and +90." << std::endl;
 		exit(1);
 	}
     
     readOutNoise = p_DataSet->datasetGetreadOutNoise();
 	if (readOutNoise < 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Readout Noise must be >= 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Readout Noise must be >= 0." << std::endl;
 		exit(1);
 	}
     
     readOutTime = p_DataSet->datasetGetreadOutTime();
 	if (readOutTime < 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Read-out Time must be >= 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Read-out Time must be >= 0." << std::endl;
 		exit(1);
 	}
     
     electronicOffset = p_DataSet->datasetGetelectronicOffset();
 	if (electronicOffset < 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Electronic Offset must be >= 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Electronic Offset must be >= 0." << std::endl;
 		exit(1);
 	}
     
     numPrescanRows = p_DataSet->datasetGetnumPrescanRows();
 	if (numPrescanRows < 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Number of Prescan Rows must be >= 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Number of Prescan Rows must be >= 0." << std::endl;
 		exit(1);
 	}
     
@@ -308,35 +308,35 @@ void ParamsWUVS::ParamsWUVScheckCCDParams(DataSet &m_DataSet)
     numSmearingOverscanRows = p_DataSet->datasetGetnumSmearingOverscanRows();
 	if (numSmearingOverscanRows < 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Number of Overscan Rows must be >= 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Number of Overscan Rows must be >= 0." << std::endl;
 		exit(1);
 	}
     
     ccdOrientation = p_DataSet->datasetGetccdOrientation();
     if (ccdOrientation < -360 || ccdOrientation > 360. )
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): CCD Orientation must be between -360 and 360." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): CCD Orientation must be between -360 and 360." << std::endl;
 		exit(1);
 	}
     
     exposureTime = p_DataSet->datasetGetexposureTime();
 	if (exposureTime <= 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Exposure Time must be > 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Exposure Time must be > 0." << std::endl;
 		exit(1);
 	}
     
     flatfieldPixelNoise = p_DataSet->datasetGetflatfieldPixelNoise();
 	if (flatfieldPixelNoise < 0 || flatfieldPixelNoise > 1)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Pixel-to-Pixel Noise must be 0 <= p <= 1." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Pixel-to-Pixel Noise must be 0 <= p <= 1." << std::endl;
 		exit(1);
 	}
     
     flatfieldWhiteNoise = p_DataSet->datasetGetflatfieldWhiteNoise();
 	if (flatfieldWhiteNoise < 0 || flatfieldWhiteNoise > 1)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Sub-Pixel White Noise must be 0 <= p <= 1." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Sub-Pixel White Noise must be 0 <= p <= 1." << std::endl;
 		exit(1);
 	}
     
@@ -344,14 +344,14 @@ void ParamsWUVS::ParamsWUVScheckCCDParams(DataSet &m_DataSet)
     meanCTE = p_DataSet->datasetGetmeanCTE();
 	if (meanCTE < 0 || meanCTE > 1)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Mean CTE must be 0 <= CTE <= 1." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Mean CTE must be 0 <= CTE <= 1." << std::endl;
 		exit(1);
 	}
     
     cosmicHitRate = p_DataSet->datasetGetcosmicHitRate();
 	if (cosmicHitRate < 0)
 	{
-		cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Cosmic Hit Rate must be >= 0." << endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Cosmic Hit Rate must be >= 0." << std::endl;
 		exit(1);
 	}
     

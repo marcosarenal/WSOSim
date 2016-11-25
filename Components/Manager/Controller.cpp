@@ -66,14 +66,14 @@ void Controller::runController(int argc, char ** argv)
     //Showing Presentation
     GlobalVariables::logManager.LogManagerPresentation();
     
-    string parameterFile = string(argv[2]);
+    std::string parameterFile = std::string(argv[2]);
     
     
     //This option calls the CCD and Photometry processing.
-    if (argc == 5 && string(argv[1]) == "-s" && string(argv[3]) == "-p")
+    if (argc == 5 && std::string(argv[1]) == "-s" && std::string(argv[3]) == "-p")
     {
     //Identifying photometry parameter file.
-    string photometryParameterFile = string(argv[4]);
+    std::string photometryParameterFile = std::string(argv[4]);
 
     LogManager::log << "Starting CCD Simulation and Photometry";
     GlobalVariables::logManager.LogManagerShowLog();
@@ -83,10 +83,10 @@ void Controller::runController(int argc, char ** argv)
 
     
     //This option calls the CMOS and Photometry processing.
-    else if (argc == 5 && string(argv[1]) == "-m" && string(argv[3]) == "-p")
+    else if (argc == 5 && std::string(argv[1]) == "-m" && std::string(argv[3]) == "-p")
     {
     //Identifying photometry parameter file.
-    string photometryParameterFile = string(argv[4]);
+    std::string photometryParameterFile = std::string(argv[4]);
 
     LogManager::log << "Starting CMOS Simulation and Photometry";
     GlobalVariables::logManager.LogManagerShowLog();
@@ -94,7 +94,7 @@ void Controller::runController(int argc, char ** argv)
     }
     
     //This option calls the CCD processing.
-    else if (argc == 3 && string(argv[1]) == "-s")
+    else if (argc == 3 && std::string(argv[1]) == "-s")
     {
     LogManager::log << "Starting CCD Simulation";
     GlobalVariables::logManager.LogManagerShowLog();
@@ -103,7 +103,7 @@ void Controller::runController(int argc, char ** argv)
     
     
     //This option calls the CMOS processing.
-    else if (argc == 3 && string(argv[1]) == "-m")
+    else if (argc == 3 && std::string(argv[1]) == "-m")
     {
     LogManager::log << "Starting CMOS Simulation";
     GlobalVariables::logManager.LogManagerShowLog();
@@ -111,10 +111,10 @@ void Controller::runController(int argc, char ** argv)
     }
     
     //This option calls the Photometry processing.
-    else if (argc == 4 && string(argv[1]) == "-p")
+    else if (argc == 4 && std::string(argv[1]) == "-p")
     {
     //Identifying photometry parameter file.
-    string photometryParameterFile = string(argv[2]);
+    std::string photometryParameterFile = std::string(argv[2]);
 
     LogManager::log << "Starting Photometry Simulation";
     GlobalVariables::logManager.LogManagerShowLog();
@@ -123,7 +123,7 @@ void Controller::runController(int argc, char ** argv)
 
  
     //This option calls the WUVS processing.
-    else if (argc == 3 && string(argv[1]) == "-w")
+    else if (argc == 3 && std::string(argv[1]) == "-w")
     {
     LogManager::log << "Starting WUVS Simulation";
     GlobalVariables::logManager.LogManagerShowLog();
@@ -135,16 +135,16 @@ void Controller::runController(int argc, char ** argv)
     //In case of incorrect input parameters usage explanation is shown to user.
     else
     {
-            cerr << "Usage: " << argv[0] << " [options] [parameter file] [[ccd input file]]" << endl;
-            cerr << "options: " << endl;
-            cerr << "-s ... Run CCD simulation" << endl;
-            //cerr << "-m ... Run CMOS simulation" << endl;
-            cerr << "-p ... Compute photometry" << endl;
-            cerr << "parameter file: An xml-file with input parameters" << endl;
-            cerr << "photometry parameter file: An XML-file with photometry input parameters."<< endl;
-            cerr << endl << "Examples:" << endl;
-            cerr << "Run a CCD simulation: ./WSOsim -s /home/WSOSim/inputfiles/ccd_parameters.xml" << endl;
-            cerr << "Run a CCD simulation and make photometry: ./WSOSim -s /home/WSOSim/inputfiles/ccd_parameters.xml -p /home/WSOSim/inputfiles/photometry_parameters.xml" << endl;
+            std::cerr << "Usage: " << argv[0] << " [options] [parameter file] [[ccd input file]]" << std::endl;
+            std::cerr << "options: " << std::endl;
+            std::cerr << "-s ... Run CCD simulation" << std::endl;
+            //std::cerr << "-m ... Run CMOS simulation" << std::endl;
+            std::cerr << "-p ... Compute photometry" << std::endl;
+            std::cerr << "parameter file: An xml-file with input parameters" << std::endl;
+            std::cerr << "photometry parameter file: An XML-file with photometry input parameters."<< std::endl;
+            std::cerr << endl << "Examples:" << std::endl;
+            std::cerr << "Run a CCD simulation: ./WSOsim -s /home/WSOSim/inputfiles/ccd_parameters.xml" << std::endl;
+            std::cerr << "Run a CCD simulation and make photometry: ./WSOSim -s /home/WSOSim/inputfiles/ccd_parameters.xml -p /home/WSOSim/inputfiles/photometry_parameters.xml" << std::endl;
     }
     
     return;
@@ -159,7 +159,7 @@ void Controller::runController(int argc, char ** argv)
  * This function is called to perform the complete CCD and Photometry processing
  * and is in charge of trigger the PreProcessing, Processing and PostProcessing.
  */
-void Controller::runCCDandPhotometryController(string parameterFile, string photometryParameterFile)
+void Controller::runCCDandPhotometryController(std::string parameterFile, std::string photometryParameterFile)
 {
     //DATASET DECLARATION
     DataSet m_DataSet;
@@ -241,7 +241,7 @@ void Controller::runCCDandPhotometryController(string parameterFile, string phot
  * This function is called to perform the complete CMOS and Photometry processing
  * and is in charge of trigger the PreProcessing, Processing and PostProcessing.
  */
-void Controller::runCMOSandPhotometryController(string parameterFile, string photometryParameterFile)
+void Controller::runCMOSandPhotometryController(std::string parameterFile, std::string photometryParameterFile)
 {
     //DATASET DECLARATION
     DataSet m_DataSet;
@@ -318,7 +318,7 @@ void Controller::runCMOSandPhotometryController(string parameterFile, string pho
  * This function is called to perform the complete CCD processing and is in charge of
  * trigger the PreProcessing, Processing and PostProcessing.
  */
-void Controller::runCCDController(string parameterFile)
+void Controller::runCCDController(std::string parameterFile)
 {
     //DATASET DECLARATION
     DataSet m_DataSet;
@@ -374,7 +374,7 @@ void Controller::runCCDController(string parameterFile)
  * This function is called to perform the complete CMOS processing and is in charge of
  * trigger the PreProcessing, Processing and PostProcessing.
  */
-void Controller::runCMOSController(string parameterFile)
+void Controller::runCMOSController(std::string parameterFile)
 {
     //DATASET DECLARATION
     DataSet m_DataSet;
@@ -427,7 +427,7 @@ void Controller::runCMOSController(string parameterFile)
  * This function is called to perform the photometry processing and is in charge of
  * trigger the PreProcessing, Processing and PostProcessing.
  */
-void Controller::runPhotometryController(string parameterFile, string photometryParameterFile)
+void Controller::runPhotometryController(std::string parameterFile, std::string photometryParameterFile)
 {
     //DATASET DECLARATION
     DataSet m_DataSet;
@@ -484,7 +484,7 @@ void Controller::runPhotometryController(string parameterFile, string photometry
  * on board the WSO-UV spacecraft. This function takes as an input a sinthetic spectrograph 
  * image and is in charge of trigger its PreProcessing, Processing and PostProcessing.
  */
-void Controller::runWUVSController(string parameterFile)
+void Controller::runWUVSController(std::string parameterFile)
 {
     //DATASET DECLARATION
     DataSet m_DataSet;

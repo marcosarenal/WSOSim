@@ -104,7 +104,7 @@ void StepConvolvePSF::StepConvolvePSFapplication(DataSet &m_DataSet)
     if (max(convolvedMap) == 0)
     {
 
-        cerr << "\nError (StepConvolvePSF::StepConvolvePSFapplication()): The simulated image does not contain any flux." << endl;
+        std::cerr << "\nError (StepConvolvePSF::StepConvolvePSFapplication()): The simulated image does not contain any flux." << std::endl;
         exit(1);
     }
         
@@ -134,21 +134,21 @@ void StepConvolvePSF::StepConvolvePSFcomputeFFT()
     //Check whether PSF is empty
     if (psfMap.rows() == 0)
     {
-        cerr << "\nError (StepConvolvePSF::StepConvolvePSFcomputeFFT()): Mask for FFT convolution is empty." << endl;
+        std::cerr << "\nError (StepConvolvePSF::StepConvolvePSFcomputeFFT()): Mask for FFT convolution is empty." << std::endl;
         exit(1);
     }
      
     //Check if psfMap is quadratic
     if (psfMap.rows() != psfMap.cols())
 	{
-		cerr << "\nError (StepConvolvePSF::StepConvolvePSFcomputeFFT()): PSF must be quadratic." << endl;
+		std::cerr << "\nError (StepConvolvePSF::StepConvolvePSFcomputeFFT()): PSF must be quadratic." << std::endl;
         exit(1);
 	}
 
     //Check if psfMap has odd size
     if (psfMap.rows() % 2 == 0)
     {
-        cerr << "\nError (StepConvolvePSF::StepConvolvePSFcomputeFFT()): PSF must have odd size." << endl;
+        std::cerr << "\nError (StepConvolvePSF::StepConvolvePSFcomputeFFT()): PSF must have odd size." << std::endl;
         exit(1);
     }
     
@@ -288,21 +288,21 @@ void StepConvolvePSF::StepConvolvePSFcomputeReal()
 	//Check whether PSF is empty
     if (psfMap.rows() == 0)
 	{
-		cerr << "\nError (StepConvolvePSF::StepConvolvePSFcomputeReal()): Mask for FFT convolution is empty." << endl;
+		std::cerr << "\nError (StepConvolvePSF::StepConvolvePSFcomputeReal()): Mask for FFT convolution is empty." << std::endl;
         exit(1);
 	}
        
 	//Check if psfMap is quadratic
     if (psfMap.rows() != psfMap.cols())
 	{
-		cerr << "\nError (StepConvolvePSF::StepConvolvePSFcomputeReal()): PSF must be quadratic." << endl;
+		std::cerr << "\nError (StepConvolvePSF::StepConvolvePSFcomputeReal()): PSF must be quadratic." << std::endl;
         exit(1);
 	}
 
     //Check if psfMap has odd size
 	if (psfMap.rows() % 2 == 0)
 	{
-		cerr << "\nError (StepConvolvePSF::StepConvolvePSFcomputeReal()): PSF must have odd size." << endl;
+		std::cerr << "\nError (StepConvolvePSF::StepConvolvePSFcomputeReal()): PSF must have odd size." << std::endl;
         exit(1);
 	}
      
@@ -431,7 +431,7 @@ void StepConvolvePSF::StepConvolvePSFcomputeReal()
  * @param fftWisdomPath
  */
 void StepConvolvePSF::StepConvolvePSFconvolveFFT(Array<float, 2> tempSubPixelMap, Array<float, 2> tempPsfMap, Array<float, 2> &convolvedMap, int threads, bool useFFTWisdom,
-                                              string fftWisdomPath)
+                                              std::string fftWisdomPath)
 {
     
 	int numRows = tempSubPixelMap.rows();

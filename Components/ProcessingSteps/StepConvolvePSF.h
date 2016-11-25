@@ -44,7 +44,7 @@ public:
         void StepConvolvePsfRealRemapArrays(Array<float, 2> &subPixelMap, Array<float, 2> &psfMap);
         void StepConvolvePsfFftRemapArrays(Array<float, 2> &subPixelMap, Array<float, 2> &psfMap);
         void StepConvolvePSFconvolveFFT(Array<float, 2> subPixelMap, Array<float, 2> psfMap, Array<float, 2> &convolvedMap, int threads, bool useFFTWisdom,
-		string fftWisdomPath);
+		std::string fftWisdomPath);
         void StepConvolvePSFconvolveReal(Array<float, 2> subPixelMap, Array<float, 2> psfMap, Array<float, 2> &convolvedMap);
 
 
@@ -53,10 +53,10 @@ private:
 
         DataSet*    p_DataSet;                         //Pointer to the DataSet to retrieve parameters from it.
         
-        string convolutionMethod;                       //Parameter retrieved from DataSet.
+        std::string convolutionMethod;                       //Parameter retrieved from DataSet.
         int    threads;                                 //Parameter retrieved from DataSet.
         bool   useFFTWisdom;                            //Parameter retrieved from DataSet.
-        string fftWisdomPath;                           //Parameter retrieved from DataSet.
+        std::string fftWisdomPath;                           //Parameter retrieved from DataSet.
         int    memoryLimit;                             //Parameter retrieved from DataSet.
         
 

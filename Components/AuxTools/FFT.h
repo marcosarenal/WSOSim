@@ -65,7 +65,7 @@ public:
 	 * \param useFFTWisdom Set to true when FFTW-wisdom should be used. Wisdom consists of a library of pre-computed matrices that speed up computation of the FFT.
 	 * \param fftWisdomPath Path on disk where the wisdom information is stored.
 	 */
-	static void forward(Array<float, 2> &in, Array<complex<float> , 2> &out, int threads, bool useFFTWisdom = false, string fftWisdomPath = "");
+	static void forward(Array<float, 2> &in, Array<complex<float> , 2> &out, int threads, bool useFFTWisdom = false, std::string fftWisdomPath = "");
 
 	/**
 	 * 2D FFT transformation backward.
@@ -77,7 +77,7 @@ public:
 	 * \param fftWisdomPath Path on disk where the wisdom information is stored.
 	 */
 	static void backward(int colst2, Array<complex<float> , 2> &in, Array<float, 2> &out, int threads, bool useFFTWisdom = false,
-			string fftWisdomPath = "");
+			std::string fftWisdomPath = "");
 
 private:
 

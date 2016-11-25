@@ -145,7 +145,7 @@ void ProcessingPhotometry::processingPhotometryPipeline(DataSet &m_DataSet, Data
         }
 
         //Take the corresponding FITS file
-        string fitsFile = outputPath + "/" + prefix + "/" +  prefix + exposuresNamesArray(iterExposure) + ".fits";
+        std::string fitsFile = outputPath + "/" + prefix + "/" +  prefix + exposuresNamesArray(iterExposure) + ".fits";
 
         //Check that it is correctly opened
         if (FileUtilities::fileExists(fitsFile))
@@ -410,7 +410,7 @@ void ProcessingPhotometry::processingPhotometryMeasureStarsFluxes(Array<float, 2
                 
                 
     //Define the file to store the star coordinates data
-    string fileCoordOutString(photometryDirName + "/star_coordinates.dat");
+    std::string fileCoordOutString(photometryDirName + "/star_coordinates.dat");
     ofstream outCoorFile(fileCoordOutString.c_str(), std::ios_base::out | std::ios_base::app);
     outCoorFile.precision(15);
 
@@ -484,13 +484,13 @@ void ProcessingPhotometry::processingPhotometryMeasureStarsFluxes(Array<float, 2
             backMedian = MathTools::median(backArray);
             if (backMedian == 0)
             {
-                cerr << "\nError (ProcessingPhotometry::processingPhotometryMeasureStarsFluxes()): No background detected on images."<<endl;
+                std::cerr << "\nError (ProcessingPhotometry::processingPhotometryMeasureStarsFluxes()): No background detected on images."<<std::endl;
                 exit (1);
             }
         }
         else
         {      
-            cerr << "\nError (ProcessingPhotometry::processingPhotometryMeasureStarsFluxes()): No background detected on images."<<endl;
+            std::cerr << "\nError (ProcessingPhotometry::processingPhotometryMeasureStarsFluxes()): No background detected on images."<<std::endl;
             exit (1);
         }
         
@@ -617,7 +617,7 @@ void ProcessingPhotometry::processingPhotometryMeasureStarsFluxes(Array<float, 2
             //If none of the available masks is selected
             else
             {                
-                cerr << "\nError (ProcessingPhotometry::processingPhotometryMeasureStarsFluxes()): "<< photometryMethod<<"  is not a valid photometry method."<<endl;
+                std::cerr << "\nError (ProcessingPhotometry::processingPhotometryMeasureStarsFluxes()): "<< photometryMethod<<"  is not a valid photometry method."<<std::endl;
                 exit (1);
                 
             }        
@@ -657,7 +657,7 @@ void ProcessingPhotometry::processingPhotometryMeasureStarsFluxes(Array<float, 2
                 stringstream ss;
                 ss << photometryDirName << "/star_input" << i << ".dat";
                 
-                string inputMagFile = ss.str();
+                std::string inputMagFile = ss.str();
                                 
                 outStar << frameIndex * (exposureTime + readOutTime)<< " "; 
                 if (FileUtilities::fileExists(inputMagFile))
@@ -668,7 +668,7 @@ void ProcessingPhotometry::processingPhotometryMeasureStarsFluxes(Array<float, 2
                 {
                     outStar << magInput << " " << fluxInput;
                     outStar << " " << magObs << " " << magObsNorm << " " << fluxObs << " " << fluxObsNorm << " " << backMedian 
-                            * exposureTime << endl;
+                            * exposureTime << std::endl;
                     
                 }
                 
@@ -677,7 +677,7 @@ void ProcessingPhotometry::processingPhotometryMeasureStarsFluxes(Array<float, 2
 				{                
 					outCoorFile << "star" << starCounter << ".phot" << " " << xd << " " << yd;
 					outCoorFile << " " << subPixelStarListOnCCD(i, 2) << " " << subPixelStarListOnCCD(i, 3)
-                    << endl;
+                    << std::endl;
 				}                				
                 outStar.close();
 
@@ -706,7 +706,7 @@ void ProcessingPhotometry::processingPhotometryMeasureStarsFluxes(Array<float, 2
 
 
 //==============================================================================
-void ProcessingPhotometry::processingPhotometryComputeStatistics(string fileName)
+void ProcessingPhotometry::processingPhotometryComputeStatistics(std::string fileName)
 {
     LogManager::log << "    Computing statistics..." ;
     GlobalVariables::logManager.LogManagerShowLog();
@@ -714,7 +714,7 @@ void ProcessingPhotometry::processingPhotometryComputeStatistics(string fileName
 	ofstream out(fileName.c_str());
 	if (!out.is_open())
 	{
-		cerr << "\nError (ProcessingPhotometry::processingPhotometryComputeStatistics()): Unable to open output information file";
+		std::cerr << "\nError (ProcessingPhotometry::processingPhotometryComputeStatistics()): Unable to open output information file";
 		exit(1);
 	}
 	out.precision(15);
@@ -724,7 +724,7 @@ void ProcessingPhotometry::processingPhotometryComputeStatistics(string fileName
 	out << " Mean measured normalized flux | Std. dev of measured flux | Theoretical photon noise (flux) | Measured noise ppm/hour for "
     << photometryNumTelescopes << " telescopes |";
 	out << " Theoretical photon noise ppm/hour for " << photometryNumTelescopes << " telescopes | Measured N (8T) | Theoretical PN (8T) |";
-	out << " Measured N (16T) | Theoretical PN (16T) | Measured N ("<<photometryNumTelescopes<<") | Theoretical PN ("<<photometryNumTelescopes<<")" << endl;
+	out << " Measured N (16T) | Theoretical PN (16T) | Measured N ("<<photometryNumTelescopes<<") | Theoretical PN ("<<photometryNumTelescopes<<")" << std::endl;
 	double stdDevMag, medianMag, stdDevInputMag, medianInputMag, rmsMag, theoreticalPhotonNoise, stdDevFlux, medianFlux, ppmphObs, ppmphPN,
     medianFluxNorm, medianMagNorm;
     
@@ -733,13 +733,13 @@ void ProcessingPhotometry::processingPhotometryComputeStatistics(string fileName
 	double medianFluxInput, medianMagInput;
     
 	//compute number of stars(==number of files containing star*.phot)
-	vector<string> starFiles;
+	vector<std::string> starFiles;
 	FileUtilities::getDir(photometryDirName, starFiles, ".phot");
 	int numStars = starFiles.size();
 	MathTools::shakersort(starFiles);
     
 	double normFactor;
-	string starPath;
+	std::string starPath;
     
     LogManager::log << "    Number of stars on frame: " << numStars ;
     GlobalVariables::logManager.LogManagerShowLog();
@@ -778,7 +778,7 @@ void ProcessingPhotometry::processingPhotometryComputeStatistics(string fileName
 		out << ppmphObs << " " << ppmphPN << " " << ppmphObs / sqrt(photometryNumTelescopes) << " " << ppmphPN / sqrt(photometryNumTelescopes) << " " << ppmphObs / sqrt(8)
         << " " << ppmphPN / sqrt(8) << " ";
 		out << ppmphObs / sqrt(16) << " " << ppmphPN / sqrt(16) << " " << ppmphObs / sqrt(24) << " " << ppmphPN / sqrt(24) << " "
-        << ppmphObs / sqrt(photometryNumTelescopes) << " " << ppmphPN / sqrt(photometryNumTelescopes) << endl;
+        << ppmphObs / sqrt(photometryNumTelescopes) << " " << ppmphPN / sqrt(photometryNumTelescopes) << std::endl;
 	}
     
 	ProcessingPhotometry::processingPhotometryMakeAnalysis(fileName);
@@ -796,7 +796,7 @@ void ProcessingPhotometry::processingPhotometryComputeStatistics(string fileName
 
 
 //==============================================================================
-void ProcessingPhotometry::processingPhotometryMakeAnalysis(string fileName)
+void ProcessingPhotometry::processingPhotometryMakeAnalysis(std::string fileName)
 {
 
 	Array<float, 1> magInput, magMeasured, fluxInput;
@@ -807,12 +807,12 @@ void ProcessingPhotometry::processingPhotometryMakeAnalysis(string fileName)
 	Array<float, 1> magDiff(magInput.shape());
 	magDiff = magMeasured - magInput;
 
-	string fileOut = photometryPlotsDir + "/crowding_" + prefix + +".dat";
+	std::string fileOut = photometryPlotsDir + "/crowding_" + prefix + +".dat";
     
 	ofstream out(fileOut.c_str());
 	if (!out.is_open())
 	{
-		cerr << "\nError (ProcessingPhotometry::processingPhotometryMakeAnalysis()): Unable to open " << fileOut << endl;
+		std::cerr << "\nError (ProcessingPhotometry::processingPhotometryMakeAnalysis()): Unable to open " << fileOut << std::endl;
 		exit(1);
 	}
 	out.precision(15);
@@ -833,7 +833,7 @@ void ProcessingPhotometry::processingPhotometryMakeAnalysis(string fileName)
 		}
 		if (counter1 > 0)
 			ratio = 100. - 100. * counter2 / counter1;
-		out << f + 0.5 << " " << 1. << " " << magInput.size() << " " << counter1 << " " << counter2 << " " << ratio << endl;
+		out << f + 0.5 << " " << 1. << " " << magInput.size() << " " << counter1 << " " << counter2 << " " << ratio << std::endl;
 	}
     
     
@@ -842,12 +842,12 @@ void ProcessingPhotometry::processingPhotometryMakeAnalysis(string fileName)
 	Array<float, 1> noise;
 	FileUtilities::readCol(fileName, 13, noise, 0);
     
-	string noiseFileName = photometryPlotsDir + "/noise_" + prefix + ".dat";
+	std::string noiseFileName = photometryPlotsDir + "/noise_" + prefix + ".dat";
     
 	ofstream out2(noiseFileName.c_str());
 	if (!out2.is_open())
 	{
-		cerr << "\nError (ProcessingPhotometry::processingPhotometryMakeAnalysis()): Unable to open "  << noiseFileName << endl;
+		std::cerr << "\nError (ProcessingPhotometry::processingPhotometryMakeAnalysis()): Unable to open "  << noiseFileName << std::endl;
 		exit(1);
 	}
 	out2.precision(15);
@@ -856,7 +856,7 @@ void ProcessingPhotometry::processingPhotometryMakeAnalysis(string fileName)
     << photometryNumTelescopes << ") | Median (T=" << photometryNumTelescopes << ") ";
 	out2
     << "| Mean noise (T=8) | Median (T=8) | Mean noise (T=16) | Median (T=16) | Mean noise (T=24) | Median (T=24)| Mean noise (T="<<photometryNumTelescopes<<") | Median (T="<<photometryNumTelescopes<<")"
-    << endl;
+    << std::endl;
     
 	Array<float, 1> noisePerMag;
 	double meany, mediany, dmag;
@@ -884,14 +884,14 @@ void ProcessingPhotometry::processingPhotometryMakeAnalysis(string fileName)
 			out2 << " " << meany / sqrt(photometryNumTelescopes) << " " << mediany / sqrt(photometryNumTelescopes) << " " << meany / sqrt(8.) << " " << mediany
             / sqrt(8.) << " " << meany / sqrt(16.) << " " << mediany / sqrt(16.);
 			out2 << " " << meany / sqrt(24.) << " " << mediany / sqrt(24.) << " " << meany / sqrt(photometryNumTelescopes) << " " << mediany / sqrt(photometryNumTelescopes)
-            << endl;
+            << std::endl;
 		}
 	}
     
 	//Compute number of stars below certain threshold levels
 	Array<int, 1> counter_ppmX(20);
     
-	string fileOut3;
+	std::string fileOut3;
 	stringstream sstr;
 	sstr << photometryPlotsDir << "/starcounts_" << photometryNumTelescopes << "T_" << prefix << ".dat";
 	fileOut3 = sstr.str();
@@ -899,12 +899,12 @@ void ProcessingPhotometry::processingPhotometryMakeAnalysis(string fileName)
 	ofstream out3(fileOut3.c_str());
 	if (!out3.is_open())
 	{
-		cerr << "\nError (ProcessingPhotometry::processingPhotometryMakeAnalysis()): Unable to open "  << fileOut3 << endl;
+		std::cerr << "\nError (ProcessingPhotometry::processingPhotometryMakeAnalysis()): Unable to open "  << fileOut3 << std::endl;
 		exit(1);
 	}
 	out3.precision(15);
     
-	out3 << "### Noise level  |  N(stars) <= noise level ppm/h | % stars <= noise level ppm/h" << endl;
+	out3 << "### Noise level  |  N(stars) <= noise level ppm/h | % stars <= noise level ppm/h" << std::endl;
 
 	int counter_ppm27 = 0;
 	int counter_ppm80 = 0;
@@ -923,17 +923,17 @@ void ProcessingPhotometry::processingPhotometryMakeAnalysis(string fileName)
 			if (noise(i) <= j * 10)
 				counter_ppmX(j)++;
 	}
-	out3 << 27 << " " << counter_ppm27 << " " << 100. * counter_ppm27 / noise.size() << endl;
-	out3 << 80 << " " << counter_ppm80 << " " << 100. * counter_ppm80 / noise.size() << endl;
+	out3 << 27 << " " << counter_ppm27 << " " << 100. * counter_ppm27 / noise.size() << std::endl;
+	out3 << 80 << " " << counter_ppm80 << " " << 100. * counter_ppm80 / noise.size() << std::endl;
 	for (unsigned int j = 1; j < counter_ppmX.size(); j++)
-		out3 << j * 10 << " " << counter_ppmX(j) << " " << 100. * counter_ppmX(j) / noise.size() << endl;
+		out3 << j * 10 << " " << counter_ppmX(j) << " " << 100. * counter_ppmX(j) / noise.size() << std::endl;
     
 	//++++++++++++++++++++++++++++++++++++++++
-	string gnu = photometryPlotsDir + "/gnuscript.gnu";
+	std::string gnu = photometryPlotsDir + "/gnuscript.gnu";
 	ofstream outGnu(gnu.c_str());
 	if (!outGnu.is_open())
 	{
-		cerr << "\nError (ProcessingPhotometry::processingPhotometryMakeAnalysis()): output gnuscript file " << gnu;
+		std::cerr << "\nError (ProcessingPhotometry::processingPhotometryMakeAnalysis()): output gnuscript file " << gnu;
 		exit(1);
 	}
     
@@ -941,143 +941,143 @@ void ProcessingPhotometry::processingPhotometryMakeAnalysis(string fileName)
     GlobalVariables::logManager.LogManagerShowLog();
     
 	outGnu.precision(15);
-	outGnu << "#!/bin/sh" << endl;
-	outGnu << "gnuplot << EOF" << endl;
-	outGnu << "set terminal jpeg large size 1000,800 enhanced" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "crowding.jpg'" << endl;
-	outGnu << "set key bottom" << endl;
-	outGnu << "f(x)=x" << endl;
-	outGnu << "set xlabel 'Input magnitude'" << endl;
-	outGnu << "set ylabel 'Measured magnitude'" << endl;
-	outGnu << "set style fill solid border -1" << endl;
-	outGnu << "plot '" << fileName << "' u 2:7 title '', f(x)" << endl;
-	outGnu << "set terminal post landscape color solid enhanced 15" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "crowding.eps'" << endl;
-	outGnu << "rep" << endl;
-	outGnu << "set out" << endl;
-	outGnu << "set terminal jpeg large size 1000,800 enhanced" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "crowding_stat.jpg'" << endl;
-	outGnu << "set xlabel 'Magnitude'" << endl;
-	outGnu << "set ylabel 'Occurence [%]'" << endl;
-	outGnu << "set xrange [5:17]" << endl;
-	outGnu << "plot '" << fileOut << "' u 1:6 w boxes title ''" << endl;
-	outGnu << "set terminal post landscape color solid enhanced 15" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "crowding_stat.eps'" << endl;
-	outGnu << "rep" << endl;
-	outGnu << "set out" << endl;
-	/* outGnu << "set terminal jpeg large size 1000,800 enhanced" << endl;
-	 outGnu << "set output '" << outputPath + "/" + FileUtilities::getCompleteBaseName(fileName) << "variables_stat.jpg'" << endl;
-	 outGnu << "set xlabel 'Magnitude'" << endl;
-	 outGnu << "set ylabel 'Occurence [%]'" << endl;
-	 outGnu << "set key top" << endl;
-	 outGnu << "set boxwidth 1"<<endl;
+	outGnu << "#!/bin/sh" << std::endl;
+	outGnu << "gnuplot << EOF" << std::endl;
+	outGnu << "set terminal jpeg large size 1000,800 enhanced" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "crowding.jpg'" << std::endl;
+	outGnu << "set key bottom" << std::endl;
+	outGnu << "f(x)=x" << std::endl;
+	outGnu << "set xlabel 'Input magnitude'" << std::endl;
+	outGnu << "set ylabel 'Measured magnitude'" << std::endl;
+	outGnu << "set style fill solid border -1" << std::endl;
+	outGnu << "plot '" << fileName << "' u 2:7 title '', f(x)" << std::endl;
+	outGnu << "set terminal post landscape color solid enhanced 15" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "crowding.eps'" << std::endl;
+	outGnu << "rep" << std::endl;
+	outGnu << "set out" << std::endl;
+	outGnu << "set terminal jpeg large size 1000,800 enhanced" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "crowding_stat.jpg'" << std::endl;
+	outGnu << "set xlabel 'Magnitude'" << std::endl;
+	outGnu << "set ylabel 'Occurence [%]'" << std::endl;
+	outGnu << "set xrange [5:17]" << std::endl;
+	outGnu << "plot '" << fileOut << "' u 1:6 w boxes title ''" << std::endl;
+	outGnu << "set terminal post landscape color solid enhanced 15" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "crowding_stat.eps'" << std::endl;
+	outGnu << "rep" << std::endl;
+	outGnu << "set out" << std::endl;
+	/* outGnu << "set terminal jpeg large size 1000,800 enhanced" << std::endl;
+	 outGnu << "set output '" << outputPath + "/" + FileUtilities::getCompleteBaseName(fileName) << "variables_stat.jpg'" << std::endl;
+	 outGnu << "set xlabel 'Magnitude'" << std::endl;
+	 outGnu << "set ylabel 'Occurence [%]'" << std::endl;
+	 outGnu << "set key top" << std::endl;
+	 outGnu << "set boxwidth 1"<<std::endl;
 	 outGnu << "plot '" << fileOut2.fileName() << "' u 1:10 w boxes title '10ppm puls. detectable (single star puls)','";
 	 outGnu << fileOut2.fileName() << "' u 1:11:2 w boxes title '10ppm puls. detectable (50% stars puls)','";
-	 outGnu << fileOut2.fileName() << "' u 1:12:3 w boxes title '10ppm puls. detectable (100% stars puls)'" << endl;
-	 outGnu << "set terminal post landscape color solid enhanced 13" << endl;
-	 outGnu << "set output '" << outputPath + "/" + FileUtilities::getCompleteBaseName(fileName) << "variables_stat.eps'" << endl;
-	 outGnu << "rep" << endl;
-	 outGnu << "set out" << endl;
+	 outGnu << fileOut2.fileName() << "' u 1:12:3 w boxes title '10ppm puls. detectable (100% stars puls)'" << std::endl;
+	 outGnu << "set terminal post landscape color solid enhanced 13" << std::endl;
+	 outGnu << "set output '" << outputPath + "/" + FileUtilities::getCompleteBaseName(fileName) << "variables_stat.eps'" << std::endl;
+	 outGnu << "rep" << std::endl;
+	 outGnu << "set out" << std::endl;
 	 */
     
-	outGnu << "set terminal jpeg large size 1000,800 enhanced" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmph.jpg'" << endl;
-	outGnu << "set key bottom" << endl;
-	outGnu << "set log y" << endl;
-	outGnu << "set yrange [1:]" << endl;
-	outGnu << "set xrange [*:*]" << endl;
-	outGnu << "f(x)=27." << endl;
-	outGnu << "g(x)=80.0" << endl;
-	outGnu << "set ylabel 'ppm/hour'" << endl;
-	outGnu << "set xlabel 'Measured magnitude'" << endl;
+	outGnu << "set terminal jpeg large size 1000,800 enhanced" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmph.jpg'" << std::endl;
+	outGnu << "set key bottom" << std::endl;
+	outGnu << "set log y" << std::endl;
+	outGnu << "set yrange [1:]" << std::endl;
+	outGnu << "set xrange [*:*]" << std::endl;
+	outGnu << "f(x)=27." << std::endl;
+	outGnu << "g(x)=80.0" << std::endl;
+	outGnu << "set ylabel 'ppm/hour'" << std::endl;
+	outGnu << "set xlabel 'Measured magnitude'" << std::endl;
 	outGnu << "plot '" << fileName << "' u 6:14 title 'observed noise', '" << fileName
-    << "' u 6:15 w l title 'theoretical photon noise', f(x) title '27 ppm/hour', g(x) title '80.0 ppm/hour'" << endl;
-	outGnu << "set terminal post landscape color solid enhanced 15" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmph.eps'" << endl;
-	outGnu << "rep" << endl;
-	outGnu << "set out" << endl;
-	outGnu << "set terminal jpeg large size 1000,800 enhanced" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag" << photometryNumTelescopes << "tel.jpg'" << endl;
-	outGnu << "set ylabel 'ppm/hour'" << endl;
-	outGnu << "set xlabel 'Input magnitude'" << endl;
+    << "' u 6:15 w l title 'theoretical photon noise', f(x) title '27 ppm/hour', g(x) title '80.0 ppm/hour'" << std::endl;
+	outGnu << "set terminal post landscape color solid enhanced 15" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmph.eps'" << std::endl;
+	outGnu << "rep" << std::endl;
+	outGnu << "set out" << std::endl;
+	outGnu << "set terminal jpeg large size 1000,800 enhanced" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag" << photometryNumTelescopes << "tel.jpg'" << std::endl;
+	outGnu << "set ylabel 'ppm/hour'" << std::endl;
+	outGnu << "set xlabel 'Input magnitude'" << std::endl;
 	outGnu << "plot '" << fileName << "' u 2:(\\$14/sqrt(" << photometryNumTelescopes << ")) title 'observed noise', '" << fileName
     << "' u 6:(\\$15/sqrt(" << photometryNumTelescopes << ")) w l title 'theoretical photon noise','" << noiseFileName
-    << "' u 2:9 w l title 'median obs. noise', f(x) title '27 ppm/hour', g(x) title '80.0 ppm/hour'" << endl;
-	outGnu << "set terminal post landscape color solid enhanced 15" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag" << photometryNumTelescopes << "tel.eps'" << endl;
-	outGnu << "rep" << endl;
-	outGnu << "set out" << endl;
-	outGnu << "set terminal jpeg large size 1000,800 enhanced" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag1tel.jpg'" << endl;
-	outGnu << "set ylabel 'ppm/hour'" << endl;
-	outGnu << "set xlabel 'Input magnitude'" << endl;
+    << "' u 2:9 w l title 'median obs. noise', f(x) title '27 ppm/hour', g(x) title '80.0 ppm/hour'" << std::endl;
+	outGnu << "set terminal post landscape color solid enhanced 15" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag" << photometryNumTelescopes << "tel.eps'" << std::endl;
+	outGnu << "rep" << std::endl;
+	outGnu << "set out" << std::endl;
+	outGnu << "set terminal jpeg large size 1000,800 enhanced" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag1tel.jpg'" << std::endl;
+	outGnu << "set ylabel 'ppm/hour'" << std::endl;
+	outGnu << "set xlabel 'Input magnitude'" << std::endl;
 	outGnu << "plot '" << fileName << "' u 2:14 title 'observed noise', '" << fileName << "' u 6:15 w l title 'theoretical photon noise','"
-    << noiseFileName << "' u 2:7 w l title 'median obs. noise', f(x) title '27 ppm/hour', g(x) title '80.0 ppm/hour'" << endl;
-	outGnu << "set terminal post landscape color solid enhanced 15" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag1tel.eps'" << endl;
-	outGnu << "rep" << endl;
-	outGnu << "set out" << endl;
-	outGnu << "set terminal jpeg large size 1000,800 enhanced" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag8tel.jpg'" << endl;
-	outGnu << "set ylabel 'ppm/hour'" << endl;
-	outGnu << "set xlabel 'Input magnitude'" << endl;
+    << noiseFileName << "' u 2:7 w l title 'median obs. noise', f(x) title '27 ppm/hour', g(x) title '80.0 ppm/hour'" << std::endl;
+	outGnu << "set terminal post landscape color solid enhanced 15" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag1tel.eps'" << std::endl;
+	outGnu << "rep" << std::endl;
+	outGnu << "set out" << std::endl;
+	outGnu << "set terminal jpeg large size 1000,800 enhanced" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag8tel.jpg'" << std::endl;
+	outGnu << "set ylabel 'ppm/hour'" << std::endl;
+	outGnu << "set xlabel 'Input magnitude'" << std::endl;
 	outGnu << "plot '" << fileName << "' u 2:18 title 'observed noise', '" << fileName << "' u 6:19 w l title 'theoretical photon noise','"
-    << noiseFileName << "' u 1:10 w l title 'median obs. noise', f(x) title '27 ppm/hour', g(x) title '80.0 ppm/hour'" << endl;
-	outGnu << "set terminal post landscape color solid enhanced 15" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag8tel.eps'" << endl;
-	outGnu << "rep" << endl;
-	outGnu << "set out" << endl;
-	outGnu << "set terminal jpeg large size 1000,800 enhanced" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag16tel.jpg'" << endl;
-	outGnu << "set ylabel 'ppm/hour'" << endl;
-	outGnu << "set xlabel 'Input magnitude'" << endl;
+    << noiseFileName << "' u 1:10 w l title 'median obs. noise', f(x) title '27 ppm/hour', g(x) title '80.0 ppm/hour'" << std::endl;
+	outGnu << "set terminal post landscape color solid enhanced 15" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag8tel.eps'" << std::endl;
+	outGnu << "rep" << std::endl;
+	outGnu << "set out" << std::endl;
+	outGnu << "set terminal jpeg large size 1000,800 enhanced" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag16tel.jpg'" << std::endl;
+	outGnu << "set ylabel 'ppm/hour'" << std::endl;
+	outGnu << "set xlabel 'Input magnitude'" << std::endl;
 	outGnu << "plot '" << fileName << "' u 2:20 title 'observed noise', '" << fileName << "' u 6:21 w l title 'theoretical photon noise','"
-    << noiseFileName << "' u 1:12 w l title 'median obs. noise', f(x) title '27 ppm/hour', g(x) title '80.0 ppm/hour'" << endl;
-	outGnu << "set terminal post landscape color solid enhanced 15" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag16tel.eps'" << endl;
-	outGnu << "rep" << endl;
-	outGnu << "set out" << endl;
-	outGnu << "set terminal jpeg large size 1000,800 enhanced" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag24tel.jpg'" << endl;
-	outGnu << "set ylabel 'ppm/hour'" << endl;
-	outGnu << "set xlabel 'Input magnitude'" << endl;
+    << noiseFileName << "' u 1:12 w l title 'median obs. noise', f(x) title '27 ppm/hour', g(x) title '80.0 ppm/hour'" << std::endl;
+	outGnu << "set terminal post landscape color solid enhanced 15" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag16tel.eps'" << std::endl;
+	outGnu << "rep" << std::endl;
+	outGnu << "set out" << std::endl;
+	outGnu << "set terminal jpeg large size 1000,800 enhanced" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag24tel.jpg'" << std::endl;
+	outGnu << "set ylabel 'ppm/hour'" << std::endl;
+	outGnu << "set xlabel 'Input magnitude'" << std::endl;
 	outGnu << "plot '" << fileName << "' u 2:22 title 'observed noise', '" << fileName << "' u 6:23 w l title 'theoretical photon noise','"
-    << noiseFileName << "' u 1:14 w l title 'median obs. noise', f(x) title '27 ppm/hour', g(x) title '80.0 ppm/hour'" << endl;
-	outGnu << "set terminal post landscape color solid enhanced 15" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag24tel.eps'" << endl;
-	outGnu << "rep" << endl;
-	outGnu << "set out" << endl;
-	outGnu << "set terminal jpeg large size 1000,800 enhanced" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag"<<photometryNumTelescopes<<"tel.jpg'" << endl;
-	outGnu << "set ylabel 'ppm/hour'" << endl;
-	outGnu << "set xlabel 'Input magnitude'" << endl;
+    << noiseFileName << "' u 1:14 w l title 'median obs. noise', f(x) title '27 ppm/hour', g(x) title '80.0 ppm/hour'" << std::endl;
+	outGnu << "set terminal post landscape color solid enhanced 15" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag24tel.eps'" << std::endl;
+	outGnu << "rep" << std::endl;
+	outGnu << "set out" << std::endl;
+	outGnu << "set terminal jpeg large size 1000,800 enhanced" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag"<<photometryNumTelescopes<<"tel.jpg'" << std::endl;
+	outGnu << "set ylabel 'ppm/hour'" << std::endl;
+	outGnu << "set xlabel 'Input magnitude'" << std::endl;
 	outGnu << "plot '" << fileName << "' u 2:24 title 'observed noise', '" << fileName << "' u 6:25 w l title 'theoretical photon noise','"
-    << noiseFileName << "' u 1:16 w l title 'median obs. noise', f(x) title '27 ppm/hour', g(x) title '80.0 ppm/hour'" << endl;
-	outGnu << "set terminal post landscape color solid enhanced 15" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag"<<photometryNumTelescopes<<"tel.eps'" << endl;
-	outGnu << "rep" << endl;
-	outGnu << "set out" << endl;
-	outGnu << "reset" << endl;
-	outGnu << "set terminal jpeg large size 1000,800 enhanced" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "psf.jpg'" << endl;
-	outGnu << "set ylabel 'y'" << endl;
-	outGnu << "set xlabel 'x'" << endl;
-	outGnu << "set pm3d map" << endl;
-	outGnu << "set xrange[-4:4]" << endl;
-	outGnu << "set yrange[-4:4]" << endl;
-	outGnu << "splot '" << photometryPlotsDir + "/" + prefix + "_psf.dat" << "' title ''" << endl;
-	outGnu << "set terminal post landscape color solid enhanced 15" << endl;
-	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "psf.eps'" << endl;
-	outGnu << "rep" << endl;
-	outGnu << "set out" << endl;
+    << noiseFileName << "' u 1:16 w l title 'median obs. noise', f(x) title '27 ppm/hour', g(x) title '80.0 ppm/hour'" << std::endl;
+	outGnu << "set terminal post landscape color solid enhanced 15" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "ppmphinputmag"<<photometryNumTelescopes<<"tel.eps'" << std::endl;
+	outGnu << "rep" << std::endl;
+	outGnu << "set out" << std::endl;
+	outGnu << "reset" << std::endl;
+	outGnu << "set terminal jpeg large size 1000,800 enhanced" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "psf.jpg'" << std::endl;
+	outGnu << "set ylabel 'y'" << std::endl;
+	outGnu << "set xlabel 'x'" << std::endl;
+	outGnu << "set pm3d map" << std::endl;
+	outGnu << "set xrange[-4:4]" << std::endl;
+	outGnu << "set yrange[-4:4]" << std::endl;
+	outGnu << "splot '" << photometryPlotsDir + "/" + prefix + "_psf.dat" << "' title ''" << std::endl;
+	outGnu << "set terminal post landscape color solid enhanced 15" << std::endl;
+	outGnu << "set output '" << photometryPlotsDir + "/" + prefix << "psf.eps'" << std::endl;
+	outGnu << "rep" << std::endl;
+	outGnu << "set out" << std::endl;
     
-	outGnu << "set nomultiplot\nset terminal x11\nset output" << endl;
-	outGnu << "EOF" << endl;
+	outGnu << "set nomultiplot\nset terminal x11\nset output" << std::endl;
+	outGnu << "EOF" << std::endl;
     
 	outGnu.close();
     
 	//execute the gnu script
-	string command = "chmod a+x " + gnu + "; " + gnu;
+	std::string command = "chmod a+x " + gnu + "; " + gnu;
     //LogManager::log << "    Creating jpeg and eps plots in " << photometryPlotsDir << "/" << prefix  ;
     //GlobalVariables::logManager.LogManagerShowLog();    
 	//system(command.c_str());
@@ -1095,13 +1095,13 @@ void ProcessingPhotometry::processingPhotometryMakeAnalysis(string fileName)
  * This function writes the sub-pixels PSF mask to an ASCII file.
  * @param fileName File name
  */
-void ProcessingPhotometry::processingPhotometryWritePsfToASCIIFile(string fileName)
+void ProcessingPhotometry::processingPhotometryWritePsfToASCIIFile(std::string fileName)
 {
     
     	ofstream out(fileName.c_str());
     	if (!out.is_open())
     	{
-    		cerr << "\nError (ProcessingPhotometry::processingPhotometryWritePsfToASCIIFile): Unable to open output PSF file";
+    		std::cerr << "\nError (ProcessingPhotometry::processingPhotometryWritePsfToASCIIFile): Unable to open output PSF file";
     		exit(1);
     	}
     	out.precision(10);
@@ -1112,9 +1112,9 @@ void ProcessingPhotometry::processingPhotometryWritePsfToASCIIFile(string fileNa
     		for (int j = 0; j < psfMap.cols(); j++)
             {
     			out << (i - (psfMap.rows() - 1.) / 2.) / double(subPixelsPerPixel) << " " << (j - (psfMap.cols() - 1.) / 2.)
-                       / double(subPixelsPerPixel) << " " << psfMap(i, j) << " " << endl;
+                       / double(subPixelsPerPixel) << " " << psfMap(i, j) << " " << std::endl;
     		}
-            out << endl;
+            out << std::endl;
     	}
 }
 //==============================================================================
@@ -1127,118 +1127,118 @@ void ProcessingPhotometry::processingPhotometryWritePsfToASCIIFile(string fileNa
  * This function writes the photometry processing info to an ASCII file.
  * @param fileName File name to be written.
  */
-void ProcessingPhotometry::processingPhotometryWriteInfo(string fileName)
+void ProcessingPhotometry::processingPhotometryWriteInfo(std::string fileName)
 {
 	ofstream out(fileName.c_str());
 	if (!out.is_open())
 	{
-		cerr << "\nError (ProcessingPhotometry::processingPhotometryWriteInfo()): Unable to open output information file " << fileName;
+		std::cerr << "\nError (ProcessingPhotometry::processingPhotometryWriteInfo()): Unable to open output information file " << fileName;
 		exit(1);
 	}
     
-	string baseName = outputPath + "/" + prefix;
+	std::string baseName = outputPath + "/" + prefix;
 	baseName.erase(baseName.end() - 1);
     
-	out << "-----------------------------------------------------------------------------" << endl;
-	out << "Information about the photometry files in this directory" << endl;
+	out << "-----------------------------------------------------------------------------" << std::endl;
+	out << "Information about the photometry files in this directory" << std::endl;
 	if (photometryMethod == "WM")   //If photometry method is Weighted Mask
-		out << "PHOTOMETRY METHOD: WEIGHTED MASKS" << endl;
+		out << "PHOTOMETRY METHOD: WEIGHTED MASKS" << std::endl;
 	else if (photometryMethod == "AP") //If photometry method is Aperture
-		out << "PHOTOMETRY METHOD: APERTURE" << endl;
+		out << "PHOTOMETRY METHOD: APERTURE" << std::endl;
     
 	if (flatfieldCorrection)
-		out << "CORRECTED FOR FLATFIELD" << endl;
+		out << "CORRECTED FOR FLATFIELD" << std::endl;
 	else
-		out << "NOT CORRECTED FOR FLATFIELD" << endl;
+		out << "NOT CORRECTED FOR FLATFIELD" << std::endl;
     
 	if (frameTransferSmearingCorrection)
-		out << "CORRECTED FOR TRAILING" << endl;
+		out << "CORRECTED FOR TRAILING" << std::endl;
 	else
-		out << "NOT CORRECTED FOR TRAILING" << endl;
+		out << "NOT CORRECTED FOR TRAILING" << std::endl;
     
-	out << "Number of Telescopes (N): " << photometryNumTelescopes << endl;
-	out << "-----------------------------------------------------------------------------" << endl;
-	out << baseName + ".info" << "  ............. Input parameters for simulation" << endl;
-	out << baseName + "*.fits" << "  ............. Raw sub-images" << endl;
-	out << baseName + "_flat.fits" << "  ............. Flatfield (illumination flux 30000 e)" << endl;
+	out << "Number of Telescopes (N): " << photometryNumTelescopes << std::endl;
+	out << "-----------------------------------------------------------------------------" << std::endl;
+	out << baseName + ".info" << "  ............. Input parameters for simulation" << std::endl;
+	out << baseName + "*.fits" << "  ............. Raw sub-images" << std::endl;
+	out << baseName + "_flat.fits" << "  ............. Flatfield (illumination flux 30000 e)" << std::endl;
 	out << baseName + "_reduced0.fits" << "  ............. First image corrected by trailing, flatfield, gain and exposure (flux/s)"
-    << endl;
-	out << baseName + "_masks0.fits" << " ................ Masks of the first image" << endl;
-	out << "Normalized flux is computed from the theoretical flux of the model PSF at the sub-pixel position of the star" << endl;
+    << std::endl;
+	out << baseName + "_masks0.fits" << " ................ Masks of the first image" << std::endl;
+	out << "Normalized flux is computed from the theoretical flux of the model PSF at the sub-pixel position of the star" << std::endl;
 	/*
-	 out << baseName + "*.phot" << " ............. Photometry of the stars on each image" << endl;
-	 out << "                                      Column description:" << endl;
-	 out << "                                      1: X-coordinate of star on sub-image" << endl;
-	 out << "                                      2: Y-coordinate of star on sub-image" << endl;
-	 out << "                                      3: Input magnitude" << endl;
-	 out << "                                      4: Input flux" << endl;
-	 out << "                                      5: Measured magnitude" << endl;
-	 out << "                                      6: Measured normalized magnitude" << endl;
-	 out << "                                      7: Measured flux" << endl;
-	 out << "                                      8: Measured normalized flux" << endl;
-	 out << "                                      9: Background flux" << endl;
+	 out << baseName + "*.phot" << " ............. Photometry of the stars on each image" << std::endl;
+	 out << "                                      Column description:" << std::endl;
+	 out << "                                      1: X-coordinate of star on sub-image" << std::endl;
+	 out << "                                      2: Y-coordinate of star on sub-image" << std::endl;
+	 out << "                                      3: Input magnitude" << std::endl;
+	 out << "                                      4: Input flux" << std::endl;
+	 out << "                                      5: Measured magnitude" << std::endl;
+	 out << "                                      6: Measured normalized magnitude" << std::endl;
+	 out << "                                      7: Measured flux" << std::endl;
+	 out << "                                      8: Measured normalized flux" << std::endl;
+	 out << "                                      9: Background flux" << std::endl;
 	 */
-	out << "star*.phot" << " ............. Lightcurve of each star" << endl;
-	out << "                                      Column description:" << endl;
-	out << "                                      1: time [s]" << endl;
-	out << "                                      2: Input magnitude" << endl;
-	out << "                                      3: Input flux" << endl;
-	out << "                                      4: Measured magnitude" << endl;
-	out << "                                      5: Measured normalized magnitude" << endl;
-	out << "                                      6: Measured flux" << endl;
-	out << "                                      7: Measured normalized flux" << endl;
-	out << "                                      8: Background flux" << endl;
+	out << "star*.phot" << " ............. Lightcurve of each star" << std::endl;
+	out << "                                      Column description:" << std::endl;
+	out << "                                      1: time [s]" << std::endl;
+	out << "                                      2: Input magnitude" << std::endl;
+	out << "                                      3: Input flux" << std::endl;
+	out << "                                      4: Measured magnitude" << std::endl;
+	out << "                                      5: Measured normalized magnitude" << std::endl;
+	out << "                                      6: Measured flux" << std::endl;
+	out << "                                      7: Measured normalized flux" << std::endl;
+	out << "                                      8: Background flux" << std::endl;
     
-	out << "star_coordinates.dat" << " ............. Coordinates and magnitude of measured stars" << endl;
-	out << "                                      Column description:" << endl;
-	out << "                                      1: File name with lightcurve" << endl;
-	out << "                                      2: X-coordinate of star on sub-image" << endl;
-	out << "                                      3: Y-coordinate of star on sub-image" << endl;
-	out << "                                      4: Input magnitude" << endl;
-	out << "                                      5: Input flux" << endl;
+	out << "star_coordinates.dat" << " ............. Coordinates and magnitude of measured stars" << std::endl;
+	out << "                                      Column description:" << std::endl;
+	out << "                                      1: File name with lightcurve" << std::endl;
+	out << "                                      2: X-coordinate of star on sub-image" << std::endl;
+	out << "                                      3: Y-coordinate of star on sub-image" << std::endl;
+	out << "                                      4: Input magnitude" << std::endl;
+	out << "                                      5: Input flux" << std::endl;
     
-	out << baseName + ".stat" << " ............. Statistics for all lightcurves" << endl;
-	out << "                                      Column description:" << endl;
-	out << "                                      1: Star file name" << endl;
-	out << "                                      2: Input magnitude" << endl;
-	out << "                                      3: Input flux" << endl;
-	out << "                                      4: Mean input magnitude (Monte-Carlo)" << endl;
-	out << "                                      5: Std. dev of input magnitude (Monte-Carlo)" << endl;
-	out << "                                      6: Mean measured magnitude" << endl;
-	out << "                                      7: Mean measured normalized magnitude" << endl;
-	out << "                                      8: Std. dev of measured magnitude" << endl;
-	out << "                                      9: RMS of measured magnitude" << endl;
-	out << "                                      10: Mean measured flux" << endl;
-	out << "                                      11: Mean measured normalized flux" << endl;
-	out << "                                      12: Std. dev of measured flux " << endl;
-	out << "                                      13: Theoretical photon noise (flux)" << endl;
-	out << "                                      14: Measured noise ppm/hour for 1 telescope" << endl;
-	out << "                                      15: Theoretical photon noise ppm/hour for 1 telescope" << endl;
-	out << "                                      16: Measured noise ppm/hour for N telescopes" << endl;
-	out << "                                      17: Theoretical photon noise ppm/hour for N telescopes" << endl;
-	out << "                                      18: Measured noise ppm/hour for 8 telescopes" << endl;
-	out << "                                      19: Theoretical photon noise ppm/hour for 8 telescopes" << endl;
-	out << "                                      20: Measured noise ppm/hour for 16 telescopes" << endl;
-	out << "                                      21: Theoretical photon noise ppm/hour for 16 telescopes" << endl;
-	out << "                                      22: Measured noise ppm/hour for 24 telescopes" << endl;
-	out << "                                      23: Theoretical photon noise ppm/hour for 24 telescopes" << endl;
-	out << "                                      24: Measured noise ppm/hour for "<<photometryNumTelescopes<<" telescopes" << endl;
-	out << "                                      25: Theoretical photon noise ppm/hour for "<<photometryNumTelescopes<<" telescopes" << endl;
+	out << baseName + ".stat" << " ............. Statistics for all lightcurves" << std::endl;
+	out << "                                      Column description:" << std::endl;
+	out << "                                      1: Star file name" << std::endl;
+	out << "                                      2: Input magnitude" << std::endl;
+	out << "                                      3: Input flux" << std::endl;
+	out << "                                      4: Mean input magnitude (Monte-Carlo)" << std::endl;
+	out << "                                      5: Std. dev of input magnitude (Monte-Carlo)" << std::endl;
+	out << "                                      6: Mean measured magnitude" << std::endl;
+	out << "                                      7: Mean measured normalized magnitude" << std::endl;
+	out << "                                      8: Std. dev of measured magnitude" << std::endl;
+	out << "                                      9: RMS of measured magnitude" << std::endl;
+	out << "                                      10: Mean measured flux" << std::endl;
+	out << "                                      11: Mean measured normalized flux" << std::endl;
+	out << "                                      12: Std. dev of measured flux " << std::endl;
+	out << "                                      13: Theoretical photon noise (flux)" << std::endl;
+	out << "                                      14: Measured noise ppm/hour for 1 telescope" << std::endl;
+	out << "                                      15: Theoretical photon noise ppm/hour for 1 telescope" << std::endl;
+	out << "                                      16: Measured noise ppm/hour for N telescopes" << std::endl;
+	out << "                                      17: Theoretical photon noise ppm/hour for N telescopes" << std::endl;
+	out << "                                      18: Measured noise ppm/hour for 8 telescopes" << std::endl;
+	out << "                                      19: Theoretical photon noise ppm/hour for 8 telescopes" << std::endl;
+	out << "                                      20: Measured noise ppm/hour for 16 telescopes" << std::endl;
+	out << "                                      21: Theoretical photon noise ppm/hour for 16 telescopes" << std::endl;
+	out << "                                      22: Measured noise ppm/hour for 24 telescopes" << std::endl;
+	out << "                                      23: Theoretical photon noise ppm/hour for 24 telescopes" << std::endl;
+	out << "                                      24: Measured noise ppm/hour for "<<photometryNumTelescopes<<" telescopes" << std::endl;
+	out << "                                      25: Theoretical photon noise ppm/hour for "<<photometryNumTelescopes<<" telescopes" << std::endl;
     
-	out << baseName + "_psf.dat" << " ............. Input PSF of image" << endl;
-	out << "                                      Column description:" << endl;
-	out << "                                      1: X-coordinate" << endl;
-	out << "                                      2: Y-coordinate" << endl;
-	out << "                                      3: Normalized flux" << endl;
+	out << baseName + "_psf.dat" << " ............. Input PSF of image" << std::endl;
+	out << "                                      Column description:" << std::endl;
+	out << "                                      1: X-coordinate" << std::endl;
+	out << "                                      2: Y-coordinate" << std::endl;
+	out << "                                      3: Normalized flux" << std::endl;
     
-	out << "crowding.dat" << " ............. Crowding statistics" << endl;
-	out << "                                      Column description:" << endl;
-	out << "                                      1: Center of range (mag)" << endl;
-	out << "                                      2: Width of range (mag)" << endl;
-	out << "                                      3: Total number of stars" << endl;
-	out << "                                      4: Number of stars in range" << endl;
-	out << "                                      5: Number of stars in range with measured mag 0.113 smaller than input mag" << endl;
-	out << "                                      6: Percentage of stars in range with measured mag 0.113 smaller than input mag" << endl;
+	out << "crowding.dat" << " ............. Crowding statistics" << std::endl;
+	out << "                                      Column description:" << std::endl;
+	out << "                                      1: Center of range (mag)" << std::endl;
+	out << "                                      2: Width of range (mag)" << std::endl;
+	out << "                                      3: Total number of stars" << std::endl;
+	out << "                                      4: Number of stars in range" << std::endl;
+	out << "                                      5: Number of stars in range with measured mag 0.113 smaller than input mag" << std::endl;
+	out << "                                      6: Percentage of stars in range with measured mag 0.113 smaller than input mag" << std::endl;
 	out.close();
 }
 //==============================================================================

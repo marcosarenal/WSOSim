@@ -98,56 +98,56 @@ void ParamsTransit::ParamsTransitcheckInputParameters(DataSet &m_DataSet)
 
             if (hostStarTransitRA < 0 || hostStarTransitRA > 360)
             {
-		cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Right Ascension of the transit host star must be between 0 and 360." << endl;
+		std::cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Right Ascension of the transit host star must be between 0 and 360." << std::endl;
 		exit(1);
             }
 
             if (hostStarTransitDec < -90 || hostStarTransitDec > 90)
             {
-		cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Declination of the transit host star must be between -90 and +90." << endl;
+		std::cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Declination of the transit host star must be between -90 and +90." << std::endl;
 		exit(1);
             }
             
             if (hostStarRadius < 0)
             {
-		cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Radius of the host star must be > 0." << endl;
+		std::cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Radius of the host star must be > 0." << std::endl;
 		exit(1);
             }
             
             if (exoplanetRadius < 0)
             {
-		cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Radius of the transit planet  must be > 0." << endl;
+		std::cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Radius of the transit planet  must be > 0." << std::endl;
 		exit(1);
             }
                         
             if (hostStarRadius < exoplanetRadius )
             {
-		cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Please, check that the radius of the transit planet is smaller than the radius of its host star." << endl;
+		std::cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Please, check that the radius of the transit planet is smaller than the radius of its host star." << std::endl;
 		exit(1);
             }
 
             if (exoplanetOrbitalPeriod < 0)
             {
-		cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Exoplanet Orbital Period must be > 0." << endl;
+		std::cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Exoplanet Orbital Period must be > 0." << std::endl;
 		exit(1);
             }
             
             if (planetaryOrbitSemiaxis < 0)
             {
-		cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Planetary Orbit Semiaxis must be > 0." << endl;
+		std::cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Planetary Orbit Semiaxis must be > 0." << std::endl;
 		exit(1);
             }
 
             if (planetaryOrbitInclination < 0 || planetaryOrbitInclination > 180 )
             {
-		cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Planetary Orbit Inclination must be between 0 and 180." << endl;
+		std::cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Planetary Orbit Inclination must be between 0 and 180." << std::endl;
 		exit(1);
             }
             
             //Calculation of the impact parameter to check whether there will be a transit or not
             if ( (planetaryOrbitSemiaxis / ( 0.00465047 * hostStarRadius ) ) * std::cos(planetaryOrbitInclination * Constants::Pi / 180) > 1 )
             {
-		cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Under these conditions there will not be an observable transit. Please modify them (an orbit inclination closer to 90 deg would help)." << endl;
+		std::cerr << "\nError (ParamsTransit::ParamsTransitcheckInputParameters): Under these conditions there will not be an observable transit. Please modify them (an orbit inclination closer to 90 deg would help)." << std::endl;
 		exit(1);
             }
 
@@ -231,8 +231,6 @@ void ParamsTransit::ParamsTransittimeCalculation(DataSet &m_DataSet)
       
         }
     }
-     
-  
 }
 
 //==============================================================================
@@ -265,9 +263,12 @@ void ParamsTransit::ParamsTransitsearchHostStarOnCatalogue(DataSet &m_DataSet)
         
     //Initialize parameter to check if the host star is found on the Star Catalogue
     bool transitHostStarMatch = false;
+            
+    //Initialize the star iterator in the Star Catalogue
+    int starIterator = 0;
     
-    //Iterate in the whole Star Catalogue
-    for (int starIterator = 0; starIterator < NumStars; starIterator++)
+    //Iterate in the whole Star Catalogue until found a transit Host Star Match or end of the StarCatalogue
+    while ( transitHostStarMatch == false && starIterator < NumStars)
     {
            
         //Check whether is a match of the hostStarTransitRA and hostStarTransitDec on the Star Catalogue and has not been found yet
@@ -275,7 +276,7 @@ void ParamsTransit::ParamsTransitsearchHostStarOnCatalogue(DataSet &m_DataSet)
         {
             //Indicate that the Host Star has been found on the Star Catalogue
             transitHostStarMatch = true;
-            
+                                
             //REMINDER:
             //starCatalogue(starIterator, 0) = id(starIterator);
             //starCatalogue(starIterator, 1) = ra(starIterator);
@@ -292,18 +293,20 @@ void ParamsTransit::ParamsTransitsearchHostStarOnCatalogue(DataSet &m_DataSet)
             p_DataSet->datasetSethostStarMagnitude(hostStarMagnitude);
         
 
-        }      
+        } 
+                  
+        //Go for the next source in the Star catalogue
+        starIterator++;
     }       
  
     //If there has NOT been any source in the Star Catalogue that matches with the Right Ascension and Declination of the transit planet 
     if (transitHostStarMatch == false) 
     {
 
-        cerr << "\nError (ParamsTransit::ParamsTransitsearchHostStarOnCatalogue): Please, check that the Right Ascension and Declination of the transit planet corresponds with a source in the Star Catalogue with better accuracy than 0.00001 degrees." << endl;
+        std::cerr << "\nError (ParamsTransit::ParamsTransitsearchHostStarOnCatalogue): Please, check that the Right Ascension and Declination of the transit planet corresponds with a source in the Star Catalogue with better accuracy than 0.00001 degrees." << std::endl;
         exit(1);
     }
-            
-            
+           
 }
 
 //==============================================================================

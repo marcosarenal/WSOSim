@@ -60,7 +60,7 @@ public:
     void paramsPSFComputeMask(DataSet &m_DataSet);
     void paramsPSFsetGaussian();
     void paramsPSFreadFromFile();
-    void paramsPSFwriteSubPixelsToASCIIFile(string);
+    void paramsPSFwriteSubPixelsToASCIIFile(std::string);
     void paramsPSFrotatePSF(Array<float, 2> &, double);
 
     
@@ -83,7 +83,7 @@ private:
     double raOpticalAxis, decOpticalAxis;                   //Parameter retrieved from DataSet.
     double xOpticalAxis, yOpticalAxis;                      //Parameter retrieved from DataSet.
     
-    string psfFileName;                                         //Parameter retrieved from DataSet.
+    std::string psfFileName;                                         //Parameter retrieved from DataSet.
     double psfGaussFWHM;                                    //Parameter retrieved from DataSet.
     int    subPixelsPerPixel;                               //Parameter retrieved from DataSet.
     bool   psfLocationDependent;                            //Parameter retrieved from DataSet.
@@ -93,9 +93,9 @@ private:
     int    subFieldSizeX, subFieldSizeY;                    //Parameter retrieved from DataSet.
     int    subFieldZeroX, subFieldZeroY;                    //Parameter retrieved from DataSet.
     bool   useGauss;                                        //Parameter retrieved from DataSet.
-    string outputPath;                                      //Parameter retrieved from DataSet.
-    string prefix;                                          //Parameter retrieved from DataSet.
-    string psfLocationFile;                                 //Parameter retrieved from DataSet.
+    std::string outputPath;                                      //Parameter retrieved from DataSet.
+    std::string prefix;                                          //Parameter retrieved from DataSet.
+    std::string psfLocationFile;                                 //Parameter retrieved from DataSet.
     
     
     Array<float, 2> mask;                                   //Calculated PSF map to be set in the DataSet.

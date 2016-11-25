@@ -54,7 +54,7 @@ private:
 
 
 
-        string  jitterFile;                                     //Parameter retrieved from DataSet.
+        std::string  jitterFile;                                     //Parameter retrieved from DataSet.
         double  jitterMultFactor;                               //Parameter retrieved from DataSet.
 	    Array<double, 2> jitterInputParams;                     //Generated Blitz map to be set into the DataSet.     
 

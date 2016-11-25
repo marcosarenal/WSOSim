@@ -62,9 +62,9 @@ private:
 	double  originOffsetXmm, originOffsetYmm;       //Parameter retrieved from DataSet.
 	double  ccdOrientation;                         //Parameter retrieved from DataSet.
         
-	string  convolutionMethod;                      //Parameter retrieved from DataSet.
-	string  ccdPredefinedPosition;                  //Parameter retrieved from DataSet.
-	string  parameterFile;                          //Parameter retrieved from DataSet.
+	std::string  convolutionMethod;                      //Parameter retrieved from DataSet.
+	std::string  ccdPredefinedPosition;                  //Parameter retrieved from DataSet.
+	std::string  parameterFile;                          //Parameter retrieved from DataSet.
 	bool    performExoTransit;                      //Parameter retrieved from DataSet.
         
         

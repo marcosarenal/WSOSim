@@ -65,12 +65,12 @@ public:
     virtual ~Controller();
         
     static void runController(int argc, char ** argv);
-    static void runCCDandPhotometryController(string parameterFile, string photometryParameterFile);
-    static void runCMOSandPhotometryController(string parameterFile, string photometryParameterFile);
-    static void runCCDController(string parameterFile);
-    static void runCMOSController(string parameterFile);
-    static void runPhotometryController(string parameterFile, string photometryParameterFile);
-    static void runWUVSController(string parameterFile);
+    static void runCCDandPhotometryController(std::string parameterFile, std::string photometryParameterFile);
+    static void runCMOSandPhotometryController(std::string parameterFile, std::string photometryParameterFile);
+    static void runCCDController(std::string parameterFile);
+    static void runCMOSController(std::string parameterFile);
+    static void runPhotometryController(std::string parameterFile, std::string photometryParameterFile);
+    static void runWUVSController(std::string parameterFile);
 
 private:
         

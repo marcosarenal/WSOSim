@@ -85,9 +85,9 @@ private:
     double flatfieldWhiteNoise;            //Parameter retrieved from DataSet.
     double flatfieldIntraPixelWidth;       //Parameter retrieved from DataSet.
     int    numExposures;                   //Parameter retrieved from DataSet.
-    string outputPath;                     //Parameter retrieved from DataSet.
-    string prefix;                         //Parameter retrieved from DataSet.
-    string outputDir;                      //Output directory path for the FITS files to be written.
+    std::string outputPath;                     //Parameter retrieved from DataSet.
+    std::string prefix;                         //Parameter retrieved from DataSet.
+    std::string outputDir;                      //Output directory path for the FITS files to be written.
     int    edgePixels;                     //Parameter retrieved from DataSet.
     int    numSmearingOverscanRows;        //Parameter retrieved from DataSet.
     int    numPrescanRows;                 //Parameter retrieved from DataSet.    
@@ -97,14 +97,14 @@ private:
     double integrationTime;                // integrationTime = exposureTime + readOutTime.
     double startTime;                      //Starting time for each exposure to be applied the Jitter
      
-    string log;                            //log string to be send to the LogManager.
+    std::string log;                            //log std::string to be send to the LogManager.
      
     Array<float, 2>  pixelMap;                     //Blitz map set into the DataSet.        
     Array<float, 2>  subPixelMap;                  //Blitz map set into the DataSet.
     Array<float, 2>  initPixelMap;                     //Blitz map set into the DataSet.        
     Array<float, 2>  initSubPixelMap;                  //Blitz map set into the DataSet.
 
-    Array<string, 1> exposuresNamesArray;          //Array containing the exposures names for the FITS files.
+    Array<std::string, 1> exposuresNamesArray;          //Array containing the exposures names for the FITS files.
     Array<float, 2>  smearingMap;                  //Array retrieved from DataSet containing the Smearing map.               
     Array<float, 2>  biasRegisterMap;              //Array retrieved from DataSet containing the BIAS register map.      
     

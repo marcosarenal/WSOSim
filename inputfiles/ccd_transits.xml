@@ -318,15 +318,15 @@
           <ExoplanetaryTransitParameters>
               <!--Perform exoplanetary transit simulation for one source in the field (0=no/1=yes)-->
               <PerformExoTransit>
-                  0
+                  1
               </PerformExoTransit>
               <!--Right Ascension of the transit host star [deg] (It must match with a source in the star catalogue)-->
               <HostStarTransitRA>
-                  179.0234789
+                  180.210278
               </HostStarTransitRA>
               <!--Declination of the transit host star [deg] (It must match with a source in the star catalogue)-->
               <HostStarTransitDec>
-                  -70.908371
+                  -70.952095
               </HostStarTransitDec>
               <!--Radius of the transit host star [Solar radius]-->
               <HostStarRadius>
@@ -338,7 +338,7 @@
               </ExoplanetRadius>
               <!--Orbital period of the exoplanet [days]-->
               <ExoplanetOrbitalPeriod>
-                  7
+                  1
               </ExoplanetOrbitalPeriod>
               <!--Semiaxis of the orbit of the exoplanet [AU]-->
               <PlanetaryOrbitSemiaxis>

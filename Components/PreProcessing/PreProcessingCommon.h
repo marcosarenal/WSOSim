@@ -54,8 +54,8 @@ public:
 	PreProcessingCommon();
 	virtual ~PreProcessingCommon();
         
-	void PreProcessingCommonCCD(DataSet &m_DataSet, string parameterFile);
-        void PreProcessingCommonPhotometry(DataSetPhotometry &datasetPhotometry, string photometryParameterFile);
+	void PreProcessingCommonCCD(DataSet &m_DataSet, std::string parameterFile);
+        void PreProcessingCommonPhotometry(DataSetPhotometry &datasetPhotometry, std::string photometryParameterFile);
 
 	     
         
@@ -64,9 +64,9 @@ private:
 
         DataSet*    p_DataSet;                  //Pointer to the DataSet to retrieve parameters from it.
 
-     //   string parameterFile;                   //Parameter retrieved from DataSet.
-        string outputDir;                       //Parameter retrieved from DataSet.
-        string outputPath, prefix;              //Parameter retrieved from DataSet.
+     //   std::string parameterFile;                   //Parameter retrieved from DataSet.
+        std::string outputDir;                       //Parameter retrieved from DataSet.
+        std::string outputPath, prefix;              //Parameter retrieved from DataSet.
         
 };
 #endif /* PREPROCESSINGCOMMON_H_ */

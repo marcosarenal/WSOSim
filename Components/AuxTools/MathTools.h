@@ -39,9 +39,9 @@ public:
 	MathTools();
 	static void shakersort(Array<double, 1> &v);
 	static void shakersort(Array<float, 1> &v);
-	static void shakersort(vector<string> &v);
+	static void shakersort(vector<std::string> &v);
 	static void shakersort(Array<double, 1> &v1, Array<double, 1> &v2);
-	static void shakersort(Array<double, 1> &v1, Array<string, 1> &v2);
+	static void shakersort(Array<double, 1> &v1, Array<std::string, 1> &v2);
 	static void shakersort(Array<double, 2> v, Array<double, 1> &vout, Array<int, 1> &index1, Array<int, 1> &index2);
 	static void shakersort(Array<float, 2> v, Array<float, 1> &vout, Array<int, 1> &index1, Array<int, 1> &index2);
 	static double median(Array<double, 1> v);
