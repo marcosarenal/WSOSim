@@ -67,7 +67,8 @@ void ProcessingCCD::processingCCDPipeline(DataSet &m_DataSet)
 
     exposureTime = m_DataSet.datasetGetexposureTime();
     readOutTime = m_DataSet.datasetGetreadOutTime();
-    integrationTime = exposureTime + readOutTime;    
+    integrationTime = exposureTime + readOutTime;
+    stackExposures = p_DataSet->datasetGetstackExposures();
 
     //re-seed the RNG with an integer incremented by 1 to ensure that each image uses a different RNG seed
     DataSet::seedRNG++;
@@ -80,12 +81,46 @@ void ProcessingCCD::processingCCDPipeline(DataSet &m_DataSet)
     {
         sprintf(tempChar,  "Exposure%06d", iter);
         exposuresNamesArray(iter) = tempChar;
+    }   
+    //Setting the generated Exposures Names Array in the Dataset
+    m_DataSet.datasetSetExposuresNamesArray(exposuresNamesArray);
+    
+    
+    
+    //If it is applied the exposures Stack
+    if(stackExposures)
+    {
+        //If exposures are to be stacked
+        //Call all the processing Steps in the noise model to be stacked in a single image 
+        ProcessingCCD::processingCCDStackProcessingSteps(m_DataSet);            
+
+    }
+    else
+    {
+        //If exposures are not stacked
+        //Call sequentially each processing Step in the noise model 
+        ProcessingCCD::processingCCDProcessingSteps(m_DataSet);
     }
     
     
-    
-    //Setting the generated FlatField map in the Dataset
-    m_DataSet.datasetSetExposuresNamesArray(exposuresNamesArray);
+
+      
+        
+         
+}
+//==============================================================================
+
+
+
+
+//==============================================================================
+/**
+ *This function applies the processing steps to be performed in the global pipeline
+ * when it is required to stack a number of exposures in a single image. 
+ * This is the working method for Kepler or the FCU instrument on-board the WSO missions.
+ */
+void ProcessingCCD::processingCCDProcessingSteps(DataSet &m_DataSet)
+{    
     
     //Iterating the CCD processing for each exposure.
     for (int iterExposure = 0; iterExposure < numExposures; iterExposure++)
@@ -107,12 +142,12 @@ void ProcessingCCD::processingCCDPipeline(DataSet &m_DataSet)
         pixelMap = 0.0;
         subPixelMap.resize(m_DataSet.datasetGetsubPixelMap().extent(0),m_DataSet.datasetGetsubPixelMap().extent(1));
         subPixelMap = 0.0;
-        
+
         //Set the null values for pixelMap and subPixelMap at the Dataset
         m_DataSet.datasetSetpixelMap(pixelMap);
         m_DataSet.datasetSetsubPixelMap(subPixelMap);
-        
-        
+
+
         //EXOPLANETS TRANSITS
         //Check if there TRANSITS must be used
         if (m_DataSet.datasetGetperformExoTransit())
@@ -120,8 +155,8 @@ void ProcessingCCD::processingCCDPipeline(DataSet &m_DataSet)
             m_StepTransit.StepTransitapplication(m_DataSet, startTime);
 
         }
-       
-            
+
+
         //JITTER
         //Check if there JITTER must be used
         if (m_DataSet.datasetGetuseJitter())
@@ -137,13 +172,13 @@ void ProcessingCCD::processingCCDPipeline(DataSet &m_DataSet)
             initPixelMap = 0.0;
             //Retrieving the initPixelMap from DataSet            
             initPixelMap = m_DataSet.datasetGetinitPixelMap();
-    
+
             //Initialize the initSubPixelMap
             initSubPixelMap.resize(m_DataSet.datasetGetinitSubPixelMap().extent(0),m_DataSet.datasetGetinitSubPixelMap().extent(1));
             initSubPixelMap = 0.0;
             //Retrieving the initSubPixelMap from DataSet            
             initSubPixelMap = m_DataSet.datasetGetinitSubPixelMap();
- 
+
             //Set the initial pixelMap and subPixelMap as pixel and subPixelMap
             m_DataSet.datasetSetpixelMap(initPixelMap);
             m_DataSet.datasetSetsubPixelMap(initSubPixelMap);            
@@ -151,12 +186,12 @@ void ProcessingCCD::processingCCDPipeline(DataSet &m_DataSet)
 
         //CONVOLVE PSF
         m_StepConvolvePSF.StepConvolvePSFapplication(m_DataSet);
-        
-        
+
+
         //CHARGE TRANSFER SMEARING
         m_StepChargeTransferSmearing.StepChargeTransferSmearingapplication(m_DataSet);
-        			
-        
+
+
         //re-seed the RNG with an integer incremented by 1 to ensure that each image uses a different RNG seed
         //in each noise process, each random variable is seeded with this value!
         DataSet::seedRNG++;
@@ -164,15 +199,15 @@ void ProcessingCCD::processingCCDPipeline(DataSet &m_DataSet)
         //COSMICS
         //Application of COSMICS hits
         m_StepCosmics.StepCosmicsapplication(m_DataSet);
-        
+
         //re-seed the RNG with an integer incremented by 1 to ensure that each image uses a different RNG seed
         //in each noise process, each random variable is seeded with this value!
         DataSet::seedRNG++;
-        
+
         //BACKGROUND
         m_StepBackground.StepBackgroundapplication(m_DataSet);
-        
-        
+
+
         //FLATFIELD
         //Checks if the FLATFIELD map should be computed at sub-pixel level.
         //if sub-pixel white noise is > 0 or the intra-pixel width is > 0:
@@ -180,19 +215,19 @@ void ProcessingCCD::processingCCDPipeline(DataSet &m_DataSet)
         {
             m_StepFlatField.StepFlatFieldapplicationSubpixel(m_DataSet);
         }
-        
-          
+
+
         //REBIN
         m_StepRebin.StepRebinapplication(m_DataSet);
-        
-        
+
+
         //FLATFIELD
         //Checks if the FLATFIELD map should be computed at pixel level (instead of sub-pixel level).
         if (m_DataSet.datasetGetflatfieldWhiteNoise() == 0 && m_DataSet.datasetGetflatfieldIntraPixelWidth() == 0)
         {
             m_StepFlatField.StepFlatFieldapplicationPixel(m_DataSet);
         }
-        
+
 
         //re-seed the RNG with an integer incremented by 1 to ensure that each image uses a different RNG seed
         //in each noise process, each random variable is seeded with this value!
@@ -204,45 +239,45 @@ void ProcessingCCD::processingCCDPipeline(DataSet &m_DataSet)
         {
             m_StepPhotonNoise.StepPhotonNoiseapplication(m_DataSet);
         }
-        
+
         //re-seed the RNG with an integer incremented by 1 to ensure that each image uses a different RNG seed
         //in each noise process, each random variable is seeded with this value!
         DataSet::seedRNG++;
-        
+
         //FULL WELL SATURATION
         m_StepSaturation.StepSaturationfullWellapplication(m_DataSet);
-        
+
         //re-seed the RNG with an integer incremented by 1 to ensure that each image uses a different RNG seed
         //in each noise process, each random variable is seeded with this value!
         DataSet::seedRNG++;
-        
+
         //CTE (CHARGE TRANSFER EFFICIENCY)
         m_StepCTE.StepCTEapplication(m_DataSet);
-        
+
         //re-seed the RNG with an integer incremented by 1 to ensure that each image uses a different RNG seed
         //in each noise process, each random variable is seeded with this value!
         DataSet::seedRNG++;
-        
+
         //READ OUT NOISE
         m_StepReadOutNoise.StepReadOutNoiseapplication(m_DataSet);
-        
+
         //re-seed the RNG with an integer incremented by 1 to ensure that each image uses a different RNG seed
         //in each noise process, each random variable is seeded with this value!
         DataSet::seedRNG++;
-        
+
         //GAIN
         m_StepGain.StepGainapplication(m_DataSet);
-        
-        
+
+
         //ELECTRONIC OFFSET
         m_StepElectronicOffset.StepElectronicOffsetapplication(m_DataSet);
-        
-        
+
+
         //DIGITAL SATURATION
         m_StepSaturation.StepSaturationdigitalapplication(m_DataSet);
-        
-        
-        
+
+
+
         //Initializing and retrieving the pixel map from DataSet
         pixelMap.resize(m_DataSet.datasetGetpixelMap().extent(0),m_DataSet.datasetGetpixelMap().extent(1));
         pixelMap = 0.0;
@@ -267,7 +302,239 @@ void ProcessingCCD::processingCCDPipeline(DataSet &m_DataSet)
                                                     smearingMap, pixelMap, outputDir + "/" + prefix + exposuresNamesArray(iterExposure));
 
     }
-      
+       
+}
+//==============================================================================
+
+
+
+
+
+//==============================================================================
+/**
+ *This function applies the processing steps to be performed in the global pipeline
+ * when it is required to stack a number of exposures in a single image. 
+ * This is the working method for Kepler or the FCU instrument on-board the WSO missions.
+ */
+void ProcessingCCD::processingCCDStackProcessingSteps(DataSet &m_DataSet)
+{    
+    //Retrieve the number of exposures to be stacked in one single image        
+    numExposuresPerStack = p_DataSet->datasetGetnumExposuresPerStack();
+                            
+    
+    //To set initial starTime to zero in the very first exposure 
+    int initialDummy = 0;
+        
+    
+    //Iterating the CCD processing for each exposure.
+    for (int iterExposure = 0; iterExposure < numExposures; iterExposure++)
+    {
+        
+        //initialize stackMap with the pixelMap size
+        stackMap.resize(m_DataSet.datasetGetpixelMap().extent(0),m_DataSet.datasetGetpixelMap().extent(1));
+        stackMap = 0.0;
+
+                    
+        //Resizing the pixelMap and subPixelMap
+        pixelMap.resize(m_DataSet.datasetGetpixelMap().extent(0),m_DataSet.datasetGetpixelMap().extent(1));
+        subPixelMap.resize(m_DataSet.datasetGetsubPixelMap().extent(0),m_DataSet.datasetGetsubPixelMap().extent(1));
+
+        
+        //Generate numExposuresPerStack exposures to be summed.
+        for (int iterSubStack = 0; iterSubStack < numExposuresPerStack; iterSubStack++)
+        {
+            LogManager::log << "  Stack No." << iterExposure<<": ";
+            LogManager::log << "  Exposure No." << iterSubStack<<": ";
+            GlobalVariables::logManager.LogManagerShowLog();
+
+            //Starting time for each exposure to be applied the Jitter
+            startTime = initialDummy * (iterExposure +1) * (iterSubStack +1) * integrationTime;
+
+            initialDummy = 1;
+
+            //TODO: include exposure0 when parallel processing. exposure0 to be the first exposure in each parallel processing (pma)
+            //startTime = (iterExposure + exposure0) * integrationTime;
+
+
+
+            //Initialize pixelMap and subPixelMap for each new exposure
+            pixelMap = 0.0;
+            subPixelMap = 0.0;
+
+            //Set the null values for pixelMap and subPixelMap at the Dataset
+            m_DataSet.datasetSetpixelMap(pixelMap);
+            m_DataSet.datasetSetsubPixelMap(subPixelMap);
+
+
+            //EXOPLANETS TRANSITS
+            //Check if there TRANSITS must be used
+            if (m_DataSet.datasetGetperformExoTransit())
+            {    
+                m_StepTransit.StepTransitapplication(m_DataSet, startTime);
+
+            }
+
+
+            //JITTER
+            //Check if there JITTER must be used
+            if (m_DataSet.datasetGetuseJitter())
+            {         
+                m_StepJitter.StepJitterapplication(m_DataSet, startTime);
+            }
+            else
+            {
+                //Retrieve the initial pixelMap and subPixelMap to be set as pixel and subPixelMap
+                //This is not needed with jitter as the stars position are recalculated for each jitter position
+                //Initialize the initPixelMap
+                initPixelMap.resize(m_DataSet.datasetGetinitPixelMap().extent(0),m_DataSet.datasetGetinitPixelMap().extent(1));
+                initPixelMap = 0.0;
+                //Retrieving the initPixelMap from DataSet            
+                initPixelMap = m_DataSet.datasetGetinitPixelMap();
+
+                //Initialize the initSubPixelMap
+                initSubPixelMap.resize(m_DataSet.datasetGetinitSubPixelMap().extent(0),m_DataSet.datasetGetinitSubPixelMap().extent(1));
+                initSubPixelMap = 0.0;
+                //Retrieving the initSubPixelMap from DataSet            
+                initSubPixelMap = m_DataSet.datasetGetinitSubPixelMap();
+
+                //Set the initial pixelMap and subPixelMap as pixel and subPixelMap
+                m_DataSet.datasetSetpixelMap(initPixelMap);
+                m_DataSet.datasetSetsubPixelMap(initSubPixelMap);            
+            }
+
+            //CONVOLVE PSF
+            m_StepConvolvePSF.StepConvolvePSFapplication(m_DataSet);
+
+
+            //CHARGE TRANSFER SMEARING
+            m_StepChargeTransferSmearing.StepChargeTransferSmearingapplication(m_DataSet);
+
+
+            //re-seed the RNG with an integer incremented by 1 to ensure that each image uses a different RNG seed
+            //in each noise process, each random variable is seeded with this value!
+            DataSet::seedRNG++;
+
+            //COSMICS
+            //Application of COSMICS hits
+            m_StepCosmics.StepCosmicsapplication(m_DataSet);
+
+            //re-seed the RNG with an integer incremented by 1 to ensure that each image uses a different RNG seed
+            //in each noise process, each random variable is seeded with this value!
+            DataSet::seedRNG++;
+
+            //BACKGROUND
+            m_StepBackground.StepBackgroundapplication(m_DataSet);
+
+
+            //FLATFIELD
+            //Checks if the FLATFIELD map should be computed at sub-pixel level.
+            //if sub-pixel white noise is > 0 or the intra-pixel width is > 0:
+            if (m_DataSet.datasetGetflatfieldWhiteNoise() != 0 || m_DataSet.datasetGetflatfieldIntraPixelWidth() != 0)
+            {
+                m_StepFlatField.StepFlatFieldapplicationSubpixel(m_DataSet);
+            }
+
+
+            //REBIN
+            m_StepRebin.StepRebinapplication(m_DataSet);
+
+
+            //FLATFIELD
+            //Checks if the FLATFIELD map should be computed at pixel level (instead of sub-pixel level).
+            if (m_DataSet.datasetGetflatfieldWhiteNoise() == 0 && m_DataSet.datasetGetflatfieldIntraPixelWidth() == 0)
+            {
+                m_StepFlatField.StepFlatFieldapplicationPixel(m_DataSet);
+            }
+
+
+            //re-seed the RNG with an integer incremented by 1 to ensure that each image uses a different RNG seed
+            //in each noise process, each random variable is seeded with this value!
+            DataSet::seedRNG++;
+
+            //PHOTON NOISE
+            //Check whether it is required the photon noise to be applied or not.
+            if (m_DataSet.datasetGetusePhotonNoise())
+            {
+                m_StepPhotonNoise.StepPhotonNoiseapplication(m_DataSet);
+            }
+
+            //re-seed the RNG with an integer incremented by 1 to ensure that each image uses a different RNG seed
+            //in each noise process, each random variable is seeded with this value!
+            DataSet::seedRNG++;
+
+            //FULL WELL SATURATION
+            m_StepSaturation.StepSaturationfullWellapplication(m_DataSet);
+
+            //re-seed the RNG with an integer incremented by 1 to ensure that each image uses a different RNG seed
+            //in each noise process, each random variable is seeded with this value!
+            DataSet::seedRNG++;
+
+            //CTE (CHARGE TRANSFER EFFICIENCY)
+            m_StepCTE.StepCTEapplication(m_DataSet);
+
+            //re-seed the RNG with an integer incremented by 1 to ensure that each image uses a different RNG seed
+            //in each noise process, each random variable is seeded with this value!
+            DataSet::seedRNG++;
+
+            //READ OUT NOISE
+            m_StepReadOutNoise.StepReadOutNoiseapplication(m_DataSet);
+
+            //re-seed the RNG with an integer incremented by 1 to ensure that each image uses a different RNG seed
+            //in each noise process, each random variable is seeded with this value!
+            DataSet::seedRNG++;
+
+            //GAIN
+            m_StepGain.StepGainapplication(m_DataSet);
+
+
+            //ELECTRONIC OFFSET
+            m_StepElectronicOffset.StepElectronicOffsetapplication(m_DataSet);
+
+
+            //DIGITAL SATURATION
+            m_StepSaturation.StepSaturationdigitalapplication(m_DataSet);
+
+
+
+            //Retrieving the pixel map from DataSet
+            pixelMap = m_DataSet.datasetGetpixelMap();
+            
+            //Add exposure to satckMap
+            stackMap =  stackMap + pixelMap;  
+           
+        }
+        //END of stack loop
+ 
+          
+             
+        //Setting the new calculated pixelMap into the DataSet
+        m_DataSet.datasetSetpixelMap(stackMap);   
+
+
+        //Retrieving the smearing map from DataSet        
+        //Initialize smearingMap
+        smearingMap.resize(m_DataSet.datasetGetsmearingMap().extent(0), m_DataSet.datasetGetsmearingMap().extent(1));
+        smearingMap = 0.0;
+        
+        //Retrieving the BIAS register map from DataSet        
+        //Initialize smearingMap
+        biasRegisterMap.resize(m_DataSet.datasetGetbiasRegisterMap().extent(0), m_DataSet.datasetGetbiasRegisterMap().extent(1));
+        biasRegisterMap = 0.0;
+         
+        //Each map is stacked numExposuresPerStack times
+        smearingMap *=numExposuresPerStack;
+        biasRegisterMap *=numExposuresPerStack;
+
+        //Each map is set in the DataSet
+        smearingMap = m_DataSet.datasetGetsmearingMap();
+        biasRegisterMap = m_DataSet.datasetGetbiasRegisterMap();
+        
+        //Write each exposure to FITS file cutting edges and adding BIAS register and smearing maps. 
+        FileUtilities::FileUtilitiesCutAndWriteFITS(exposureTime, edgePixels, numPrescanRows, numSmearingOverscanRows, biasRegisterMap,
+                                                    smearingMap, stackMap, outputDir + "/" + prefix + exposuresNamesArray(iterExposure));
+
+    }
+       
 }
 //==============================================================================
 

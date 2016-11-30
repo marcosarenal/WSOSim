@@ -36,7 +36,7 @@
               </OutputPath>
               <!--Prefix of output files (=name of output sub-directory)-->
               <Prefix>
-                  PLATOsim-transits
+                  PLATOsim-stack
               </Prefix>
               <!--Write sub-pixel images to fits file (1=yes/0=no)-->
               <WriteSubPixelFits>
@@ -46,12 +46,20 @@
           <ObservingParameters>
               <!--Exposure time [s]-->
               <ExposureTime>
-                  220
+                  6
               </ExposureTime>
               <!--Total number of exposures-->
               <NumExposures>
                   10
               </NumExposures>
+              <!--Stack series of exposures in one output FITS image file (0=no/1=yes)-->
+              <StackExposures>
+                  1
+              </StackExposures>
+              <!--Total number of exposures to be added in one single Stack-->
+              <NumExposuresPerStack>
+                  27
+              </NumExposuresPerStack>
               <!--File name stellar catalogue (RA, DEC, Mag)-->
               <CatalogueFileName>
                   /hd1/Projects/WSOSim/inputfiles/field_RA180.0_DEC-70.0_R1.0.coo

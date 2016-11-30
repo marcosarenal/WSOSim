@@ -100,6 +100,8 @@ void DataSet::datasetReadParameterFile(std::string parameterFile)
     pElem = config->FirstChildElement("ObservingParameters");
     pElem->FirstChildElement("ExposureTime")->GetText(&exposureTime);
     pElem->FirstChildElement("NumExposures")->GetText(&numExposures);
+    pElem->FirstChildElement("StackExposures")->GetText(&stackExposures);
+    pElem->FirstChildElement("NumExposuresPerStack")->GetText(&numExposuresPerStack);
     pElem->FirstChildElement("CatalogueFileName")->GetText(&catalogueFileName);
 
     pElem->FirstChildElement("Fluxm0")->GetText(&fluxm0);
