@@ -56,7 +56,9 @@ public:
     
     ProcessingCCD();
     virtual ~ProcessingCCD();
-    void processingCCDPipeline(DataSet &m_DataSet);
+    void processingCCDPipeline(DataSet &m_DataSet); 
+    void processingCCDProcessingSteps(DataSet &m_DataSet); 
+    void processingCCDStackProcessingSteps(DataSet &m_DataSet);
     void processingCCDPipelineOnTheGoPhotom(DataSet &m_DataSet, DataSetPhotometry &datasetPhotometry);
     
 private:
@@ -85,9 +87,11 @@ private:
     double flatfieldWhiteNoise;            //Parameter retrieved from DataSet.
     double flatfieldIntraPixelWidth;       //Parameter retrieved from DataSet.
     int    numExposures;                   //Parameter retrieved from DataSet.
-    std::string outputPath;                     //Parameter retrieved from DataSet.
-    std::string prefix;                         //Parameter retrieved from DataSet.
-    std::string outputDir;                      //Output directory path for the FITS files to be written.
+    int    numExposuresPerStack;           //Number of exposures to be summed in the same image.
+    bool   stackExposures;                 //Stack series of exposures in one output FITS image file (0=no/1=yes).        
+    string outputPath;                     //Parameter retrieved from DataSet.
+    string prefix;                         //Parameter retrieved from DataSet.
+    string outputDir;                      //Output directory path for the FITS files to be written.
     int    edgePixels;                     //Parameter retrieved from DataSet.
     int    numSmearingOverscanRows;        //Parameter retrieved from DataSet.
     int    numPrescanRows;                 //Parameter retrieved from DataSet.    
@@ -97,17 +101,18 @@ private:
     double integrationTime;                // integrationTime = exposureTime + readOutTime.
     double startTime;                      //Starting time for each exposure to be applied the Jitter
      
-    std::string log;                            //log std::string to be send to the LogManager.
+    string log;                            //log string to be send to the LogManager.
      
     Array<float, 2>  pixelMap;                     //Blitz map set into the DataSet.        
     Array<float, 2>  subPixelMap;                  //Blitz map set into the DataSet.
-    Array<float, 2>  initPixelMap;                     //Blitz map set into the DataSet.        
-    Array<float, 2>  initSubPixelMap;                  //Blitz map set into the DataSet.
+    Array<float, 2>  initPixelMap;                 //Blitz map set into the DataSet.        
+    Array<float, 2>  initSubPixelMap;              //Blitz map set into the DataSet.
 
-    Array<std::string, 1> exposuresNamesArray;          //Array containing the exposures names for the FITS files.
+    Array<string, 1> exposuresNamesArray;          //Array containing the exposures names for the FITS files.
     Array<float, 2>  smearingMap;                  //Array retrieved from DataSet containing the Smearing map.               
     Array<float, 2>  biasRegisterMap;              //Array retrieved from DataSet containing the BIAS register map.      
-    
+    Array<float, 2>  stackMap;                     //Array defined to stack exposures
+ 
     
 };
 #endif /* PROCESSINGCCD_H_ */

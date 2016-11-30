@@ -48,19 +48,19 @@ public:
         DataSet();
         virtual ~DataSet();
         
-        void datasetReadParameterFile(std::string parameterFile);
+        void datasetReadParameterFile(string parameterFile);
 
         
         //Parameter getters:
-        inline std::string datasetGetOutputPath() const{ return outputPath;}                         //Retrieves the output path.
-        inline std::string datasetGetPrefix() const{ return prefix;}                                 //Retrieves the prefix of output files
-        inline std::string datasetGetCatalogueFileName() const{ return catalogueFileName;}           //Retrieves the stellar catalogue file name(RA, DEC, Mag).
+        inline string datasetGetOutputPath() const{ return outputPath;}                         //Retrieves the output path.
+        inline string datasetGetPrefix() const{ return prefix;}                                 //Retrieves the prefix of output files
+        inline string datasetGetCatalogueFileName() const{ return catalogueFileName;}           //Retrieves the stellar catalogue file name(RA, DEC, Mag).
         inline int    datasetGetnumExposures() const{ return numExposures;}                     //Retrieves the total number of exposures.
 
-        inline std::string datasetGetconvolutionMethod() const{ return convolutionMethod;}           //Retrieves the convolution method (FFT or Real).
+        inline string datasetGetconvolutionMethod() const{ return convolutionMethod;}           //Retrieves the convolution method (FFT or Real).
         inline int    datasetGetthreads() const{ return threads;}                               //Retrieves the number of processors to use in parallel
         inline bool   datasetGetuseFFTWisdom() const{ return useFFTWisdom;}                     //Retrieves the use-of-Wisdom value.
-        inline std::string datasetGetfftWisdomPath() const{ return fftWisdomPath;}                   //Retrieves the directory where wisdom is stored.
+        inline string datasetGetfftWisdomPath() const{ return fftWisdomPath;}                   //Retrieves the directory where wisdom is stored.
         inline int    datasetGetmemoryLimit() const{ return memoryLimit;}                       //Retrieves the memory limit for FFT convolution.
 
         inline bool   datasetGetuseJitter() const{ return useJitter;}                           //Apply jitter to time series (0=no/1=yes).
@@ -76,10 +76,10 @@ public:
         inline int    datasetGetnumPrescanRows() const{ return numPrescanRows;}                   //Retrieves the number of pre-scan rows [pixels].
 
 
-        inline std::string datasetGetpsfFileName() const{ return psfFileName;}                       //Retrieves the PSF file name.
+        inline string datasetGetpsfFileName() const{ return psfFileName;}                       //Retrieves the PSF file name.
         inline double datasetGetpsfGaussFWHM() const{ return psfGaussFWHM;}                     //Retrieves the width of Gaussian PSF (only applicable if no PSF file is read in) [pixels]
         inline bool   datasetGetpsfLocationDependent()const{return psfLocationDependent;}       //Retrieves 0=no location-dependent PSF / 1=location-dependent PSF
-        inline std::string datasetGetpsfLocationFile()const{return psfLocationFile;}                 //Retrieves the file with list of PSFs and their location.
+        inline string datasetGetpsfLocationFile()const{return psfLocationFile;}                 //Retrieves the file with list of PSFs and their location.
         inline double datasetGetpsfRotationAngle() const{ return psfRotationAngle;}             //Retrieves the rotation angle of PSF in degrees (counter-clockwise).
         inline int    datasetGetpsfSubPixels() const{ return psfSubPixels;}                     //Retrieves the number of sub-pixels per pixel in PSF file (NumPixels/SubPixels must be an integer value).
         inline int    datasetGetpsfNumPixels() const{ return psfNumPixels;}                     //Retrieves the total number of pixels of the PSF
@@ -89,7 +89,7 @@ public:
         inline double datasetGetpsfOrientation() const{ return psfOrientation;}                 //Retrieves the orientation of pre-computed PSF in degrees (x-Axis=0°, counter-clockwise)
         inline bool   datasetGetuseGauss() const{ return useGauss;}                             //Use analytical Gaussian PSF (0=no/1=yes).
 
-        inline std::string datasetGetccdPredefinedPosition() const{ return ccdPredefinedPosition;}   //Retrieves the ccd Predefined Position
+        inline string datasetGetccdPredefinedPosition() const{ return ccdPredefinedPosition;}   //Retrieves the ccd Predefined Position
         inline int    datasetGetccdSizeX() const{ return ccdSizeX;}                             //Retrieves the CCD size X [pixels] (columns).
         inline int    datasetGetccdSizeY() const{ return ccdSizeY;}                             //Retrieves the CCD size Y [pixels] (rows).
         inline double datasetGetOriginOffsetXmm() const{ return originOffsetXmm;}               //Retrieves the X Offset of CCD origin from center of focal plane [mm].
@@ -134,6 +134,8 @@ public:
         inline double datasetGetelectronicOffset() const{ return electronicOffset;}             //Retrieves the electronic offset (= bias level) [ADU]
         
         inline double datasetGetexposureTime() const{ return exposureTime;}                     //Retrieves the exposure time [s].
+        inline bool   datasetGetstackExposures() const{ return stackExposures;}                     //Retrieves the exposure time [s].
+        inline int    datasetGetnumExposuresPerStack() const{ return numExposuresPerStack;}                     //Retrieves the exposure time [s].
         inline double datasetGetreadOutTime() const{ return readOutTime;}                       //Retrieves the read-out time [s].
         inline double datasetGetcosmicHitRate() const{ return cosmicHitRate;}                   //Retrieves the cosmic hit rate [events/cm^2/min].
         inline double datasetGetcosmicsWidth() const{ return cosmicsWidth;}                     //Retrieves the cosmic hit width [pixels].
@@ -150,7 +152,7 @@ public:
         inline double datasetGetflatfieldIntraPixelWidth() const{ return flatfieldIntraPixelWidth;}//Retrieves the Flatfieldwidth of the central part of the pixel which is affected by
                                                                                                    //a loss of sensitivity  lower than 5\% due to edge effect [\% of pixel size, rounded up]\\.
 
-        inline std::string datasetGetjitterFile() const{ return jitterFile;}                         //Retrieves the file name with jitter time series
+        inline string datasetGetjitterFile() const{ return jitterFile;}                         //Retrieves the file name with jitter time series
         inline double datasetGetjitterAngularDist() const{ return jitterAngularDist;}           //Retrieves the angular distance [deg] of satellite jitter rotation axis from CCD center-of-field
         inline double datasetGetjitterPosAngle() const{ return jitterPosAngle;}                 //Retrieves the position angle [deg] of satellite jitter rotation axis (relative to N).
         inline double datasetGetjitterMultFactor() const{ return jitterMultFactor;}             //Retrieves the multiplication factor of jitter time-series.
@@ -180,7 +182,7 @@ public:
         Array<double, 2>  datasetGetJitterInputParams();         
         Array<float, 2>  datasetGetStarListOnCCD();                  
         Array<float, 2>  datasetGetsubPixelStarListOnCCD();                  
-        Array<std::string, 1>  datasetGetExposuresNamesArray();        
+        Array<string, 1>  datasetGetExposuresNamesArray();        
         Array<float, 2> datasetGetStarCatalogue();                  
         Array<float, 1> datasetGetinTransitArray();                  
 
@@ -213,7 +215,7 @@ public:
         void datasetSetStarListOnCCD(Array<float, 2> starListOnCCD);
         void datasetSetsubPixelStarListOnCCD(Array<float, 2> subPixelStarListOnCCD);
         void datasetSetCenterFocalPlane(double xOpticalAxis, double yOpticalAxis);
-        void datasetSetExposuresNamesArray(Array<std::string, 1> exposuresNamesArrayCopy);
+        void datasetSetExposuresNamesArray(Array<string, 1> exposuresNamesArrayCopy);
         void datasetSetStarCatalogue(Array<float, 2> starCatalogue);
         void datasetSetinTransitArray(Array<float, 1> inTransitArray);
         void datasetSethostStarMagnitude(double hostStarMagnitude);
@@ -229,14 +231,14 @@ public:
 
 private:
                 
-        std::string outputPath;                      //Output path.
-        std::string catalogueFileName;               //File name stellar catalogue (RA, DEC, Mag).
-        std::string prefix;                          //Prefix of output files (=name of output sub-directory).
+        string outputPath;                      //Output path.
+        string catalogueFileName;               //File name stellar catalogue (RA, DEC, Mag).
+        string prefix;                          //Prefix of output files (=name of output sub-directory).
         int    threads;                         //Number of processors to use in parallel.
         int    memoryLimit;                     //Memory limit for FFT convolution (to avoid memory overflow).
         int    edgePixels;                      //Number of pixels by which the image size is increased on each side to ensure that the treatment of the edges is made correctly.
         
-        std::string ccdPredefinedPosition;           //Predefined position of CCD (A, B, C, D, AF, BF, CF, DF, or User).
+        string ccdPredefinedPosition;           //Predefined position of CCD (A, B, C, D, AF, BF, CF, DF, or User).
         int    ccdSizeX;                        //CCD size X [pixels] (columns)
         int    ccdSizeY;                        //CCD size Y [pixels] (rows)
         double originOffsetXmm;                 //X Offset of CCD origin from center of focal plane [mm]
@@ -262,8 +264,8 @@ private:
         double declCenterSubField;              //Declination of center of FOV of CCD [deg].
         double radiusFOVCCD;                    //Radius of the FOV [deg].
         
-        std::string psfFileName;                     //PSF file name.
-        std::string psfLocationFile;                 //File with list of PSFs and their location.
+        string psfFileName;                     //PSF file name.
+        string psfLocationFile;                 //File with list of PSFs and their location.
         double psfGaussFWHM;                    //Width of Gaussian PSF (only applicable if no PSF file is read in) [pixels]
         double psfCenterX;                      //X Center of the PSF in sub-pixel coordinates.
         double psfCenterY;                      //X Center of the PSF in sub-pixel coordinates.
@@ -274,13 +276,15 @@ private:
         int    psfSubPixels;                    //Number of sub-pixels per pixel in PSF file (NumPixels/SubPixels must be an integer value).
         bool   psfLocationDependent;            //Use location-dependent PSF (0=no/1=yes).
         
-        std::string convolutionMethod;               //Convolution method: FFT Convolution (FFT) or Real Space Convolution (Real).
+        string convolutionMethod;               //Convolution method: FFT Convolution (FFT) or Real Space Convolution (Real).
         bool   useFFTWisdom;                    //Use FFT Wisdom to speed up convolution (can take longer for certain image dimensions) (0=no/1=yes)
-        std::string fftWisdomPath;                   //The wisdom information is stored in this directory.
+        string fftWisdomPath;                   //The wisdom information is stored in this directory.
         bool   useGauss;                        //Use analytical Gaussian PSF (0=no/1=yes).
         
         double exposureTime;                    //Exposure time [s].
         int    numExposures;                    //Total number of exposures.
+        bool   stackExposures;                  //Stack series of exposures in one output FITS image file (0=no/1=yes).        
+        int    numExposuresPerStack;            //Number of exposures to be summed in the same image.
         double fluxm0;                          //Flux of m=0 star [phot/s/cm^2].
         
         double gain;                            //Gain [e/ADU].
@@ -316,7 +320,7 @@ private:
         double jitterDrift;                     //Retrieves the jitter drift [in arcsecs/min].
         double jitterRepointing;                //Retrieves the jitter repointing time [in hours]. Time for the shuttle to point back to the initial position (center of the FoV).
 
-        std::string jitterFile;                      //File with jitter time series.
+        string jitterFile;                      //File with jitter time series.
         double jitterPosAngle;                  //Position angle [deg] of satellite jitter rotation axis (relative to N).
         double jitterAngularDist;               //Angular distance [deg] of satellite jitter rotation axis from CCD center-of-field.
         double jitterMultFactor;                //Multiplication factor of jitter time-series.
@@ -353,7 +357,7 @@ private:
         Array<double, 2> jitterInputParams;             //Blitz 2-D array with the jitter displacement time [s], yaw, pitch and roll angles [deg].
         Array<float, 2>  starListOnCCD;                 //Blitz 2-D array with the list of stars on the CCD.
         Array<float, 2>  subPixelStarListOnCCD;         //Blitz 2-D array with the list of stars on the CCD at subpixel level.
-        Array<std::string, 1> exposuresNamesArray;           //Blitz 2-D array with the list of exposures names.
+        Array<string, 1> exposuresNamesArray;           //Blitz 2-D array with the list of exposures names.
         Array<float, 2>  starCatalogue;                 //Blitz 2-D array with the star catalogue
         Array<float, 1>  inTransitArray;                //Blitz 2-D array with the the times where the exoplanet transit takes place.
 };
@@ -371,12 +375,12 @@ public:
         DataSetPhotometry();
         virtual ~DataSetPhotometry();
         
-        void datasetPhotometryReadParameterFile(std::string photometryParameterFile);
+        void datasetPhotometryReadParameterFile(string photometryParameterFile);
         
         //Photometry Parameter getters:
-        inline std::string datasetGetphotometryMethod() const{ return photometryMethod;}   //Retrieves the photometry method selected.
-        inline std::string datasetGetphotometryDirName() const{ return photometryDirName;}   //Retrieves the photometry directory name.
-        inline std::string datasetGetphotometryPlotsDir() const{ return photometryPlotsDir;}   //Retrieves the photometry directory name for plots.
+        inline string datasetGetphotometryMethod() const{ return photometryMethod;}   //Retrieves the photometry method selected.
+        inline string datasetGetphotometryDirName() const{ return photometryDirName;}   //Retrieves the photometry directory name.
+        inline string datasetGetphotometryPlotsDir() const{ return photometryPlotsDir;}   //Retrieves the photometry directory name for plots.
         inline bool datasetGetframeTransferSmearingCorrection() const{ return frameTransferSmearingCorrection;}   //Retrieves whether the frame Transfer Smearing must be corrected or not.
         inline int datasetGetphotometryNumTelescopes() const{ return photometryNumTelescopes;}   //Retrieves the photometry number of telescopes.
         inline bool datasetGetphotometryFlatfieldCorrectionr() const{ return flatfieldCorrection;}   //Retrieves whether the flatfield must be corrected or not.
@@ -385,21 +389,21 @@ public:
         inline double datasetGetphotometryBackgroundAnnulusOuterRadius() const{ return backgroundAnnulusOuterRadius;}   //Retrieves the photometry Background Annulus Outer Radius.
 
         //Photometry Parameter setters:
-        void datasetSetPhotometryParams(std::string PhotomOutputDir, std::string PhotomPlotsDir);
+        void datasetSetPhotometryParams(string PhotomOutputDir, string PhotomPlotsDir);
     
 
         
 private:
                 
-        std::string photometryMethod;                //Photometry method selected (WM=Weighted Mask, AP= Simple Aperture Photometry).
+        string photometryMethod;                //Photometry method selected (WM=Weighted Mask, AP= Simple Aperture Photometry).
         int    photometryNumTelescopes;         //Number of telescopes that should be considered for statistical calculations.
         bool   flatfieldCorrection;             //Correct the flat field (0=no/1=yes) (flatfield must be provided and have mean flux of 30000 ADU)
         bool   frameTransferSmearingCorrection; //Correct for the smearing trails from the read-out with open shutter (0=no/1=yes) (trails must be provided in a 1D file).
         double photometryBackground;            //Background flux [e-/pixel/s] (negative for automatic calculation).
         double backgroundAnnulusInnerRadius;    //Inner radius of annulus for background calculation [pixels].
         double backgroundAnnulusOuterRadius;    //Outer radius of annulus for background calculation [pixels]
-        std::string photometryDirName;               //Directory name for the photometry output.
-        std::string photometryPlotsDir;              //Directory name for the photometry plots.
+        string photometryDirName;               //Directory name for the photometry output.
+        string photometryPlotsDir;              //Directory name for the photometry plots.
 
 
 };
