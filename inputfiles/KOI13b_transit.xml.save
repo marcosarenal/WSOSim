@@ -36,7 +36,7 @@
               </OutputPath>
               <!--Prefix of output files (=name of output sub-directory)-->
               <Prefix>
-                  PLATOsim-test
+                  WSOsim-KOI13b_test
               </Prefix>
               <!--Write sub-pixel images to fits file (1=yes/0=no)-->
               <WriteSubPixelFits>
@@ -53,7 +53,7 @@
                   10
               </NumExposures>
               <!--Stack series of exposures in one output FITS image file (0=no/1=yes)-->
-              <StackExposures>
+              <StackE180-70_onesource.cooxposures>
                   1
               </StackExposures>
               <!--Total number of exposures to be added in one single Stack-->
@@ -124,7 +124,7 @@
               </PixelScale>
               <!--Gain [e/ADU]-->
               <Gain>
-                  58
+                  112.84
               </Gain>
               <!--Quantum efficiency-->
               <QuantumEfficiency>
@@ -140,7 +140,7 @@
               </DigitalSaturation>
               <!--Readout noise [e]-->
               <ReadoutNoise>
-                  23
+                  90
               </ReadoutNoise>
               <!--Electronic offset (= bias level) [ADU]-->
               <ElectronicOffset>
@@ -152,7 +152,7 @@
               </BiasPrescanRows>
               <!--Read-out time [s] = time to read out the entire CCD -->
               <ReadOutTime>
-                  3
+                  0.5
               </ReadOutTime>
               <!--Smearing overscan strip number of rows [pixels]-->
               <SmearingOverscanRows>
@@ -194,7 +194,7 @@
               </SubFieldZeroPointY>
               <!--Sub-field size X [pixels] (columns)-->
               <SubFieldSizeX>
-                  100
+                  110
               </SubFieldSizeX>
               <!--Sub-field size Y [pixels] (rows)-->
               <SubFieldSizeY>

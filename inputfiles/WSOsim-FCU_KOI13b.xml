@@ -36,7 +36,7 @@
               </OutputPath>
               <!--Prefix of output files (=name of output sub-directory)-->
               <Prefix>
-                  PLATOsim-test
+                  WSOsim-FCU_test
               </Prefix>
               <!--Write sub-pixel images to fits file (1=yes/0=no)-->
               <WriteSubPixelFits>
@@ -46,11 +46,11 @@
           <ObservingParameters>
               <!--Exposure time [s]-->
               <ExposureTime>
-                  6
+                  300
               </ExposureTime>
               <!--Total number of exposures-->
               <NumExposures>
-                  10
+                  1
               </NumExposures>
               <!--Stack series of exposures in one output FITS image file (0=no/1=yes)-->
               <StackExposures>
@@ -58,19 +58,19 @@
               </StackExposures>
               <!--Total number of exposures to be added in one single Stack-->
               <NumExposuresPerStack>
-                  27
+                  2
               </NumExposuresPerStack>
               <!--File name stellar catalogue (RA, DEC, Mag)-->
               <CatalogueFileName>
-                  /hd1/Projects/WSOSim/inputfiles/field_RA180.0_DEC-70.0_R1.0.coo
+                  /hd1/Projects/WSOSim/inputfiles/KOI_13b_cat.coo
               </CatalogueFileName>
               <!--Flux of m=0 star [phot/s/cm^2]-->
               <Fluxm0>
-                  4962700
+                  462700
               </Fluxm0>
               <!--Light collecting area of each telescope [cm^2]-->
               <LightCollectingArea>
-                  113.09
+                  90792.03
               </LightCollectingArea>
               <!--Transmission efficiency-->
               <TransmissionEfficiency>
@@ -78,11 +78,11 @@
               </TransmissionEfficiency>
               <!--Right Ascension of optical axis [deg]-->
               <OpticalAxisRACenter>
-                  180
+                  286.971189
               </OpticalAxisRACenter>
               <!--Declination of optical axis [deg]-->
               <OpticalAxisDecCenter>
-                  -70
+                  46.868260
               </OpticalAxisDecCenter>
               <!--Orientation of focal plane [deg]-->
               <FocalPlaneOrientation>
@@ -94,11 +94,11 @@
               </CCDPredefinedPosition>
               <!--X Offset of CCD origin from center of focal plane [mm]-->
               <CCDOriginOffsetX>
-                  0
+                  -1.3
               </CCDOriginOffsetX>
               <!--Y Offset of CCD origin from center of focal plane [mm]-->
               <CCDOriginOffsetY>
-                  0
+                  -0.5
               </CCDOriginOffsetY>
               <!--Orientation of CCD with respect to focal plane orientation [deg]-->
               <CCDOrientation>
@@ -108,71 +108,71 @@
           <CCD>
               <!--CCD size X [pixels] (columns)-->
               <CCDSizeX>
-                  4510
+                  1024
               </CCDSizeX>
               <!--CCD size Y [pixels] (rows)-->
               <CCDSizeY>
-                  4510
+                  1024
               </CCDSizeY>
               <!--Pixel size [microns]-->
               <PixelSize>
-                  18
+                  20
               </PixelSize>
               <!--Pixel scale [arcsec/pixel]-->
               <PixelScale>
-                  15
+                  0.2426
               </PixelScale>
               <!--Gain [e/ADU]-->
               <Gain>
-                  58
+                  60
               </Gain>
               <!--Quantum efficiency-->
               <QuantumEfficiency>
-                  0.87
+                  0.2
               </QuantumEfficiency>
               <!--Full well saturation [e/pixel]-->
               <FullWellSaturation>
-                  1243000
+                  924300000
               </FullWellSaturation>
               <!--Digital saturation [ADU/pixel]-->
               <DigitalSaturation>
-                  16384
+                  9965536
               </DigitalSaturation>
               <!--Readout noise [e]-->
               <ReadoutNoise>
-                  23
+                  1257
               </ReadoutNoise>
-              <!--Electronic offset (= bias level) [ADU]-->
+              <!--Electronic offset (= bias level) [ADU]--> 
               <ElectronicOffset>
-                  100
+                  10
               </ElectronicOffset>
               <!--Electronic offset (bias) prescan strip number of rows [pixels]-->
               <BiasPrescanRows>
-                  5
+                  0
               </BiasPrescanRows>
-              <!--Read-out time [s] = time to read out the entire CCD -->
+              <!--Read-out time [s] = time to read out the entire CCD (For FCU, the Poisson noise of the Dark current is applied as Read-out noise)-->
               <ReadOutTime>
-                  3
+                  0.000004
               </ReadOutTime>
               <!--Smearing overscan strip number of rows [pixels]-->
               <SmearingOverscanRows>
-                  5
+                  0
               </SmearingOverscanRows>
               <!--Flatfield peak-to-peak pixel noise-->
               <FlatfieldPtPNoise>
-                  0.016
+                  0.018
               </FlatfieldPtPNoise>
               <!--Flatfield sub-pixel white noise-->
               <FlatfieldSubpixelNoise>
-                  0
+                  0.05
               </FlatfieldSubpixelNoise>
               <!--Flatfield intrapixel-width at edge of pixel with 5% lower sensitivity [% of pixel size, rounded up]-->
               <FlatfieldIntraWidth>
-                  0
+                  0.05
               </FlatfieldIntraWidth>
               <!--Mean Charge Transfer Efficiency-->
               <CTEMean>
-                  0.999999
+                  1
               </CTEMean>
               <!--No. of low-CTE pixels-->
               <CTELowPixels>
@@ -208,7 +208,7 @@
           <JitterParameters>
               <!--Apply jitter to time series (0=no/1=yes)-->
               <UseJitter>
-                  1
+                  0
               </UseJitter>
               <!--Apply jitter to time series from a file with jitter time-series or using jitter parameters (0=using parameters/1=from file)-->
               <UseJitterFromFile>
@@ -220,7 +220,7 @@
               </JitterInterval>
               <!--Jitter rms [in arcsecs]-->
               <JitterRms>
-                  0.5
+                  0.2
               </JitterRms>
               <!--Jitter drift [in arcsecs/min]-->
               <JitterDrift>
@@ -254,7 +254,7 @@
               </UseGauss>
               <!--Width of Gaussian PSF (only applicable if no PSF file is read in) [pixels]-->
               <PSFGaussFWHM>
-                  1
+                  2
               </PSFGaussFWHM>
               <!--File with normalised PSF -->
               <PSFFileName>
@@ -270,7 +270,7 @@
               </PSFLocationFileName>
               <!--Rotate PSF  (0 = No Rotation / 1 = Towards Optical Axis / 2 = Arbitrary Rotation by PSFRotationAngle)-->
               <PSFRotation>
-                  1
+                  0
               </PSFRotation>
               <!--Rotation angle of PSF in degrees (counter-clockwise)-->
               <PSFRotationAngle>
@@ -294,7 +294,7 @@
               </PSFCenterY>
               <!--Orientation of pre-computed PSF in degrees (x-Axis=0°, counter-clockwise)-->
               <PSFOrientation>
-                  -45
+                  0
               </PSFOrientation>
           </PSFParameters>
           <NoiseParameters>
@@ -326,23 +326,23 @@
           <ExoplanetaryTransitParameters>
               <!--Perform exoplanetary transit simulation for one source in the field (0=no/1=yes)-->
               <PerformExoTransit>
-                  1
+                  0
               </PerformExoTransit>
               <!--Right Ascension of the transit host star [deg] (It must match with a source in the star catalogue)-->
               <HostStarTransitRA>
-                  180.210278
+                  286.971189
               </HostStarTransitRA>
               <!--Declination of the transit host star [deg] (It must match with a source in the star catalogue)-->
               <HostStarTransitDec>
-                  -70.952095
+                  46.868260
               </HostStarTransitDec>
               <!--Radius of the transit host star [Solar radius]-->
               <HostStarRadius>
-                  10
+                  1
               </HostStarRadius>
               <!--Radius of the exoplanet [Solar radius]-->
               <ExoplanetRadius>
-                  0.3
+                  0.0091
               </ExoplanetRadius>
               <!--Orbital period of the exoplanet [days]-->
               <ExoplanetOrbitalPeriod>
@@ -354,7 +354,7 @@
               </PlanetaryOrbitSemiaxis>
               <!--Inclination of the orbit of the exoplanet as seen from Earth [deg]-->
               <PlanetaryOrbitInclination>
-                  89.8
+                  90
               </PlanetaryOrbitInclination>
           </ExoplanetaryTransitParameters>    
       </Config>

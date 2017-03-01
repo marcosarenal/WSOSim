@@ -5,7 +5,7 @@
     </code-assistance-data>
     <data xmlns="http://www.netbeans.org/ns/make-project-private/1">
         <activeConfTypeElem>0</activeConfTypeElem>
-        <activeConfIndexElem>6</activeConfIndexElem>
+        <activeConfIndexElem>8</activeConfIndexElem>
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
         <file>
@@ -19,14 +19,10 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Volumes/Projects/WSOSim/inputfiles/ccd_transits.xml</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/ProcessingSteps/StepTransit.cpp</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/Processing/ProcessingCCD.cpp</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/Parameters/ParamsTransit.h</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/DataSet/DataSet.cpp</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/ProcessingSteps/StepTransit.h</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/Parameters/ParamsTransit.cpp</file>
-            <file>file:/Volumes/Projects/WSOSim/Components/DataSet/DataSet.h</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/ProcessingSteps/StepCTE.h</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/ProcessingSteps/StepCTE.cpp</file>
+            <file>file:/Volumes/Projects/WSOSim/Components/ProcessingSteps/StepReadOutNoise.cpp</file>
+            <file>file:/Volumes/Projects/WSOSim/inputfiles/WSOsim-FCU_KOI13b.xml</file>
         </group>
     </open-files>
     <preferences xmlns="http://www.netbeans.org/ns/auxiliary-configuration-preferences/1">
