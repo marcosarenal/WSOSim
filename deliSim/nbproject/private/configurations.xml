@@ -534,5 +534,127 @@
         </environment>
       </runprofile>
     </conf>
+    <conf name="KOI13b_transit" type="0">
+      <toolsSet>
+        <developmentServer>pablo@deli.estad.ucm.es:22</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>../build</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>make -j 4
+</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>/bin/bash -c "ulimit -s 2048; ./PLATOSim"</runcommandpicklistitem>
+          <runcommandpicklistitem></runcommandpicklistitem>
+          <runcommandpicklistitem>./PLATOSim -s ../inputfiles/ccd_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./PLATOSim -s ../inputfiles/ccd_parameters.xml -p ../inputfiles/photometry_parameters.xml </runcommandpicklistitem>
+          <runcommandpicklistitem>./PLATOSim -s ../inputfiles/ccd_parameters.xml -p ../inputfiles/photometry_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./WSOSim -s ../inputfiles/ccd_parameters.xml -p ../inputfiles/photometry_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./WSOSim -s ../inputfiles/ccd_transits.xml -p ../inputfiles/photometry_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./WSOSim -s ../inputfiles/KOI13b_transit.xml -p ../inputfiles/photometry_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./WSOSim -s ../inputfiles/KOI13b_transit.xml </runcommandpicklistitem>
+          <runcommandpicklistitem>./WSOSim -s ../inputfiles/KOI13b_transit.xml</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>./WSOSim -s ../inputfiles/KOI13b_transit.xml</runcommand>
+        <rundir>../build</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+          <variable name="DYLD_LIBRARY_PATH"
+                    value="$PLATOROOT/../dependencyInstalls/OpenCV-2.4.2/lib/"/>
+          <variable name="LD_LIBRARY_PATH"
+                    value="$PLATOROOT/../dependencyInstalls/openmpi-1.6.5/lib/"/>
+        </environment>
+      </runprofile>
+    </conf>
+    <conf name="FCU_KOI13b_transit" type="0">
+      <toolsSet>
+        <developmentServer>pablo@deli.estad.ucm.es:22</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>../build</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>make -j 4
+</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem></runcommandpicklistitem>
+          <runcommandpicklistitem>./PLATOSim -s ../inputfiles/ccd_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./PLATOSim -s ../inputfiles/ccd_parameters.xml -p ../inputfiles/photometry_parameters.xml </runcommandpicklistitem>
+          <runcommandpicklistitem>./PLATOSim -s ../inputfiles/ccd_parameters.xml -p ../inputfiles/photometry_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./WSOSim -s ../inputfiles/ccd_parameters.xml -p ../inputfiles/photometry_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./WSOSim -s ../inputfiles/ccd_transits.xml -p ../inputfiles/photometry_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./WSOSim -s ../inputfiles/KOI13b_transit.xml -p ../inputfiles/photometry_parameters.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./WSOSim -s ../inputfiles/KOI13b_transit.xml </runcommandpicklistitem>
+          <runcommandpicklistitem>./WSOSim -s ../inputfiles/KOI13b_transit.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./WSOSim -s ../inputfiles/WSOsim-FCU_KOI13b.xml</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>./WSOSim -s ../inputfiles/WSOsim-FCU_KOI13b.xml</runcommand>
+        <rundir>../build</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+          <variable name="DYLD_LIBRARY_PATH"
+                    value="$PLATOROOT/../dependencyInstalls/OpenCV-2.4.2/lib/"/>
+          <variable name="LD_LIBRARY_PATH"
+                    value="$PLATOROOT/../dependencyInstalls/openmpi-1.6.5/lib/"/>
+        </environment>
+      </runprofile>
+    </conf>
   </confs>
 </configurationDescriptor>

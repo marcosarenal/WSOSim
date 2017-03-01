@@ -36,7 +36,7 @@
               </OutputPath>
               <!--Prefix of output files (=name of output sub-directory)-->
               <Prefix>
-                  PLATOsim-test
+                  WSOsim-KOI13b_test
               </Prefix>
               <!--Write sub-pixel images to fits file (1=yes/0=no)-->
               <WriteSubPixelFits>
@@ -50,7 +50,7 @@
               </ExposureTime>
               <!--Total number of exposures-->
               <NumExposures>
-                  10
+                  2
               </NumExposures>
               <!--Stack series of exposures in one output FITS image file (0=no/1=yes)-->
               <StackExposures>
@@ -58,11 +58,11 @@
               </StackExposures>
               <!--Total number of exposures to be added in one single Stack-->
               <NumExposuresPerStack>
-                  27
+                  2
               </NumExposuresPerStack>
               <!--File name stellar catalogue (RA, DEC, Mag)-->
               <CatalogueFileName>
-                  /hd1/Projects/WSOSim/inputfiles/field_RA180.0_DEC-70.0_R1.0.coo
+                  /hd1/Projects/WSOSim/inputfiles/180-70_onesource.coo
               </CatalogueFileName>
               <!--Flux of m=0 star [phot/s/cm^2]-->
               <Fluxm0>
@@ -94,11 +94,11 @@
               </CCDPredefinedPosition>
               <!--X Offset of CCD origin from center of focal plane [mm]-->
               <CCDOriginOffsetX>
-                  0
+                  50
               </CCDOriginOffsetX>
               <!--Y Offset of CCD origin from center of focal plane [mm]-->
               <CCDOriginOffsetY>
-                  0
+                  50
               </CCDOriginOffsetY>
               <!--Orientation of CCD with respect to focal plane orientation [deg]-->
               <CCDOrientation>
@@ -124,7 +124,7 @@
               </PixelScale>
               <!--Gain [e/ADU]-->
               <Gain>
-                  58
+                  112.84
               </Gain>
               <!--Quantum efficiency-->
               <QuantumEfficiency>
@@ -140,7 +140,7 @@
               </DigitalSaturation>
               <!--Readout noise [e]-->
               <ReadoutNoise>
-                  23
+                  90
               </ReadoutNoise>
               <!--Electronic offset (= bias level) [ADU]-->
               <ElectronicOffset>
@@ -152,7 +152,7 @@
               </BiasPrescanRows>
               <!--Read-out time [s] = time to read out the entire CCD -->
               <ReadOutTime>
-                  3
+                  0.5
               </ReadOutTime>
               <!--Smearing overscan strip number of rows [pixels]-->
               <SmearingOverscanRows>
@@ -330,11 +330,11 @@
               </PerformExoTransit>
               <!--Right Ascension of the transit host star [deg] (It must match with a source in the star catalogue)-->
               <HostStarTransitRA>
-                  180.210278
+                  180.0
               </HostStarTransitRA>
               <!--Declination of the transit host star [deg] (It must match with a source in the star catalogue)-->
               <HostStarTransitDec>
-                  -70.952095
+                  -70.0
               </HostStarTransitDec>
               <!--Radius of the transit host star [Solar radius]-->
               <HostStarRadius>
