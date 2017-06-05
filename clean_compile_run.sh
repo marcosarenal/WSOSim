@@ -3,8 +3,8 @@
 
 cd build
 rm -rf *
-cmake ..
+cmake -DCMAKE_BUILD_TYPE=Debug ..
 make -j4
-./PLATOSim -w ../inputfiles/WUVS_parameters.xml 
+./WSOSim -s ../inputfiles/ccd_parameters.xml 
 cd ..
 exit

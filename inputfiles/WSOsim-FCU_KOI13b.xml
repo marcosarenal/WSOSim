@@ -36,7 +36,7 @@
               </OutputPath>
               <!--Prefix of output files (=name of output sub-directory)-->
               <Prefix>
-                  WSOsim-FCU_test
+                  WSOsim-FCU_test1
               </Prefix>
               <!--Write sub-pixel images to fits file (1=yes/0=no)-->
               <WriteSubPixelFits>
@@ -46,7 +46,7 @@
           <ObservingParameters>
               <!--Exposure time [s]-->
               <ExposureTime>
-                  300
+                  6.02
               </ExposureTime>
               <!--Total number of exposures-->
               <NumExposures>
@@ -54,11 +54,11 @@
               </NumExposures>
               <!--Stack series of exposures in one output FITS image file (0=no/1=yes)-->
               <StackExposures>
-                  1
+                  0
               </StackExposures>
               <!--Total number of exposures to be added in one single Stack-->
               <NumExposuresPerStack>
-                  2
+                  270
               </NumExposuresPerStack>
               <!--File name stellar catalogue (RA, DEC, Mag)-->
               <CatalogueFileName>
@@ -70,7 +70,7 @@
               </Fluxm0>
               <!--Light collecting area of each telescope [cm^2]-->
               <LightCollectingArea>
-                  90792.03
+                  7080
               </LightCollectingArea>
               <!--Transmission efficiency-->
               <TransmissionEfficiency>

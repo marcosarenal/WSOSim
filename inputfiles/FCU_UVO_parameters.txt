@@ -1,0 +1,25 @@
+Exposure time [s]:	65*
+Flux of m=0 star [phot/s/cm^2]:	462700
+Light collecting area of telescope [cm^2]:	22698*
+Transmission efficiency:	0.59*
+CCD size X [pixels] (columns):	3112*
+CCD size Y [pixels] (rows):	4096*
+Pixel size [microns]:	12*
+Pixel scale [arcsec/pixel]:	0.145*
+Gain [e/ADU]:	60
+Quantum efficiency:	0.2
+Full well saturation [e/pixel]:	30000!
+Digital saturation [ADU/pixel]:	16384
+Readout noise [e]:	3*
+Electronic offset (= bias level) [ADU]:	100
+Read-out time [s] = time to read out the entire CCD (For FCU, the Poisson noise of the Dark current is applied as Read-out noise):	0.004*
+Flatfield peak-to-peak pixel noise:	0.018
+Flatfield sub-pixel white noise:	0.05
+Flatfield intrapixel-width at edge of pixel with 5% lower sensitivity [% of pixel size]:	0.05
+Mean Charge Transfer Efficiency:	0.999999
+No. of low-CTE pixels:	0
+No. of low-CTE lines:	0
+Jitter rms [arcsecs]:	0.3*
+Jitter drift [arcsecs/min]:	0.00001
+Jitter repointing time [hours]:	12
+

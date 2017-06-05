@@ -1,11 +1,11 @@
 # cmake file to build the Simulator
-# 
+#
 #
 # Usage: ($ mkdir build)
 #        $ cd build
 #        $ cmake ..
 #        ($ make clean)
-#        $ make -j 4 
+#        $ make -j 4
 #
 #
 # Notes:
@@ -31,10 +31,6 @@ cmake_minimum_required(VERSION 2.8)
 
 
 
-
-
-
-
 # Find OPENCV libraries previously installed
 #------------------------
 
@@ -50,8 +46,8 @@ cmake_minimum_required(VERSION 2.8)
 
 #IF (NOT OPENCV_FOUND)
 
-#	SET(OPENCVLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/OpenCV-2.4.2) 
-	
+#	SET(OPENCVLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/OpenCV-2.4.2)
+
 #	FIND_LIBRARY(OpenCV_CORE NAMES libopencv_core.so  HINTS ${OPENCVLIBSEARCHPATHS} PATH_SUFFIXES lib)
 #	FIND_LIBRARY(OpenCV_CONTRIB NAMES libopencv_contrib.so PATHS ${OPENCVLIBSEARCHPATHS} PATH_SUFFIXES lib)
 #	FIND_LIBRARY(OpenCV_IMGPROC NAMES libopencv_imgproc.so PATHS ${OPENCVLIBSEARCHPATHS} PATH_SUFFIXES lib)
@@ -61,9 +57,9 @@ cmake_minimum_required(VERSION 2.8)
 #    include_directories(${OPENCVLIBSEARCHPATHS}/include/opencv2)
 
 #	IF (OpenCV_INCLUDE_DIRS AND OpenCV_COMPUTE_CAPABILITIES AND OpenCV_LIBS)
-#		SET(OPENCV_FOUND TRUE) 
+#		SET(OPENCV_FOUND TRUE)
 #	ENDIF (OpenCV_INCLUDE_DIRS AND OpenCV_COMPUTE_CAPABILITIES AND OpenCV_LIBS)
-		
+
 #	link_directories(${OPENCVLIBSEARCHPATHS}/lib)
 
 #ENDIF (NOT OPENCV_FOUND)
@@ -78,20 +74,20 @@ FIND_LIBRARY(CCFITS REQUIRED)
 
 if(NOT CCFITS_FOUND)
 
-	SET(CCFITS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/CCfits)
+    SET(CCFITS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/CCfits)
     find_path(CCFITS_INCLUDE_DIR
         NAMES CCfits/CCfits.h
         HINTS $ENV{CCFITS_ROOT_DIR} "${CCFITS_DIR}/include"
         DOC "CCFITS include directory.")
-    
+
     include_directories(${CCFITS_DIR}/include/)
-    
+
     find_library(CCFITS_LIBRARY
-        NAMES libCCfits.so libCCfits.a libCCfits.dylib libCCfits.la libCCfits.0.dylib 
+        NAMES libCCfits.so libCCfits.a libCCfits.dylib libCCfits.la libCCfits.0.dylib
         HINTS $ENV{CCFITS_ROOT_DIR} "${CCFITS_DIR}/lib"
         DOC "CCFITS library.")
-  
-  	SET(CFITSIO_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/cfitsio)
+
+    SET(CFITSIO_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/cfitsio)
     find_library(CFITSIO_LIBRARY
         NAMES libcfitsio.a
         HINTS "${CFITSIO_DIR}/lib"
@@ -127,7 +123,7 @@ IF (FFTW_FOUND)
     message( STATUS "FFTW libraries: ${FFTW_INCLUDE_DIRS}" )
     include_directories( ${FFTW_INCLUDE_DIRS} )
   ENDIF(FFTW_INCLUDE_DIRS)
-  
+
   IF (FFTW_LIBRARIES)
     message( STATUS "FFTW libraries: ${FFTW_LIBRARIES}" )
     link_directories( ${FFTW_LIBRARIES} )
@@ -136,7 +132,7 @@ ENDIF (FFTW_FOUND)
 
 
 IF (NOT FFTW_FOUND)
-	SET(FFTWLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/fftw-3.3.3) 
+    SET(FFTWLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/fftw-3.3.3)
 
     find_path(FFTW_INCLUDE_DIR
         NAMES fftw3.h
@@ -146,15 +142,15 @@ IF (NOT FFTW_FOUND)
     include_directories(${FFTWLIBSEARCHPATHS}/include)
 
     find_library(FFTW_LIBRARY
-        NAMES libfftw3.a libfftw3.la libfftw3_threads.a libfftw3_threads.la  
+        NAMES libfftw3.a libfftw3.la libfftw3_threads.a libfftw3_threads.la
         HINTS $ENV{FFTW_ROOT_DIR} "${FFTWLIBSEARCHPATHS}/lib"
         DOC "FFTW library.")
 
-	link_directories(${FFTWLIBSEARCHPATHS}/lib)
+    link_directories(${FFTWLIBSEARCHPATHS}/lib)
 
-	IF (FFTW_INCLUDE_DIR AND FFTW_LIBRARY)
-		SET(FFTW_FOUND TRUE) 
-	ENDIF (FFTW_INCLUDE_DIR AND FFTW_LIBRARY)
+    IF (FFTW_INCLUDE_DIR AND FFTW_LIBRARY)
+        SET(FFTW_FOUND TRUE)
+    ENDIF (FFTW_INCLUDE_DIR AND FFTW_LIBRARY)
 ENDIF (NOT FFTW_FOUND)
 
 
@@ -163,38 +159,36 @@ ENDIF (NOT FFTW_FOUND)
 #------------------------
 
 # Require BLITZ for this project:
-        
 
 FIND_LIBRARY(BLITZ_LIBRARY NAMES blitz)
 IF (BLITZ_LIBRARY)
-	link_directories(${BLITZ_LIBRARY})
+    link_directories(${BLITZ_LIBRARY})
 ENDIF (BLITZ_LIBRARY)
 
 IF(BLITZ_INCLUDE_DIR)
-  	include_directories( ${BLITZ_INCLUDE_DIR} )
-  	include_directories( "${BLITZ_INCLUDE_DIR}/blitz" )
+    include_directories( ${BLITZ_INCLUDE_DIR} )
+    include_directories( "${BLITZ_INCLUDE_DIR}/blitz" )
 ENDIF(BLITZ_INCLUDE_DIR)
-  
 
 IF (NOT BLITZ_LIBRARY)
-	SET(BLITZLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/blitz-0.10) 
-	
-    find_path(BLITZ_INCLUDE_DIR 
-    	NAMES blitz/blitz.h PATHS ${BLITZLIBSEARCHPATHS}
+    SET(BLITZLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/blitz-0.10)
+
+    find_path(BLITZ_INCLUDE_DIR
+        NAMES blitz/blitz.h PATHS ${BLITZLIBSEARCHPATHS}
         DOC "BLITZ include directory.")
-   
+
    include_directories(${BLITZLIBSEARCHPATHS}/include)
    include_directories(${BLITZLIBSEARCHPATHS}/include/blitz)
-   
-	find_library(BLITZ_LIBRARY 
-		NAMES blitz PATHS ${BLITZLIBSEARCHPATHS}/lib
-        DOC "BLITZ library.")
 
-	link_directories(${BLITZLIBSEARCHPATHS}/lib)
+   find_library(BLITZ_LIBRARY
+       NAMES blitz PATHS ${BLITZLIBSEARCHPATHS}/lib
+       DOC "BLITZ library.")
 
-	IF (BLITZ_INCLUDE_DIR AND BLITZ_LIBRARY)
-		SET(BLITZ_FOUND TRUE)
-	ENDIF (BLITZ_INCLUDE_DIR AND BLITZ_LIBRARY)		
+   link_directories(${BLITZLIBSEARCHPATHS}/lib)
+
+   IF (BLITZ_INCLUDE_DIR AND BLITZ_LIBRARY)
+      SET(BLITZ_FOUND TRUE)
+   ENDIF (BLITZ_INCLUDE_DIR AND BLITZ_LIBRARY)
 ENDIF (NOT BLITZ_LIBRARY)
 
 
@@ -218,24 +212,24 @@ ENDIF (NOT BLITZ_LIBRARY)
 
 
 # IF (NOT LAPACK_FOUND)
-# 	SET(LAPACKLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/lapack-3.5.0) 
-# 	        
+# 	SET(LAPACKLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/lapack-3.5.0)
+#
 # 	find_library(LAPACK_LIBRARIES
 #  		NAMES lapack liblapack PATHS $ENV{LAPACKDIR}/lib ${LAPACKLIBSEARCHPATHS}/lib
 #         DOC "LAPACK library.")
-#         
+#
 # 	IF (LAPACK_INCLUDES AND LAPACK_LIBRARY)
-# 		SET(LAPACK_FOUND TRUE) 
+# 		SET(LAPACK_FOUND TRUE)
 # 	ENDIF (LAPACK_INCLUDES AND LAPACK_LIBRARY)
-# 
+#
 # #	find_library(BLAS_LIBRARY
 # #		NAMES blas libblas PATHS $ENV{LAPACKDIR}/lib ${LAPACKLIBSEARCHPATHS}/lib
 # #        DOC "LAPACK library.")
 # #
 # #	IF (BLAS_LIBRARY)
-# #		SET(BLAS_FOUND TRUE) 
+# #		SET(BLAS_FOUND TRUE)
 # #	ENDIF (BLAS_LIBRARY)
-# 
+#
 # ENDIF (NOT LAPACK_FOUND)
 
 
@@ -260,25 +254,15 @@ endif (tinyxml_include_dirs)
 
 
 IF (NOT tinyxml_library)
+    SET(TINYXMLLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/tinyxml)
+    message (STATUS "Looking for " ${TINYXMLLIBSEARCHPATHS})
 
+    include_directories(${TINYXMLLIBSEARCHPATHS}/include)
+    link_directories(${TINYXMLLIBSEARCHPATHS}/lib)
 
-	SET(TINYXMLLIBSEARCHPATHS ${CMAKE_CURRENT_SOURCE_DIR}/dependencyInstalls/tinyxml) 
-	
-    find_path(TINYXML_INCLUDE_DIR 
-    	NAMES ticpp.h tinyxml.h PATHS ${TINYXMLLIBSEARCHPATHS}
-        DOC "TINYXML include directory.")
-   
-   include_directories(${TINYXMLLIBSEARCHPATHS}/include)
-   
-	find_library(tinyxml_library 
-		NAMES ticpp tinyxml PATHS ${TINYXMLLIBSEARCHPATHS}/lib
-        DOC "TINYXML library.")
-
-	link_directories(${TINYXMLLIBSEARCHPATHS}/lib)
-
-	IF (TINYXML_INCLUDE_DIR AND tinyxml_library)
-		SET(TINYXML_FOUND TRUE)
-	ENDIF (TINYXML_INCLUDE_DIR AND tinyxml_library)		
+    IF (NOT ${TINYXMLLIBSEARCHPATHS}/include)
+        message (STATUS "Looking for tinyxml/tinyxml.hpp or tinyxml/tinyxml.h - not found.")
+    ENDIF(NOT ${TINYXMLLIBSEARCHPATHS}/include)
 
 ENDIF (NOT tinyxml_library)
 
@@ -300,10 +284,9 @@ endforeach()
 
 
 
-
 # Specify the simulator source files to be compiled
 #------------------------
-              
+
 file(GLOB sourceFiles ${CMAKE_CURRENT_SOURCE_DIR}/Components/*/*.cpp)
 
 # Set the compiler flags
@@ -320,6 +303,18 @@ MESSAGE( STATUS "CXX COMPILER = " ${CMAKE_CXX_COMPILER})
 
 
 
+
+
+# Add debugguing options
+#_______________________
+SET(CMAKE_BUILD_TYPE debug)
+SET(CMAKE_CXX_FLAGS_DEBUG "-g3 -Wall -Wextra -Wno-unused -pg")
+#SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "-pg")
+#SET(CMAKE_SHARED_LINKER_FLAGS_DEBUG "-pg")
+#SET(CMAKE_MODULE_LINKER_FLAGS_DEBUG "-pg")
+
+
+
 # Create an executable target (WSOSim)
 #------------------------
 
@@ -328,7 +323,7 @@ add_executable(WSOSim ${sourceFiles})
 # Link the executable to the dependency libraries
 # Note: the location of these libraries was specified above
 
-target_link_libraries(WSOSim ${CCFITS_LIBRARIES} ticppd fftw3 fftw3_threads blitz) 
+target_link_libraries(WSOSim ${CCFITS_LIBRARIES} ticppd fftw3 fftw3_threads blitz)
 
 
 # Create a launcher that sets the DYLD_LIBRARY_PATH environment variable
