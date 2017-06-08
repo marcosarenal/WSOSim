@@ -87,7 +87,7 @@ private:
     double psfGaussFWHM;                                    //Parameter retrieved from DataSet.
     int    subPixelsPerPixel;                               //Parameter retrieved from DataSet.
     bool   psfLocationDependent;                            //Parameter retrieved from DataSet.
-    int    psfSubPixels, psfNumPixels;                      //Parameter retrieved from DataSet.
+    int    psfSubPixels, psfNumRows;                      //Parameter retrieved from DataSet.
     double psfCenterX, psfCenterY, orientationAngle;        //Parameter retrieved from DataSet.
     int    psfSize;                                         //Parameter retrieved from DataSet.
     int    subFieldSizeX, subFieldSizeY;                    //Parameter retrieved from DataSet.

@@ -36,7 +36,7 @@
               </OutputPath>
               <!--Prefix of output files (=name of output sub-directory)-->
               <Prefix>
-                  WSOsim-FCU_UVO_test3
+                  WSOsim-FCU_UVO_PSF_test1
               </Prefix>
               <!--Write sub-pixel images to fits file (1=yes/0=no)-->
               <WriteSubPixelFits>
@@ -88,7 +88,7 @@
               <FocalPlaneOrientation>
                   0
               </FocalPlaneOrientation>
-              <!--Predefined position of CCD (A, B, C, D, AF, BF, CF, DF, or User)-->
+              <!--Predefined position of CCD (Only for PLATO!): A, B, C, D, AF, BF, CF, DF, or User -->
               <CCDPredefinedPosition>
                   User
               </CCDPredefinedPosition>
@@ -201,14 +201,14 @@
                   100
               </SubFieldSizeY>
               <!--Number of sub-pixels-->
-              <SubPixels>
+              <SubPixelsPerPixel>
                   1
-              </SubPixels>
+              </SubPixelsPerPixel>
           </SubField>
           <JitterParameters>
               <!--Apply jitter to time series (0=no/1=yes)-->
               <UseJitter>
-                  1
+                  0
               </UseJitter>
               <!--Apply jitter to time series from a file with jitter time-series or using jitter parameters (0=using parameters/1=from file)-->
               <UseJitterFromFile>
@@ -250,7 +250,7 @@
           <PSFParameters>
               <!--Use analytical Gaussian PSF (0=no/1=yes)-->
               <UseGauss>
-                  1
+                  0
               </UseGauss>
               <!--Width of Gaussian PSF (only applicable if no PSF file is read in) [pixels]-->
               <PSFGaussFWHM>
@@ -280,7 +280,7 @@
               <PSFNumRows>
                   1024
               </PSFNumRows>
-              <!--Number of sub-pixels per pixel in PSF file (NumPixels/SubPixels must be an integer value) [pixels]-->
+              <!--Number of sub-pixels per pixel in PSF file (PSFNumRows/SubPixelsPerPixel must be an integer value) [pixels]-->
               <PSFSubPixels>
                   128
               </PSFSubPixels>

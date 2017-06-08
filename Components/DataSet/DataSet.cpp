@@ -141,7 +141,7 @@ void DataSet::datasetReadParameterFile(std::string parameterFile)
     pElem->FirstChildElement("SubFieldZeroPointY")->GetText(&subFieldZeroY);
     pElem->FirstChildElement("SubFieldSizeX")->GetText(&subFieldSizeX);
     pElem->FirstChildElement("SubFieldSizeY")->GetText(&subFieldSizeY);
-    pElem->FirstChildElement("SubPixels")->GetText(&subPixelsPerPixel);
+    pElem->FirstChildElement("SubPixelsPerPixel")->GetText(&subPixelsPerPixel);
 
     pElem = config->FirstChildElement("JitterParameters");
     pElem->FirstChildElement("UseJitter")->GetText(&useJitter);
@@ -177,7 +177,7 @@ void DataSet::datasetReadParameterFile(std::string parameterFile)
     }         
 
 
-    pElem->FirstChildElement("PSFNumRows")->GetText(&psfNumPixels);
+    pElem->FirstChildElement("PSFNumRows")->GetText(&psfNumRows);
     pElem->FirstChildElement("PSFSubPixels")->GetText(&psfSubPixels);
     pElem->FirstChildElement("PSFCenterX")->GetText(&psfCenterX);
     pElem->FirstChildElement("PSFCenterY")->GetText(&psfCenterY);

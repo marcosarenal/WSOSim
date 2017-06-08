@@ -81,8 +81,8 @@ public:
         inline bool   datasetGetpsfLocationDependent()const{return psfLocationDependent;}       //Retrieves 0=no location-dependent PSF / 1=location-dependent PSF
         inline string datasetGetpsfLocationFile()const{return psfLocationFile;}                 //Retrieves the file with list of PSFs and their location.
         inline double datasetGetpsfRotationAngle() const{ return psfRotationAngle;}             //Retrieves the rotation angle of PSF in degrees (counter-clockwise).
-        inline int    datasetGetpsfSubPixels() const{ return psfSubPixels;}                     //Retrieves the number of sub-pixels per pixel in PSF file (NumPixels/SubPixels must be an integer value).
-        inline int    datasetGetpsfNumPixels() const{ return psfNumPixels;}                     //Retrieves the total number of pixels of the PSF
+        inline int    datasetGetpsfSubPixels() const{ return psfSubPixels;}                     //Retrieves the number of sub-pixels per pixel in PSF file (PSFNumRows/SubPixelsPerPixel must be an integer value).
+        inline int    datasetGetpsfNumRows() const{ return psfNumRows;}                     //Retrieves the total number of pixels of the PSF
         inline double datasetGetpsfCenterX() const{ return psfCenterX;}                         //Retrieves the X Center of the PSF in sub-pixel coordinates.
         inline double datasetGetpsfCenterY() const{ return psfCenterY;}                         //Retrieves the Y Center of the PSF in sub-pixel coordinates.
         inline int    datasetGetpsfRotation() const{ return psfRotation;}                       //Retrieves 0 = No PSF Rotation / 1 = PSF Rotation towards Optical Axis / 2 = Arbitrary Rotation by PSFRotationAngle) 
@@ -272,8 +272,8 @@ private:
         double psfOrientation;                  //Orientation of pre-computed PSF in degrees (x-Axis=0°, counter-clockwise).
         double psfRotationAngle;                //Rotation angle of PSF in degrees (counter-clockwise).
         int    psfRotation;                     //Rotate PSF  (0 = No Rotation / 1 = Towards Optical Axis / 2 = Arbitrary Rotation by PSFRotationAngle).
-        int    psfNumPixels;                    //Total number of pixels of the PSF taken from the number of rows of PSF file (must be quadratic).
-        int    psfSubPixels;                    //Number of sub-pixels per pixel in PSF file (NumPixels/SubPixels must be an integer value).
+        int    psfNumRows;                    //Total number of pixels of the PSF taken from the number of rows of PSF file (must be quadratic).
+        int    psfSubPixels;                    //Number of sub-pixels per pixel in PSF file (PSFNumRows/SubPixelsPerPixel must be an integer value).
         bool   psfLocationDependent;            //Use location-dependent PSF (0=no/1=yes).
         
         string convolutionMethod;               //Convolution method: FFT Convolution (FFT) or Real Space Convolution (Real).

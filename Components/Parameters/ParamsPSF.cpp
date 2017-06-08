@@ -224,7 +224,7 @@ void ParamsPSF::paramsPSFsetGaussian()
     //Retrieving fromm the DataSet    
     psfGaussFWHM = p_DataSet->datasetGetpsfGaussFWHM();
  
-    psfNumPixels = p_DataSet->datasetGetpsfNumPixels();
+    psfNumRows = p_DataSet->datasetGetpsfNumRows();
     psfCenterX = p_DataSet->datasetGetpsfCenterX();
     psfCenterY = p_DataSet->datasetGetpsfCenterY();
  
@@ -241,7 +241,7 @@ void ParamsPSF::paramsPSFsetGaussian()
     double fak2 = 2 * fwhm * fwhm;
     	
     Array<float, 2> gaussMask;
-    gaussMask.resize(psfNumPixels, psfNumPixels);
+    gaussMask.resize(psfNumRows, psfNumRows);
     gaussMask=0.0;
 		
     	
@@ -262,14 +262,14 @@ void ParamsPSF::paramsPSFsetGaussian()
     //new size of PSF mask
     double xCenter = int(psfCenterX);
     double yCenter = int(psfCenterY);
-    int newSize = max(max(xCenter + 1, yCenter + 1), max(psfNumPixels - xCenter, psfNumPixels - yCenter)) * 2 - 1;
+    int newSize = max(max(xCenter + 1, yCenter + 1), max(psfNumRows - xCenter, psfNumRows - yCenter)) * 2 - 1;
 
     //generate a new mask with flux 0 and put the fileMask into it such that the center (x,y) is at the center ((xsize-1)/2) of the new mask
     Array<float, 2> newGaussMask(newSize, newSize);
     newGaussMask = 0.;
     double center = (newSize - 1) / 2;
 
-    newGaussMask(Range(center - xCenter, center - xCenter + psfNumPixels - 1), Range(center - yCenter, center - yCenter + psfNumPixels - 1))
+    newGaussMask(Range(center - xCenter, center - xCenter + psfNumRows - 1), Range(center - yCenter, center - yCenter + psfNumRows - 1))
                 = gaussMask;
 
 
@@ -414,18 +414,18 @@ void ParamsPSF::paramsPSFreadFromFile()
     
     //Retrieving parameters from DataSet
     psfSubPixels = p_DataSet->datasetGetpsfSubPixels();
-    psfNumPixels = p_DataSet->datasetGetpsfNumPixels();
+    psfNumRows = p_DataSet->datasetGetpsfNumRows();
         
     psfCenterX = p_DataSet->datasetGetpsfCenterX();
     psfCenterY = p_DataSet->datasetGetpsfCenterY();
     
     
     
-    if (floor(double(psfNumPixels) / double(psfSubPixels)) != ceil(double(psfNumPixels) / double(psfSubPixels)))
+    if (floor(double(psfNumRows) / double(psfSubPixels)) != ceil(double(psfNumRows) / double(psfSubPixels)))
     {
-        std::cerr << "\nError (ParamsPSF::paramsPSFreadFromFile()): Size of PSF (" << psfNumPixels << "=Number of Rows) must be "
+        std::cerr << "\nError (ParamsPSF::paramsPSFreadFromFile()): Size of PSF (" << psfNumRows << "=Number of Rows) must be "
                         " an integer factor of the number of sub-pixels ("<< psfSubPixels << ")." << std::endl;
-        std::cerr << "\nModify the parameters NumPixels and SubPixels of PSFParameters accordingly." << std::endl;
+        std::cerr << "\nModify the parameters PSFNumRows and SubPixelsPerPixel of PSFParameters accordingly." << std::endl;
         exit(1);
     }
 
@@ -437,12 +437,12 @@ void ParamsPSF::paramsPSFreadFromFile()
         std::cerr << "\nError (ParamsPSF::paramsPSFreadFromFile()): The number of sub-pixels (" << subPixelsPerPixel<< ")"
                           " must be a integer multiple of the number of PSF sub-pixels per pixel (" << psfSubPixels << ") ";
         std::cerr << "of the input PSF used in the simulation." << std::endl;
-        std::cerr << "\nModify the SubPixels parameter in the input parameters file accordingly." << std::endl;
+        std::cerr << "\nModify the SubPixelsPerPixel parameter in the input parameters file accordingly." << std::endl;
         exit(1);
     }
 
     Array<float, 2> fileMask;
-    fileMask.resize(psfNumPixels, psfNumPixels);
+    fileMask.resize(psfNumRows, psfNumRows);
     fileMask=0.0;
 
     //Read PSF file into array fileMask
@@ -456,7 +456,7 @@ void ParamsPSF::paramsPSFreadFromFile()
         {
             istringstream iss(line);
 
-            for (int i = 0; i < psfNumPixels; i++)
+            for (int i = 0; i < psfNumRows; i++)
             {
                 iss >> dummy;
                 fileMask(i, lineNumber) = dummy;
@@ -487,20 +487,20 @@ void ParamsPSF::paramsPSFreadFromFile()
     //Below, the matrix is shifted by (-0.5, -0.5). Then, the center will be located at the intrinsic pixel coordinates (3,5) 
     double p1, p2, p3, p4;
 
-    for (int i = 0; i < psfNumPixels; i++)
+    for (int i = 0; i < psfNumRows; i++)
     {
-        for (int j = 0; j < psfNumPixels; j++)
+        for (int j = 0; j < psfNumRows; j++)
         {
             p1 = fileMask(i, j);
-            if (i < psfNumPixels - 1)
+            if (i < psfNumRows - 1)
                     p2 = fileMask(i + 1, j);
             else
                     p2 = 0.;
-            if (j < psfNumPixels - 1)
+            if (j < psfNumRows - 1)
                     p3 = fileMask(i, j + 1);
             else
                     p3 = 0.;
-            if (i < psfNumPixels - 1 && j < psfNumPixels - 1)
+            if (i < psfNumRows - 1 && j < psfNumRows - 1)
                     p4 = fileMask(i + 1, j + 1);
             else
                     p4 = 0.;
@@ -515,13 +515,13 @@ void ParamsPSF::paramsPSFreadFromFile()
     //new size of PSF mask
     double xCenter = int(psfCenterX);
     double yCenter = int(psfCenterY);
-    int newSize = max(max(xCenter + 1, yCenter + 1), max(psfNumPixels - xCenter, psfNumPixels - yCenter)) * 2 - 1;
+    int newSize = max(max(xCenter + 1, yCenter + 1), max(psfNumRows - xCenter, psfNumRows - yCenter)) * 2 - 1;
     //generate a new mask with flux 0 and put the fileMask into it such that the center (x,y) is at the center ((xsize-1)/2) of the new mask
     Array<float, 2> newMask(newSize, newSize);
     newMask = 0.;
     double center = (newSize - 1) / 2;
 
-    newMask(Range(center - xCenter, center - xCenter + psfNumPixels - 1), Range(center - yCenter, center - yCenter + psfNumPixels - 1))
+    newMask(Range(center - xCenter, center - xCenter + psfNumRows - 1), Range(center - yCenter, center - yCenter + psfNumRows - 1))
                     = fileMask;
 
     double xbinning = double(psfSubPixels) / double(subPixelsPerPixel);

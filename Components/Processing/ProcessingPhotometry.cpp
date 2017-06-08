@@ -302,7 +302,7 @@ void ProcessingPhotometry::processingPhotometryPreComputeWeightedMask()
     
     //Retrieving parameters from DataSet
     subPixelsPerPixel = p_DataSet->datasetGetsubPixelsPerPixel();
-    psfNumPixels = p_DataSet->datasetGetpsfNumPixels();
+    psfNumRows = p_DataSet->datasetGetpsfNumRows();
 
 
     //Create a bigger PSF map

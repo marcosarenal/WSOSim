@@ -201,9 +201,9 @@
                   100
               </SubFieldSizeY>
               <!--Number of sub-pixels-->
-              <SubPixels>
+              <SubPixelsPerPixel>
                   16
-              </SubPixels>
+              </SubPixelsPerPixel>
           </SubField>
           <JitterParameters>
               <!--Apply jitter to time series (0=no/1=yes)-->

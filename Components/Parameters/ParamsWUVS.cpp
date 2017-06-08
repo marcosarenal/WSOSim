@@ -108,7 +108,7 @@ void ParamsWUVS::ParamsWUVSresizeCCD(DataSet &m_DataSet)
 
     if (subPixelsPerPixel <= 0)
     {
-            std::cerr << "\nError (ParamsCCD::paramsCCDcheckCCDParams): Number of SubPixels per Pixel must be > 0." << std::endl;
+            std::cerr << "\nError (ParamsCCD::paramsCCDcheckCCDParams): Number of SubPixelsPerPixel per Pixel must be > 0." << std::endl;
             exit(1);
     }
     
@@ -239,7 +239,7 @@ void ParamsWUVS::ParamsWUVScheckCCDParams(DataSet &m_DataSet)
     
 	if (subPixelsPerPixel <= 0)
 	{
-		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Number of SubPixels per Pixel must be > 0." << std::endl;
+		std::cerr << "\nError (ParamsWUVS::ParamsWUVScheckCCDParams): Number of SubPixelsPerPixel per Pixel must be > 0." << std::endl;
 		exit(1);
 	}
     

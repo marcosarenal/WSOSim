@@ -73,7 +73,7 @@ PreProcessingPhotometry::PreProcessingPhotometry(DataSet &m_DataSet, DataSetPhot
     //If PSFsubpixels < subfield size
     if (photometryMethod == "WM" && (psfSubPixels < subFieldSizeX || psfSubPixels < subFieldSizeY) )
     {
-        std::cerr << "\nError (PreProcessingPhotometry::PreProcessingPhotometry()):  You must provide a higher PSFSubPixels value (being PSFSubPixels/SubPixels an integer value) or a smaller subFieldSize because" << std::endl;
+        std::cerr << "\nError (PreProcessingPhotometry::PreProcessingPhotometry()):  You must provide a higher PSFSubPixels value (being PSFSubPixels/SubPixelsPerPixel an integer value) or a smaller subFieldSize because" << std::endl;
         std::cerr << "psfSubPixels ("<< psfSubPixels <<")  < subFieldSizeX ("<< subFieldSizeX <<") or psfSubPixels ("<< psfSubPixels <<") < subFieldSizeY ("<< subFieldSizeX <<")"  << std::endl;
         std::cerr << "You can also use Aperture Photometry (AP) instead of Weighted Mask Photometry (WM) ."  << std::endl;
         exit(1);
