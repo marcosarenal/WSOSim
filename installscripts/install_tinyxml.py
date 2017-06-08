@@ -32,8 +32,8 @@ installProcedure = "cd dependencyDownloads/;   \
 					mkdir tinyxml; \
 					unzip tinyxml.zip  ; \
 					cd %s;                      \
-                    ./premake4 gmake --unicode --dynamic-runtime --ticpp-shared; \
-                    make CONFIG=Release;               \
+                    premake4 gmake --unicode --dynamic-runtime --ticpp-shared; \
+                    make CONFIG=Debug;               \
                     cp -r ./lib %s;                    \
                     mkdir %s/include;                  \
                     cp *.h %s/include" %               \

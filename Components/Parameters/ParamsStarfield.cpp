@@ -219,7 +219,8 @@ void ParamsStarfield::ParamsStarfieldReadCatalogue(std::string catalogueFileName
     {        
         while (myfile >> myRA >> myDec >> myMag)
         {
-            //if the star is within the FOV
+            //TODO: check here whether the transit host star is in the field of view is duplicated or not (pma)
+            //Check if the star is within the FOV to set its RA, DEC, magnitude and ID in arrays
             if (MathTools::getAngularDistanceSphere(raCenterRad, decCenterRad, myRA * Constants::DEG2RAD, myDec * Constants::DEG2RAD)
                 < radiusFOV) 
             {

@@ -109,7 +109,7 @@ void ParamsCCD::paramsCCDresizeCCD(DataSet &m_DataSet)
     
     if (subPixelsPerPixel <= 0)
     {
-            std::cerr << "\nError (ParamsCCD::paramsCCDcheckCCDParams): Number of SubPixels per Pixel must be > 0." << std::endl;
+            std::cerr << "\nError (ParamsCCD::paramsCCDcheckCCDParams): Number of SubPixelsPerPixel per Pixel must be > 0." << std::endl;
             exit(1);
     }
     halfPSFSize = (psfSubPixels/ subPixelsPerPixel + 1)/2;
@@ -126,7 +126,7 @@ void ParamsCCD::paramsCCDresizeCCD(DataSet &m_DataSet)
     subFieldSizeX = subFieldSizeX + psfSize;
     subFieldSizeY = subFieldSizeY + psfSize;
 
-    
+
     
     LogManager::log<< "    Important: To provide proper treatment at the edges of the CCD and sub-image, the sizes of both are increased during the computations. ";
     GlobalVariables::logManager.LogManagerAppendLogAndShow();
@@ -155,11 +155,10 @@ void ParamsCCD::paramsCCDresizeCCD(DataSet &m_DataSet)
     
     originOffsetXmm = originOffsetXmm - halfPSFSize * pixelSize / 1000.;
     originOffsetYmm = originOffsetYmm - halfPSFSize * pixelSize / 1000.;
-
+    
     LogManager::log << "    New origin offset of enlarged CCD field (X, Y) = (" << originOffsetXmm << " mm, "
                     << originOffsetYmm << " mm)";
-    GlobalVariables::logManager.LogManagerAppendLogAndShow();
- 	
+    GlobalVariables::logManager.LogManagerAppendLogAndShow();	
 }
 //==============================================================================
 /**
@@ -239,7 +238,7 @@ void ParamsCCD::paramsCCDcheckCCDParams(DataSet &m_DataSet)
     
 	if (subPixelsPerPixel <= 0)
 	{
-		std::cerr << "\nError (ParamsCCD::paramsCCDcheckCCDParams): Number of SubPixels per Pixel must be > 0." << std::endl;
+		std::cerr << "\nError (ParamsCCD::paramsCCDcheckCCDParams): Number of SubPixelsPerPixel per Pixel must be > 0." << std::endl;
 		exit(1);
 	}
     

@@ -632,8 +632,6 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem></runcommandpicklistitem>
-          <runcommandpicklistitem>./PLATOSim -s ../inputfiles/ccd_parameters.xml</runcommandpicklistitem>
           <runcommandpicklistitem>./PLATOSim -s ../inputfiles/ccd_parameters.xml -p ../inputfiles/photometry_parameters.xml </runcommandpicklistitem>
           <runcommandpicklistitem>./PLATOSim -s ../inputfiles/ccd_parameters.xml -p ../inputfiles/photometry_parameters.xml</runcommandpicklistitem>
           <runcommandpicklistitem>./WSOSim -s ../inputfiles/ccd_parameters.xml -p ../inputfiles/photometry_parameters.xml</runcommandpicklistitem>
@@ -642,8 +640,10 @@
           <runcommandpicklistitem>./WSOSim -s ../inputfiles/KOI13b_transit.xml </runcommandpicklistitem>
           <runcommandpicklistitem>./WSOSim -s ../inputfiles/KOI13b_transit.xml</runcommandpicklistitem>
           <runcommandpicklistitem>./WSOSim -s ../inputfiles/WSOsim-FCU_KOI13b.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./WSOSim -s ../inputfiles/FCU_UVO_KOI13b.xml</runcommandpicklistitem>
+          <runcommandpicklistitem>./WSOSim -s ../inputfiles/FCU_UVO_KOI13b.xml -p ../inputfiles/photometry_parameters.xml</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>./WSOSim -s ../inputfiles/WSOsim-FCU_KOI13b.xml</runcommand>
+        <runcommand>./WSOSim -s ../inputfiles/FCU_UVO_KOI13b.xml -p ../inputfiles/photometry_parameters.xml</runcommand>
         <rundir>../build</rundir>
         <buildfirst>false</buildfirst>
         <terminal-type>0</terminal-type>

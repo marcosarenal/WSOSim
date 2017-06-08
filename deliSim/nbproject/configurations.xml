@@ -102,10 +102,13 @@
                    projectFiles="false"
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>../CMakeLists.txt</itemPath>
+      <itemPath>../inputfiles/FCU_UVO_KOI13b.xml</itemPath>
       <itemPath>../inputfiles/KOI13b_transit.xml</itemPath>
       <itemPath>../build/Makefile</itemPath>
       <itemPath>../inputfiles/WSOsim-FCU_KOI13b.xml</itemPath>
+      <itemPath>../inputfiles/WSOsim-FCU_UVO.xml</itemPath>
       <itemPath>../inputfiles/ccd_transits.xml</itemPath>
+      <itemPath>../inputfiles/photometry_parameters.xml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>

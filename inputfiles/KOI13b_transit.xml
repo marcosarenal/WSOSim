@@ -88,7 +88,7 @@
               <FocalPlaneOrientation>
                   0
               </FocalPlaneOrientation>
-              <!--Predefined position of CCD (A, B, C, D, AF, BF, CF, DF, or User)-->
+              <!--Predefined position of CCD (Only for PLATO!): A, B, C, D, AF, BF, CF, DF, or User -->
               <CCDPredefinedPosition>
                   User
               </CCDPredefinedPosition>
@@ -201,9 +201,9 @@
                   10
               </SubFieldSizeY>
               <!--Number of sub-pixels-->
-              <SubPixels>
+              <SubPixelsPerPixel>
                   16
-              </SubPixels>
+              </SubPixelsPerPixel>
           </SubField>
           <JitterParameters>
               <!--Apply jitter to time series (0=no/1=yes)-->
@@ -280,7 +280,7 @@
               <PSFNumRows>
                   1024
               </PSFNumRows>
-              <!--Number of sub-pixels per pixel in PSF file (NumPixels/SubPixels must be an integer value) [pixels]-->
+              <!--Number of sub-pixels per pixel in PSF file (PSFNumRows/SubPixelsPerPixel must be an integer value) [pixels]-->
               <PSFSubPixels>
                   128
               </PSFSubPixels>

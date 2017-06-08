@@ -66,7 +66,7 @@ private:
     std::string photometryMethod;
 
     int    subPixelsPerPixel;                //Parameter retrieved from DataSet.
-    int    psfSubPixels, psfNumPixels;       //Parameter retrieved from DataSet.
+    int    psfSubPixels, psfNumRows;       //Parameter retrieved from DataSet.
     int    psfSize;                          //Parameter retrieved from DataSet.
     int    subFieldSizeX, subFieldSizeY;     //Parameter retrieved from DataSet.
 

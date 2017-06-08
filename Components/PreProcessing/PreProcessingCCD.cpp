@@ -61,7 +61,7 @@ PreProcessingCCD::PreProcessingCCD(DataSet &m_DataSet)
     PreProcessingCCD::preProcessingCCDGetPredefinedCCDOffsets(p_DataSet);
     if (ccdPredefinedPosition == "A" || ccdPredefinedPosition == "B" || ccdPredefinedPosition == "C" || ccdPredefinedPosition == "D")
     {
-        LogManager::log<< "    Using pre-defined CCD position " << ccdPredefinedPosition << ".";
+        LogManager::log<< "    Using pre-defined CCD position (Only for PLATO CCD simulations)" << ccdPredefinedPosition << ".";
         GlobalVariables::logManager.LogManagerShowLog();
     }
     
