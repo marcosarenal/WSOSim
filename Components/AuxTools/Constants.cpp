@@ -26,6 +26,7 @@
 
 #include "Constants.h"
 
+double Constants::e_number       = 2.71828182845904523536029;   // e; Napier's constant or Euler's number 
 double Constants::Pi2            = 6.2831853071795862;
 double Constants::Pi             = 3.14159265358979323846264;
 double Constants::EMPTY          = 99999.12345;
